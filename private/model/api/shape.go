@@ -376,6 +376,8 @@ func goType(s *Shape, withPkgName bool) string {
 		return "*time.Time"
 	case "interface":
 		return "*interface{}"
+	case "ksc":
+		return "*map[string]interface{}"
 	default:
 		panic("Unsupported shape type: " + s.Type)
 	}

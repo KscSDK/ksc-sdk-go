@@ -332,7 +332,12 @@ func createAPIParamShape(a *API, opName string, ref *ShapeRef, shapeName string,
 }
 
 func setAsPlacholderShape(tgtShapeRef *ShapeRef, name string, a *API) {
-	shape := a.makeIOShape(name)
+	shape := &Shape{}
+	if a.Metadata.Protocol == "ksc-query" {
+		shape = a.makeKSCShape(name)
+	} else {
+		shape = a.makeIOShape(name)
+	}
 	shape.Placeholder = true
 	*tgtShapeRef = ShapeRef{API: a, ShapeName: shape.ShapeName, Shape: shape}
 	shape.refs = append(shape.refs, tgtShapeRef)
@@ -343,6 +348,14 @@ func (a *API) makeIOShape(name string) *Shape {
 	shape := &Shape{
 		API: a, ShapeName: name, Type: "structure",
 		MemberRefs: map[string]*ShapeRef{},
+	}
+	a.Shapes[name] = shape
+	return shape
+}
+
+func (a *API) makeKSCShape(name string) *Shape {
+	shape := &Shape{
+		API: a, ShapeName: name, Type: "ksc",
 	}
 	a.Shapes[name] = shape
 	return shape

@@ -163,6 +163,9 @@ func (a *API) AttachString(str string) {
 
 // Setup initializes the API.
 func (a *API) Setup() {
+	if a.Shapes == nil {
+		a.Shapes = map[string]*Shape{}
+	}
 	a.setServiceAliaseName()
 	a.setMetadataEndpointsKey()
 	a.writeShapeNames()

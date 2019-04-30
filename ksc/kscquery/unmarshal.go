@@ -22,18 +22,10 @@ func Unmarshal(r *request.Request) {
 			fmt.Printf("read body err, %v\n", err)
 			return
 		}
-		map2 := make(map[string]interface{})
-		if err = json.Unmarshal(body,&map2); err != nil {
+		if err = json.Unmarshal(body, &r.Data); err != nil {
 			fmt.Printf("Unmarshal err, %v\n", err)
 			return
 		}
-		//fmt.Printf("Unmarshal result, %v\n", map2)
-		//if err = json.Unmarshal(body,r.Data); err != nil {
-		//	fmt.Printf("Unmarshal err, %v\n", err)
-		//	return
-		//}
-		r.Data =map2
-		fmt.Printf("Unmarshal result, %v\n", r)
 	}
 }
 

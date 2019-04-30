@@ -327,7 +327,13 @@ func (a *API) KscAddSDKImport(v ...string) error {
 func (a *API) APIGoCode() string {
 	a.resetImports()
 	a.AddSDKImport("aws")
-	a.AddSDKImport("aws/awsutil")
+	for _, v := range a.Shapes {
+		if v.Type == "string" || v.Type == "character" {
+			a.AddSDKImport("aws/awsutil")
+			break
+		}
+	}
+
 	a.AddSDKImport("aws/request")
 
 	var buf bytes.Buffer
@@ -686,16 +692,15 @@ func (a *API) ServiceGoCode() string {
 	} else {
 		a.AddSDKImport("aws/signer/v4")
 	}
-	if a.Metadata.Protocol =="ksc-query"{
-		a.KscAddSDKImport("ksc",a.ProtocolPackage())
+	if a.Metadata.Protocol == "ksc-query" {
+		a.KscAddSDKImport("ksc", a.ProtocolPackage())
 		a.KscAddSDKImport("ksc/utils")
-	}else{
+	} else {
 		a.AddSDKImport("private/protocol", a.ProtocolPackage())
 	}
 	if a.EndpointDiscoveryOp != nil {
 		a.AddSDKImport("aws/crr")
 	}
-
 
 	var buf bytes.Buffer
 	err := tplService.Execute(&buf, a)

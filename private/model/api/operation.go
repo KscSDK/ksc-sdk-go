@@ -534,7 +534,11 @@ func (o *Operation) ExampleInput() string {
 // ShouldDiscardResponse returns if the operation should discard the response
 // returned by the service.
 func (o *Operation) ShouldDiscardResponse() bool {
+
 	s := o.OutputRef.Shape
+	if s.Type == "ksc" {
+		return false
+	}
 	return s.Placeholder || len(s.MemberRefs) == 0
 }
 

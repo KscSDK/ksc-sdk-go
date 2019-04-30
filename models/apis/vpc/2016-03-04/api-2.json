@@ -1,0 +1,29 @@
+{
+  "version": "2.0",
+  "metadata":{
+    "apiVersion":"2016-03-04",
+    "endpointPrefix":"vpc",
+    "protocol":"ksc-query",
+    "serviceFullName":"vpc",
+    "serviceId":"vpc",
+    "signatureVersion":"v4",
+    "uid":"vpc-2016-03-04",
+    "xmlNamespace":"http://vpc.ksyun.com/doc/2016-03-04/"
+  },
+  "operations":{
+    "DescribeVpcs": {
+      "name":"DescribeVpcs",
+      "http":{
+        "method":"GET",
+        "requestUri":"/"
+      }
+    },
+    "DescribeSubnets": {
+      "name":"DescribeSubnets",
+      "http":{
+        "method":"GET",
+        "requestUri":"/"
+      }
+    }
+  }
+}

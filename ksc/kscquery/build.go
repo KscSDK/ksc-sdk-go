@@ -5,6 +5,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
 	"net/url"
+	"reflect"
 	"strings"
 )
 
@@ -17,7 +18,12 @@ func Build(r *request.Request) {
 		"Action":  {r.Operation.Name},
 		"Version": {r.ClientInfo.APIVersion},
 	}
-	if err := queryutil.Parse(body, r.Params, false); err != nil {
+	if reflect.TypeOf(r.Params) == reflect.TypeOf(&map[string]interface{}{}) {
+		m := *(r.Params).(*map[string]interface{})
+		for k, v := range m {
+			body.Add(k, v.(string))
+		}
+	} else if err := queryutil.Parse(body, r.Params, false); err != nil {
 		r.Error = awserr.New("SerializationError", "failed encoding Query request", err)
 		return
 	}
@@ -30,7 +36,7 @@ func Build(r *request.Request) {
 	} else if method == "POST" {
 		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
 		r.SetBufferBody([]byte(body.Encode()))
-	} else if method == "PUT"{
+	} else if method == "PUT" {
 		r.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
 		r.SetBufferBody([]byte(body.Encode()))
 	} else {
