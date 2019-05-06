@@ -147,6 +147,18 @@
 			"revisionTime": "2019-05-03T18:24:48Z"
 		},
 		{
+			"checksumSHA1": "tXRIRarT7qepHconxydtO7mXod4=",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/json/jsonutil",
+			"revision": "4c79508525af24f4e6475f061b5615cac1fbb608",
+			"revisionTime": "2019-05-03T18:24:48Z"
+		},
+		{
+			"checksumSHA1": "4LOXXSH5M4cPopv6cfEztWAbJqU=",
+			"path": "github.com/aws/aws-sdk-go/private/protocol/jsonrpc",
+			"revision": "4c79508525af24f4e6475f061b5615cac1fbb608",
+			"revisionTime": "2019-05-03T18:24:48Z"
+		},
+		{
 			"checksumSHA1": "lj56XJFI2OSp+hEOrFZ+eiEi/yM=",
 			"path": "github.com/aws/aws-sdk-go/private/protocol/query",
 			"revision": "4c79508525af24f4e6475f061b5615cac1fbb608",
