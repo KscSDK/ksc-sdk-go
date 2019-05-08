@@ -1,4 +1,5 @@
 /vendor/bin/
 /vendor/pkg/
 /vendor/src/
+.idea/
 doc
