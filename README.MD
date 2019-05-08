@@ -19,19 +19,9 @@
 	ak := "用户AK"
 	sk := "用户SK"
 	region := "cn-beijing-6"
-	//生产签名对象和Session
-	_credentials := credentials.NewStaticCredentials(ak, sk, "")
-	sess, err := session.NewSession(&aws.Config{Credentials: _credentials})
-	//获取服务的对象 （vpc/slb/eip/kec ....） 请参考各自的demo 
-	//UseSSL代表使用HTTPS 默认HTTP
-	//Locate 代表使用本地化域名 默认为false
-	svc := vpc.ExtraNew(&utils.UrlInfo{
-		UseSSL: true,
-		Locate: true,
-	}, sess, &aws.Config{Region: &region})
-	if err != nil {
-		fmt.Printf("%v", err)
-	}
+	svc := vpc.SdkNew(ksc.NewClient(ak, sk), &ksc.Config{Region: &region}, &utils.UrlInfo{
+    		UseSSL: true,
+    	})
 
 	//创建入参 参考 https://docs.ksyun.com/
 	m_vpc := make(map[string]interface{})
