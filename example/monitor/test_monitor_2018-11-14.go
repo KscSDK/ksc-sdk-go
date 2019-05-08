@@ -3,9 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/ksc/ksc-sdk-go/ksc"
 	"github.com/ksc/ksc-sdk-go/ksc/utils"
 	"github.com/ksc/ksc-sdk-go/service/monitorv2"
 )
@@ -14,16 +12,10 @@ func main() {
 	ak := "你的 AK"
 	sk := "你的 SK"
 	region := "cn-shanghai-2"
-	_credentials := credentials.NewStaticCredentials(ak, sk, "")
-	//需要调试时，可打开调试模式
-	sess, err := session.NewSession(&aws.Config{Credentials: _credentials /*,LogLevel:aws.LogLevel(aws.LogDebugWithHTTPBody)*/})
-	svc := monitorv2.ExtraNew(&utils.UrlInfo{
+	//debug模式的话 打开这个开关
+	svc := monitorv2.SdkNew(ksc.NewClient(ak, sk /*true*/), &ksc.Config{Region: &region}, &utils.UrlInfo{
 		UseSSL: true,
-		Locate: true,
-	}, sess, &aws.Config{Region: &region})
-	if err != nil {
-		fmt.Printf("%v", err)
-	}
+	})
 
 	/*
 		 *
