@@ -7,36 +7,34 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
-const opGetMetricStatisticsBatch = "GetMetricStatisticsBatch"
+const opGetMetricStatistics = "GetMetricStatistics"
 
-// GetMetricStatisticsBatchRequest generates a "aws/request.Request" representing the
-// client's request for the GetMetricStatisticsBatch operation. The "output" return
+// GetMetricStatisticsRequest generates a "ksc/request.Request" representing the
+// client's request for the GetMetricStatistics operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
 //
 // Use "Send" method on the returned Request to send the API call to the service.
 // the "output" return value is not valid until after Send returns without error.
 //
-// See GetMetricStatisticsBatch for more information on using the GetMetricStatisticsBatch
+// See GetMetricStatistics for more information on using the GetMetricStatistics
 // API call, and error handling.
 //
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
 //
-//    // Example sending a request using the GetMetricStatisticsBatchRequest method.
-//    req, resp := client.GetMetricStatisticsBatchRequest(params)
+//    // Example sending a request using the GetMetricStatisticsRequest method.
+//    req, resp := client.GetMetricStatisticsRequest(params)
 //
 //    err := req.Send()
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
-//
-// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2018-09-29/GetMetricStatisticsBatch
-func (c *Monitor) GetMetricStatisticsBatchRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+func (c *Monitor) GetMetricStatisticsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
-		Name:       opGetMetricStatisticsBatch,
-		HTTPMethod: "POST",
+		Name:       opGetMetricStatistics,
+		HTTPMethod: "GET",
 		HTTPPath:   "/",
 	}
 
@@ -47,36 +45,103 @@ func (c *Monitor) GetMetricStatisticsBatchRequest(input *map[string]interface{})
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
-	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
-
 	return
 }
 
-// GetMetricStatisticsBatch API operation for monitor.
+// GetMetricStatistics API operation for monitor.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
-// See the AWS API reference guide for monitor's
-// API operation GetMetricStatisticsBatch for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2018-09-29/GetMetricStatisticsBatch
-func (c *Monitor) GetMetricStatisticsBatch(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.GetMetricStatisticsBatchRequest(input)
+// See the KSC API reference guide for monitor's
+// API operation GetMetricStatistics for usage and error information.
+func (c *Monitor) GetMetricStatistics(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.GetMetricStatisticsRequest(input)
 	return out, req.Send()
 }
 
-// GetMetricStatisticsBatchWithContext is the same as GetMetricStatisticsBatch with the addition of
+// GetMetricStatisticsWithContext is the same as GetMetricStatistics with the addition of
 // the ability to pass a context and additional request options.
 //
-// See GetMetricStatisticsBatch for details on how to use this API operation.
+// See GetMetricStatistics for details on how to use this API operation.
 //
 // The context must be non-nil and will be used for request cancellation. If
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Monitor) GetMetricStatisticsBatchWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.GetMetricStatisticsBatchRequest(input)
+func (c *Monitor) GetMetricStatisticsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.GetMetricStatisticsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opListMetrics = "ListMetrics"
+
+// ListMetricsRequest generates a "ksc/request.Request" representing the
+// client's request for the ListMetrics operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListMetrics for more information on using the ListMetrics
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ListMetricsRequest method.
+//    req, resp := client.ListMetricsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+func (c *Monitor) ListMetricsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opListMetrics,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ListMetrics API operation for monitor.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for monitor's
+// API operation ListMetrics for usage and error information.
+func (c *Monitor) ListMetrics(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ListMetricsRequest(input)
+	return out, req.Send()
+}
+
+// ListMetricsWithContext is the same as ListMetrics with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListMetrics for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Monitor) ListMetricsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ListMetricsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

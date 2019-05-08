@@ -9,7 +9,7 @@ import (
 
 const opDescribeSubnets = "DescribeSubnets"
 
-// DescribeSubnetsRequest generates a "aws/request.Request" representing the
+// DescribeSubnetsRequest generates a "ksc/request.Request" representing the
 // client's request for the DescribeSubnets operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
@@ -46,6 +46,7 @@ func (c *Vpc) DescribeSubnetsRequest(input *map[string]interface{}) (req *reques
 
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
+
 	return
 }
 
@@ -55,7 +56,7 @@ func (c *Vpc) DescribeSubnetsRequest(input *map[string]interface{}) (req *reques
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
-// See the AWS API reference guide for vpc's
+// See the KSC API reference guide for vpc's
 // API operation DescribeSubnets for usage and error information.
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeSubnets
 func (c *Vpc) DescribeSubnets(input *map[string]interface{}) (*map[string]interface{}, error) {
@@ -81,7 +82,7 @@ func (c *Vpc) DescribeSubnetsWithContext(ctx aws.Context, input *map[string]inte
 
 const opDescribeVpcs = "DescribeVpcs"
 
-// DescribeVpcsRequest generates a "aws/request.Request" representing the
+// DescribeVpcsRequest generates a "ksc/request.Request" representing the
 // client's request for the DescribeVpcs operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
@@ -118,6 +119,7 @@ func (c *Vpc) DescribeVpcsRequest(input *map[string]interface{}) (req *request.R
 
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
+
 	return
 }
 
@@ -127,7 +129,7 @@ func (c *Vpc) DescribeVpcsRequest(input *map[string]interface{}) (req *request.R
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
-// See the AWS API reference guide for vpc's
+// See the KSC API reference guide for vpc's
 // API operation DescribeVpcs for usage and error information.
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpcs
 func (c *Vpc) DescribeVpcs(input *map[string]interface{}) (*map[string]interface{}, error) {
