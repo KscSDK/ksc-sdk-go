@@ -8,6 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/client/metadata"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
+	"github.com/ksc/ksc-sdk-go/ksc"
 	"github.com/ksc/ksc-sdk-go/ksc/kscjson"
 	"github.com/ksc/ksc-sdk-go/ksc/utils"
 )
@@ -65,6 +66,24 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 		Region:  c.SigningRegion,
 	})
 	return newClient(*c.Config, c.Handlers, c.Endpoint, c.SigningRegion, c.SigningName)
+}
+
+// SdkNew create int can support ssl or region locate set
+func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Monitorv1 {
+	_info := utils.UrlInfo{
+		UseSSL: false,
+		Locate: true,
+	}
+	if len(info) > 0 && len(info) == 1 {
+		if info[0].UseSSL {
+			_info.UseSSL = info[0].UseSSL
+		}
+		if info[0].Locate {
+			_info.Locate = info[0].Locate
+		}
+
+	}
+	return ExtraNew(&_info, p, &aws.Config{Region: cfgs.Region})
 }
 
 // newClient creates, initializes and returns a new service client instance.

@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/ksc/ksc-sdk-go/ksc"
 	"github.com/ksc/ksc-sdk-go/ksc/utils"
 	"github.com/ksc/ksc-sdk-go/service/vpc"
 )
@@ -13,15 +11,9 @@ func main() {
 	ak := "你的AK"
 	sk := "你的SK"
 	region := "cn-beijing-6"
-	_credentials := credentials.NewStaticCredentials(ak, sk, "")
-	sess, err := session.NewSession(&aws.Config{Credentials: _credentials})
-	svc := vpc.ExtraNew(&utils.UrlInfo{
+	svc := vpc.SdkNew(ksc.NewClient(ak, sk), &ksc.Config{Region: &region}, &utils.UrlInfo{
 		UseSSL: true,
-		Locate: true,
-	}, sess, &aws.Config{Region: &region})
-	if err != nil {
-		fmt.Printf("%v", err)
-	}
+	})
 
 	//var ids= []string{"ae19a823-e920-446b-a720-ceab512c7673"}
 
