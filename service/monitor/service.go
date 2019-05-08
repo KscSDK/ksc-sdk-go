@@ -30,14 +30,14 @@ var initRequest func(*request.Request)
 
 // Service information constants
 const (
-	ServiceName = "monitor"   // Name of service.
-	EndpointsID = ServiceName // ID to lookup a service endpoint with.
-	ServiceID   = "monitor"   // ServiceID is a unique identifer of a specific service.
+	ServiceName = "monitor-2010-05-25" // Name of service.
+	EndpointsID = "monitor"            // ID to lookup a service endpoint with.
+	ServiceID   = "monitor-2010-05-25" // ServiceID is a unique identifer of a specific service.
 )
 
 // New creates a new instance of the Monitor client with a session.
 // If additional configuration is needed for the client instance use the optional
-// aws.Config parameter to add your extra config.
+// ksc.Config parameter to add your extra config.
 //
 // Example:
 //     // Create a Monitor client from just a session.
@@ -78,7 +78,7 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 				SigningName:   signingName,
 				SigningRegion: signingRegion,
 				Endpoint:      endpoint,
-				APIVersion:    "2018-09-29",
+				APIVersion:    "2010-05-25",
 			},
 			handlers,
 		),
