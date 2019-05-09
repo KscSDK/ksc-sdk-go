@@ -31,6 +31,8 @@ const opGetMetricStatisticsBatch = "GetMetricStatisticsBatch"
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2018-11-14/GetMetricStatisticsBatch
 func (c *Monitorv2) GetMetricStatisticsBatchRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opGetMetricStatisticsBatch,
@@ -56,6 +58,7 @@ func (c *Monitorv2) GetMetricStatisticsBatchRequest(input *map[string]interface{
 //
 // See the KSC API reference guide for monitorv2's
 // API operation GetMetricStatisticsBatch for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2018-11-14/GetMetricStatisticsBatch
 func (c *Monitorv2) GetMetricStatisticsBatch(input *map[string]interface{}) (*map[string]interface{}, error) {
 	req, out := c.GetMetricStatisticsBatchRequest(input)
 	return out, req.Send()
