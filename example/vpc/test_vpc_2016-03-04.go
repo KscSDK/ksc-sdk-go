@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	ak := "AKLTg7VBRZTqTeq0sm5YR9RC2Q"
-	sk := "OIG+gXs7NzdTMhNfIiyEDD/Zm3TEvXCB1DytyAUTUG0J0NjdEoCU5zbGBUmCjimtGQ=="
+	ak := "你的ak"
+	sk := "你的sk"
 	region := "cn-shanghai-2"
 	svc := vpc.SdkNew(ksc.NewClient(ak, sk), &ksc.Config{Region: &region}, &utils.UrlInfo{
 		UseSSL: true,
