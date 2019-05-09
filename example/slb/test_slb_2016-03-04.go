@@ -71,6 +71,7 @@ func main() {
 	*/
 
 	//	****************************************查询负载均衡信息(DescribeLoadBalancers())***************************************************
+
 	describeLoadBalancers := make(map[string]interface{})
 	describeLoadBalancers["LoadBalancerId.1"] = "b2e1c23e-2038-4b46-8885-2d5425d7823d"
 	describeLoadBalancers["Filter.1.Name"] = "vpc-id"
@@ -140,19 +141,19 @@ func main() {
 
 	*/
 	//	****************************************查询监听器信息(DescribeListeners())***************************************************
-
-	describeListeners := make(map[string]interface{})
-	describeListeners["Filter.1.Name"] = "load-balancer-id"
-	describeListeners["Filter.1.Value.1"] = "a2401d6b-d706-49b3-a0b4-e2fdb0c38899"
-	resp, err = svc.DescribeListeners(&describeListeners)
-	if err != nil {
-		fmt.Println("error:", err.Error())
-	}
-	if resp != nil {
-		str, _ := json.Marshal(&resp)
-		fmt.Printf("%+v\n", string(str))
-	}
-
+	/*
+		describeListeners := make(map[string]interface{})
+		describeListeners["Filter.1.Name"] = "load-balancer-id"
+		describeListeners["Filter.1.Value.1"] = "a2401d6b-d706-49b3-a0b4-e2fdb0c38899"
+		resp, err = svc.DescribeListeners(&describeListeners)
+		if err != nil {
+			fmt.Println("error:", err.Error())
+		}
+		if resp != nil {
+			str, _ := json.Marshal(&resp)
+			fmt.Printf("%+v\n", string(str))
+		}
+	*/
 	//	****************************************创建健康检查(ConfigureHealthCheck())***************************************************
 	/*
 		configureHealthCheck := make(map[string]interface{})

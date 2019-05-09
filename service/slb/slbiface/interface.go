@@ -68,10 +68,6 @@ type SlbAPI interface {
 	ConfigureHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ConfigureHealthCheckRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	CreateCertificate(*map[string]interface{}) (*map[string]interface{}, error)
-	CreateCertificateWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	CreateCertificateRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	CreateListeners(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateListenersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateListenersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -87,10 +83,6 @@ type SlbAPI interface {
 	CreateLoadBalancerAclEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateLoadBalancerAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateLoadBalancerAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	DeleteCertificate(*map[string]interface{}) (*map[string]interface{}, error)
-	DeleteCertificateWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DeleteCertificateRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteHealthCheck(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -116,10 +108,6 @@ type SlbAPI interface {
 	DeregisterInstancesFromListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	DescribeCertificates(*map[string]interface{}) (*map[string]interface{}, error)
-	DescribeCertificatesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DescribeCertificatesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	DescribeHealthChecks(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeHealthChecksWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeHealthChecksRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -143,10 +131,6 @@ type SlbAPI interface {
 	DisassociateLoadBalancerAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateLoadBalancerAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateLoadBalancerAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	ModifyCertificate(*map[string]interface{}) (*map[string]interface{}, error)
-	ModifyCertificateWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	ModifyCertificateRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyHealthCheck(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
