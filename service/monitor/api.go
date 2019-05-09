@@ -31,6 +31,8 @@ const opGetMetricStatistics = "GetMetricStatistics"
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2010-05-25/GetMetricStatistics
 func (c *Monitor) GetMetricStatisticsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opGetMetricStatistics,
@@ -56,6 +58,7 @@ func (c *Monitor) GetMetricStatisticsRequest(input *map[string]interface{}) (req
 //
 // See the KSC API reference guide for monitor's
 // API operation GetMetricStatistics for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2010-05-25/GetMetricStatistics
 func (c *Monitor) GetMetricStatistics(input *map[string]interface{}) (*map[string]interface{}, error) {
 	req, out := c.GetMetricStatisticsRequest(input)
 	return out, req.Send()
@@ -101,6 +104,8 @@ const opListMetrics = "ListMetrics"
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2010-05-25/ListMetrics
 func (c *Monitor) ListMetricsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opListMetrics,
@@ -126,6 +131,7 @@ func (c *Monitor) ListMetricsRequest(input *map[string]interface{}) (req *reques
 //
 // See the KSC API reference guide for monitor's
 // API operation ListMetrics for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/monitor-2010-05-25/ListMetrics
 func (c *Monitor) ListMetrics(input *map[string]interface{}) (*map[string]interface{}, error) {
 	req, out := c.ListMetricsRequest(input)
 	return out, req.Send()

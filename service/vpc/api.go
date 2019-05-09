@@ -7,6 +7,152 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opCreateVpc = "CreateVpc"
+
+// CreateVpcRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateVpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateVpc for more information on using the CreateVpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateVpcRequest method.
+//    req, resp := client.CreateVpcRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpc
+func (c *Vpc) CreateVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateVpc,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateVpc API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateVpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpc
+func (c *Vpc) CreateVpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateVpcRequest(input)
+	return out, req.Send()
+}
+
+// CreateVpcWithContext is the same as CreateVpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateVpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateVpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateVpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteVpc = "DeleteVpc"
+
+// DeleteVpcRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteVpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteVpc for more information on using the DeleteVpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteVpcRequest method.
+//    req, resp := client.DeleteVpcRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpc
+func (c *Vpc) DeleteVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteVpc,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteVpc API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteVpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpc
+func (c *Vpc) DeleteVpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteVpcRequest(input)
+	return out, req.Send()
+}
+
+// DeleteVpcWithContext is the same as DeleteVpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteVpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteVpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteVpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeSubnets = "DescribeSubnets"
 
 // DescribeSubnetsRequest generates a "ksc/request.Request" representing the
@@ -148,6 +294,79 @@ func (c *Vpc) DescribeVpcs(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Vpc) DescribeVpcsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeVpcsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyVpc = "ModifyVpc"
+
+// ModifyVpcRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyVpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyVpc for more information on using the ModifyVpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyVpcRequest method.
+//    req, resp := client.ModifyVpcRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyVpc
+func (c *Vpc) ModifyVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyVpc,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyVpc API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyVpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyVpc
+func (c *Vpc) ModifyVpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyVpcRequest(input)
+	return out, req.Send()
+}
+
+// ModifyVpcWithContext is the same as ModifyVpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyVpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyVpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyVpcRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

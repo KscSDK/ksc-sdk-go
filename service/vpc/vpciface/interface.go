@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // vpc.
 //    func myFunc(svc vpciface.VpcAPI) bool {
-//        // Make svc.DescribeSubnets request
+//        // Make svc.CreateVpc request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockVpcClient struct {
 //        vpciface.VpcAPI
 //    }
-//    func (m *mockVpcClient) DescribeSubnets(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockVpcClient) CreateVpc(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,14 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type VpcAPI interface {
+	CreateVpc(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateVpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateVpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteVpc(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteVpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteVpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeSubnets(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeSubnetsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeSubnetsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -67,6 +75,10 @@ type VpcAPI interface {
 	DescribeVpcs(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeVpcsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeVpcsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyVpc(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyVpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyVpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ VpcAPI = (*vpc.Vpc)(nil)
