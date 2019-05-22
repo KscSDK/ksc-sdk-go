@@ -116,10 +116,6 @@ type EpcAPI interface {
 	DescribeCabinetsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeCabinetsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	DescribeCertificates(*map[string]interface{}) (*map[string]interface{}, error)
-	DescribeCertificatesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DescribeCertificatesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	DescribeEpcManagements(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeEpcManagementsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeEpcManagementsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
