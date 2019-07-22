@@ -9,12 +9,12 @@ import (
 )
 
 func main() {
-	ak := "AKLTUnpB8vY3T0SwYFGprjj_7w"
-	sk := "OGmPbxxelZZ/94zx7yna8fjA6pEaEaeqIv6PoV6sPnFET2/fhkUaz7ZwcVOOM0NW3Q=="
-	region := "cn-shanghai-3"
+	ak := "你的ak"
+	sk := "你的sk"
+	region := "cn-beijing-6"
 	//debug模式的话 打开这个开关
 	svc := sks.SdkNew(ksc.NewClient(ak, sk /*,true*/), &ksc.Config{Region: &region}, &utils.UrlInfo{
-		UseSSL: false,
+		UseSSL: true,
 	})
 	var resp *map[string]interface{}
 	var err error
