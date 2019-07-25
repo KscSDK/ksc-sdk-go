@@ -47,6 +47,8 @@ func (c *Monitorv1) GetMetricStatisticsBatchRequest(input *map[string]interface{
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
 	return
 }
 
