@@ -72,7 +72,7 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Vpc {
 	_info := utils.UrlInfo{
 		UseSSL: false,
-		Locate: true,
+		Locate: false,
 	}
 	if len(info) > 0 && len(info) == 1 {
 		if info[0].UseSSL {
