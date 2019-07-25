@@ -1058,7 +1058,7 @@ const opDescribeCacheParameterGroup = "DescribeCacheParameterGroup"
 func (c *Kcsv1) DescribeCacheParameterGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeCacheParameterGroup,
-		HTTPMethod: "PUT",
+		HTTPMethod: "GET",
 		HTTPPath:   "/",
 	}
 
@@ -1715,7 +1715,7 @@ const opExportSnapshot = "ExportSnapshot"
 func (c *Kcsv1) ExportSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opExportSnapshot,
-		HTTPMethod: "DELETE",
+		HTTPMethod: "GET",
 		HTTPPath:   "/",
 	}
 
@@ -2299,7 +2299,7 @@ const opSetCacheParameterGroup = "SetCacheParameterGroup"
 func (c *Kcsv1) SetCacheParameterGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opSetCacheParameterGroup,
-		HTTPMethod: "GET",
+		HTTPMethod: "PUT",
 		HTTPPath:   "/",
 	}
 
