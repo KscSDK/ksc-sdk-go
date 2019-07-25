@@ -1,7 +1,7 @@
 package kscquery
 
 import (
-	"aws-sdk-go/private/protocol/query/queryutil"
+	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/ksc/ksc-sdk-go/ksc/kscbody"
