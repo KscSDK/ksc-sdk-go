@@ -9,7 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
 	"github.com/ksc/ksc-sdk-go/ksc"
-	"github.com/ksc/ksc-sdk-go/ksc/kscjson"
+	"github.com/ksc/ksc-sdk-go/ksc/kscquery"
 	"github.com/ksc/ksc-sdk-go/ksc/utils"
 )
 
@@ -105,10 +105,10 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 
 	// Handlers
 	svc.Handlers.Sign.PushBackNamed(v4.SignRequestHandler)
-	svc.Handlers.Build.PushBackNamed(kscjson.BuildHandler)
-	svc.Handlers.Unmarshal.PushBackNamed(kscjson.UnmarshalHandler)
-	svc.Handlers.UnmarshalMeta.PushBackNamed(kscjson.UnmarshalMetaHandler)
-	svc.Handlers.UnmarshalError.PushBackNamed(kscjson.UnmarshalErrorHandler)
+	svc.Handlers.Build.PushBackNamed(kscquery.BuildHandler)
+	svc.Handlers.Unmarshal.PushBackNamed(kscquery.UnmarshalHandler)
+	svc.Handlers.UnmarshalMeta.PushBackNamed(kscquery.UnmarshalMetaHandler)
+	svc.Handlers.UnmarshalError.PushBackNamed(kscquery.UnmarshalErrorHandler)
 
 	// Run custom client initialization if present
 	if initClient != nil {
