@@ -1,9 +1,9 @@
 package kscquery
 
 import (
+	"aws-sdk-go/private/protocol/query/queryutil"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
 	"github.com/ksc/ksc-sdk-go/ksc/kscbody"
 	"net/url"
 	"reflect"
@@ -19,6 +19,25 @@ func Build(r *request.Request) {
 		"Action":  {r.Operation.Name},
 		"Version": {r.ClientInfo.APIVersion},
 	}
+	r.HTTPRequest.Header.Add("Accept", "application/json")
+	//method := strings.ToUpper(r.HTTPRequest.Method)
+	r.HTTPRequest.URL.RawQuery = body.Encode()
+	v := r.HTTPRequest.Header.Get("Content-Type")
+	if len(v) > 0 && strings.Contains(strings.ToLower(v), "application/json") {
+		r.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+		kscbody.BodyJson(r)
+		return
+	}
+	if len(v) > 0 && strings.Contains(strings.ToLower(v), "x-www-form-urlencoded") {
+		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
+		r.SetBufferBody([]byte(body.Encode()))
+		return
+	}
+	if len(v)>0{
+		r.Error = awserr.New("SerializationError", "not support such content-type",nil)
+		return
+	}
+
 	if reflect.TypeOf(r.Params) == reflect.TypeOf(&map[string]interface{}{}) {
 		m := *(r.Params).(*map[string]interface{})
 		for k, v := range m {
@@ -30,29 +49,5 @@ func Build(r *request.Request) {
 		r.Error = awserr.New("SerializationError", "failed encoding Query request", err)
 		return
 	}
-
-	method := strings.ToUpper(r.HTTPRequest.Method)
-	v := r.HTTPRequest.Header.Get("Content-Type")
-	if method == "POST" {
-		if len(v) > 0 && strings.Contains(strings.ToLower(v), "application/json") {
-			kscbody.BodyJson(r)
-			return
-		}
-	}
-
-	r.HTTPRequest.Header.Add("Accept", "application/json")
-
-	if method == "GET" {
-		r.HTTPRequest.URL.RawQuery = body.Encode()
-	} else if method == "POST" {
-		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
-		r.SetBufferBody([]byte(body.Encode()))
-	} else if method == "PUT" {
-		r.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
-		kscbody.BodyJson(r)
-		return
-	} else {
-		r.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
-		r.SetBufferBody([]byte(body.Encode()))
-	}
+	r.HTTPRequest.URL.RawQuery = body.Encode()
 }
