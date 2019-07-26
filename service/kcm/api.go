@@ -47,6 +47,8 @@ func (c *Kcm) CreateCertificateRequest(input *map[string]interface{}) (req *requ
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
+	req.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
+
 	return
 }
 
