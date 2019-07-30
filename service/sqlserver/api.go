@@ -37,7 +37,7 @@ func (c *Sqlserver) CloneSecurityGroupRequest(input *map[string]interface{}) (re
 	op := &request.Operation{
 		Name:       opCloneSecurityGroup,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -110,7 +110,7 @@ func (c *Sqlserver) CreateDBInstanceRequest(input *map[string]interface{}) (req 
 	op := &request.Operation{
 		Name:       opCreateDBInstance,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -183,7 +183,7 @@ func (c *Sqlserver) CreateSecurityGroupRequest(input *map[string]interface{}) (r
 	op := &request.Operation{
 		Name:       opCreateSecurityGroup,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -256,7 +256,7 @@ func (c *Sqlserver) DeleteDBInstanceRequest(input *map[string]interface{}) (req 
 	op := &request.Operation{
 		Name:       opDeleteDBInstance,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -329,7 +329,7 @@ func (c *Sqlserver) DeleteSecurityGroupRequest(input *map[string]interface{}) (r
 	op := &request.Operation{
 		Name:       opDeleteSecurityGroup,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -402,7 +402,7 @@ func (c *Sqlserver) DescribeDBInstancesRequest(input *map[string]interface{}) (r
 	op := &request.Operation{
 		Name:       opDescribeDBInstances,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -475,7 +475,7 @@ func (c *Sqlserver) DescribeSecurityGroupRequest(input *map[string]interface{}) 
 	op := &request.Operation{
 		Name:       opDescribeSecurityGroup,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -548,7 +548,7 @@ func (c *Sqlserver) ModifyDBInstanceRequest(input *map[string]interface{}) (req 
 	op := &request.Operation{
 		Name:       opModifyDBInstance,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -621,7 +621,7 @@ func (c *Sqlserver) ModifySecurityGroupRequest(input *map[string]interface{}) (r
 	op := &request.Operation{
 		Name:       opModifySecurityGroup,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -694,7 +694,7 @@ func (c *Sqlserver) ModifySecurityGroupRuleRequest(input *map[string]interface{}
 	op := &request.Operation{
 		Name:       opModifySecurityGroupRule,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -767,7 +767,7 @@ func (c *Sqlserver) ModifySecurityGroupRuleNameRequest(input *map[string]interfa
 	op := &request.Operation{
 		Name:       opModifySecurityGroupRuleName,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -840,7 +840,7 @@ func (c *Sqlserver) SecurityGroupRelationRequest(input *map[string]interface{}) 
 	op := &request.Operation{
 		Name:       opSecurityGroupRelation,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {
@@ -913,7 +913,7 @@ func (c *Sqlserver) StatisticDBInstancesRequest(input *map[string]interface{}) (
 	op := &request.Operation{
 		Name:       opStatisticDBInstances,
 		HTTPMethod: "GET",
-		HTTPPath:   "/sqlserver",
+		HTTPPath:   "/",
 	}
 
 	if input == nil {

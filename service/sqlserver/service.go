@@ -31,9 +31,9 @@ var initRequest func(*request.Request)
 
 // Service information constants
 const (
-	ServiceName = "sqlserver  " // Name of service.
-	EndpointsID = "sqlserver"   // ID to lookup a service endpoint with.
-	ServiceID   = "sqlserver  " // ServiceID is a unique identifer of a specific service.
+	ServiceName = "sqlserver" // Name of service.
+	EndpointsID = ServiceName // ID to lookup a service endpoint with.
+	ServiceID   = "sqlserver" // ServiceID is a unique identifer of a specific service.
 )
 
 // New creates a new instance of the Sqlserver client with a session.
