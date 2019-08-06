@@ -9,15 +9,9 @@ import (
 )
 
 func main() {
-	ak := "AKLT0tdvdrASSnGbxQbHSdeAbA"
-	sk := "ODi8E02pdZSO1pGyAWh8+OHF6Uh9LIxv9xhYVtdgsN9IHetRJJvPWttQPxvIpJi+7Q=="
-	region := "cn-beijing-6"
-
-	/*
-	ak := "AKLTWjcmVntESASmyr9QAGELMg"
-	sk := "OKn4wzC1ncrDq5tYBFZWeESIuh5i1twyZm5+/lfNRdMr6ZlPwHNy0Eu3YUL+wACSIA=="
-	region := "cn-shanghai-3"
-	*/
+	ak := "你的ak"
+	sk := "你的sk"
+	region := "cn-beijing-3"
 
 	//debug模式的话 打开这个开关
 	svc := iam.SdkNew(ksc.NewClient(ak, sk ,false), &ksc.Config{Region: &region}, &utils.UrlInfo{
