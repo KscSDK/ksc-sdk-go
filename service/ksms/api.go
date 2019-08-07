@@ -47,7 +47,7 @@ func (c *Ksms) BatchSendSmsRequest(input *map[string]interface{}) (req *request.
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
-	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+	req.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
 
 	return
 }
@@ -122,7 +122,7 @@ func (c *Ksms) SendSmsRequest(input *map[string]interface{}) (req *request.Reque
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
-	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+	req.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
 
 	return
 }
