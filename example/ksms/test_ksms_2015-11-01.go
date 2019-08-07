@@ -23,9 +23,9 @@ func main() {
 
 	//	****************************************发送单条短信（SendSms）***************************************************
 	params := make(map[string]interface{})
-	params["Mobile"] = "13043120503"
-	params["SignName"] = "温州瑞彰"
-	params["TplId"] = "70"
+	params["Mobile"] = "130xx"
+	params["SignName"] = "xxxxx"
+	params["TplId"] = "7"
 	params["TplParams"] = "{\"param1\":\"test\"}"
 
 	resp, err = svc.SendSms(&params)
@@ -40,9 +40,9 @@ func main() {
 	//	****************************************发送多条短信（BatchSendSms）***************************************************
 	/*
 	params := make(map[string]interface{})
-	params["Mobile"] = "13043120503,15300131513"
-	params["SignName"] = "温州瑞彰"
-	params["TplId"] = "70"
+	params["Mobile"] = "130xxxx,153xxxxx"
+	params["SignName"] = "xxxxx"
+	params["TplId"] = "7"
 	params["TplParams"] = "{\"param1\":\"test\"}"
 
 	resp, err = svc.BatchSendSms(&params)
