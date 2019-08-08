@@ -203,6 +203,10 @@ type Kcsv1API interface {
 	SetTimingSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	SetTimingSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetTimingSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdatePassword(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdatePasswordWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdatePasswordRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ Kcsv1API = (*kcsv1.Kcsv1)(nil)
