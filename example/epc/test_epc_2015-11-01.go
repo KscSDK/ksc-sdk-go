@@ -410,5 +410,18 @@ func main() {
 	//		fmt.Printf("%+v\n", string(str))
 	//	}
 	//}
-
+	//	****************************************查询云物理主机的库存***************************************************
+	//{
+	//	//describeEpcStocks:=make(map[string] interface{})
+	//	//describeEpcStocks["Filter.1.Name"]="host-type"
+	//	//describeEpcStocks["Filter.1.Value.1"]="CAL"
+	//	resp, err = svc.DescribeEpcStocks(nil)
+	//	if err != nil {
+	//		fmt.Println("error:", err.Error())
+	//	}
+	//	if resp != nil {
+	//		str, _ := json.Marshal(&resp)
+	//		fmt.Printf("%+v\n", string(str))
+	//	}
+	//}
 }
