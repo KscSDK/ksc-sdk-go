@@ -163,6 +163,10 @@ type KrdsAPI interface {
 	StatisticDBInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	StatisticDBInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	StatisticDBInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpgradeDBInstanceEngineVersion(*map[string]interface{}) (*map[string]interface{}, error)
+	UpgradeDBInstanceEngineVersionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpgradeDBInstanceEngineVersionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ KrdsAPI = (*krds.Krds)(nil)
