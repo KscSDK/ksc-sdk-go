@@ -116,9 +116,17 @@ type EpcAPI interface {
 	DescribeCabinetsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeCabinetsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeEpcDeviceAttributes(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeEpcDeviceAttributesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeEpcDeviceAttributesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeEpcManagements(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeEpcManagementsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeEpcManagementsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeEpcStocks(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeEpcStocksWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeEpcStocksRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeEpcs(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeEpcsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
