@@ -14,7 +14,8 @@ func main() {
 	region := "cn-shanghai-2"
 	//debug模式的话 打开这个开关
 	svc := eip.SdkNew(ksc.NewClient(ak, sk /*,true*/), &ksc.Config{Region: &region}, &utils.UrlInfo{
-		UseSSL: true,
+		UseSSL:      true,
+		UseInternal: true,
 	})
 	var resp *map[string]interface{}
 	var err error
