@@ -13,6 +13,8 @@
 或者使用 go get github.com/aws/aws-sdk-go
 
 ##### 代码示例
+UseInternal:true 代表使用金山云内网域名
+
 代码示例在example目录下
 
 	ak := "用户AK"
@@ -20,6 +22,7 @@
 	region := "cn-beijing-6"
 	svc := vpc.SdkNew(ksc.NewClient(ak, sk), &ksc.Config{Region: &region}, &utils.UrlInfo{
     		UseSSL: true,
+    		UseInternal:true,
     	})
 
 	//创建入参 参考 https://docs.ksyun.com/
