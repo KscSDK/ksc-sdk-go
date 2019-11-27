@@ -132,6 +132,10 @@ type KecAPI interface {
 	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeKecInventory(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeKecInventoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeKecInventoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeLocalVolumeSnapshots(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
