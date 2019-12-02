@@ -9,9 +9,9 @@
 package sksiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/sks"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/sks"
 )
 
 // SksAPI provides an interface to enable mocking the

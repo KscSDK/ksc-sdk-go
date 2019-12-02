@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/ksc/ksc-sdk-go/example/nosql"
-	"github.com/ksc/ksc-sdk-go/ksc"
-	"github.com/ksc/ksc-sdk-go/ksc/utils"
-	"github.com/ksc/ksc-sdk-go/service/kcsv1"
-	"github.com/ksc/ksc-sdk-go/service/kcsv2"
+	"github.com/KscSDK/ksc-sdk-go/example/nosql"
+	"github.com/KscSDK/ksc-sdk-go/ksc"
+	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
+	"github.com/KscSDK/ksc-sdk-go/service/kcsv1"
+	"github.com/KscSDK/ksc-sdk-go/service/kcsv2"
 )
 
 var v1 *kcsv1.Kcsv1
