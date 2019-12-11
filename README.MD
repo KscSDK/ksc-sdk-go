@@ -3,7 +3,7 @@
 1. 金山云Go语言SDK
 2. Go语言版本1.5+ 推荐是用1.12+ 这样方便使用govendor
 3. service目录下的文件请不要修改，都是由代码生成器自动生成 代码生成器暂时不开源
-4. 如果使用vendor 请确保所有ksc-sdk-go 在GOPATH下面/src/github.com/ksc目录下 ($GOPATH/src/github.com/ksc)
+4. 如果使用vendor 请确保所有ksc-sdk-go 在GOPATH下面/src/github.com/KscSDK目录下 ($GOPATH/src/github.com/KscSDK)
 
 ##### vendor
 使用vendor(Go 1.5+)做依赖的话可以直接使用本sdk工具
