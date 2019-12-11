@@ -9,9 +9,9 @@
 package mongodbiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/mongodb"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/mongodb"
 )
 
 // MongodbAPI provides an interface to enable mocking the

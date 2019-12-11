@@ -9,9 +9,9 @@
 package krdsiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/krds"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/krds"
 )
 
 // KrdsAPI provides an interface to enable mocking the
@@ -99,6 +99,10 @@ type KrdsAPI interface {
 	DescribeDBBackupPolicy(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDBBackupPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBBackupPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDBBackups(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBBackupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBBackupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeDBInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDBInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

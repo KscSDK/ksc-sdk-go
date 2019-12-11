@@ -2,7 +2,7 @@ package kscjson
 
 import (
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/ksc/kscquery"
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscquery"
 )
 
 // UnmarshalHandler is a named request handler for unmarshaling query protocol requests

@@ -9,9 +9,9 @@
 package iamiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/iam"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/iam"
 )
 
 // IamAPI provides an interface to enable mocking the
