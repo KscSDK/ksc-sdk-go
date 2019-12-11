@@ -72,10 +72,6 @@ type IamAPI interface {
 	AddUserToGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddUserToGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	AssumeRole(*map[string]interface{}) (*map[string]interface{}, error)
-	AssumeRoleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	AssumeRoleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	AttachGroupPolicy(*map[string]interface{}) (*map[string]interface{}, error)
 	AttachGroupPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachGroupPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
