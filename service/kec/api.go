@@ -7,6 +7,79 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddVmIntoDataGuard = "AddVmIntoDataGuard"
+
+// AddVmIntoDataGuardRequest generates a "ksc/request.Request" representing the
+// client's request for the AddVmIntoDataGuard operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddVmIntoDataGuard for more information on using the AddVmIntoDataGuard
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddVmIntoDataGuardRequest method.
+//    req, resp := client.AddVmIntoDataGuardRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/AddVmIntoDataGuard
+func (c *Kec) AddVmIntoDataGuardRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddVmIntoDataGuard,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddVmIntoDataGuard API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation AddVmIntoDataGuard for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/AddVmIntoDataGuard
+func (c *Kec) AddVmIntoDataGuard(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddVmIntoDataGuardRequest(input)
+	return out, req.Send()
+}
+
+// AddVmIntoDataGuardWithContext is the same as AddVmIntoDataGuard with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddVmIntoDataGuard for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) AddVmIntoDataGuardWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddVmIntoDataGuardRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAttachKey = "AttachKey"
 
 // AttachKeyRequest generates a "ksc/request.Request" representing the
@@ -226,6 +299,79 @@ func (c *Kec) CopyImageWithContext(ctx aws.Context, input *map[string]interface{
 	return out, req.Send()
 }
 
+const opCreateDataGuardGroup = "CreateDataGuardGroup"
+
+// CreateDataGuardGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDataGuardGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDataGuardGroup for more information on using the CreateDataGuardGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateDataGuardGroupRequest method.
+//    req, resp := client.CreateDataGuardGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateDataGuardGroup
+func (c *Kec) CreateDataGuardGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDataGuardGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDataGuardGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateDataGuardGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateDataGuardGroup
+func (c *Kec) CreateDataGuardGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDataGuardGroupRequest(input)
+	return out, req.Send()
+}
+
+// CreateDataGuardGroupWithContext is the same as CreateDataGuardGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDataGuardGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateDataGuardGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDataGuardGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateImage = "CreateImage"
 
 // CreateImageRequest generates a "ksc/request.Request" representing the
@@ -372,6 +518,79 @@ func (c *Kec) CreateLocalVolumeSnapshotWithContext(ctx aws.Context, input *map[s
 	return out, req.Send()
 }
 
+const opDeleteDataGuardGroups = "DeleteDataGuardGroups"
+
+// DeleteDataGuardGroupsRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDataGuardGroups operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDataGuardGroups for more information on using the DeleteDataGuardGroups
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteDataGuardGroupsRequest method.
+//    req, resp := client.DeleteDataGuardGroupsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteDataGuardGroups
+func (c *Kec) DeleteDataGuardGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDataGuardGroups,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDataGuardGroups API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DeleteDataGuardGroups for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteDataGuardGroups
+func (c *Kec) DeleteDataGuardGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDataGuardGroupsRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDataGuardGroupsWithContext is the same as DeleteDataGuardGroups with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDataGuardGroups for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DeleteDataGuardGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDataGuardGroupsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteLocalVolumeSnapshot = "DeleteLocalVolumeSnapshot"
 
 // DeleteLocalVolumeSnapshotRequest generates a "ksc/request.Request" representing the
@@ -513,6 +732,152 @@ func (c *Kec) DescribeAvailabilityZones(input *map[string]interface{}) (*map[str
 // for more information on using Contexts.
 func (c *Kec) DescribeAvailabilityZonesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeAvailabilityZonesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDataGuardCapacity = "DescribeDataGuardCapacity"
+
+// DescribeDataGuardCapacityRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDataGuardCapacity operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDataGuardCapacity for more information on using the DescribeDataGuardCapacity
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDataGuardCapacityRequest method.
+//    req, resp := client.DescribeDataGuardCapacityRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeDataGuardCapacity
+func (c *Kec) DescribeDataGuardCapacityRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDataGuardCapacity,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDataGuardCapacity API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeDataGuardCapacity for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeDataGuardCapacity
+func (c *Kec) DescribeDataGuardCapacity(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDataGuardCapacityRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDataGuardCapacityWithContext is the same as DescribeDataGuardCapacity with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDataGuardCapacity for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeDataGuardCapacityWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDataGuardCapacityRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDataGuardGroup = "DescribeDataGuardGroup"
+
+// DescribeDataGuardGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDataGuardGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDataGuardGroup for more information on using the DescribeDataGuardGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDataGuardGroupRequest method.
+//    req, resp := client.DescribeDataGuardGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeDataGuardGroup
+func (c *Kec) DescribeDataGuardGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDataGuardGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDataGuardGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeDataGuardGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeDataGuardGroup
+func (c *Kec) DescribeDataGuardGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDataGuardGroupRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDataGuardGroupWithContext is the same as DescribeDataGuardGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDataGuardGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeDataGuardGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDataGuardGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -956,6 +1321,79 @@ func (c *Kec) DescribeInstancesWithContext(ctx aws.Context, input *map[string]in
 	return out, req.Send()
 }
 
+const opDescribeKecInventory = "DescribeKecInventory"
+
+// DescribeKecInventoryRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeKecInventory operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeKecInventory for more information on using the DescribeKecInventory
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeKecInventoryRequest method.
+//    req, resp := client.DescribeKecInventoryRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeKecInventory
+func (c *Kec) DescribeKecInventoryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeKecInventory,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeKecInventory API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeKecInventory for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeKecInventory
+func (c *Kec) DescribeKecInventory(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeKecInventoryRequest(input)
+	return out, req.Send()
+}
+
+// DescribeKecInventoryWithContext is the same as DescribeKecInventory with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeKecInventory for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeKecInventoryWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeKecInventoryRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeLocalVolumeSnapshots = "DescribeLocalVolumeSnapshots"
 
 // DescribeLocalVolumeSnapshotsRequest generates a "ksc/request.Request" representing the
@@ -1389,6 +1827,79 @@ func (c *Kec) ImportImage(input *map[string]interface{}) (*map[string]interface{
 // for more information on using Contexts.
 func (c *Kec) ImportImageWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ImportImageRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyDataGuardGroups = "ModifyDataGuardGroups"
+
+// ModifyDataGuardGroupsRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyDataGuardGroups operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyDataGuardGroups for more information on using the ModifyDataGuardGroups
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyDataGuardGroupsRequest method.
+//    req, resp := client.ModifyDataGuardGroupsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyDataGuardGroups
+func (c *Kec) ModifyDataGuardGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyDataGuardGroups,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyDataGuardGroups API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyDataGuardGroups for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyDataGuardGroups
+func (c *Kec) ModifyDataGuardGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyDataGuardGroupsRequest(input)
+	return out, req.Send()
+}
+
+// ModifyDataGuardGroupsWithContext is the same as ModifyDataGuardGroups with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyDataGuardGroups for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyDataGuardGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyDataGuardGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1973,6 +2484,79 @@ func (c *Kec) RemoveImages(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Kec) RemoveImagesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RemoveImagesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRemoveVmFromDataGuard = "RemoveVmFromDataGuard"
+
+// RemoveVmFromDataGuardRequest generates a "ksc/request.Request" representing the
+// client's request for the RemoveVmFromDataGuard operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RemoveVmFromDataGuard for more information on using the RemoveVmFromDataGuard
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the RemoveVmFromDataGuardRequest method.
+//    req, resp := client.RemoveVmFromDataGuardRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/RemoveVmFromDataGuard
+func (c *Kec) RemoveVmFromDataGuardRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRemoveVmFromDataGuard,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// RemoveVmFromDataGuard API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation RemoveVmFromDataGuard for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/RemoveVmFromDataGuard
+func (c *Kec) RemoveVmFromDataGuard(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RemoveVmFromDataGuardRequest(input)
+	return out, req.Send()
+}
+
+// RemoveVmFromDataGuardWithContext is the same as RemoveVmFromDataGuard with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RemoveVmFromDataGuard for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) RemoveVmFromDataGuardWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RemoveVmFromDataGuardRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

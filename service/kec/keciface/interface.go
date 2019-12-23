@@ -9,9 +9,9 @@
 package keciface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/kec"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/kec"
 )
 
 // KecAPI provides an interface to enable mocking the
@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kec.
 //    func myFunc(svc keciface.KecAPI) bool {
-//        // Make svc.AttachKey request
+//        // Make svc.AddVmIntoDataGuard request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKecClient struct {
 //        keciface.KecAPI
 //    }
-//    func (m *mockKecClient) AttachKey(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKecClient) AddVmIntoDataGuard(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,10 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KecAPI interface {
+	AddVmIntoDataGuard(*map[string]interface{}) (*map[string]interface{}, error)
+	AddVmIntoDataGuardWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddVmIntoDataGuardRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AttachKey(*map[string]interface{}) (*map[string]interface{}, error)
 	AttachKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachKeyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -72,6 +76,10 @@ type KecAPI interface {
 	CopyImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CopyImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateDataGuardGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDataGuardGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDataGuardGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateImage(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -80,6 +88,10 @@ type KecAPI interface {
 	CreateLocalVolumeSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateLocalVolumeSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteDataGuardGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDataGuardGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDataGuardGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteLocalVolumeSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteLocalVolumeSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteLocalVolumeSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -87,6 +99,14 @@ type KecAPI interface {
 	DescribeAvailabilityZones(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeAvailabilityZonesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeAvailabilityZonesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDataGuardCapacity(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDataGuardCapacityWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDataGuardCapacityRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDataGuardGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDataGuardGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDataGuardGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeImageSharePermission(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeImageSharePermissionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -112,6 +132,10 @@ type KecAPI interface {
 	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeKecInventory(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeKecInventoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeKecInventoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeLocalVolumeSnapshots(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -135,6 +159,10 @@ type KecAPI interface {
 	ImportImage(*map[string]interface{}) (*map[string]interface{}, error)
 	ImportImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ImportImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyDataGuardGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDataGuardGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDataGuardGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyImageAttribute(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyImageAttributeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -167,6 +195,10 @@ type KecAPI interface {
 	RemoveImages(*map[string]interface{}) (*map[string]interface{}, error)
 	RemoveImagesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RemoveImagesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RemoveVmFromDataGuard(*map[string]interface{}) (*map[string]interface{}, error)
+	RemoveVmFromDataGuardWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RemoveVmFromDataGuardRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RollbackLocalVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	RollbackLocalVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

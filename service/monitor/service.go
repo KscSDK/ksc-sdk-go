@@ -3,14 +3,14 @@
 package monitor
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/ksc"
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscjson"
+	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/client"
 	"github.com/aws/aws-sdk-go/aws/client/metadata"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
-	"github.com/ksc/ksc-sdk-go/ksc"
-	"github.com/ksc/ksc-sdk-go/ksc/kscjson"
-	"github.com/ksc/ksc-sdk-go/ksc/utils"
 )
 
 // Monitor provides the API operation methods for making requests to
@@ -49,8 +49,9 @@ const (
 func New(p client.ConfigProvider, cfgs ...*aws.Config) *Monitor {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	c.Endpoint = utils.Url(&utils.UrlInfo{
-		UseSSL: false,
-		Locate: true,
+		UseSSL:      false,
+		Locate:      true,
+		UseInternal: false,
 	}, utils.ServiceInfo{
 		Service: EndpointsID,
 		Region:  c.SigningRegion,
@@ -71,8 +72,9 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 // SdkNew create int can support ssl or region locate set
 func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Monitor {
 	_info := utils.UrlInfo{
-		UseSSL: false,
-		Locate: true,
+		UseSSL:      false,
+		Locate:      false,
+		UseInternal: false,
 	}
 	if len(info) > 0 && len(info) == 1 {
 		if info[0].UseSSL {
@@ -80,6 +82,9 @@ func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *
 		}
 		if info[0].Locate {
 			_info.Locate = info[0].Locate
+		}
+		if info[0].UseInternal {
+			_info.UseInternal = info[0].UseInternal
 		}
 
 	}
