@@ -3,9 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/ksc/ksc-sdk-go/ksc"
-	"github.com/ksc/ksc-sdk-go/ksc/utils"
-	"github.com/ksc/ksc-sdk-go/service/eip"
+	"github.com/KscSDK/ksc-sdk-go/ksc"
+	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
+	"github.com/KscSDK/ksc-sdk-go/service/eip"
 )
 
 func main() {
@@ -14,7 +14,8 @@ func main() {
 	region := "cn-shanghai-2"
 	//debug模式的话 打开这个开关
 	svc := eip.SdkNew(ksc.NewClient(ak, sk /*,true*/), &ksc.Config{Region: &region}, &utils.UrlInfo{
-		UseSSL: true,
+		UseSSL:      true,
+		UseInternal: true,
 	})
 	var resp *map[string]interface{}
 	var err error

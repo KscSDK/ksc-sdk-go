@@ -9,9 +9,9 @@
 package iamiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/iam"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/iam"
 )
 
 // IamAPI provides an interface to enable mocking the
@@ -71,10 +71,6 @@ type IamAPI interface {
 	AddUserToGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	AddUserToGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddUserToGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	AssumeRole(*map[string]interface{}) (*map[string]interface{}, error)
-	AssumeRoleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	AssumeRoleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	AttachGroupPolicy(*map[string]interface{}) (*map[string]interface{}, error)
 	AttachGroupPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

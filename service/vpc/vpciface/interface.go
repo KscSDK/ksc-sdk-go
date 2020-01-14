@@ -9,9 +9,9 @@
 package vpciface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/vpc"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/vpc"
 )
 
 // VpcAPI provides an interface to enable mocking the

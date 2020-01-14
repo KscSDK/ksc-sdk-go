@@ -9,9 +9,9 @@
 package ebsiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/ebs"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/ebs"
 )
 
 // EbsAPI provides an interface to enable mocking the

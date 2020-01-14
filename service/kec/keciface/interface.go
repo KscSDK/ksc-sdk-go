@@ -9,9 +9,9 @@
 package keciface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/kec"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/kec"
 )
 
 // KecAPI provides an interface to enable mocking the
@@ -131,6 +131,10 @@ type KecAPI interface {
 	DescribeInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeKecInventory(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeKecInventoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeKecInventoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeLocalVolumeSnapshots(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
