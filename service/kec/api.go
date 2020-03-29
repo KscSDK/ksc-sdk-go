@@ -2664,7 +2664,7 @@ const opRunInstances = "RunInstances"
 func (c *Kec) RunInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opRunInstances,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
