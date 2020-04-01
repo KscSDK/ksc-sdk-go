@@ -1,10 +1,10 @@
 package kscquery
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscbody"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
-	"github.com/KscSDK/ksc-sdk-go/ksc/kscbody"
 	"net/url"
 	"reflect"
 	"strings"
@@ -44,11 +44,18 @@ func Build(r *request.Request) {
 		r.SetBufferBody([]byte(body.Encode()))
 		return
 	}
-	if len(v)>0{
-		r.Error = awserr.New("SerializationError", "not support such content-type",nil)
+	if len(v) > 0 {
+		r.Error = awserr.New("SerializationError", "not support such content-type", nil)
 		return
 	}
 
-
-	r.HTTPRequest.URL.RawQuery = body.Encode()
+	method := strings.ToUpper(r.HTTPRequest.Method)
+	if method == "GET" || method == "DELETE" {
+		r.HTTPRequest.URL.RawQuery = body.Encode()
+	} else if method == "POST" || method == "PUT" {
+		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
+		r.SetBufferBody([]byte(body.Encode()))
+	} else {
+		r.HTTPRequest.URL.RawQuery = body.Encode()
+	}
 }
