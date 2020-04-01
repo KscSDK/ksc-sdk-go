@@ -72,6 +72,10 @@ type EpcAPI interface {
 	CreateAccessoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateAccessoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateCabinet(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateCabinetWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateCabinetRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateEpc(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateEpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateEpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -83,6 +87,10 @@ type EpcAPI interface {
 	CreateKey(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateKeyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateProcess(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateProcessWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateProcessRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateRemoteManagement(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateRemoteManagementWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -103,6 +111,10 @@ type EpcAPI interface {
 	DeleteKey(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteKeyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteProcess(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteProcessWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteProcessRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteRemoteManagement(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteRemoteManagementWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -147,6 +159,10 @@ type EpcAPI interface {
 	DescribePhysicalMonitor(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribePhysicalMonitorWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribePhysicalMonitorRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeProcesses(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeProcessesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeProcessesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeRemoteManagements(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeRemoteManagementsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -211,6 +227,10 @@ type EpcAPI interface {
 	ReinstallEpc(*map[string]interface{}) (*map[string]interface{}, error)
 	ReinstallEpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ReinstallEpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ReplyProcess(*map[string]interface{}) (*map[string]interface{}, error)
+	ReplyProcessWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ReplyProcessRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ResetPassword(*map[string]interface{}) (*map[string]interface{}, error)
 	ResetPasswordWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
