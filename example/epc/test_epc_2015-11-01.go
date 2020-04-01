@@ -385,4 +385,62 @@ func main() {
 	//	str, _ := json.Marshal(&resp)
 	//	fmt.Printf("%+v\n", string(str))
 	//}
+
+	//	****************************************查询工单信息***************************************************
+	//describeProcesses:=make(map[string] interface{})
+	//describeProcesses["Filter.1.Name"]="sn"
+	//describeProcesses["Filter.1.Value.1"]="1111"
+	//resp, err = svc.DescribeProcesses(&describeProcesses)
+	//if err != nil {
+	//	fmt.Println("error:", err.Error())
+	//}
+	//if resp != nil {
+	//	str, _ := json.Marshal(&resp)
+	//	fmt.Printf("%+v\n", string(str))
+	//}
+
+	//	****************************************创建工单信息***************************************************
+	//createProcess:=make(map[string] interface{})
+	//createProcess["ProcessId"]="sn"
+	//createProcess["Sn"]="PC0KCJXS"
+	//createProcess["AvailabilityZone"]="cn-shanghai-3b"
+	//createProcess["Confirm"]="0"
+	//createProcess["Type"]="fix"
+	//createProcess["Attribute"]="Network"
+	//createProcess["Title"]="test"
+	//createProcess["MachineCount"]="1"
+	//createProcess["Content"]="test"
+	//resp, err = svc.CreateProcess(&createProcess)
+	//if err != nil {
+	//	fmt.Println("error:", err.Error())
+	//}
+	//if resp != nil {
+	//	str, _ := json.Marshal(&resp)
+	//	fmt.Printf("%+v\n", string(str))
+	//}
+
+	//	****************************************删除工单信息***************************************************
+	//deleteProcess:=make(map[string] interface{})
+	//deleteProcess["OperationProcessId"]="268ba9e4-c399-40e9-98b5-1c122b8866ff"
+	//resp, err = svc.DeleteProcess(&deleteProcess)
+	//if err != nil {
+	//	fmt.Println("error:", err.Error())
+	//}
+	//if resp != nil {
+	//	str, _ := json.Marshal(&resp)
+	//	fmt.Printf("%+v\n", string(str))
+	//}
+
+	//	****************************************回复工单信息***************************************************
+	//replyProcess:=make(map[string] interface{})
+	//replyProcess["OperationProcessId"]="7765a43f-2999-46c3-8596-bd132b1e5a81"
+	//replyProcess["Remarks"]="test remark"
+	//resp, err = svc.ReplyProcess(&replyProcess)
+	//if err != nil {
+	//	fmt.Println("error:", err.Error())
+	//}
+	//if resp != nil {
+	//	str, _ := json.Marshal(&resp)
+	//	fmt.Printf("%+v\n", string(str))
+	//}
 }
