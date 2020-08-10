@@ -226,6 +226,79 @@ func (c *Epc) CreateAccessoryWithContext(ctx aws.Context, input *map[string]inte
 	return out, req.Send()
 }
 
+const opCreateCabinet = "CreateCabinet"
+
+// CreateCabinetRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateCabinet operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateCabinet for more information on using the CreateCabinet
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateCabinetRequest method.
+//    req, resp := client.CreateCabinetRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateCabinet
+func (c *Epc) CreateCabinetRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateCabinet,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateCabinet API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation CreateCabinet for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateCabinet
+func (c *Epc) CreateCabinet(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateCabinetRequest(input)
+	return out, req.Send()
+}
+
+// CreateCabinetWithContext is the same as CreateCabinet with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateCabinet for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) CreateCabinetWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateCabinetRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateEpc = "CreateEpc"
 
 // CreateEpcRequest generates a "ksc/request.Request" representing the
@@ -440,6 +513,79 @@ func (c *Epc) CreateKey(input *map[string]interface{}) (*map[string]interface{},
 // for more information on using Contexts.
 func (c *Epc) CreateKeyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateKeyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateProcess = "CreateProcess"
+
+// CreateProcessRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateProcess operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateProcess for more information on using the CreateProcess
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateProcessRequest method.
+//    req, resp := client.CreateProcessRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateProcess
+func (c *Epc) CreateProcessRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateProcess,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateProcess API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation CreateProcess for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateProcess
+func (c *Epc) CreateProcess(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateProcessRequest(input)
+	return out, req.Send()
+}
+
+// CreateProcessWithContext is the same as CreateProcess with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateProcess for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) CreateProcessWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateProcessRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -805,6 +951,79 @@ func (c *Epc) DeleteKey(input *map[string]interface{}) (*map[string]interface{},
 // for more information on using Contexts.
 func (c *Epc) DeleteKeyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteKeyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteProcess = "DeleteProcess"
+
+// DeleteProcessRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteProcess operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteProcess for more information on using the DeleteProcess
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteProcessRequest method.
+//    req, resp := client.DeleteProcessRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteProcess
+func (c *Epc) DeleteProcessRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteProcess,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteProcess API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation DeleteProcess for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteProcess
+func (c *Epc) DeleteProcess(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteProcessRequest(input)
+	return out, req.Send()
+}
+
+// DeleteProcessWithContext is the same as DeleteProcess with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteProcess for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) DeleteProcessWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteProcessRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1608,6 +1827,79 @@ func (c *Epc) DescribePhysicalMonitor(input *map[string]interface{}) (*map[strin
 // for more information on using Contexts.
 func (c *Epc) DescribePhysicalMonitorWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribePhysicalMonitorRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeProcesses = "DescribeProcesses"
+
+// DescribeProcessesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeProcesses operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeProcesses for more information on using the DescribeProcesses
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeProcessesRequest method.
+//    req, resp := client.DescribeProcessesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeProcesses
+func (c *Epc) DescribeProcessesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeProcesses,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeProcesses API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation DescribeProcesses for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeProcesses
+func (c *Epc) DescribeProcesses(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeProcessesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeProcessesWithContext is the same as DescribeProcesses with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeProcesses for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) DescribeProcessesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeProcessesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -2776,6 +3068,79 @@ func (c *Epc) ReinstallEpc(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Epc) ReinstallEpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ReinstallEpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opReplyProcess = "ReplyProcess"
+
+// ReplyProcessRequest generates a "ksc/request.Request" representing the
+// client's request for the ReplyProcess operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ReplyProcess for more information on using the ReplyProcess
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ReplyProcessRequest method.
+//    req, resp := client.ReplyProcessRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ReplyProcess
+func (c *Epc) ReplyProcessRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opReplyProcess,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ReplyProcess API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation ReplyProcess for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ReplyProcess
+func (c *Epc) ReplyProcess(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ReplyProcessRequest(input)
+	return out, req.Send()
+}
+
+// ReplyProcessWithContext is the same as ReplyProcess with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ReplyProcess for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) ReplyProcessWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ReplyProcessRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
