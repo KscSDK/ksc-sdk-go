@@ -80,6 +80,79 @@ func (c *Vpc) AcceptVpcPeeringConnectionWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opAllocateSubnetIpv6CidrBlock = "AllocateSubnetIpv6CidrBlock"
+
+// AllocateSubnetIpv6CidrBlockRequest generates a "ksc/request.Request" representing the
+// client's request for the AllocateSubnetIpv6CidrBlock operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AllocateSubnetIpv6CidrBlock for more information on using the AllocateSubnetIpv6CidrBlock
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AllocateSubnetIpv6CidrBlockRequest method.
+//    req, resp := client.AllocateSubnetIpv6CidrBlockRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AllocateSubnetIpv6CidrBlock
+func (c *Vpc) AllocateSubnetIpv6CidrBlockRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAllocateSubnetIpv6CidrBlock,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AllocateSubnetIpv6CidrBlock API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AllocateSubnetIpv6CidrBlock for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AllocateSubnetIpv6CidrBlock
+func (c *Vpc) AllocateSubnetIpv6CidrBlock(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AllocateSubnetIpv6CidrBlockRequest(input)
+	return out, req.Send()
+}
+
+// AllocateSubnetIpv6CidrBlockWithContext is the same as AllocateSubnetIpv6CidrBlock with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AllocateSubnetIpv6CidrBlock for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AllocateSubnetIpv6CidrBlockWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AllocateSubnetIpv6CidrBlockRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAssociateNat = "AssociateNat"
 
 // AssociateNatRequest generates a "ksc/request.Request" representing the
@@ -226,6 +299,79 @@ func (c *Vpc) AssociateNetworkAclWithContext(ctx aws.Context, input *map[string]
 	return out, req.Send()
 }
 
+const opAssociateVpcCidrBlock = "AssociateVpcCidrBlock"
+
+// AssociateVpcCidrBlockRequest generates a "ksc/request.Request" representing the
+// client's request for the AssociateVpcCidrBlock operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AssociateVpcCidrBlock for more information on using the AssociateVpcCidrBlock
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AssociateVpcCidrBlockRequest method.
+//    req, resp := client.AssociateVpcCidrBlockRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateVpcCidrBlock
+func (c *Vpc) AssociateVpcCidrBlockRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAssociateVpcCidrBlock,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AssociateVpcCidrBlock API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AssociateVpcCidrBlock for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateVpcCidrBlock
+func (c *Vpc) AssociateVpcCidrBlock(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AssociateVpcCidrBlockRequest(input)
+	return out, req.Send()
+}
+
+// AssociateVpcCidrBlockWithContext is the same as AssociateVpcCidrBlock with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AssociateVpcCidrBlock for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AssociateVpcCidrBlockWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AssociateVpcCidrBlockRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAuthorizeSecurityGroupEntry = "AuthorizeSecurityGroupEntry"
 
 // AuthorizeSecurityGroupEntryRequest generates a "ksc/request.Request" representing the
@@ -367,6 +513,79 @@ func (c *Vpc) CreateCustomerGateway(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Vpc) CreateCustomerGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateCustomerGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateIpv6PublicIp = "CreateIpv6PublicIp"
+
+// CreateIpv6PublicIpRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateIpv6PublicIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateIpv6PublicIp for more information on using the CreateIpv6PublicIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateIpv6PublicIpRequest method.
+//    req, resp := client.CreateIpv6PublicIpRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateIpv6PublicIp
+func (c *Vpc) CreateIpv6PublicIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateIpv6PublicIp,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateIpv6PublicIp API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateIpv6PublicIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateIpv6PublicIp
+func (c *Vpc) CreateIpv6PublicIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateIpv6PublicIpRequest(input)
+	return out, req.Send()
+}
+
+// CreateIpv6PublicIpWithContext is the same as CreateIpv6PublicIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateIpv6PublicIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateIpv6PublicIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateIpv6PublicIpRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -2124,6 +2343,152 @@ func (c *Vpc) DescribeInternetGatewaysWithContext(ctx aws.Context, input *map[st
 	return out, req.Send()
 }
 
+const opDescribeIpv6NetworkInterfaces = "DescribeIpv6NetworkInterfaces"
+
+// DescribeIpv6NetworkInterfacesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeIpv6NetworkInterfaces operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeIpv6NetworkInterfaces for more information on using the DescribeIpv6NetworkInterfaces
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeIpv6NetworkInterfacesRequest method.
+//    req, resp := client.DescribeIpv6NetworkInterfacesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeIpv6NetworkInterfaces
+func (c *Vpc) DescribeIpv6NetworkInterfacesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeIpv6NetworkInterfaces,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeIpv6NetworkInterfaces API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeIpv6NetworkInterfaces for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeIpv6NetworkInterfaces
+func (c *Vpc) DescribeIpv6NetworkInterfaces(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeIpv6NetworkInterfacesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeIpv6NetworkInterfacesWithContext is the same as DescribeIpv6NetworkInterfaces with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeIpv6NetworkInterfaces for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeIpv6NetworkInterfacesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeIpv6NetworkInterfacesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeIpv6PublicIpAddresses = "DescribeIpv6PublicIpAddresses"
+
+// DescribeIpv6PublicIpAddressesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeIpv6PublicIpAddresses operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeIpv6PublicIpAddresses for more information on using the DescribeIpv6PublicIpAddresses
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeIpv6PublicIpAddressesRequest method.
+//    req, resp := client.DescribeIpv6PublicIpAddressesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeIpv6PublicIpAddresses
+func (c *Vpc) DescribeIpv6PublicIpAddressesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeIpv6PublicIpAddresses,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeIpv6PublicIpAddresses API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeIpv6PublicIpAddresses for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeIpv6PublicIpAddresses
+func (c *Vpc) DescribeIpv6PublicIpAddresses(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeIpv6PublicIpAddressesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeIpv6PublicIpAddressesWithContext is the same as DescribeIpv6PublicIpAddresses with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeIpv6PublicIpAddresses for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeIpv6PublicIpAddressesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeIpv6PublicIpAddressesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeNats = "DescribeNats"
 
 // DescribeNatsRequest generates a "ksc/request.Request" representing the
@@ -3219,6 +3584,79 @@ func (c *Vpc) ModifyCustomerGatewayWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opModifyIpv6PublicIp = "ModifyIpv6PublicIp"
+
+// ModifyIpv6PublicIpRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyIpv6PublicIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyIpv6PublicIp for more information on using the ModifyIpv6PublicIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyIpv6PublicIpRequest method.
+//    req, resp := client.ModifyIpv6PublicIpRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyIpv6PublicIp
+func (c *Vpc) ModifyIpv6PublicIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyIpv6PublicIp,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyIpv6PublicIp API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyIpv6PublicIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyIpv6PublicIp
+func (c *Vpc) ModifyIpv6PublicIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyIpv6PublicIpRequest(input)
+	return out, req.Send()
+}
+
+// ModifyIpv6PublicIpWithContext is the same as ModifyIpv6PublicIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyIpv6PublicIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyIpv6PublicIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyIpv6PublicIpRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyNat = "ModifyNat"
 
 // ModifyNatRequest generates a "ksc/request.Request" representing the
@@ -3871,6 +4309,79 @@ func (c *Vpc) RejectVpcPeeringConnection(input *map[string]interface{}) (*map[st
 // for more information on using Contexts.
 func (c *Vpc) RejectVpcPeeringConnectionWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RejectVpcPeeringConnectionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opReleaseIpv6PublicIp = "ReleaseIpv6PublicIp"
+
+// ReleaseIpv6PublicIpRequest generates a "ksc/request.Request" representing the
+// client's request for the ReleaseIpv6PublicIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ReleaseIpv6PublicIp for more information on using the ReleaseIpv6PublicIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ReleaseIpv6PublicIpRequest method.
+//    req, resp := client.ReleaseIpv6PublicIpRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ReleaseIpv6PublicIp
+func (c *Vpc) ReleaseIpv6PublicIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opReleaseIpv6PublicIp,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ReleaseIpv6PublicIp API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ReleaseIpv6PublicIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ReleaseIpv6PublicIp
+func (c *Vpc) ReleaseIpv6PublicIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ReleaseIpv6PublicIpRequest(input)
+	return out, req.Send()
+}
+
+// ReleaseIpv6PublicIpWithContext is the same as ReleaseIpv6PublicIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ReleaseIpv6PublicIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ReleaseIpv6PublicIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ReleaseIpv6PublicIpRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
