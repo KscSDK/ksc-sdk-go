@@ -153,6 +153,152 @@ func (c *Slb) ConfigureHealthCheckWithContext(ctx aws.Context, input *map[string
 	return out, req.Send()
 }
 
+const opCreateBackendServerGroup = "CreateBackendServerGroup"
+
+// CreateBackendServerGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateBackendServerGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateBackendServerGroup for more information on using the CreateBackendServerGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateBackendServerGroupRequest method.
+//    req, resp := client.CreateBackendServerGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateBackendServerGroup
+func (c *Slb) CreateBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateBackendServerGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateBackendServerGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateBackendServerGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateBackendServerGroup
+func (c *Slb) CreateBackendServerGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateBackendServerGroupRequest(input)
+	return out, req.Send()
+}
+
+// CreateBackendServerGroupWithContext is the same as CreateBackendServerGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateBackendServerGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateBackendServerGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateBackendServerGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateHostHeader = "CreateHostHeader"
+
+// CreateHostHeaderRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateHostHeader operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateHostHeader for more information on using the CreateHostHeader
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateHostHeaderRequest method.
+//    req, resp := client.CreateHostHeaderRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateHostHeader
+func (c *Slb) CreateHostHeaderRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateHostHeader,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateHostHeader API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateHostHeader for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateHostHeader
+func (c *Slb) CreateHostHeader(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateHostHeaderRequest(input)
+	return out, req.Send()
+}
+
+// CreateHostHeaderWithContext is the same as CreateHostHeader with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateHostHeader for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateHostHeaderWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateHostHeaderRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateListeners = "CreateListeners"
 
 // CreateListenersRequest generates a "ksc/request.Request" representing the
@@ -445,6 +591,152 @@ func (c *Slb) CreateLoadBalancerAclEntryWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opCreateSlbRule = "CreateSlbRule"
+
+// CreateSlbRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateSlbRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateSlbRule for more information on using the CreateSlbRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateSlbRuleRequest method.
+//    req, resp := client.CreateSlbRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateSlbRule
+func (c *Slb) CreateSlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateSlbRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateSlbRule API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateSlbRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateSlbRule
+func (c *Slb) CreateSlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateSlbRuleRequest(input)
+	return out, req.Send()
+}
+
+// CreateSlbRuleWithContext is the same as CreateSlbRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateSlbRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateSlbRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateSlbRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteBackendServerGroup = "DeleteBackendServerGroup"
+
+// DeleteBackendServerGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteBackendServerGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteBackendServerGroup for more information on using the DeleteBackendServerGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteBackendServerGroupRequest method.
+//    req, resp := client.DeleteBackendServerGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteBackendServerGroup
+func (c *Slb) DeleteBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteBackendServerGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteBackendServerGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteBackendServerGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteBackendServerGroup
+func (c *Slb) DeleteBackendServerGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteBackendServerGroupRequest(input)
+	return out, req.Send()
+}
+
+// DeleteBackendServerGroupWithContext is the same as DeleteBackendServerGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteBackendServerGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteBackendServerGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteBackendServerGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteHealthCheck = "DeleteHealthCheck"
 
 // DeleteHealthCheckRequest generates a "ksc/request.Request" representing the
@@ -513,6 +805,79 @@ func (c *Slb) DeleteHealthCheck(input *map[string]interface{}) (*map[string]inte
 // for more information on using Contexts.
 func (c *Slb) DeleteHealthCheckWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteHealthCheckRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteHostHeader = "DeleteHostHeader"
+
+// DeleteHostHeaderRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteHostHeader operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteHostHeader for more information on using the DeleteHostHeader
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteHostHeaderRequest method.
+//    req, resp := client.DeleteHostHeaderRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteHostHeader
+func (c *Slb) DeleteHostHeaderRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteHostHeader,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteHostHeader API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteHostHeader for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteHostHeader
+func (c *Slb) DeleteHostHeader(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteHostHeaderRequest(input)
+	return out, req.Send()
+}
+
+// DeleteHostHeaderWithContext is the same as DeleteHostHeader with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteHostHeader for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteHostHeaderWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteHostHeaderRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -810,6 +1175,152 @@ func (c *Slb) DeleteLoadBalancerAclEntryWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opDeleteRule = "DeleteRule"
+
+// DeleteRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteRule for more information on using the DeleteRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteRuleRequest method.
+//    req, resp := client.DeleteRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteRule
+func (c *Slb) DeleteRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteRule API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteRule
+func (c *Slb) DeleteRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteRuleRequest(input)
+	return out, req.Send()
+}
+
+// DeleteRuleWithContext is the same as DeleteRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeregisterBackendServer = "DeregisterBackendServer"
+
+// DeregisterBackendServerRequest generates a "ksc/request.Request" representing the
+// client's request for the DeregisterBackendServer operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeregisterBackendServer for more information on using the DeregisterBackendServer
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeregisterBackendServerRequest method.
+//    req, resp := client.DeregisterBackendServerRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterBackendServer
+func (c *Slb) DeregisterBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeregisterBackendServer,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeregisterBackendServer API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeregisterBackendServer for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterBackendServer
+func (c *Slb) DeregisterBackendServer(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeregisterBackendServerRequest(input)
+	return out, req.Send()
+}
+
+// DeregisterBackendServerWithContext is the same as DeregisterBackendServer with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeregisterBackendServer for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeregisterBackendServerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeregisterBackendServerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeregisterInstancesFromListener = "DeregisterInstancesFromListener"
 
 // DeregisterInstancesFromListenerRequest generates a "ksc/request.Request" representing the
@@ -883,6 +1394,152 @@ func (c *Slb) DeregisterInstancesFromListenerWithContext(ctx aws.Context, input 
 	return out, req.Send()
 }
 
+const opDescribeBackendServerGroups = "DescribeBackendServerGroups"
+
+// DescribeBackendServerGroupsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeBackendServerGroups operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeBackendServerGroups for more information on using the DescribeBackendServerGroups
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeBackendServerGroupsRequest method.
+//    req, resp := client.DescribeBackendServerGroupsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeBackendServerGroups
+func (c *Slb) DescribeBackendServerGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeBackendServerGroups,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeBackendServerGroups API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeBackendServerGroups for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeBackendServerGroups
+func (c *Slb) DescribeBackendServerGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeBackendServerGroupsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeBackendServerGroupsWithContext is the same as DescribeBackendServerGroups with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeBackendServerGroups for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeBackendServerGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeBackendServerGroupsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeBackendServers = "DescribeBackendServers"
+
+// DescribeBackendServersRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeBackendServers operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeBackendServers for more information on using the DescribeBackendServers
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeBackendServersRequest method.
+//    req, resp := client.DescribeBackendServersRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeBackendServers
+func (c *Slb) DescribeBackendServersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeBackendServers,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeBackendServers API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeBackendServers for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeBackendServers
+func (c *Slb) DescribeBackendServers(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeBackendServersRequest(input)
+	return out, req.Send()
+}
+
+// DescribeBackendServersWithContext is the same as DescribeBackendServers with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeBackendServers for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeBackendServersWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeBackendServersRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeHealthChecks = "DescribeHealthChecks"
 
 // DescribeHealthChecksRequest generates a "ksc/request.Request" representing the
@@ -951,6 +1608,79 @@ func (c *Slb) DescribeHealthChecks(input *map[string]interface{}) (*map[string]i
 // for more information on using Contexts.
 func (c *Slb) DescribeHealthChecksWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeHealthChecksRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeHostHeaders = "DescribeHostHeaders"
+
+// DescribeHostHeadersRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeHostHeaders operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeHostHeaders for more information on using the DescribeHostHeaders
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeHostHeadersRequest method.
+//    req, resp := client.DescribeHostHeadersRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeHostHeaders
+func (c *Slb) DescribeHostHeadersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeHostHeaders,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeHostHeaders API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeHostHeaders for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeHostHeaders
+func (c *Slb) DescribeHostHeaders(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeHostHeadersRequest(input)
+	return out, req.Send()
+}
+
+// DescribeHostHeadersWithContext is the same as DescribeHostHeaders with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeHostHeaders for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeHostHeadersWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeHostHeadersRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1248,6 +1978,79 @@ func (c *Slb) DescribeLoadBalancersWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opDescribeRules = "DescribeRules"
+
+// DescribeRulesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeRules operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeRules for more information on using the DescribeRules
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeRulesRequest method.
+//    req, resp := client.DescribeRulesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeRules
+func (c *Slb) DescribeRulesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeRules,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeRules API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeRules for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeRules
+func (c *Slb) DescribeRules(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeRulesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeRulesWithContext is the same as DescribeRules with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeRules for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeRulesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeRulesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDisassociateLoadBalancerAcl = "DisassociateLoadBalancerAcl"
 
 // DisassociateLoadBalancerAclRequest generates a "ksc/request.Request" representing the
@@ -1321,6 +2124,225 @@ func (c *Slb) DisassociateLoadBalancerAclWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
+const opModifyBackendServer = "ModifyBackendServer"
+
+// ModifyBackendServerRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyBackendServer operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyBackendServer for more information on using the ModifyBackendServer
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyBackendServerRequest method.
+//    req, resp := client.ModifyBackendServerRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServer
+func (c *Slb) ModifyBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyBackendServer,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyBackendServer API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyBackendServer for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServer
+func (c *Slb) ModifyBackendServer(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyBackendServerRequest(input)
+	return out, req.Send()
+}
+
+// ModifyBackendServerWithContext is the same as ModifyBackendServer with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyBackendServer for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyBackendServerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyBackendServerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyBackendServerGroup = "ModifyBackendServerGroup"
+
+// ModifyBackendServerGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyBackendServerGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyBackendServerGroup for more information on using the ModifyBackendServerGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyBackendServerGroupRequest method.
+//    req, resp := client.ModifyBackendServerGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServerGroup
+func (c *Slb) ModifyBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyBackendServerGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyBackendServerGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyBackendServerGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServerGroup
+func (c *Slb) ModifyBackendServerGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyBackendServerGroupRequest(input)
+	return out, req.Send()
+}
+
+// ModifyBackendServerGroupWithContext is the same as ModifyBackendServerGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyBackendServerGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyBackendServerGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyBackendServerGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyBackendServerGroupHealthCheck = "ModifyBackendServerGroupHealthCheck"
+
+// ModifyBackendServerGroupHealthCheckRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyBackendServerGroupHealthCheck operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyBackendServerGroupHealthCheck for more information on using the ModifyBackendServerGroupHealthCheck
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyBackendServerGroupHealthCheckRequest method.
+//    req, resp := client.ModifyBackendServerGroupHealthCheckRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServerGroupHealthCheck
+func (c *Slb) ModifyBackendServerGroupHealthCheckRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyBackendServerGroupHealthCheck,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyBackendServerGroupHealthCheck API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyBackendServerGroupHealthCheck for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServerGroupHealthCheck
+func (c *Slb) ModifyBackendServerGroupHealthCheck(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyBackendServerGroupHealthCheckRequest(input)
+	return out, req.Send()
+}
+
+// ModifyBackendServerGroupHealthCheckWithContext is the same as ModifyBackendServerGroupHealthCheck with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyBackendServerGroupHealthCheck for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyBackendServerGroupHealthCheckWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyBackendServerGroupHealthCheckRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyHealthCheck = "ModifyHealthCheck"
 
 // ModifyHealthCheckRequest generates a "ksc/request.Request" representing the
@@ -1389,6 +2411,79 @@ func (c *Slb) ModifyHealthCheck(input *map[string]interface{}) (*map[string]inte
 // for more information on using Contexts.
 func (c *Slb) ModifyHealthCheckWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ModifyHealthCheckRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyHostHeader = "ModifyHostHeader"
+
+// ModifyHostHeaderRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyHostHeader operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyHostHeader for more information on using the ModifyHostHeader
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyHostHeaderRequest method.
+//    req, resp := client.ModifyHostHeaderRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyHostHeader
+func (c *Slb) ModifyHostHeaderRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyHostHeader,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyHostHeader API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyHostHeader for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyHostHeader
+func (c *Slb) ModifyHostHeader(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyHostHeaderRequest(input)
+	return out, req.Send()
+}
+
+// ModifyHostHeaderWithContext is the same as ModifyHostHeader with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyHostHeader for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyHostHeaderWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyHostHeaderRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1681,6 +2776,152 @@ func (c *Slb) ModifyLoadBalancerAcl(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Slb) ModifyLoadBalancerAclWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ModifyLoadBalancerAclRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifySlbRule = "ModifySlbRule"
+
+// ModifySlbRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifySlbRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifySlbRule for more information on using the ModifySlbRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifySlbRuleRequest method.
+//    req, resp := client.ModifySlbRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifySlbRule
+func (c *Slb) ModifySlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifySlbRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifySlbRule API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifySlbRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifySlbRule
+func (c *Slb) ModifySlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifySlbRuleRequest(input)
+	return out, req.Send()
+}
+
+// ModifySlbRuleWithContext is the same as ModifySlbRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifySlbRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifySlbRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifySlbRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRegisterBackendServer = "RegisterBackendServer"
+
+// RegisterBackendServerRequest generates a "ksc/request.Request" representing the
+// client's request for the RegisterBackendServer operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RegisterBackendServer for more information on using the RegisterBackendServer
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the RegisterBackendServerRequest method.
+//    req, resp := client.RegisterBackendServerRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterBackendServer
+func (c *Slb) RegisterBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRegisterBackendServer,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// RegisterBackendServer API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation RegisterBackendServer for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterBackendServer
+func (c *Slb) RegisterBackendServer(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RegisterBackendServerRequest(input)
+	return out, req.Send()
+}
+
+// RegisterBackendServerWithContext is the same as RegisterBackendServer with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RegisterBackendServer for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) RegisterBackendServerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RegisterBackendServerRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
