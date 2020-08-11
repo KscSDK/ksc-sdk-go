@@ -104,6 +104,10 @@ type VpcAPI interface {
 	CreateNetworkAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateNetworkAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateNetworkInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateRoute(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -147,6 +151,10 @@ type VpcAPI interface {
 	DeleteNetworkAclEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteNetworkAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteNetworkAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteNetworkInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteRoute(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
