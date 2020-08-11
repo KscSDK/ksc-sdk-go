@@ -810,6 +810,79 @@ func (c *Vpc) CreateNetworkAclEntryWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opCreateNetworkInterface = "CreateNetworkInterface"
+
+// CreateNetworkInterfaceRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateNetworkInterface operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateNetworkInterface for more information on using the CreateNetworkInterface
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateNetworkInterfaceRequest method.
+//    req, resp := client.CreateNetworkInterfaceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNetworkInterface
+func (c *Vpc) CreateNetworkInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateNetworkInterface,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateNetworkInterface API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateNetworkInterface for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNetworkInterface
+func (c *Vpc) CreateNetworkInterface(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateNetworkInterfaceRequest(input)
+	return out, req.Send()
+}
+
+// CreateNetworkInterfaceWithContext is the same as CreateNetworkInterface with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateNetworkInterface for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateNetworkInterfaceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateNetworkInterfaceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateRoute = "CreateRoute"
 
 // CreateRouteRequest generates a "ksc/request.Request" representing the
@@ -1608,6 +1681,79 @@ func (c *Vpc) DeleteNetworkAclEntry(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Vpc) DeleteNetworkAclEntryWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteNetworkAclEntryRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteNetworkInterface = "DeleteNetworkInterface"
+
+// DeleteNetworkInterfaceRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteNetworkInterface operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteNetworkInterface for more information on using the DeleteNetworkInterface
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteNetworkInterfaceRequest method.
+//    req, resp := client.DeleteNetworkInterfaceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNetworkInterface
+func (c *Vpc) DeleteNetworkInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteNetworkInterface,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteNetworkInterface API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteNetworkInterface for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNetworkInterface
+func (c *Vpc) DeleteNetworkInterface(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteNetworkInterfaceRequest(input)
+	return out, req.Send()
+}
+
+// DeleteNetworkInterfaceWithContext is the same as DeleteNetworkInterface with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteNetworkInterface for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteNetworkInterfaceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteNetworkInterfaceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
