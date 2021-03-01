@@ -1,6 +1,7 @@
 package kscquery
 
 import (
+	"fmt"
 	"github.com/KscSDK/ksc-sdk-go/ksc/kscbody"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/request"
@@ -33,6 +34,8 @@ func Build(r *request.Request) {
 		for k, v := range m {
 			if reflect.TypeOf(v).String() == "string" {
 				body.Add(k, v.(string))
+			} else {
+				body.Add(k, fmt.Sprintf("%v", v))
 			}
 		}
 	} else if err := queryutil.Parse(body, r.Params, false); err != nil {
