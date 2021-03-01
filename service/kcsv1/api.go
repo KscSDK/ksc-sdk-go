@@ -7,6 +7,152 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAllocateSecurityGroup = "AllocateSecurityGroup"
+
+// AllocateSecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the AllocateSecurityGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AllocateSecurityGroup for more information on using the AllocateSecurityGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AllocateSecurityGroupRequest method.
+//    req, resp := client.AllocateSecurityGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/AllocateSecurityGroup
+func (c *Kcsv1) AllocateSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAllocateSecurityGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AllocateSecurityGroup API operation for kcsv1.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcsv1's
+// API operation AllocateSecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/AllocateSecurityGroup
+func (c *Kcsv1) AllocateSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AllocateSecurityGroupRequest(input)
+	return out, req.Send()
+}
+
+// AllocateSecurityGroupWithContext is the same as AllocateSecurityGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AllocateSecurityGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcsv1) AllocateSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AllocateSecurityGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCloneSecurityGroup = "CloneSecurityGroup"
+
+// CloneSecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CloneSecurityGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CloneSecurityGroup for more information on using the CloneSecurityGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CloneSecurityGroupRequest method.
+//    req, resp := client.CloneSecurityGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CloneSecurityGroup
+func (c *Kcsv1) CloneSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCloneSecurityGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CloneSecurityGroup API operation for kcsv1.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcsv1's
+// API operation CloneSecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CloneSecurityGroup
+func (c *Kcsv1) CloneSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CloneSecurityGroupRequest(input)
+	return out, req.Send()
+}
+
+// CloneSecurityGroupWithContext is the same as CloneSecurityGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CloneSecurityGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcsv1) CloneSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CloneSecurityGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateCacheCluster = "CreateCacheCluster"
 
 // CreateCacheClusterRequest generates a "ksc/request.Request" representing the
@@ -153,35 +299,35 @@ func (c *Kcsv1) CreateCacheParameterGroupWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
-const opCreateCacheSecurityGroup = "CreateCacheSecurityGroup"
+const opCreateSecurityGroup = "CreateSecurityGroup"
 
-// CreateCacheSecurityGroupRequest generates a "ksc/request.Request" representing the
-// client's request for the CreateCacheSecurityGroup operation. The "output" return
+// CreateSecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
 //
 // Use "Send" method on the returned Request to send the API call to the service.
 // the "output" return value is not valid until after Send returns without error.
 //
-// See CreateCacheSecurityGroup for more information on using the CreateCacheSecurityGroup
+// See CreateSecurityGroup for more information on using the CreateSecurityGroup
 // API call, and error handling.
 //
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
 //
-//    // Example sending a request using the CreateCacheSecurityGroupRequest method.
-//    req, resp := client.CreateCacheSecurityGroupRequest(params)
+//    // Example sending a request using the CreateSecurityGroupRequest method.
+//    req, resp := client.CreateSecurityGroupRequest(params)
 //
 //    err := req.Send()
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
 //
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CreateCacheSecurityGroup
-func (c *Kcsv1) CreateCacheSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CreateSecurityGroup
+func (c *Kcsv1) CreateSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
-		Name:       opCreateCacheSecurityGroup,
+		Name:       opCreateSecurityGroup,
 		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
@@ -196,31 +342,104 @@ func (c *Kcsv1) CreateCacheSecurityGroupRequest(input *map[string]interface{}) (
 	return
 }
 
-// CreateCacheSecurityGroup API operation for kcsv1.
+// CreateSecurityGroup API operation for kcsv1.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
 // See the KSC API reference guide for kcsv1's
-// API operation CreateCacheSecurityGroup for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CreateCacheSecurityGroup
-func (c *Kcsv1) CreateCacheSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.CreateCacheSecurityGroupRequest(input)
+// API operation CreateSecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CreateSecurityGroup
+func (c *Kcsv1) CreateSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateSecurityGroupRequest(input)
 	return out, req.Send()
 }
 
-// CreateCacheSecurityGroupWithContext is the same as CreateCacheSecurityGroup with the addition of
+// CreateSecurityGroupWithContext is the same as CreateSecurityGroup with the addition of
 // the ability to pass a context and additional request options.
 //
-// See CreateCacheSecurityGroup for details on how to use this API operation.
+// See CreateSecurityGroup for details on how to use this API operation.
 //
 // The context must be non-nil and will be used for request cancellation. If
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Kcsv1) CreateCacheSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.CreateCacheSecurityGroupRequest(input)
+func (c *Kcsv1) CreateSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateSecurityGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateSecurityGroupRule = "CreateSecurityGroupRule"
+
+// CreateSecurityGroupRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateSecurityGroupRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateSecurityGroupRule for more information on using the CreateSecurityGroupRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateSecurityGroupRuleRequest method.
+//    req, resp := client.CreateSecurityGroupRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CreateSecurityGroupRule
+func (c *Kcsv1) CreateSecurityGroupRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateSecurityGroupRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateSecurityGroupRule API operation for kcsv1.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcsv1's
+// API operation CreateSecurityGroupRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/CreateSecurityGroupRule
+func (c *Kcsv1) CreateSecurityGroupRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateSecurityGroupRuleRequest(input)
+	return out, req.Send()
+}
+
+// CreateSecurityGroupRuleWithContext is the same as CreateSecurityGroupRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateSecurityGroupRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcsv1) CreateSecurityGroupRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateSecurityGroupRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -294,6 +513,79 @@ func (c *Kcsv1) CreateSnapshot(input *map[string]interface{}) (*map[string]inter
 // for more information on using Contexts.
 func (c *Kcsv1) CreateSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateSnapshotRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeallocateSecurityGroup = "DeallocateSecurityGroup"
+
+// DeallocateSecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DeallocateSecurityGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeallocateSecurityGroup for more information on using the DeallocateSecurityGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeallocateSecurityGroupRequest method.
+//    req, resp := client.DeallocateSecurityGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeallocateSecurityGroup
+func (c *Kcsv1) DeallocateSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeallocateSecurityGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeallocateSecurityGroup API operation for kcsv1.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcsv1's
+// API operation DeallocateSecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeallocateSecurityGroup
+func (c *Kcsv1) DeallocateSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeallocateSecurityGroupRequest(input)
+	return out, req.Send()
+}
+
+// DeallocateSecurityGroupWithContext is the same as DeallocateSecurityGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeallocateSecurityGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcsv1) DeallocateSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeallocateSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -445,36 +737,36 @@ func (c *Kcsv1) DeleteCacheParameterGroupWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
-const opDeleteCacheSecurityGroup = "DeleteCacheSecurityGroup"
+const opDeleteSecurityGroup = "DeleteSecurityGroup"
 
-// DeleteCacheSecurityGroupRequest generates a "ksc/request.Request" representing the
-// client's request for the DeleteCacheSecurityGroup operation. The "output" return
+// DeleteSecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteSecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
 //
 // Use "Send" method on the returned Request to send the API call to the service.
 // the "output" return value is not valid until after Send returns without error.
 //
-// See DeleteCacheSecurityGroup for more information on using the DeleteCacheSecurityGroup
+// See DeleteSecurityGroup for more information on using the DeleteSecurityGroup
 // API call, and error handling.
 //
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
 //
-//    // Example sending a request using the DeleteCacheSecurityGroupRequest method.
-//    req, resp := client.DeleteCacheSecurityGroupRequest(params)
+//    // Example sending a request using the DeleteSecurityGroupRequest method.
+//    req, resp := client.DeleteSecurityGroupRequest(params)
 //
 //    err := req.Send()
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
 //
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteCacheSecurityGroup
-func (c *Kcsv1) DeleteCacheSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteSecurityGroup
+func (c *Kcsv1) DeleteSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
-		Name:       opDeleteCacheSecurityGroup,
-		HTTPMethod: "DELETE",
+		Name:       opDeleteSecurityGroup,
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -488,66 +780,66 @@ func (c *Kcsv1) DeleteCacheSecurityGroupRequest(input *map[string]interface{}) (
 	return
 }
 
-// DeleteCacheSecurityGroup API operation for kcsv1.
+// DeleteSecurityGroup API operation for kcsv1.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
 // See the KSC API reference guide for kcsv1's
-// API operation DeleteCacheSecurityGroup for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteCacheSecurityGroup
-func (c *Kcsv1) DeleteCacheSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.DeleteCacheSecurityGroupRequest(input)
+// API operation DeleteSecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteSecurityGroup
+func (c *Kcsv1) DeleteSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteSecurityGroupRequest(input)
 	return out, req.Send()
 }
 
-// DeleteCacheSecurityGroupWithContext is the same as DeleteCacheSecurityGroup with the addition of
+// DeleteSecurityGroupWithContext is the same as DeleteSecurityGroup with the addition of
 // the ability to pass a context and additional request options.
 //
-// See DeleteCacheSecurityGroup for details on how to use this API operation.
+// See DeleteSecurityGroup for details on how to use this API operation.
 //
 // The context must be non-nil and will be used for request cancellation. If
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Kcsv1) DeleteCacheSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.DeleteCacheSecurityGroupRequest(input)
+func (c *Kcsv1) DeleteSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteSecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
 }
 
-const opDeleteCacheSecurityGroupRule = "DeleteCacheSecurityGroupRule"
+const opDeleteSecurityGroupRule = "DeleteSecurityGroupRule"
 
-// DeleteCacheSecurityGroupRuleRequest generates a "ksc/request.Request" representing the
-// client's request for the DeleteCacheSecurityGroupRule operation. The "output" return
+// DeleteSecurityGroupRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteSecurityGroupRule operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
 //
 // Use "Send" method on the returned Request to send the API call to the service.
 // the "output" return value is not valid until after Send returns without error.
 //
-// See DeleteCacheSecurityGroupRule for more information on using the DeleteCacheSecurityGroupRule
+// See DeleteSecurityGroupRule for more information on using the DeleteSecurityGroupRule
 // API call, and error handling.
 //
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
 //
-//    // Example sending a request using the DeleteCacheSecurityGroupRuleRequest method.
-//    req, resp := client.DeleteCacheSecurityGroupRuleRequest(params)
+//    // Example sending a request using the DeleteSecurityGroupRuleRequest method.
+//    req, resp := client.DeleteSecurityGroupRuleRequest(params)
 //
 //    err := req.Send()
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
 //
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteCacheSecurityGroupRule
-func (c *Kcsv1) DeleteCacheSecurityGroupRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteSecurityGroupRule
+func (c *Kcsv1) DeleteSecurityGroupRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
-		Name:       opDeleteCacheSecurityGroupRule,
-		HTTPMethod: "DELETE",
+		Name:       opDeleteSecurityGroupRule,
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -561,104 +853,31 @@ func (c *Kcsv1) DeleteCacheSecurityGroupRuleRequest(input *map[string]interface{
 	return
 }
 
-// DeleteCacheSecurityGroupRule API operation for kcsv1.
+// DeleteSecurityGroupRule API operation for kcsv1.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
 // See the KSC API reference guide for kcsv1's
-// API operation DeleteCacheSecurityGroupRule for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteCacheSecurityGroupRule
-func (c *Kcsv1) DeleteCacheSecurityGroupRule(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.DeleteCacheSecurityGroupRuleRequest(input)
+// API operation DeleteSecurityGroupRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteSecurityGroupRule
+func (c *Kcsv1) DeleteSecurityGroupRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteSecurityGroupRuleRequest(input)
 	return out, req.Send()
 }
 
-// DeleteCacheSecurityGroupRuleWithContext is the same as DeleteCacheSecurityGroupRule with the addition of
+// DeleteSecurityGroupRuleWithContext is the same as DeleteSecurityGroupRule with the addition of
 // the ability to pass a context and additional request options.
 //
-// See DeleteCacheSecurityGroupRule for details on how to use this API operation.
+// See DeleteSecurityGroupRule for details on how to use this API operation.
 //
 // The context must be non-nil and will be used for request cancellation. If
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Kcsv1) DeleteCacheSecurityGroupRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.DeleteCacheSecurityGroupRuleRequest(input)
-	req.SetContext(ctx)
-	req.ApplyOptions(opts...)
-	return out, req.Send()
-}
-
-const opDeleteCacheSecurityRule = "DeleteCacheSecurityRule"
-
-// DeleteCacheSecurityRuleRequest generates a "ksc/request.Request" representing the
-// client's request for the DeleteCacheSecurityRule operation. The "output" return
-// value will be populated with the request's response once the request completes
-// successfully.
-//
-// Use "Send" method on the returned Request to send the API call to the service.
-// the "output" return value is not valid until after Send returns without error.
-//
-// See DeleteCacheSecurityRule for more information on using the DeleteCacheSecurityRule
-// API call, and error handling.
-//
-// This method is useful when you want to inject custom logic or configuration
-// into the SDK's request lifecycle. Such as custom headers, or retry logic.
-//
-//
-//    // Example sending a request using the DeleteCacheSecurityRuleRequest method.
-//    req, resp := client.DeleteCacheSecurityRuleRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
-//
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteCacheSecurityRule
-func (c *Kcsv1) DeleteCacheSecurityRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
-	op := &request.Operation{
-		Name:       opDeleteCacheSecurityRule,
-		HTTPMethod: "DELETE",
-		HTTPPath:   "/",
-	}
-
-	if input == nil {
-		input = &map[string]interface{}{}
-	}
-
-	output = &map[string]interface{}{}
-	req = c.newRequest(op, input, output)
-
-	return
-}
-
-// DeleteCacheSecurityRule API operation for kcsv1.
-//
-// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
-// with awserr.Error's Code and Message methods to get detailed information about
-// the error.
-//
-// See the KSC API reference guide for kcsv1's
-// API operation DeleteCacheSecurityRule for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DeleteCacheSecurityRule
-func (c *Kcsv1) DeleteCacheSecurityRule(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.DeleteCacheSecurityRuleRequest(input)
-	return out, req.Send()
-}
-
-// DeleteCacheSecurityRuleWithContext is the same as DeleteCacheSecurityRule with the addition of
-// the ability to pass a context and additional request options.
-//
-// See DeleteCacheSecurityRule for details on how to use this API operation.
-//
-// The context must be non-nil and will be used for request cancellation. If
-// the context is nil a panic will occur. In the future the SDK may create
-// sub-contexts for http.Requests. See https://golang.org/pkg/context/
-// for more information on using Contexts.
-func (c *Kcsv1) DeleteCacheSecurityRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.DeleteCacheSecurityRuleRequest(input)
+func (c *Kcsv1) DeleteSecurityGroupRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteSecurityGroupRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1248,35 +1467,35 @@ func (c *Kcsv1) DescribeCacheParametersWithContext(ctx aws.Context, input *map[s
 	return out, req.Send()
 }
 
-const opDescribeCacheSecurityGroup = "DescribeCacheSecurityGroup"
+const opDescribeInstances = "DescribeInstances"
 
-// DescribeCacheSecurityGroupRequest generates a "ksc/request.Request" representing the
-// client's request for the DescribeCacheSecurityGroup operation. The "output" return
+// DescribeInstancesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeInstances operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
 //
 // Use "Send" method on the returned Request to send the API call to the service.
 // the "output" return value is not valid until after Send returns without error.
 //
-// See DescribeCacheSecurityGroup for more information on using the DescribeCacheSecurityGroup
+// See DescribeInstances for more information on using the DescribeInstances
 // API call, and error handling.
 //
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
 //
-//    // Example sending a request using the DescribeCacheSecurityGroupRequest method.
-//    req, resp := client.DescribeCacheSecurityGroupRequest(params)
+//    // Example sending a request using the DescribeInstancesRequest method.
+//    req, resp := client.DescribeInstancesRequest(params)
 //
 //    err := req.Send()
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
 //
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeCacheSecurityGroup
-func (c *Kcsv1) DescribeCacheSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeInstances
+func (c *Kcsv1) DescribeInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
-		Name:       opDescribeCacheSecurityGroup,
+		Name:       opDescribeInstances,
 		HTTPMethod: "GET",
 		HTTPPath:   "/",
 	}
@@ -1291,177 +1510,31 @@ func (c *Kcsv1) DescribeCacheSecurityGroupRequest(input *map[string]interface{})
 	return
 }
 
-// DescribeCacheSecurityGroup API operation for kcsv1.
+// DescribeInstances API operation for kcsv1.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
 // See the KSC API reference guide for kcsv1's
-// API operation DescribeCacheSecurityGroup for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeCacheSecurityGroup
-func (c *Kcsv1) DescribeCacheSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.DescribeCacheSecurityGroupRequest(input)
+// API operation DescribeInstances for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeInstances
+func (c *Kcsv1) DescribeInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeInstancesRequest(input)
 	return out, req.Send()
 }
 
-// DescribeCacheSecurityGroupWithContext is the same as DescribeCacheSecurityGroup with the addition of
+// DescribeInstancesWithContext is the same as DescribeInstances with the addition of
 // the ability to pass a context and additional request options.
 //
-// See DescribeCacheSecurityGroup for details on how to use this API operation.
+// See DescribeInstances for details on how to use this API operation.
 //
 // The context must be non-nil and will be used for request cancellation. If
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Kcsv1) DescribeCacheSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.DescribeCacheSecurityGroupRequest(input)
-	req.SetContext(ctx)
-	req.ApplyOptions(opts...)
-	return out, req.Send()
-}
-
-const opDescribeCacheSecurityGroups = "DescribeCacheSecurityGroups"
-
-// DescribeCacheSecurityGroupsRequest generates a "ksc/request.Request" representing the
-// client's request for the DescribeCacheSecurityGroups operation. The "output" return
-// value will be populated with the request's response once the request completes
-// successfully.
-//
-// Use "Send" method on the returned Request to send the API call to the service.
-// the "output" return value is not valid until after Send returns without error.
-//
-// See DescribeCacheSecurityGroups for more information on using the DescribeCacheSecurityGroups
-// API call, and error handling.
-//
-// This method is useful when you want to inject custom logic or configuration
-// into the SDK's request lifecycle. Such as custom headers, or retry logic.
-//
-//
-//    // Example sending a request using the DescribeCacheSecurityGroupsRequest method.
-//    req, resp := client.DescribeCacheSecurityGroupsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
-//
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeCacheSecurityGroups
-func (c *Kcsv1) DescribeCacheSecurityGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
-	op := &request.Operation{
-		Name:       opDescribeCacheSecurityGroups,
-		HTTPMethod: "GET",
-		HTTPPath:   "/",
-	}
-
-	if input == nil {
-		input = &map[string]interface{}{}
-	}
-
-	output = &map[string]interface{}{}
-	req = c.newRequest(op, input, output)
-
-	return
-}
-
-// DescribeCacheSecurityGroups API operation for kcsv1.
-//
-// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
-// with awserr.Error's Code and Message methods to get detailed information about
-// the error.
-//
-// See the KSC API reference guide for kcsv1's
-// API operation DescribeCacheSecurityGroups for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeCacheSecurityGroups
-func (c *Kcsv1) DescribeCacheSecurityGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.DescribeCacheSecurityGroupsRequest(input)
-	return out, req.Send()
-}
-
-// DescribeCacheSecurityGroupsWithContext is the same as DescribeCacheSecurityGroups with the addition of
-// the ability to pass a context and additional request options.
-//
-// See DescribeCacheSecurityGroups for details on how to use this API operation.
-//
-// The context must be non-nil and will be used for request cancellation. If
-// the context is nil a panic will occur. In the future the SDK may create
-// sub-contexts for http.Requests. See https://golang.org/pkg/context/
-// for more information on using Contexts.
-func (c *Kcsv1) DescribeCacheSecurityGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.DescribeCacheSecurityGroupsRequest(input)
-	req.SetContext(ctx)
-	req.ApplyOptions(opts...)
-	return out, req.Send()
-}
-
-const opDescribeCacheSecurityRules = "DescribeCacheSecurityRules"
-
-// DescribeCacheSecurityRulesRequest generates a "ksc/request.Request" representing the
-// client's request for the DescribeCacheSecurityRules operation. The "output" return
-// value will be populated with the request's response once the request completes
-// successfully.
-//
-// Use "Send" method on the returned Request to send the API call to the service.
-// the "output" return value is not valid until after Send returns without error.
-//
-// See DescribeCacheSecurityRules for more information on using the DescribeCacheSecurityRules
-// API call, and error handling.
-//
-// This method is useful when you want to inject custom logic or configuration
-// into the SDK's request lifecycle. Such as custom headers, or retry logic.
-//
-//
-//    // Example sending a request using the DescribeCacheSecurityRulesRequest method.
-//    req, resp := client.DescribeCacheSecurityRulesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
-//
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeCacheSecurityRules
-func (c *Kcsv1) DescribeCacheSecurityRulesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
-	op := &request.Operation{
-		Name:       opDescribeCacheSecurityRules,
-		HTTPMethod: "GET",
-		HTTPPath:   "/",
-	}
-
-	if input == nil {
-		input = &map[string]interface{}{}
-	}
-
-	output = &map[string]interface{}{}
-	req = c.newRequest(op, input, output)
-
-	return
-}
-
-// DescribeCacheSecurityRules API operation for kcsv1.
-//
-// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
-// with awserr.Error's Code and Message methods to get detailed information about
-// the error.
-//
-// See the KSC API reference guide for kcsv1's
-// API operation DescribeCacheSecurityRules for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeCacheSecurityRules
-func (c *Kcsv1) DescribeCacheSecurityRules(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.DescribeCacheSecurityRulesRequest(input)
-	return out, req.Send()
-}
-
-// DescribeCacheSecurityRulesWithContext is the same as DescribeCacheSecurityRules with the addition of
-// the ability to pass a context and additional request options.
-//
-// See DescribeCacheSecurityRules for details on how to use this API operation.
-//
-// The context must be non-nil and will be used for request cancellation. If
-// the context is nil a panic will occur. In the future the SDK may create
-// sub-contexts for http.Requests. See https://golang.org/pkg/context/
-// for more information on using Contexts.
-func (c *Kcsv1) DescribeCacheSecurityRulesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.DescribeCacheSecurityRulesRequest(input)
+func (c *Kcsv1) DescribeInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1535,6 +1608,152 @@ func (c *Kcsv1) DescribeRegions(input *map[string]interface{}) (*map[string]inte
 // for more information on using Contexts.
 func (c *Kcsv1) DescribeRegionsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeRegionsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeSecurityGroup = "DescribeSecurityGroup"
+
+// DescribeSecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeSecurityGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeSecurityGroup for more information on using the DescribeSecurityGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeSecurityGroupRequest method.
+//    req, resp := client.DescribeSecurityGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeSecurityGroup
+func (c *Kcsv1) DescribeSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeSecurityGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeSecurityGroup API operation for kcsv1.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcsv1's
+// API operation DescribeSecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeSecurityGroup
+func (c *Kcsv1) DescribeSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeSecurityGroupRequest(input)
+	return out, req.Send()
+}
+
+// DescribeSecurityGroupWithContext is the same as DescribeSecurityGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeSecurityGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcsv1) DescribeSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeSecurityGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeSecurityGroups = "DescribeSecurityGroups"
+
+// DescribeSecurityGroupsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeSecurityGroups operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeSecurityGroups for more information on using the DescribeSecurityGroups
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeSecurityGroupsRequest method.
+//    req, resp := client.DescribeSecurityGroupsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeSecurityGroups
+func (c *Kcsv1) DescribeSecurityGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeSecurityGroups,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeSecurityGroups API operation for kcsv1.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcsv1's
+// API operation DescribeSecurityGroups for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/DescribeSecurityGroups
+func (c *Kcsv1) DescribeSecurityGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeSecurityGroupsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeSecurityGroupsWithContext is the same as DescribeSecurityGroups with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeSecurityGroups for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcsv1) DescribeSecurityGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeSecurityGroupsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1905,36 +2124,36 @@ func (c *Kcsv1) ModifyCacheParameterGroupWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
-const opModifyCacheSecurityGroup = "ModifyCacheSecurityGroup"
+const opModifySecurityGroup = "ModifySecurityGroup"
 
-// ModifyCacheSecurityGroupRequest generates a "ksc/request.Request" representing the
-// client's request for the ModifyCacheSecurityGroup operation. The "output" return
+// ModifySecurityGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifySecurityGroup operation. The "output" return
 // value will be populated with the request's response once the request completes
 // successfully.
 //
 // Use "Send" method on the returned Request to send the API call to the service.
 // the "output" return value is not valid until after Send returns without error.
 //
-// See ModifyCacheSecurityGroup for more information on using the ModifyCacheSecurityGroup
+// See ModifySecurityGroup for more information on using the ModifySecurityGroup
 // API call, and error handling.
 //
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
 //
-//    // Example sending a request using the ModifyCacheSecurityGroupRequest method.
-//    req, resp := client.ModifyCacheSecurityGroupRequest(params)
+//    // Example sending a request using the ModifySecurityGroupRequest method.
+//    req, resp := client.ModifySecurityGroupRequest(params)
 //
 //    err := req.Send()
 //    if err == nil { // resp is now filled
 //        fmt.Println(resp)
 //    }
 //
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/ModifyCacheSecurityGroup
-func (c *Kcsv1) ModifyCacheSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/ModifySecurityGroup
+func (c *Kcsv1) ModifySecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
-		Name:       opModifyCacheSecurityGroup,
-		HTTPMethod: "PUT",
+		Name:       opModifySecurityGroup,
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -1948,31 +2167,31 @@ func (c *Kcsv1) ModifyCacheSecurityGroupRequest(input *map[string]interface{}) (
 	return
 }
 
-// ModifyCacheSecurityGroup API operation for kcsv1.
+// ModifySecurityGroup API operation for kcsv1.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
 //
 // See the KSC API reference guide for kcsv1's
-// API operation ModifyCacheSecurityGroup for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/ModifyCacheSecurityGroup
-func (c *Kcsv1) ModifyCacheSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.ModifyCacheSecurityGroupRequest(input)
+// API operation ModifySecurityGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/ModifySecurityGroup
+func (c *Kcsv1) ModifySecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifySecurityGroupRequest(input)
 	return out, req.Send()
 }
 
-// ModifyCacheSecurityGroupWithContext is the same as ModifyCacheSecurityGroup with the addition of
+// ModifySecurityGroupWithContext is the same as ModifySecurityGroup with the addition of
 // the ability to pass a context and additional request options.
 //
-// See ModifyCacheSecurityGroup for details on how to use this API operation.
+// See ModifySecurityGroup for details on how to use this API operation.
 //
 // The context must be non-nil and will be used for request cancellation. If
 // the context is nil a panic will occur. In the future the SDK may create
 // sub-contexts for http.Requests. See https://golang.org/pkg/context/
 // for more information on using Contexts.
-func (c *Kcsv1) ModifyCacheSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.ModifyCacheSecurityGroupRequest(input)
+func (c *Kcsv1) ModifySecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifySecurityGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -2411,152 +2630,6 @@ func (c *Kcsv1) SetCacheParameters(input *map[string]interface{}) (*map[string]i
 // for more information on using Contexts.
 func (c *Kcsv1) SetCacheParametersWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.SetCacheParametersRequest(input)
-	req.SetContext(ctx)
-	req.ApplyOptions(opts...)
-	return out, req.Send()
-}
-
-const opSetCacheSecurityGroup = "SetCacheSecurityGroup"
-
-// SetCacheSecurityGroupRequest generates a "ksc/request.Request" representing the
-// client's request for the SetCacheSecurityGroup operation. The "output" return
-// value will be populated with the request's response once the request completes
-// successfully.
-//
-// Use "Send" method on the returned Request to send the API call to the service.
-// the "output" return value is not valid until after Send returns without error.
-//
-// See SetCacheSecurityGroup for more information on using the SetCacheSecurityGroup
-// API call, and error handling.
-//
-// This method is useful when you want to inject custom logic or configuration
-// into the SDK's request lifecycle. Such as custom headers, or retry logic.
-//
-//
-//    // Example sending a request using the SetCacheSecurityGroupRequest method.
-//    req, resp := client.SetCacheSecurityGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
-//
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/SetCacheSecurityGroup
-func (c *Kcsv1) SetCacheSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
-	op := &request.Operation{
-		Name:       opSetCacheSecurityGroup,
-		HTTPMethod: "PUT",
-		HTTPPath:   "/",
-	}
-
-	if input == nil {
-		input = &map[string]interface{}{}
-	}
-
-	output = &map[string]interface{}{}
-	req = c.newRequest(op, input, output)
-
-	return
-}
-
-// SetCacheSecurityGroup API operation for kcsv1.
-//
-// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
-// with awserr.Error's Code and Message methods to get detailed information about
-// the error.
-//
-// See the KSC API reference guide for kcsv1's
-// API operation SetCacheSecurityGroup for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/SetCacheSecurityGroup
-func (c *Kcsv1) SetCacheSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.SetCacheSecurityGroupRequest(input)
-	return out, req.Send()
-}
-
-// SetCacheSecurityGroupWithContext is the same as SetCacheSecurityGroup with the addition of
-// the ability to pass a context and additional request options.
-//
-// See SetCacheSecurityGroup for details on how to use this API operation.
-//
-// The context must be non-nil and will be used for request cancellation. If
-// the context is nil a panic will occur. In the future the SDK may create
-// sub-contexts for http.Requests. See https://golang.org/pkg/context/
-// for more information on using Contexts.
-func (c *Kcsv1) SetCacheSecurityGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.SetCacheSecurityGroupRequest(input)
-	req.SetContext(ctx)
-	req.ApplyOptions(opts...)
-	return out, req.Send()
-}
-
-const opSetCacheSecurityRules = "SetCacheSecurityRules"
-
-// SetCacheSecurityRulesRequest generates a "ksc/request.Request" representing the
-// client's request for the SetCacheSecurityRules operation. The "output" return
-// value will be populated with the request's response once the request completes
-// successfully.
-//
-// Use "Send" method on the returned Request to send the API call to the service.
-// the "output" return value is not valid until after Send returns without error.
-//
-// See SetCacheSecurityRules for more information on using the SetCacheSecurityRules
-// API call, and error handling.
-//
-// This method is useful when you want to inject custom logic or configuration
-// into the SDK's request lifecycle. Such as custom headers, or retry logic.
-//
-//
-//    // Example sending a request using the SetCacheSecurityRulesRequest method.
-//    req, resp := client.SetCacheSecurityRulesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
-//
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/SetCacheSecurityRules
-func (c *Kcsv1) SetCacheSecurityRulesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
-	op := &request.Operation{
-		Name:       opSetCacheSecurityRules,
-		HTTPMethod: "PUT",
-		HTTPPath:   "/",
-	}
-
-	if input == nil {
-		input = &map[string]interface{}{}
-	}
-
-	output = &map[string]interface{}{}
-	req = c.newRequest(op, input, output)
-
-	return
-}
-
-// SetCacheSecurityRules API operation for kcsv1.
-//
-// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
-// with awserr.Error's Code and Message methods to get detailed information about
-// the error.
-//
-// See the KSC API reference guide for kcsv1's
-// API operation SetCacheSecurityRules for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kcs-2016-07-01/SetCacheSecurityRules
-func (c *Kcsv1) SetCacheSecurityRules(input *map[string]interface{}) (*map[string]interface{}, error) {
-	req, out := c.SetCacheSecurityRulesRequest(input)
-	return out, req.Send()
-}
-
-// SetCacheSecurityRulesWithContext is the same as SetCacheSecurityRules with the addition of
-// the ability to pass a context and additional request options.
-//
-// See SetCacheSecurityRules for details on how to use this API operation.
-//
-// The context must be non-nil and will be used for request cancellation. If
-// the context is nil a panic will occur. In the future the SDK may create
-// sub-contexts for http.Requests. See https://golang.org/pkg/context/
-// for more information on using Contexts.
-func (c *Kcsv1) SetCacheSecurityRulesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
-	req, out := c.SetCacheSecurityRulesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
