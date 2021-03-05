@@ -280,6 +280,10 @@ type VpcAPI interface {
 	ModifySecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifySecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifySecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifySecurityGroupEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifySubnet(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySubnetWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySubnetRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
