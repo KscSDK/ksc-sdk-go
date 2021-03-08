@@ -80,6 +80,79 @@ func (c *Kec) AddVmIntoDataGuardWithContext(ctx aws.Context, input *map[string]i
 	return out, req.Send()
 }
 
+const opAttachInstance = "AttachInstance"
+
+// AttachInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the AttachInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AttachInstance for more information on using the AttachInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AttachInstanceRequest method.
+//    req, resp := client.AttachInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/AttachInstance
+func (c *Kec) AttachInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAttachInstance,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AttachInstance API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation AttachInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/AttachInstance
+func (c *Kec) AttachInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AttachInstanceRequest(input)
+	return out, req.Send()
+}
+
+// AttachInstanceWithContext is the same as AttachInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AttachInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) AttachInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AttachInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAttachKey = "AttachKey"
 
 // AttachKeyRequest generates a "ksc/request.Request" representing the
@@ -518,6 +591,371 @@ func (c *Kec) CreateLocalVolumeSnapshotWithContext(ctx aws.Context, input *map[s
 	return out, req.Send()
 }
 
+const opCreateScalingConfiguration = "CreateScalingConfiguration"
+
+// CreateScalingConfigurationRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateScalingConfiguration operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateScalingConfiguration for more information on using the CreateScalingConfiguration
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateScalingConfigurationRequest method.
+//    req, resp := client.CreateScalingConfigurationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingConfiguration
+func (c *Kec) CreateScalingConfigurationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateScalingConfiguration,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateScalingConfiguration API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateScalingConfiguration for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingConfiguration
+func (c *Kec) CreateScalingConfiguration(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingConfigurationRequest(input)
+	return out, req.Send()
+}
+
+// CreateScalingConfigurationWithContext is the same as CreateScalingConfiguration with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateScalingConfiguration for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateScalingConfigurationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingConfigurationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateScalingGroup = "CreateScalingGroup"
+
+// CreateScalingGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateScalingGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateScalingGroup for more information on using the CreateScalingGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateScalingGroupRequest method.
+//    req, resp := client.CreateScalingGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingGroup
+func (c *Kec) CreateScalingGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateScalingGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateScalingGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateScalingGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingGroup
+func (c *Kec) CreateScalingGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingGroupRequest(input)
+	return out, req.Send()
+}
+
+// CreateScalingGroupWithContext is the same as CreateScalingGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateScalingGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateScalingGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateScalingNotification = "CreateScalingNotification"
+
+// CreateScalingNotificationRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateScalingNotification operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateScalingNotification for more information on using the CreateScalingNotification
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateScalingNotificationRequest method.
+//    req, resp := client.CreateScalingNotificationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingNotification
+func (c *Kec) CreateScalingNotificationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateScalingNotification,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateScalingNotification API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateScalingNotification for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingNotification
+func (c *Kec) CreateScalingNotification(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingNotificationRequest(input)
+	return out, req.Send()
+}
+
+// CreateScalingNotificationWithContext is the same as CreateScalingNotification with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateScalingNotification for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateScalingNotificationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingNotificationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateScalingPolicy = "CreateScalingPolicy"
+
+// CreateScalingPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateScalingPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateScalingPolicy for more information on using the CreateScalingPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateScalingPolicyRequest method.
+//    req, resp := client.CreateScalingPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingPolicy
+func (c *Kec) CreateScalingPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateScalingPolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateScalingPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateScalingPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScalingPolicy
+func (c *Kec) CreateScalingPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingPolicyRequest(input)
+	return out, req.Send()
+}
+
+// CreateScalingPolicyWithContext is the same as CreateScalingPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateScalingPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateScalingPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateScalingPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateScheduledTask = "CreateScheduledTask"
+
+// CreateScheduledTaskRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateScheduledTask operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateScheduledTask for more information on using the CreateScheduledTask
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateScheduledTaskRequest method.
+//    req, resp := client.CreateScheduledTaskRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScheduledTask
+func (c *Kec) CreateScheduledTaskRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateScheduledTask,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateScheduledTask API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateScheduledTask for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateScheduledTask
+func (c *Kec) CreateScheduledTask(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateScheduledTaskRequest(input)
+	return out, req.Send()
+}
+
+// CreateScheduledTaskWithContext is the same as CreateScheduledTask with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateScheduledTask for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateScheduledTaskWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateScheduledTaskRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteDataGuardGroups = "DeleteDataGuardGroups"
 
 // DeleteDataGuardGroupsRequest generates a "ksc/request.Request" representing the
@@ -659,6 +1097,298 @@ func (c *Kec) DeleteLocalVolumeSnapshot(input *map[string]interface{}) (*map[str
 // for more information on using Contexts.
 func (c *Kec) DeleteLocalVolumeSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteLocalVolumeSnapshotRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteScalingConfiguration = "DeleteScalingConfiguration"
+
+// DeleteScalingConfigurationRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteScalingConfiguration operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteScalingConfiguration for more information on using the DeleteScalingConfiguration
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteScalingConfigurationRequest method.
+//    req, resp := client.DeleteScalingConfigurationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScalingConfiguration
+func (c *Kec) DeleteScalingConfigurationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteScalingConfiguration,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteScalingConfiguration API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DeleteScalingConfiguration for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScalingConfiguration
+func (c *Kec) DeleteScalingConfiguration(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteScalingConfigurationRequest(input)
+	return out, req.Send()
+}
+
+// DeleteScalingConfigurationWithContext is the same as DeleteScalingConfiguration with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteScalingConfiguration for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DeleteScalingConfigurationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteScalingConfigurationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteScalingGroup = "DeleteScalingGroup"
+
+// DeleteScalingGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteScalingGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteScalingGroup for more information on using the DeleteScalingGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteScalingGroupRequest method.
+//    req, resp := client.DeleteScalingGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScalingGroup
+func (c *Kec) DeleteScalingGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteScalingGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteScalingGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DeleteScalingGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScalingGroup
+func (c *Kec) DeleteScalingGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteScalingGroupRequest(input)
+	return out, req.Send()
+}
+
+// DeleteScalingGroupWithContext is the same as DeleteScalingGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteScalingGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DeleteScalingGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteScalingGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteScalingPolicy = "DeleteScalingPolicy"
+
+// DeleteScalingPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteScalingPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteScalingPolicy for more information on using the DeleteScalingPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteScalingPolicyRequest method.
+//    req, resp := client.DeleteScalingPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScalingPolicy
+func (c *Kec) DeleteScalingPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteScalingPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteScalingPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DeleteScalingPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScalingPolicy
+func (c *Kec) DeleteScalingPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteScalingPolicyRequest(input)
+	return out, req.Send()
+}
+
+// DeleteScalingPolicyWithContext is the same as DeleteScalingPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteScalingPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DeleteScalingPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteScalingPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteScheduledTask = "DeleteScheduledTask"
+
+// DeleteScheduledTaskRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteScheduledTask operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteScheduledTask for more information on using the DeleteScheduledTask
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteScheduledTaskRequest method.
+//    req, resp := client.DeleteScheduledTaskRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScheduledTask
+func (c *Kec) DeleteScheduledTaskRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteScheduledTask,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteScheduledTask API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DeleteScheduledTask for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteScheduledTask
+func (c *Kec) DeleteScheduledTask(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteScheduledTaskRequest(input)
+	return out, req.Send()
+}
+
+// DeleteScheduledTaskWithContext is the same as DeleteScheduledTask with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteScheduledTask for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DeleteScheduledTaskWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteScheduledTaskRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1613,6 +2343,590 @@ func (c *Kec) DescribeRegionsWithContext(ctx aws.Context, input *map[string]inte
 	return out, req.Send()
 }
 
+const opDescribeScalingActivity = "DescribeScalingActivity"
+
+// DescribeScalingActivityRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScalingActivity operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScalingActivity for more information on using the DescribeScalingActivity
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScalingActivityRequest method.
+//    req, resp := client.DescribeScalingActivityRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingActivity
+func (c *Kec) DescribeScalingActivityRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScalingActivity,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScalingActivity API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScalingActivity for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingActivity
+func (c *Kec) DescribeScalingActivity(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingActivityRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScalingActivityWithContext is the same as DescribeScalingActivity with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScalingActivity for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScalingActivityWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingActivityRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeScalingConfiguration = "DescribeScalingConfiguration"
+
+// DescribeScalingConfigurationRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScalingConfiguration operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScalingConfiguration for more information on using the DescribeScalingConfiguration
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScalingConfigurationRequest method.
+//    req, resp := client.DescribeScalingConfigurationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingConfiguration
+func (c *Kec) DescribeScalingConfigurationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScalingConfiguration,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScalingConfiguration API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScalingConfiguration for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingConfiguration
+func (c *Kec) DescribeScalingConfiguration(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingConfigurationRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScalingConfigurationWithContext is the same as DescribeScalingConfiguration with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScalingConfiguration for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScalingConfigurationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingConfigurationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeScalingGroup = "DescribeScalingGroup"
+
+// DescribeScalingGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScalingGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScalingGroup for more information on using the DescribeScalingGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScalingGroupRequest method.
+//    req, resp := client.DescribeScalingGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingGroup
+func (c *Kec) DescribeScalingGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScalingGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScalingGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScalingGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingGroup
+func (c *Kec) DescribeScalingGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingGroupRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScalingGroupWithContext is the same as DescribeScalingGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScalingGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScalingGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeScalingInstance = "DescribeScalingInstance"
+
+// DescribeScalingInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScalingInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScalingInstance for more information on using the DescribeScalingInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScalingInstanceRequest method.
+//    req, resp := client.DescribeScalingInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingInstance
+func (c *Kec) DescribeScalingInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScalingInstance,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScalingInstance API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScalingInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingInstance
+func (c *Kec) DescribeScalingInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingInstanceRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScalingInstanceWithContext is the same as DescribeScalingInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScalingInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScalingInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeScalingNotification = "DescribeScalingNotification"
+
+// DescribeScalingNotificationRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScalingNotification operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScalingNotification for more information on using the DescribeScalingNotification
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScalingNotificationRequest method.
+//    req, resp := client.DescribeScalingNotificationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingNotification
+func (c *Kec) DescribeScalingNotificationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScalingNotification,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScalingNotification API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScalingNotification for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingNotification
+func (c *Kec) DescribeScalingNotification(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingNotificationRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScalingNotificationWithContext is the same as DescribeScalingNotification with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScalingNotification for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScalingNotificationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingNotificationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeScalingPolicy = "DescribeScalingPolicy"
+
+// DescribeScalingPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScalingPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScalingPolicy for more information on using the DescribeScalingPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScalingPolicyRequest method.
+//    req, resp := client.DescribeScalingPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingPolicy
+func (c *Kec) DescribeScalingPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScalingPolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScalingPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScalingPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScalingPolicy
+func (c *Kec) DescribeScalingPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingPolicyRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScalingPolicyWithContext is the same as DescribeScalingPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScalingPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScalingPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScalingPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeScheduledTask = "DescribeScheduledTask"
+
+// DescribeScheduledTaskRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeScheduledTask operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeScheduledTask for more information on using the DescribeScheduledTask
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeScheduledTaskRequest method.
+//    req, resp := client.DescribeScheduledTaskRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScheduledTask
+func (c *Kec) DescribeScheduledTaskRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeScheduledTask,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeScheduledTask API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeScheduledTask for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeScheduledTask
+func (c *Kec) DescribeScheduledTask(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeScheduledTaskRequest(input)
+	return out, req.Send()
+}
+
+// DescribeScheduledTaskWithContext is the same as DescribeScheduledTask with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeScheduledTask for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeScheduledTaskWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeScheduledTaskRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDetachInstance = "DetachInstance"
+
+// DetachInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the DetachInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetachInstance for more information on using the DetachInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DetachInstanceRequest method.
+//    req, resp := client.DetachInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DetachInstance
+func (c *Kec) DetachInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDetachInstance,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DetachInstance API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DetachInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DetachInstance
+func (c *Kec) DetachInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DetachInstanceRequest(input)
+	return out, req.Send()
+}
+
+// DetachInstanceWithContext is the same as DetachInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetachInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DetachInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DetachInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDetachKey = "DetachKey"
 
 // DetachKeyRequest generates a "ksc/request.Request" representing the
@@ -1754,6 +3068,152 @@ func (c *Kec) DetachNetworkInterface(input *map[string]interface{}) (*map[string
 // for more information on using Contexts.
 func (c *Kec) DetachNetworkInterfaceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DetachNetworkInterfaceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDisableScalingGroup = "DisableScalingGroup"
+
+// DisableScalingGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DisableScalingGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DisableScalingGroup for more information on using the DisableScalingGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DisableScalingGroupRequest method.
+//    req, resp := client.DisableScalingGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DisableScalingGroup
+func (c *Kec) DisableScalingGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDisableScalingGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DisableScalingGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DisableScalingGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DisableScalingGroup
+func (c *Kec) DisableScalingGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DisableScalingGroupRequest(input)
+	return out, req.Send()
+}
+
+// DisableScalingGroupWithContext is the same as DisableScalingGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DisableScalingGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DisableScalingGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DisableScalingGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opEnableScalingGroup = "EnableScalingGroup"
+
+// EnableScalingGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the EnableScalingGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See EnableScalingGroup for more information on using the EnableScalingGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the EnableScalingGroupRequest method.
+//    req, resp := client.EnableScalingGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/EnableScalingGroup
+func (c *Kec) EnableScalingGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opEnableScalingGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// EnableScalingGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation EnableScalingGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/EnableScalingGroup
+func (c *Kec) EnableScalingGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.EnableScalingGroupRequest(input)
+	return out, req.Send()
+}
+
+// EnableScalingGroupWithContext is the same as EnableScalingGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See EnableScalingGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) EnableScalingGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.EnableScalingGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -2343,6 +3803,371 @@ func (c *Kec) ModifyNetworkInterfaceAttributeWithContext(ctx aws.Context, input 
 	return out, req.Send()
 }
 
+const opModifyScalingConfiguration = "ModifyScalingConfiguration"
+
+// ModifyScalingConfigurationRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyScalingConfiguration operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyScalingConfiguration for more information on using the ModifyScalingConfiguration
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyScalingConfigurationRequest method.
+//    req, resp := client.ModifyScalingConfigurationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingConfiguration
+func (c *Kec) ModifyScalingConfigurationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyScalingConfiguration,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyScalingConfiguration API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyScalingConfiguration for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingConfiguration
+func (c *Kec) ModifyScalingConfiguration(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingConfigurationRequest(input)
+	return out, req.Send()
+}
+
+// ModifyScalingConfigurationWithContext is the same as ModifyScalingConfiguration with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyScalingConfiguration for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyScalingConfigurationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingConfigurationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyScalingGroup = "ModifyScalingGroup"
+
+// ModifyScalingGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyScalingGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyScalingGroup for more information on using the ModifyScalingGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyScalingGroupRequest method.
+//    req, resp := client.ModifyScalingGroupRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingGroup
+func (c *Kec) ModifyScalingGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyScalingGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyScalingGroup API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyScalingGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingGroup
+func (c *Kec) ModifyScalingGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingGroupRequest(input)
+	return out, req.Send()
+}
+
+// ModifyScalingGroupWithContext is the same as ModifyScalingGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyScalingGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyScalingGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyScalingNotification = "ModifyScalingNotification"
+
+// ModifyScalingNotificationRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyScalingNotification operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyScalingNotification for more information on using the ModifyScalingNotification
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyScalingNotificationRequest method.
+//    req, resp := client.ModifyScalingNotificationRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingNotification
+func (c *Kec) ModifyScalingNotificationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyScalingNotification,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyScalingNotification API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyScalingNotification for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingNotification
+func (c *Kec) ModifyScalingNotification(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingNotificationRequest(input)
+	return out, req.Send()
+}
+
+// ModifyScalingNotificationWithContext is the same as ModifyScalingNotification with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyScalingNotification for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyScalingNotificationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingNotificationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyScalingPolicy = "ModifyScalingPolicy"
+
+// ModifyScalingPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyScalingPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyScalingPolicy for more information on using the ModifyScalingPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyScalingPolicyRequest method.
+//    req, resp := client.ModifyScalingPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingPolicy
+func (c *Kec) ModifyScalingPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyScalingPolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyScalingPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyScalingPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScalingPolicy
+func (c *Kec) ModifyScalingPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingPolicyRequest(input)
+	return out, req.Send()
+}
+
+// ModifyScalingPolicyWithContext is the same as ModifyScalingPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyScalingPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyScalingPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyScalingPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyScheduledTask = "ModifyScheduledTask"
+
+// ModifyScheduledTaskRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyScheduledTask operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyScheduledTask for more information on using the ModifyScheduledTask
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyScheduledTaskRequest method.
+//    req, resp := client.ModifyScheduledTaskRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScheduledTask
+func (c *Kec) ModifyScheduledTaskRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyScheduledTask,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyScheduledTask API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyScheduledTask for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyScheduledTask
+func (c *Kec) ModifyScheduledTask(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyScheduledTaskRequest(input)
+	return out, req.Send()
+}
+
+// ModifyScheduledTaskWithContext is the same as ModifyScheduledTask with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyScheduledTask for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyScheduledTaskWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyScheduledTaskRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRebootInstances = "RebootInstances"
 
 // RebootInstancesRequest generates a "ksc/request.Request" representing the
@@ -2703,6 +4528,79 @@ func (c *Kec) RunInstances(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Kec) RunInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RunInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opSetKvmProtectedDetach = "SetKvmProtectedDetach"
+
+// SetKvmProtectedDetachRequest generates a "ksc/request.Request" representing the
+// client's request for the SetKvmProtectedDetach operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SetKvmProtectedDetach for more information on using the SetKvmProtectedDetach
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the SetKvmProtectedDetachRequest method.
+//    req, resp := client.SetKvmProtectedDetachRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/SetKvmProtectedDetach
+func (c *Kec) SetKvmProtectedDetachRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSetKvmProtectedDetach,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// SetKvmProtectedDetach API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation SetKvmProtectedDetach for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/SetKvmProtectedDetach
+func (c *Kec) SetKvmProtectedDetach(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SetKvmProtectedDetachRequest(input)
+	return out, req.Send()
+}
+
+// SetKvmProtectedDetachWithContext is the same as SetKvmProtectedDetach with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SetKvmProtectedDetach for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) SetKvmProtectedDetachWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SetKvmProtectedDetachRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
