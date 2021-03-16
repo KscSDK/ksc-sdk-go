@@ -276,6 +276,10 @@ type KecAPI interface {
 	ModifyScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyScalingLoadBalancers(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScalingLoadBalancersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScalingLoadBalancersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyScalingNotification(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyScalingNotificationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyScalingNotificationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
