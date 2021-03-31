@@ -2781,6 +2781,79 @@ func (c *Slb) ModifyLoadBalancerAclWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opModifyLoadBalancerAclEntry = "DescribeBackendServers"
+
+// ModifyLoadBalancerAclEntryRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyLoadBalancerAclEntry operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyLoadBalancerAclEntry for more information on using the ModifyLoadBalancerAclEntry
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyLoadBalancerAclEntryRequest method.
+//    req, resp := client.ModifyLoadBalancerAclEntryRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyLoadBalancerAclEntry
+func (c *Slb) ModifyLoadBalancerAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyLoadBalancerAclEntry,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyLoadBalancerAclEntry API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyLoadBalancerAclEntry for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyLoadBalancerAclEntry
+func (c *Slb) ModifyLoadBalancerAclEntry(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyLoadBalancerAclEntryRequest(input)
+	return out, req.Send()
+}
+
+// ModifyLoadBalancerAclEntryWithContext is the same as ModifyLoadBalancerAclEntry with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyLoadBalancerAclEntry for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyLoadBalancerAclEntryWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyLoadBalancerAclEntryRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifySlbRule = "ModifySlbRule"
 
 // ModifySlbRuleRequest generates a "ksc/request.Request" representing the
