@@ -212,6 +212,10 @@ type SlbAPI interface {
 	ModifyLoadBalancerAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyLoadBalancerAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyLoadBalancerAclEntry(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyLoadBalancerAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyLoadBalancerAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifySlbRule(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySlbRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySlbRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
