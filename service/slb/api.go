@@ -2781,7 +2781,7 @@ func (c *Slb) ModifyLoadBalancerAclWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
-const opModifyLoadBalancerAclEntry = "DescribeBackendServers"
+const opModifyLoadBalancerAclEntry = "ModifyLoadBalancerAclEntry"
 
 // ModifyLoadBalancerAclEntryRequest generates a "ksc/request.Request" representing the
 // client's request for the ModifyLoadBalancerAclEntry operation. The "output" return
