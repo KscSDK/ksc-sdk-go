@@ -2007,7 +2007,7 @@ const opDescribeInstances = "DescribeInstances"
 func (c *Kec) DescribeInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeInstances,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 

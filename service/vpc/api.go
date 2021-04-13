@@ -2664,7 +2664,7 @@ const opDescribeNats = "DescribeNats"
 func (c *Vpc) DescribeNatsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeNats,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
