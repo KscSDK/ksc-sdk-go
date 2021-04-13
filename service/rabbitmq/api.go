@@ -7,6 +7,298 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddSecurityGroupRule = "AddSecurityGroupRule"
+
+// AddSecurityGroupRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the AddSecurityGroupRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddSecurityGroupRule for more information on using the AddSecurityGroupRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddSecurityGroupRuleRequest method.
+//    req, resp := client.AddSecurityGroupRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/AddSecurityGroupRule
+func (c *Rabbitmq) AddSecurityGroupRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddSecurityGroupRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddSecurityGroupRule API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation AddSecurityGroupRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/AddSecurityGroupRule
+func (c *Rabbitmq) AddSecurityGroupRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddSecurityGroupRuleRequest(input)
+	return out, req.Send()
+}
+
+// AddSecurityGroupRuleWithContext is the same as AddSecurityGroupRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddSecurityGroupRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) AddSecurityGroupRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddSecurityGroupRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opAllocateEip = "AllocateEip"
+
+// AllocateEipRequest generates a "ksc/request.Request" representing the
+// client's request for the AllocateEip operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AllocateEip for more information on using the AllocateEip
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AllocateEipRequest method.
+//    req, resp := client.AllocateEipRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/AllocateEip
+func (c *Rabbitmq) AllocateEipRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAllocateEip,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AllocateEip API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation AllocateEip for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/AllocateEip
+func (c *Rabbitmq) AllocateEip(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AllocateEipRequest(input)
+	return out, req.Send()
+}
+
+// AllocateEipWithContext is the same as AllocateEip with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AllocateEip for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) AllocateEipWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AllocateEipRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCheckInstanceConfig = "CheckInstanceConfig"
+
+// CheckInstanceConfigRequest generates a "ksc/request.Request" representing the
+// client's request for the CheckInstanceConfig operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CheckInstanceConfig for more information on using the CheckInstanceConfig
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CheckInstanceConfigRequest method.
+//    req, resp := client.CheckInstanceConfigRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/CheckInstanceConfig
+func (c *Rabbitmq) CheckInstanceConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCheckInstanceConfig,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CheckInstanceConfig API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation CheckInstanceConfig for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/CheckInstanceConfig
+func (c *Rabbitmq) CheckInstanceConfig(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CheckInstanceConfigRequest(input)
+	return out, req.Send()
+}
+
+// CheckInstanceConfigWithContext is the same as CheckInstanceConfig with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CheckInstanceConfig for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) CheckInstanceConfigWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CheckInstanceConfigRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCheckInstanceStatus = "CheckInstanceStatus"
+
+// CheckInstanceStatusRequest generates a "ksc/request.Request" representing the
+// client's request for the CheckInstanceStatus operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CheckInstanceStatus for more information on using the CheckInstanceStatus
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CheckInstanceStatusRequest method.
+//    req, resp := client.CheckInstanceStatusRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/CheckInstanceStatus
+func (c *Rabbitmq) CheckInstanceStatusRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCheckInstanceStatus,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CheckInstanceStatus API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation CheckInstanceStatus for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/CheckInstanceStatus
+func (c *Rabbitmq) CheckInstanceStatus(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CheckInstanceStatusRequest(input)
+	return out, req.Send()
+}
+
+// CheckInstanceStatusWithContext is the same as CheckInstanceStatus with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CheckInstanceStatus for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) CheckInstanceStatusWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CheckInstanceStatusRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateInstance = "CreateInstance"
 
 // CreateInstanceRequest generates a "ksc/request.Request" representing the
@@ -47,8 +339,6 @@ func (c *Rabbitmq) CreateInstanceRequest(input *map[string]interface{}) (req *re
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
-	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
-
 	return
 }
 
@@ -77,6 +367,79 @@ func (c *Rabbitmq) CreateInstance(input *map[string]interface{}) (*map[string]in
 // for more information on using Contexts.
 func (c *Rabbitmq) CreateInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeallocateEip = "DeallocateEip"
+
+// DeallocateEipRequest generates a "ksc/request.Request" representing the
+// client's request for the DeallocateEip operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeallocateEip for more information on using the DeallocateEip
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeallocateEipRequest method.
+//    req, resp := client.DeallocateEipRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DeallocateEip
+func (c *Rabbitmq) DeallocateEipRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeallocateEip,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeallocateEip API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DeallocateEip for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DeallocateEip
+func (c *Rabbitmq) DeallocateEip(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeallocateEipRequest(input)
+	return out, req.Send()
+}
+
+// DeallocateEipWithContext is the same as DeallocateEip with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeallocateEip for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DeallocateEipWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeallocateEipRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -155,6 +518,79 @@ func (c *Rabbitmq) DeleteInstanceWithContext(ctx aws.Context, input *map[string]
 	return out, req.Send()
 }
 
+const opDeleteSecurityGroupRules = "DeleteSecurityGroupRules"
+
+// DeleteSecurityGroupRulesRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteSecurityGroupRules operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteSecurityGroupRules for more information on using the DeleteSecurityGroupRules
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteSecurityGroupRulesRequest method.
+//    req, resp := client.DeleteSecurityGroupRulesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DeleteSecurityGroupRules
+func (c *Rabbitmq) DeleteSecurityGroupRulesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteSecurityGroupRules,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteSecurityGroupRules API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DeleteSecurityGroupRules for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DeleteSecurityGroupRules
+func (c *Rabbitmq) DeleteSecurityGroupRules(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteSecurityGroupRulesRequest(input)
+	return out, req.Send()
+}
+
+// DeleteSecurityGroupRulesWithContext is the same as DeleteSecurityGroupRules with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteSecurityGroupRules for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DeleteSecurityGroupRulesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteSecurityGroupRulesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeInstance = "DescribeInstance"
 
 // DescribeInstanceRequest generates a "ksc/request.Request" representing the
@@ -228,6 +664,79 @@ func (c *Rabbitmq) DescribeInstanceWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opDescribeInstanceNodes = "DescribeInstanceNodes"
+
+// DescribeInstanceNodesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeInstanceNodes operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeInstanceNodes for more information on using the DescribeInstanceNodes
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeInstanceNodesRequest method.
+//    req, resp := client.DescribeInstanceNodesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeInstanceNodes
+func (c *Rabbitmq) DescribeInstanceNodesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeInstanceNodes,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeInstanceNodes API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DescribeInstanceNodes for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeInstanceNodes
+func (c *Rabbitmq) DescribeInstanceNodes(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeInstanceNodesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeInstanceNodesWithContext is the same as DescribeInstanceNodes with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeInstanceNodes for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DescribeInstanceNodesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeInstanceNodesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeInstances = "DescribeInstances"
 
 // DescribeInstancesRequest generates a "ksc/request.Request" representing the
@@ -296,6 +805,517 @@ func (c *Rabbitmq) DescribeInstances(input *map[string]interface{}) (*map[string
 // for more information on using Contexts.
 func (c *Rabbitmq) DescribeInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeRegions = "DescribeRegions"
+
+// DescribeRegionsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeRegions operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeRegions for more information on using the DescribeRegions
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeRegionsRequest method.
+//    req, resp := client.DescribeRegionsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeRegions
+func (c *Rabbitmq) DescribeRegionsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeRegions,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeRegions API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DescribeRegions for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeRegions
+func (c *Rabbitmq) DescribeRegions(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeRegionsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeRegionsWithContext is the same as DescribeRegions with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeRegions for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DescribeRegionsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeRegionsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeSecurityGroupRules = "DescribeSecurityGroupRules"
+
+// DescribeSecurityGroupRulesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeSecurityGroupRules operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeSecurityGroupRules for more information on using the DescribeSecurityGroupRules
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeSecurityGroupRulesRequest method.
+//    req, resp := client.DescribeSecurityGroupRulesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeSecurityGroupRules
+func (c *Rabbitmq) DescribeSecurityGroupRulesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeSecurityGroupRules,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeSecurityGroupRules API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DescribeSecurityGroupRules for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeSecurityGroupRules
+func (c *Rabbitmq) DescribeSecurityGroupRules(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeSecurityGroupRulesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeSecurityGroupRulesWithContext is the same as DescribeSecurityGroupRules with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeSecurityGroupRules for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DescribeSecurityGroupRulesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeSecurityGroupRulesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeValidRegion = "DescribeValidRegion"
+
+// DescribeValidRegionRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeValidRegion operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeValidRegion for more information on using the DescribeValidRegion
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeValidRegionRequest method.
+//    req, resp := client.DescribeValidRegionRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeValidRegion
+func (c *Rabbitmq) DescribeValidRegionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeValidRegion,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeValidRegion API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DescribeValidRegion for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DescribeValidRegion
+func (c *Rabbitmq) DescribeValidRegion(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeValidRegionRequest(input)
+	return out, req.Send()
+}
+
+// DescribeValidRegionWithContext is the same as DescribeValidRegion with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeValidRegion for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DescribeValidRegionWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeValidRegionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyBandWidth = "ModifyBandWidth"
+
+// ModifyBandWidthRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyBandWidth operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyBandWidth for more information on using the ModifyBandWidth
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyBandWidthRequest method.
+//    req, resp := client.ModifyBandWidthRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/ModifyBandWidth
+func (c *Rabbitmq) ModifyBandWidthRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyBandWidth,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyBandWidth API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation ModifyBandWidth for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/ModifyBandWidth
+func (c *Rabbitmq) ModifyBandWidth(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyBandWidthRequest(input)
+	return out, req.Send()
+}
+
+// ModifyBandWidthWithContext is the same as ModifyBandWidth with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyBandWidth for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) ModifyBandWidthWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyBandWidthRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRename = "Rename"
+
+// RenameRequest generates a "ksc/request.Request" representing the
+// client's request for the Rename operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See Rename for more information on using the Rename
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the RenameRequest method.
+//    req, resp := client.RenameRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/Rename
+func (c *Rabbitmq) RenameRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRename,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// Rename API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation Rename for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/Rename
+func (c *Rabbitmq) Rename(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RenameRequest(input)
+	return out, req.Send()
+}
+
+// RenameWithContext is the same as Rename with the addition of
+// the ability to pass a context and additional request options.
+//
+// See Rename for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) RenameWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RenameRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opResetPassword = "ResetPassword"
+
+// ResetPasswordRequest generates a "ksc/request.Request" representing the
+// client's request for the ResetPassword operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ResetPassword for more information on using the ResetPassword
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ResetPasswordRequest method.
+//    req, resp := client.ResetPasswordRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/ResetPassword
+func (c *Rabbitmq) ResetPasswordRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opResetPassword,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ResetPassword API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation ResetPassword for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/ResetPassword
+func (c *Rabbitmq) ResetPassword(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ResetPasswordRequest(input)
+	return out, req.Send()
+}
+
+// ResetPasswordWithContext is the same as ResetPassword with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ResetPassword for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) ResetPasswordWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ResetPasswordRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRestartInstance = "RestartInstance"
+
+// RestartInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the RestartInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RestartInstance for more information on using the RestartInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the RestartInstanceRequest method.
+//    req, resp := client.RestartInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/RestartInstance
+func (c *Rabbitmq) RestartInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRestartInstance,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// RestartInstance API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation RestartInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/RestartInstance
+func (c *Rabbitmq) RestartInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RestartInstanceRequest(input)
+	return out, req.Send()
+}
+
+// RestartInstanceWithContext is the same as RestartInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RestartInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) RestartInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RestartInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
