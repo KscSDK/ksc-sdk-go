@@ -91,10 +91,6 @@ type EipAPI interface {
 	ReleaseAddress(*map[string]interface{}) (*map[string]interface{}, error)
 	ReleaseAddressWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ReleaseAddressRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	UpdateInstanceProject(*map[string]interface{}) (*map[string]interface{}, error)
-	UpdateInstanceProjectWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	UpdateInstanceProjectRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ EipAPI = (*eip.Eip)(nil)
