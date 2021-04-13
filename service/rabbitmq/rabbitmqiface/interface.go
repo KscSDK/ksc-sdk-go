@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // rabbitmq.
 //    func myFunc(svc rabbitmqiface.RabbitmqAPI) bool {
-//        // Make svc.CreateInstance request
+//        // Make svc.AddSecurityGroupRule request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockRabbitmqClient struct {
 //        rabbitmqiface.RabbitmqAPI
 //    }
-//    func (m *mockRabbitmqClient) CreateInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockRabbitmqClient) AddSecurityGroupRule(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,21 +60,77 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type RabbitmqAPI interface {
+	AddSecurityGroupRule(*map[string]interface{}) (*map[string]interface{}, error)
+	AddSecurityGroupRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddSecurityGroupRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	AllocateEip(*map[string]interface{}) (*map[string]interface{}, error)
+	AllocateEipWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AllocateEipRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CheckInstanceConfig(*map[string]interface{}) (*map[string]interface{}, error)
+	CheckInstanceConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CheckInstanceConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CheckInstanceStatus(*map[string]interface{}) (*map[string]interface{}, error)
+	CheckInstanceStatusWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CheckInstanceStatusRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeallocateEip(*map[string]interface{}) (*map[string]interface{}, error)
+	DeallocateEipWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeallocateEipRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteSecurityGroupRules(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteSecurityGroupRulesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteSecurityGroupRulesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeInstanceNodes(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeInstanceNodesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeInstanceNodesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeRegions(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeRegionsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeRegionsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeSecurityGroupRules(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeSecurityGroupRulesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeSecurityGroupRulesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeValidRegion(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeValidRegionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeValidRegionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyBandWidth(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyBandWidthWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyBandWidthRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	Rename(*map[string]interface{}) (*map[string]interface{}, error)
+	RenameWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RenameRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ResetPassword(*map[string]interface{}) (*map[string]interface{}, error)
+	ResetPasswordWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ResetPasswordRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RestartInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	RestartInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RestartInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	UpgradeInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	UpgradeInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
