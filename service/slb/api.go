@@ -1934,7 +1934,7 @@ const opDescribeLoadBalancers = "DescribeLoadBalancers"
 func (c *Slb) DescribeLoadBalancersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeLoadBalancers,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
