@@ -152,6 +152,10 @@ type KrdsAPI interface {
 	ModifySecurityGroupRuleNameWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySecurityGroupRuleNameRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	RebootDBInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	RebootDBInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RebootDBInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ReleaseDBInstanceEip(*map[string]interface{}) (*map[string]interface{}, error)
 	ReleaseDBInstanceEipWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ReleaseDBInstanceEipRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
