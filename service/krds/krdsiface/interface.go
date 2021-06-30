@@ -100,6 +100,10 @@ type KrdsAPI interface {
 	DescribeDBBackupPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBBackupPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeDBBackups(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBBackupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBBackupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeDBInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDBInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
