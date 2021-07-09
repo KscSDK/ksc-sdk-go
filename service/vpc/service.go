@@ -9,6 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/client"
 	"github.com/aws/aws-sdk-go/aws/client/metadata"
+	"github.com/aws/aws-sdk-go/aws/corehandlers"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
 )
@@ -110,6 +111,10 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 
 	// Handlers
 	svc.Handlers.Sign.PushBackNamed(v4.SignRequestHandler)
+	// remove aws user-agent
+	svc.Handlers.Build.Remove(corehandlers.SDKVersionUserAgentHandler)
+	// add ksc user-agent
+	svc.Handlers.Build.PushBackNamed(ksc.SDKVersionUserAgentHandler)
 	svc.Handlers.Build.PushBackNamed(kscquery.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed(kscquery.UnmarshalHandler)
 	svc.Handlers.UnmarshalMeta.PushBackNamed(kscquery.UnmarshalMetaHandler)
