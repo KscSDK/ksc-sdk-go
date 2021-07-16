@@ -1029,6 +1029,225 @@ func (c *Rabbitmq) DescribeValidRegionWithContext(ctx aws.Context, input *map[st
 	return out, req.Send()
 }
 
+const opDisableInstancePlugins = "DisableInstancePlugins"
+
+// DisableInstancePluginsRequest generates a "ksc/request.Request" representing the
+// client's request for the DisableInstancePlugins operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DisableInstancePlugins for more information on using the DisableInstancePlugins
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DisableInstancePluginsRequest method.
+//    req, resp := client.DisableInstancePluginsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DisableInstancePlugins
+func (c *Rabbitmq) DisableInstancePluginsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDisableInstancePlugins,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DisableInstancePlugins API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation DisableInstancePlugins for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/DisableInstancePlugins
+func (c *Rabbitmq) DisableInstancePlugins(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DisableInstancePluginsRequest(input)
+	return out, req.Send()
+}
+
+// DisableInstancePluginsWithContext is the same as DisableInstancePlugins with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DisableInstancePlugins for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) DisableInstancePluginsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DisableInstancePluginsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opEnableInstancePlugins = "EnableInstancePlugins"
+
+// EnableInstancePluginsRequest generates a "ksc/request.Request" representing the
+// client's request for the EnableInstancePlugins operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See EnableInstancePlugins for more information on using the EnableInstancePlugins
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the EnableInstancePluginsRequest method.
+//    req, resp := client.EnableInstancePluginsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/EnableInstancePlugins
+func (c *Rabbitmq) EnableInstancePluginsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opEnableInstancePlugins,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// EnableInstancePlugins API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation EnableInstancePlugins for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/EnableInstancePlugins
+func (c *Rabbitmq) EnableInstancePlugins(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.EnableInstancePluginsRequest(input)
+	return out, req.Send()
+}
+
+// EnableInstancePluginsWithContext is the same as EnableInstancePlugins with the addition of
+// the ability to pass a context and additional request options.
+//
+// See EnableInstancePlugins for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) EnableInstancePluginsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.EnableInstancePluginsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opListInstancePlugins = "ListInstancePlugins"
+
+// ListInstancePluginsRequest generates a "ksc/request.Request" representing the
+// client's request for the ListInstancePlugins operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListInstancePlugins for more information on using the ListInstancePlugins
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ListInstancePluginsRequest method.
+//    req, resp := client.ListInstancePluginsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/ListInstancePlugins
+func (c *Rabbitmq) ListInstancePluginsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opListInstancePlugins,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ListInstancePlugins API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation ListInstancePlugins for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/ListInstancePlugins
+func (c *Rabbitmq) ListInstancePlugins(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ListInstancePluginsRequest(input)
+	return out, req.Send()
+}
+
+// ListInstancePluginsWithContext is the same as ListInstancePlugins with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListInstancePlugins for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) ListInstancePluginsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ListInstancePluginsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyBandWidth = "ModifyBandWidth"
 
 // ModifyBandWidthRequest generates a "ksc/request.Request" representing the
@@ -1316,6 +1535,79 @@ func (c *Rabbitmq) RestartInstance(input *map[string]interface{}) (*map[string]i
 // for more information on using Contexts.
 func (c *Rabbitmq) RestartInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RestartInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opSupportPlugins = "SupportPlugins"
+
+// SupportPluginsRequest generates a "ksc/request.Request" representing the
+// client's request for the SupportPlugins operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SupportPlugins for more information on using the SupportPlugins
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the SupportPluginsRequest method.
+//    req, resp := client.SupportPluginsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/SupportPlugins
+func (c *Rabbitmq) SupportPluginsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSupportPlugins,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// SupportPlugins API operation for rabbitmq.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for rabbitmq's
+// API operation SupportPlugins for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/rabbitmq-2019-10-17/SupportPlugins
+func (c *Rabbitmq) SupportPlugins(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SupportPluginsRequest(input)
+	return out, req.Send()
+}
+
+// SupportPluginsWithContext is the same as SupportPlugins with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SupportPlugins for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Rabbitmq) SupportPluginsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SupportPluginsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

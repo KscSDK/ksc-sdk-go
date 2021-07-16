@@ -116,6 +116,18 @@ type RabbitmqAPI interface {
 	DescribeValidRegionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeValidRegionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DisableInstancePlugins(*map[string]interface{}) (*map[string]interface{}, error)
+	DisableInstancePluginsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DisableInstancePluginsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	EnableInstancePlugins(*map[string]interface{}) (*map[string]interface{}, error)
+	EnableInstancePluginsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	EnableInstancePluginsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ListInstancePlugins(*map[string]interface{}) (*map[string]interface{}, error)
+	ListInstancePluginsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ListInstancePluginsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyBandWidth(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyBandWidthWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyBandWidthRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -131,6 +143,10 @@ type RabbitmqAPI interface {
 	RestartInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	RestartInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RestartInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SupportPlugins(*map[string]interface{}) (*map[string]interface{}, error)
+	SupportPluginsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SupportPluginsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	UpgradeInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	UpgradeInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
