@@ -4,4 +4,4 @@ package ksc
 const SDKName = "ksc-sdk-go"
 
 // SDKVersion is the version of this SDK
-const SDKVersion = "0.1.26"
+const SDKVersion = "0.1.27"
