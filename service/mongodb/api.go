@@ -7,6 +7,79 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddClusterNode = "AddClusterNode"
+
+// AddClusterNodeRequest generates a "ksc/request.Request" representing the
+// client's request for the AddClusterNode operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddClusterNode for more information on using the AddClusterNode
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddClusterNodeRequest method.
+//    req, resp := client.AddClusterNodeRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/AddClusterNode
+func (c *Mongodb) AddClusterNodeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddClusterNode,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddClusterNode API operation for mongodb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for mongodb's
+// API operation AddClusterNode for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/AddClusterNode
+func (c *Mongodb) AddClusterNode(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddClusterNodeRequest(input)
+	return out, req.Send()
+}
+
+// AddClusterNodeWithContext is the same as AddClusterNode with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddClusterNode for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Mongodb) AddClusterNodeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddClusterNodeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAddSecondaryInstance = "AddSecondaryInstance"
 
 // AddSecondaryInstanceRequest generates a "ksc/request.Request" representing the
@@ -367,6 +440,79 @@ func (c *Mongodb) CreateMongoDBSnapshot(input *map[string]interface{}) (*map[str
 // for more information on using Contexts.
 func (c *Mongodb) CreateMongoDBSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateMongoDBSnapshotRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteClusterNode = "DeleteClusterNode"
+
+// DeleteClusterNodeRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteClusterNode operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteClusterNode for more information on using the DeleteClusterNode
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteClusterNodeRequest method.
+//    req, resp := client.DeleteClusterNodeRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/DeleteClusterNode
+func (c *Mongodb) DeleteClusterNodeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteClusterNode,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteClusterNode API operation for mongodb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for mongodb's
+// API operation DeleteClusterNode for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/DeleteClusterNode
+func (c *Mongodb) DeleteClusterNode(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterNodeRequest(input)
+	return out, req.Send()
+}
+
+// DeleteClusterNodeWithContext is the same as DeleteClusterNode with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteClusterNode for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Mongodb) DeleteClusterNodeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterNodeRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1248,6 +1394,79 @@ func (c *Mongodb) RenameMongoDBSnapshotWithContext(ctx aws.Context, input *map[s
 	return out, req.Send()
 }
 
+const opResetPasswordMongoDBInstance = "ResetPasswordMongoDBInstance"
+
+// ResetPasswordMongoDBInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the ResetPasswordMongoDBInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ResetPasswordMongoDBInstance for more information on using the ResetPasswordMongoDBInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ResetPasswordMongoDBInstanceRequest method.
+//    req, resp := client.ResetPasswordMongoDBInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/ResetPasswordMongoDBInstance
+func (c *Mongodb) ResetPasswordMongoDBInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opResetPasswordMongoDBInstance,
+		HTTPMethod: "PUT",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ResetPasswordMongoDBInstance API operation for mongodb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for mongodb's
+// API operation ResetPasswordMongoDBInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/ResetPasswordMongoDBInstance
+func (c *Mongodb) ResetPasswordMongoDBInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ResetPasswordMongoDBInstanceRequest(input)
+	return out, req.Send()
+}
+
+// ResetPasswordMongoDBInstanceWithContext is the same as ResetPasswordMongoDBInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ResetPasswordMongoDBInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Mongodb) ResetPasswordMongoDBInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ResetPasswordMongoDBInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRestartMongoDBInstance = "RestartMongoDBInstance"
 
 // RestartMongoDBInstanceRequest generates a "ksc/request.Request" representing the
@@ -1389,6 +1608,152 @@ func (c *Mongodb) SetMongoDBTimingSnapshot(input *map[string]interface{}) (*map[
 // for more information on using Contexts.
 func (c *Mongodb) SetMongoDBTimingSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.SetMongoDBTimingSnapshotRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUpdateMongoDBInstance = "UpdateMongoDBInstance"
+
+// UpdateMongoDBInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the UpdateMongoDBInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateMongoDBInstance for more information on using the UpdateMongoDBInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the UpdateMongoDBInstanceRequest method.
+//    req, resp := client.UpdateMongoDBInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/UpdateMongoDBInstance
+func (c *Mongodb) UpdateMongoDBInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUpdateMongoDBInstance,
+		HTTPMethod: "PUT",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UpdateMongoDBInstance API operation for mongodb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for mongodb's
+// API operation UpdateMongoDBInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/UpdateMongoDBInstance
+func (c *Mongodb) UpdateMongoDBInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UpdateMongoDBInstanceRequest(input)
+	return out, req.Send()
+}
+
+// UpdateMongoDBInstanceWithContext is the same as UpdateMongoDBInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateMongoDBInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Mongodb) UpdateMongoDBInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UpdateMongoDBInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUpdateMongoDBInstanceCluster = "UpdateMongoDBInstanceCluster"
+
+// UpdateMongoDBInstanceClusterRequest generates a "ksc/request.Request" representing the
+// client's request for the UpdateMongoDBInstanceCluster operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateMongoDBInstanceCluster for more information on using the UpdateMongoDBInstanceCluster
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the UpdateMongoDBInstanceClusterRequest method.
+//    req, resp := client.UpdateMongoDBInstanceClusterRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/UpdateMongoDBInstanceCluster
+func (c *Mongodb) UpdateMongoDBInstanceClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUpdateMongoDBInstanceCluster,
+		HTTPMethod: "PUT",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UpdateMongoDBInstanceCluster API operation for mongodb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for mongodb's
+// API operation UpdateMongoDBInstanceCluster for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/mongodb-2017-01-01/UpdateMongoDBInstanceCluster
+func (c *Mongodb) UpdateMongoDBInstanceCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UpdateMongoDBInstanceClusterRequest(input)
+	return out, req.Send()
+}
+
+// UpdateMongoDBInstanceClusterWithContext is the same as UpdateMongoDBInstanceCluster with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateMongoDBInstanceCluster for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Mongodb) UpdateMongoDBInstanceClusterWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UpdateMongoDBInstanceClusterRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
