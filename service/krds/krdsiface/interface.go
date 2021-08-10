@@ -104,6 +104,18 @@ type KrdsAPI interface {
 	DescribeDBBackupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBBackupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeDBInstancePackages(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBInstancePackagesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBInstancePackagesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDBInstanceParameters(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBInstanceParametersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBInstanceParametersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDBInstanceRegions(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBInstanceRegionsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBInstanceRegionsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeDBInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDBInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
