@@ -810,6 +810,225 @@ func (c *Krds) DescribeDBBackupsWithContext(ctx aws.Context, input *map[string]i
 	return out, req.Send()
 }
 
+const opDescribeDBInstancePackages = "DescribeDBInstancePackages"
+
+// DescribeDBInstancePackagesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDBInstancePackages operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDBInstancePackages for more information on using the DescribeDBInstancePackages
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDBInstancePackagesRequest method.
+//    req, resp := client.DescribeDBInstancePackagesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/krds-2016-07-01/DescribeDBInstancePackages
+func (c *Krds) DescribeDBInstancePackagesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDBInstancePackages,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDBInstancePackages API operation for krds.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for krds's
+// API operation DescribeDBInstancePackages for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/krds-2016-07-01/DescribeDBInstancePackages
+func (c *Krds) DescribeDBInstancePackages(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDBInstancePackagesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDBInstancePackagesWithContext is the same as DescribeDBInstancePackages with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDBInstancePackages for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Krds) DescribeDBInstancePackagesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDBInstancePackagesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDBInstanceParameters = "DescribeDBInstanceParameters"
+
+// DescribeDBInstanceParametersRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDBInstanceParameters operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDBInstanceParameters for more information on using the DescribeDBInstanceParameters
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDBInstanceParametersRequest method.
+//    req, resp := client.DescribeDBInstanceParametersRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/krds-2016-07-01/DescribeDBInstanceParameters
+func (c *Krds) DescribeDBInstanceParametersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDBInstanceParameters,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDBInstanceParameters API operation for krds.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for krds's
+// API operation DescribeDBInstanceParameters for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/krds-2016-07-01/DescribeDBInstanceParameters
+func (c *Krds) DescribeDBInstanceParameters(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDBInstanceParametersRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDBInstanceParametersWithContext is the same as DescribeDBInstanceParameters with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDBInstanceParameters for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Krds) DescribeDBInstanceParametersWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDBInstanceParametersRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDBInstanceRegions = "DescribeDBInstanceRegions"
+
+// DescribeDBInstanceRegionsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDBInstanceRegions operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDBInstanceRegions for more information on using the DescribeDBInstanceRegions
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDBInstanceRegionsRequest method.
+//    req, resp := client.DescribeDBInstanceRegionsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/krds-2016-07-01/DescribeDBInstanceRegions
+func (c *Krds) DescribeDBInstanceRegionsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDBInstanceRegions,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDBInstanceRegions API operation for krds.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for krds's
+// API operation DescribeDBInstanceRegions for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/krds-2016-07-01/DescribeDBInstanceRegions
+func (c *Krds) DescribeDBInstanceRegions(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDBInstanceRegionsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDBInstanceRegionsWithContext is the same as DescribeDBInstanceRegions with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDBInstanceRegions for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Krds) DescribeDBInstanceRegionsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDBInstanceRegionsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeDBInstances = "DescribeDBInstances"
 
 // DescribeDBInstancesRequest generates a "ksc/request.Request" representing the
