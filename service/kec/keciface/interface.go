@@ -68,6 +68,10 @@ type KecAPI interface {
 	AttachInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AttachInstancesIamRole(*map[string]interface{}) (*map[string]interface{}, error)
+	AttachInstancesIamRoleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AttachInstancesIamRoleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AttachKey(*map[string]interface{}) (*map[string]interface{}, error)
 	AttachKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachKeyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -172,6 +176,10 @@ type KecAPI interface {
 	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeKecIamRoles(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeKecIamRolesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeKecIamRolesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeKecInventory(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeKecInventoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeKecInventoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -219,6 +227,10 @@ type KecAPI interface {
 	DetachInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	DetachInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DetachInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DetachInstancesIamRole(*map[string]interface{}) (*map[string]interface{}, error)
+	DetachInstancesIamRoleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DetachInstancesIamRoleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DetachKey(*map[string]interface{}) (*map[string]interface{}, error)
 	DetachKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
