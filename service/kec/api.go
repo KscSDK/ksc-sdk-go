@@ -153,6 +153,79 @@ func (c *Kec) AttachInstanceWithContext(ctx aws.Context, input *map[string]inter
 	return out, req.Send()
 }
 
+const opAttachInstancesIamRole = "AttachInstancesIamRole"
+
+// AttachInstancesIamRoleRequest generates a "ksc/request.Request" representing the
+// client's request for the AttachInstancesIamRole operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AttachInstancesIamRole for more information on using the AttachInstancesIamRole
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AttachInstancesIamRoleRequest method.
+//    req, resp := client.AttachInstancesIamRoleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/AttachInstancesIamRole
+func (c *Kec) AttachInstancesIamRoleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAttachInstancesIamRole,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AttachInstancesIamRole API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation AttachInstancesIamRole for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/AttachInstancesIamRole
+func (c *Kec) AttachInstancesIamRole(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AttachInstancesIamRoleRequest(input)
+	return out, req.Send()
+}
+
+// AttachInstancesIamRoleWithContext is the same as AttachInstancesIamRole with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AttachInstancesIamRole for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) AttachInstancesIamRoleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AttachInstancesIamRoleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAttachKey = "AttachKey"
 
 // AttachKeyRequest generates a "ksc/request.Request" representing the
@@ -2051,6 +2124,79 @@ func (c *Kec) DescribeInstancesWithContext(ctx aws.Context, input *map[string]in
 	return out, req.Send()
 }
 
+const opDescribeKecIamRoles = "DescribeKecIamRoles"
+
+// DescribeKecIamRolesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeKecIamRoles operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeKecIamRoles for more information on using the DescribeKecIamRoles
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeKecIamRolesRequest method.
+//    req, resp := client.DescribeKecIamRolesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeKecIamRoles
+func (c *Kec) DescribeKecIamRolesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeKecIamRoles,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeKecIamRoles API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeKecIamRoles for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeKecIamRoles
+func (c *Kec) DescribeKecIamRoles(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeKecIamRolesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeKecIamRolesWithContext is the same as DescribeKecIamRoles with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeKecIamRoles for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeKecIamRolesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeKecIamRolesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeKecInventory = "DescribeKecInventory"
 
 // DescribeKecInventoryRequest generates a "ksc/request.Request" representing the
@@ -2922,6 +3068,79 @@ func (c *Kec) DetachInstance(input *map[string]interface{}) (*map[string]interfa
 // for more information on using Contexts.
 func (c *Kec) DetachInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DetachInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDetachInstancesIamRole = "DetachInstancesIamRole"
+
+// DetachInstancesIamRoleRequest generates a "ksc/request.Request" representing the
+// client's request for the DetachInstancesIamRole operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetachInstancesIamRole for more information on using the DetachInstancesIamRole
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DetachInstancesIamRoleRequest method.
+//    req, resp := client.DetachInstancesIamRoleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DetachInstancesIamRole
+func (c *Kec) DetachInstancesIamRoleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDetachInstancesIamRole,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DetachInstancesIamRole API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DetachInstancesIamRole for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DetachInstancesIamRole
+func (c *Kec) DetachInstancesIamRole(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DetachInstancesIamRoleRequest(input)
+	return out, req.Send()
+}
+
+// DetachInstancesIamRoleWithContext is the same as DetachInstancesIamRole with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetachInstancesIamRole for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DetachInstancesIamRoleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DetachInstancesIamRoleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
