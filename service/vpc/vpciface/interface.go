@@ -276,6 +276,10 @@ type VpcAPI interface {
 	ModifyNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNetworkAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyNetworkInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifySecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
