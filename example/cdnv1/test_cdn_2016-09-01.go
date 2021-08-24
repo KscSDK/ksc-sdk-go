@@ -5,16 +5,16 @@ import (
 	"fmt"
 	"github.com/KscSDK/ksc-sdk-go/ksc"
 	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
-	"github.com/KscSDK/ksc-sdk-go/service/cdn1"
+	"github.com/KscSDK/ksc-sdk-go/service/cdnv1"
 )
 
 func main() {
-	ak := "yoursak"
-	sk := "yourssk"
-	region := "yoursregion"
+	ak := "你的ak"
+	sk := "你的sk"
+	region := "cn-shanghai-2"
 
 	//debug模式的话 打开这个开关
-	svc := cdn1.SdkNew(ksc.NewClient(ak, sk ,true), &ksc.Config{Region: &region}, &utils.UrlInfo{
+	svc := cdnv1.SdkNew(ksc.NewClient(ak, sk ,true), &ksc.Config{Region: &region}, &utils.UrlInfo{
 		UseSSL: true,
 	})
 
@@ -31,23 +31,23 @@ func main() {
 	//        CdnType         string  产品类型，取值为video:音视频点播,file:大文件下载,live:流媒体直播，多个产品类型之间用逗号（半角）间隔，默认为空，代表当前用户下全部产品类型
 	//        FuzzyMatch      string  域名过滤是否使用模糊匹配，取值为on：开启，off：关闭，默认为on
 
-	//getCdnDomains := make(map[string]interface{})
-	//getCdnDomains["PageSize"] = "20"
-	//getCdnDomains["PageNumber"] = "1"
-	//getCdnDomains["DomainName"] = ""
-	//getCdnDomains["ProjectId"] = ""
-	//getCdnDomains["DomainStatus"] = ""
-	//getCdnDomains["CdnType"] = "live"
-	//getCdnDomains["FuzzyMatch"] = ""
-	//
-	//resp, err = svc.GetCdnDomainsGet(&getCdnDomains)
-	//if err != nil {
-	//	fmt.Println("error:", err.Error())
-	//}
-	//if resp != nil {
-	//	str, _ := json.Marshal(&resp)
-	//	fmt.Printf("%+v\n", string(str))
-	//}
+	getCdnDomains := make(map[string]interface{})
+	getCdnDomains["PageSize"] = "20"
+	getCdnDomains["PageNumber"] = "1"
+	getCdnDomains["DomainName"] = ""
+	getCdnDomains["ProjectId"] = ""
+	getCdnDomains["DomainStatus"] = ""
+	getCdnDomains["CdnType"] = "live"
+	getCdnDomains["FuzzyMatch"] = ""
+
+	resp, err = svc.GetCdnDomainsGet(&getCdnDomains)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
 
 	//	****************************************查询域名列表POST（GetCdnDomains）***************************************************
 	// Parameters:
@@ -3539,20 +3539,20 @@ func main() {
 	//        ResultType  String  取值为0：只返回域名级别的汇总数据；1：返回域名级别+流维度的详细数据；
 	//        LimitN 否 Int Top条数，取值为1-200，最大200，默认100
 
-	getLivePlayStatData := make(map[string]interface{})
-	getLivePlayStatData["DomainIds"] = "2D07WRH"
-	getLivePlayStatData["StartTime"] = "2021-06-01T21:14+0800"
-	getLivePlayStatData["EndTime"] = "2021-06-01T21:34+0800"
-	getLivePlayStatData["Regions"] = "CN"
-	getLivePlayStatData["ResultType"] = 0
-	getLivePlayStatData["LimitN"] = 10
-
-	resp, err = svc.GetLivePlayStatDataPost(&getLivePlayStatData)
-	if err != nil {
-		fmt.Println("error:", err.Error())
-	}
-	if resp != nil {
-		str, _ := json.Marshal(&resp)
-		fmt.Printf("%+v\n", string(str))
-	}
+	//getLivePlayStatData := make(map[string]interface{})
+	//getLivePlayStatData["DomainIds"] = "2D07WRH"
+	//getLivePlayStatData["StartTime"] = "2021-06-01T21:14+0800"
+	//getLivePlayStatData["EndTime"] = "2021-06-01T21:34+0800"
+	//getLivePlayStatData["Regions"] = "CN"
+	//getLivePlayStatData["ResultType"] = 0
+	//getLivePlayStatData["LimitN"] = 10
+	//
+	//resp, err = svc.GetLivePlayStatDataPost(&getLivePlayStatData)
+	//if err != nil {
+	//	fmt.Println("error:", err.Error())
+	//}
+	//if resp != nil {
+	//	str, _ := json.Marshal(&resp)
+	//	fmt.Printf("%+v\n", string(str))
+	//}
 }
