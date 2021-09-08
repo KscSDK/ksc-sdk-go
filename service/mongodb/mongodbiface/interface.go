@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // mongodb.
 //    func myFunc(svc mongodbiface.MongodbAPI) bool {
-//        // Make svc.AddSecondaryInstance request
+//        // Make svc.AddClusterNode request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockMongodbClient struct {
 //        mongodbiface.MongodbAPI
 //    }
-//    func (m *mockMongodbClient) AddSecondaryInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockMongodbClient) AddClusterNode(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,10 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type MongodbAPI interface {
+	AddClusterNode(*map[string]interface{}) (*map[string]interface{}, error)
+	AddClusterNodeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddClusterNodeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AddSecondaryInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	AddSecondaryInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddSecondaryInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -79,6 +83,10 @@ type MongodbAPI interface {
 	CreateMongoDBSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateMongoDBSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateMongoDBSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteClusterNode(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteClusterNodeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteClusterNodeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteMongoDBInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteMongoDBInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -128,6 +136,10 @@ type MongodbAPI interface {
 	RenameMongoDBSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RenameMongoDBSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ResetPasswordMongoDBInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	ResetPasswordMongoDBInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ResetPasswordMongoDBInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	RestartMongoDBInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	RestartMongoDBInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RestartMongoDBInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -135,6 +147,14 @@ type MongodbAPI interface {
 	SetMongoDBTimingSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	SetMongoDBTimingSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetMongoDBTimingSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdateMongoDBInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdateMongoDBInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdateMongoDBInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdateMongoDBInstanceCluster(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdateMongoDBInstanceClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdateMongoDBInstanceClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ MongodbAPI = (*mongodb.Mongodb)(nil)

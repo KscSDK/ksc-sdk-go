@@ -104,6 +104,18 @@ type KrdsAPI interface {
 	DescribeDBBackupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBBackupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeDBInstancePackages(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBInstancePackagesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBInstancePackagesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDBInstanceParameters(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBInstanceParametersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBInstanceParametersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDBInstanceRegions(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDBInstanceRegionsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDBInstanceRegionsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeDBInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDBInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -111,6 +123,10 @@ type KrdsAPI interface {
 	DescribeDBParameterGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDBParameterGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDBParameterGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeEngineDefaultParameters(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeEngineDefaultParametersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeEngineDefaultParametersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -151,6 +167,10 @@ type KrdsAPI interface {
 	ModifySecurityGroupRuleName(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySecurityGroupRuleNameWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySecurityGroupRuleNameRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RebootDBInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	RebootDBInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RebootDBInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ReleaseDBInstanceEip(*map[string]interface{}) (*map[string]interface{}, error)
 	ReleaseDBInstanceEipWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

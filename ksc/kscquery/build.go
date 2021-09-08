@@ -1,12 +1,15 @@
 package kscquery
 
 import (
+	"fmt"
+	"github.com/KscSDK/ksc-sdk-go/ksc"
 	"github.com/KscSDK/ksc-sdk-go/ksc/kscbody"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
 	"net/url"
 	"reflect"
+	"runtime"
 	"strings"
 )
 
@@ -33,6 +36,8 @@ func Build(r *request.Request) {
 		for k, v := range m {
 			if reflect.TypeOf(v).String() == "string" {
 				body.Add(k, v.(string))
+			} else {
+				body.Add(k, fmt.Sprintf("%v", v))
 			}
 		}
 	} else if err := queryutil.Parse(body, r.Params, false); err != nil {
@@ -58,4 +63,8 @@ func Build(r *request.Request) {
 	} else {
 		r.HTTPRequest.URL.RawQuery = body.Encode()
 	}
+	//user-agent
+	r.HTTPRequest.Header.Del("User-Agent")
+	fn := request.MakeAddToUserAgentHandler(ksc.SDKName, ksc.SDKVersion, runtime.Version(), runtime.GOOS, runtime.GOARCH)
+	fn(r)
 }

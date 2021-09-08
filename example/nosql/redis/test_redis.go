@@ -35,6 +35,7 @@ func CreateCacheCluster() {
 	form["VpcId"] = "vpcId"
 	form["VnetId"] = "vnetId"
 	form["Protocol"] = "4.0"
+	form["SecurityGroupId"] = "10086"
 	nosql.ProcessResult(v1.CreateCacheCluster(&form))
 }
 
@@ -49,18 +50,6 @@ func CreateCacheParameterGroup() {
 	form["Parameters.ParameterName.2"] = "appendonly"
 	form["Parameters.ParameterValue.2"] = "yes"
 	nosql.ProcessResult(v1.CreateCacheParameterGroup(&form))
-}
-
-func CreateCacheSecurityGroup() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheId"] = "cacheId"
-	form["Name"] = "myRedisParamGroup"
-	form["Description"] = "myRedisParamGroup"
-	form["SecurityGroupRules.Cidr.1"] = "192.168.18.17/21"
-	form["SecurityGroupRules.Cidr.2"] = "192.168.18.18/21"
-	nosql.ProcessResult(v1.CreateCacheSecurityGroup(&form))
 }
 
 func CreateSnapshot() {
@@ -86,32 +75,6 @@ func DeleteCacheParameterGroup() {
 	form["Engine"] = "redis"
 	form["CacheParameterGroupId"] = "123123"
 	nosql.ProcessResult(v1.DeleteCacheParameterGroup(&form))
-}
-
-func DeleteCacheSecurityGroup() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheSecurityGroupId"] = "123123"
-	nosql.ProcessResult(v1.DeleteCacheSecurityGroup(&form))
-}
-
-func DeleteCacheSecurityGroupRule() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheSecurityGroupId"] = "123123"
-	form["SecurityRuleId"] = "123123"
-	nosql.ProcessResult(v1.DeleteCacheSecurityGroupRule(&form))
-}
-
-func DeleteCacheSecurityRule() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheId"] = "cacheId"
-	form["SecurityRuleId"] = "123123"
-	nosql.ProcessResult(v1.DeleteCacheSecurityRule(&form))
 }
 
 func DeleteSnapshot() {
@@ -174,29 +137,6 @@ func DescribeCacheParameters() {
 	nosql.ProcessResult(v1.DescribeCacheParameters(&form))
 }
 
-func DescribeCacheSecurityGroup() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheSecurityGroupId"] = "1212"
-	nosql.ProcessResult(v1.DescribeCacheSecurityGroup(&form))
-}
-
-func DescribeCacheSecurityGroups() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	nosql.ProcessResult(v1.DescribeCacheSecurityGroups(&form))
-}
-
-func DescribeCacheSecurityRules() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheId"] = "cacheId"
-	nosql.ProcessResult(v1.DescribeCacheSecurityRules(&form))
-}
-
 func DescribeRegions() {
 	nosql.ProcessResult(v1.DescribeRegions(nil))
 }
@@ -247,19 +187,6 @@ func ModifyCacheParameterGroup() {
 	form["Parameters.ParameterName.2"] = "appendonly"
 	form["Parameters.ParameterValue.2"] = "yes"
 	nosql.ProcessResult(v1.ModifyCacheParameterGroup(&form))
-}
-
-func ModifyCacheSecurityGroup() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheId"] = "cacheId"
-	form["Name"] = "myRedisParamGroup"
-	form["CacheSecurityGroupId"] = "1231"
-	form["Description"] = "myRedisParamGroup"
-	form["SecurityGroupRules.Cidr.1"] = "192.168.18.17/21"
-	form["SecurityGroupRules.Cidr.2"] = "192.168.18.18/21"
-	nosql.ProcessResult(v1.ModifyCacheSecurityGroup(&form))
 }
 
 func RenameCacheCluster() {
@@ -319,25 +246,6 @@ func SetCacheParameters() {
 	nosql.ProcessResult(v1.SetCacheParameters(&form))
 }
 
-func SetCacheSecurityGroup() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheId"] = "cacheId"
-	form["CacheSecurityGroupId"] = "122"
-	nosql.ProcessResult(v1.SetCacheSecurityGroup(&form))
-}
-
-func SetCacheSecurityRules() {
-	form := make(map[string]interface{})
-	form["AvailableZone"] = "az"
-	form["Engine"] = "redis"
-	form["CacheId"] = "cacheId"
-	form["SecurityGroupRules.Cidr.1"] = "192.168.18.17/21"
-	form["SecurityGroupRules.Cidr.2"] = "192.168.18.18/21"
-	nosql.ProcessResult(v1.SetCacheSecurityRules(&form))
-}
-
 func SetTimingSnapshot() {
 	form := make(map[string]interface{})
 	form["AvailableZone"] = "az"
@@ -383,17 +291,105 @@ func UpdatePassword() {
 	nosql.ProcessResult(v1.UpdatePassword(&form))
 }
 
+func CreateSecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["Name"] = "testGoSdk"
+	form["Description"] = "testGoSdk"
+	nosql.ProcessResult(v1.CreateSecurityGroup(&form))
+}
+
+func CloneSecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["Name"] = "testGoSdkClone"
+	form["Description"] = "testGoSdkClone"
+	form["SrcSecurityGroupId"] = "srcSecurityGroupId"
+	nosql.ProcessResult(v1.CloneSecurityGroup(&form))
+}
+
+func DeleteSecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["SecurityGroupId.1"] = "securityGroupId"
+	nosql.ProcessResult(v1.DeleteSecurityGroup(&form))
+}
+
+func ModifySecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["Name"] = "testGoSdkClone777"
+	form["Description"] = "testGoSdkClone777"
+	form["SecurityGroupId"] = "securityGroupId"
+	nosql.ProcessResult(v1.ModifySecurityGroup(&form))
+}
+
+func DescribeSecurityGroups() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	nosql.ProcessResult(v1.DescribeSecurityGroups(&form))
+}
+
+func DescribeSecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["SecurityGroupId"] = "securityGroupId"
+	nosql.ProcessResult(v1.DescribeSecurityGroup(&form))
+}
+
+func AllocateSecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["CacheId.1"] = "cacheId"
+	form["SecurityGroupId.1"] = "securityGroupId"
+	nosql.ProcessResult(v1.AllocateSecurityGroup(&form))
+}
+
+func DeallocateSecurityGroup() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["CacheId.1"] = "cacheId"
+	form["SecurityGroupId"] = "securityGroupId"
+	nosql.ProcessResult(v1.DeallocateSecurityGroup(&form))
+}
+
+func CreateSecurityGroupRule() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["SecurityGroupId"] = "securityGroupId"
+	form["Cidrs.1"] = "172.11.14.0/16"
+	nosql.ProcessResult(v1.CreateSecurityGroupRule(&form))
+}
+
+func DeleteSecurityGroupRule() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["SecurityGroupId"] = "securityGroupId"
+	form["SecurityGroupRuleId.1"] = "securityGroupRuleId"
+	nosql.ProcessResult(v1.DeleteSecurityGroupRule(&form))
+}
+
+func DescribeInstances() {
+	form := make(map[string]interface{})
+	form["AvailableZone"] = "az"
+	form["SecurityGroupId"] = "securityGroupId"
+	nosql.ProcessResult(v1.DescribeInstances(&form))
+}
+
 func main() {
+	AllocateSecurityGroup()
 	CreateCacheCluster()
 	CreateCacheParameterGroup()
-	CreateCacheSecurityGroup()
+	CreateSecurityGroup()
+	CloneSecurityGroup()
+	CreateSecurityGroupRule()
 	CreateSnapshot()
 	DeleteCacheCluster()
 	DeleteCacheParameterGroup()
-	DeleteCacheSecurityGroup()
-	DeleteCacheSecurityGroupRule()
-	DeleteCacheSecurityRule()
+	DeleteSecurityGroup()
+	DeleteSecurityGroupRule()
 	DeleteSnapshot()
+	DeallocateSecurityGroup()
 	DescribeAvailabilityZones()
 	DescribeCacheCluster()
 	DescribeCacheClusters()
@@ -401,24 +397,22 @@ func main() {
 	DescribeCacheParameterGroup()
 	DescribeCacheParameterGroups()
 	DescribeCacheParameters()
-	DescribeCacheSecurityGroup()
-	DescribeCacheSecurityGroups()
-	DescribeCacheSecurityRules()
+	DescribeInstances()
+	DescribeSecurityGroups()
+	DescribeSecurityGroup()
 	DescribeRegions()
 	DescribeSnapshots()
 	DownloadSnapshot()
 	ExportSnapshot()
 	FlushCacheCluster()
+	ModifySecurityGroup()
 	ModifyCacheParameterGroup()
-	ModifyCacheSecurityGroup()
 	RenameCacheCluster()
 	RenameSnapshot()
 	ResizeCacheCluster()
 	RestoreSnapshot()
 	SetCacheParameterGroup()
 	SetCacheParameters()
-	SetCacheSecurityGroup()
-	SetCacheSecurityRules()
 	SetTimingSnapshot()
 	AddCacheSlaveNode()
 	DeleteCacheSlaveNode()

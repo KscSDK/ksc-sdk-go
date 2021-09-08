@@ -182,7 +182,7 @@ const opDescribeAddresses = "DescribeAddresses"
 func (c *Eip) DescribeAddressesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeAddresses,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
