@@ -33,7 +33,7 @@ func main() {
 		fmt.Printf("%+v\n", string(str))
 	}
 
-	//	****************************************查询交换机信息***************************************************
+	//	****************************************查询交换机信息**************************************************
 	//querySwitchOrderInfos := make(map[string]interface{})
 	//querySwitchOrderInfos["BatchId"]  = "QYBD_内网核心交换机_375689"
 	//querySwitchOrderInfos["Limit"] = 5
@@ -46,7 +46,7 @@ func main() {
 	//	str, _ := json.Marshal(&resp)
 	//	fmt.Printf("%+v\n", string(str))
 	//}
-	//	****************************************查询服务器批次号***************************************************
+	//	****************************************查询服务器批次号**************************************************
 	//queryServerBatchIds := make(map[string]interface{})
 	//queryServerBatchIds["Limit"] = 5
 	//queryServerBatchIds["Offset"] = 0
