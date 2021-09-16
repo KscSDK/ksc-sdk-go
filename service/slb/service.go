@@ -72,11 +72,7 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 
 // SdkNew create int can support ssl or region locate set
 func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Slb {
-	_info := utils.UrlInfo{
-		UseSSL:      false,
-		Locate:      false,
-		UseInternal: false,
-	}
+	_info := utils.UrlInfo{}
 	if len(info) > 0 && len(info) == 1 {
 		if info[0].UseSSL {
 			_info.UseSSL = info[0].UseSSL
@@ -86,6 +82,9 @@ func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *
 		}
 		if info[0].UseInternal {
 			_info.UseInternal = info[0].UseInternal
+		}
+		if info[0].CustomerDomain != "" {
+			_info.CustomerDomain = info[0].CustomerDomain
 		}
 
 	}

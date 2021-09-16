@@ -9,6 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/client"
 	"github.com/aws/aws-sdk-go/aws/client/metadata"
+	"github.com/aws/aws-sdk-go/aws/corehandlers"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
 )
@@ -71,11 +72,7 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 
 // SdkNew create int can support ssl or region locate set
 func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Cdnv1 {
-	_info := utils.UrlInfo{
-		UseSSL:      false,
-		Locate:      false,
-		UseInternal: false,
-	}
+	_info := utils.UrlInfo{}
 	if len(info) > 0 && len(info) == 1 {
 		if info[0].UseSSL {
 			_info.UseSSL = info[0].UseSSL
@@ -85,6 +82,9 @@ func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *
 		}
 		if info[0].UseInternal {
 			_info.UseInternal = info[0].UseInternal
+		}
+		if info[0].CustomerDomain != "" {
+			_info.CustomerDomain = info[0].CustomerDomain
 		}
 
 	}
@@ -110,6 +110,10 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 
 	// Handlers
 	svc.Handlers.Sign.PushBackNamed(v4.SignRequestHandler)
+	// remove aws user-agent
+	svc.Handlers.Build.Remove(corehandlers.SDKVersionUserAgentHandler)
+	// add ksc user-agent
+	svc.Handlers.Build.PushBackNamed(ksc.SDKVersionUserAgentHandler)
 	svc.Handlers.Build.PushBackNamed(kscquery.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed(kscquery.UnmarshalHandler)
 	svc.Handlers.UnmarshalMeta.PushBackNamed(kscquery.UnmarshalMetaHandler)
