@@ -1,10 +1,11 @@
 package utils
 
 type UrlInfo struct {
-	UseSSL         bool
-	Locate         bool
-	UseInternal    bool
-	CustomerDomain string
+	UseSSL                      bool
+	Locate                      bool
+	UseInternal                 bool
+	CustomerDomain              string
+	CustomerDomainIgnoreService bool
 }
 
 type ServiceInfo struct {
@@ -22,7 +23,11 @@ const (
 func Url(urlInfo *UrlInfo, info ServiceInfo) string {
 	p := Protocol(urlInfo.UseSSL)
 	if urlInfo.CustomerDomain != "" {
-		return p + "://" + info.Service + "." + urlInfo.CustomerDomain
+		if !urlInfo.CustomerDomainIgnoreService {
+			return p + "://" + info.Service + "." + urlInfo.CustomerDomain
+		} else {
+			return p + "://" + urlInfo.CustomerDomain
+		}
 
 	} else {
 		if urlInfo.UseInternal {
