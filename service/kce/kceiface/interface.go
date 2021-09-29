@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kce.
 //    func myFunc(svc kceiface.KceAPI) bool {
-//        // Make svc.DescribeCluster request
+//        // Make svc.AddClusterInstanceToNodePool request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKceClient struct {
 //        kceiface.KceAPI
 //    }
-//    func (m *mockKceClient) DescribeCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKceClient) AddClusterInstanceToNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,9 +60,49 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KceAPI interface {
+	AddClusterInstanceToNodePool(*map[string]interface{}) (*map[string]interface{}, error)
+	AddClusterInstanceToNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddClusterInstanceToNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateNodePool(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteClusterInstancesFromNodePool(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteClusterInstancesFromNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteClusterInstancesFromNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteNodePool(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeNodePool(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyNodePool(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyNodePoolScaleDownPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNodePoolScaleDownPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNodePoolScaleDownPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyNodePoolScaleUpPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNodePoolScaleUpPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNodePoolScaleUpPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyNodeTemplate(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNodeTemplateWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNodeTemplateRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ProtectedFromScaleDown(*map[string]interface{}) (*map[string]interface{}, error)
+	ProtectedFromScaleDownWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ProtectedFromScaleDownRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ KceAPI = (*kce.Kce)(nil)
