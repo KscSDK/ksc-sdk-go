@@ -9,9 +9,9 @@
 package vpciface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/vpc"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/vpc"
 )
 
 // VpcAPI provides an interface to enable mocking the
@@ -64,6 +64,10 @@ type VpcAPI interface {
 	AcceptVpcPeeringConnectionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AcceptVpcPeeringConnectionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AllocateSubnetIpv6CidrBlock(*map[string]interface{}) (*map[string]interface{}, error)
+	AllocateSubnetIpv6CidrBlockWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AllocateSubnetIpv6CidrBlockRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AssociateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	AssociateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssociateNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -72,6 +76,10 @@ type VpcAPI interface {
 	AssociateNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssociateNetworkAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AssociateVpcCidrBlock(*map[string]interface{}) (*map[string]interface{}, error)
+	AssociateVpcCidrBlockWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AssociateVpcCidrBlockRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AuthorizeSecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	AuthorizeSecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AuthorizeSecurityGroupEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -79,6 +87,10 @@ type VpcAPI interface {
 	CreateCustomerGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateIpv6PublicIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -91,6 +103,10 @@ type VpcAPI interface {
 	CreateNetworkAclEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateNetworkAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateNetworkAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateNetworkInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateRoute(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -136,6 +152,10 @@ type VpcAPI interface {
 	DeleteNetworkAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteNetworkAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteNetworkInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteRoute(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -175,6 +195,14 @@ type VpcAPI interface {
 	DescribeInternetGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInternetGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInternetGatewaysRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeIpv6NetworkInterfaces(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeIpv6NetworkInterfacesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeIpv6NetworkInterfacesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeIpv6PublicIpAddresses(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeIpv6PublicIpAddressesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeIpv6PublicIpAddressesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeNats(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeNatsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -236,6 +264,10 @@ type VpcAPI interface {
 	ModifyCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyIpv6PublicIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyNat(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -244,9 +276,21 @@ type VpcAPI interface {
 	ModifyNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNetworkAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyNetworkAclEntry(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNetworkAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNetworkAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyNetworkInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifySecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifySecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifySecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifySecurityGroupEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifySubnet(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySubnetWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -271,6 +315,10 @@ type VpcAPI interface {
 	RejectVpcPeeringConnection(*map[string]interface{}) (*map[string]interface{}, error)
 	RejectVpcPeeringConnectionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RejectVpcPeeringConnectionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ReleaseIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
+	ReleaseIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ReleaseIpv6PublicIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RevokeSecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	RevokeSecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

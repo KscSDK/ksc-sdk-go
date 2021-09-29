@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ksc/ksc-sdk-go/ksc"
-	"github.com/ksc/ksc-sdk-go/ksc/utils"
-	"github.com/ksc/ksc-sdk-go/service/kec"
+	"github.com/KscSDK/ksc-sdk-go/ksc"
+	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
+	"github.com/KscSDK/ksc-sdk-go/service/kec"
 )
 
 func main() {
@@ -98,10 +98,10 @@ func main() {
 
 	//	****************************************描述实例信息(DescribeInstances())***************************************************
 
-	/*describeInstances := make(map[string]interface{})
-	describeInstances["InstanceId.1"] = "6867b808-feea-4416-88bb-361224d82f1b"
+	describeInstances := make(map[string]interface{})
+	//describeInstances["InstanceId.1"] = "6867b808-feea-4416-88bb-361224d82f1b"
 	describeInstances["Marker"] = "0"
-	describeInstances["MaxResults"] = "5"
+	describeInstances["MaxResults"] = "10"
 
 	resp, err = svc.DescribeInstances(nil)
 	if err != nil {
@@ -110,7 +110,7 @@ func main() {
 	if resp != nil {
 		str, _ := json.Marshal(&resp)
 		fmt.Printf("%+v\n", string(str))
-	}*/
+	}
 
 	//	****************************************获取VNC信息(DescribeInstanceVnc())***************************************************
 

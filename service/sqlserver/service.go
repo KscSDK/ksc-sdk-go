@@ -3,14 +3,15 @@
 package sqlserver
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/ksc"
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscquery"
+	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/client"
 	"github.com/aws/aws-sdk-go/aws/client/metadata"
+	"github.com/aws/aws-sdk-go/aws/corehandlers"
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/signer/v4"
-	"github.com/ksc/ksc-sdk-go/ksc"
-	"github.com/ksc/ksc-sdk-go/ksc/kscquery"
-	"github.com/ksc/ksc-sdk-go/ksc/utils"
 )
 
 // Sqlserver provides the API operation methods for making requests to
@@ -31,9 +32,9 @@ var initRequest func(*request.Request)
 
 // Service information constants
 const (
-	ServiceName = "sqlserver  " // Name of service.
-	EndpointsID = "sqlserver"   // ID to lookup a service endpoint with.
-	ServiceID   = "sqlserver  " // ServiceID is a unique identifer of a specific service.
+	ServiceName = "sqlserver" // Name of service.
+	EndpointsID = ServiceName // ID to lookup a service endpoint with.
+	ServiceID   = "sqlserver" // ServiceID is a unique identifer of a specific service.
 )
 
 // New creates a new instance of the Sqlserver client with a session.
@@ -49,8 +50,9 @@ const (
 func New(p client.ConfigProvider, cfgs ...*aws.Config) *Sqlserver {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	c.Endpoint = utils.Url(&utils.UrlInfo{
-		UseSSL: false,
-		Locate: true,
+		UseSSL:      false,
+		Locate:      true,
+		UseInternal: false,
 	}, utils.ServiceInfo{
 		Service: EndpointsID,
 		Region:  c.SigningRegion,
@@ -70,16 +72,19 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 
 // SdkNew create int can support ssl or region locate set
 func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Sqlserver {
-	_info := utils.UrlInfo{
-		UseSSL: false,
-		Locate: false,
-	}
+	_info := utils.UrlInfo{}
 	if len(info) > 0 && len(info) == 1 {
 		if info[0].UseSSL {
 			_info.UseSSL = info[0].UseSSL
 		}
 		if info[0].Locate {
 			_info.Locate = info[0].Locate
+		}
+		if info[0].UseInternal {
+			_info.UseInternal = info[0].UseInternal
+		}
+		if info[0].CustomerDomain != "" {
+			_info.CustomerDomain = info[0].CustomerDomain
 		}
 
 	}
@@ -105,6 +110,10 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 
 	// Handlers
 	svc.Handlers.Sign.PushBackNamed(v4.SignRequestHandler)
+	// remove aws user-agent
+	svc.Handlers.Build.Remove(corehandlers.SDKVersionUserAgentHandler)
+	// add ksc user-agent
+	svc.Handlers.Build.PushBackNamed(ksc.SDKVersionUserAgentHandler)
 	svc.Handlers.Build.PushBackNamed(kscquery.BuildHandler)
 	svc.Handlers.Unmarshal.PushBackNamed(kscquery.UnmarshalHandler)
 	svc.Handlers.UnmarshalMeta.PushBackNamed(kscquery.UnmarshalMetaHandler)

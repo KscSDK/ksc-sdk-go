@@ -9,9 +9,9 @@
 package slbiface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/slb"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/slb"
 )
 
 // SlbAPI provides an interface to enable mocking the
@@ -68,6 +68,14 @@ type SlbAPI interface {
 	ConfigureHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ConfigureHealthCheckRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateBackendServerGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateBackendServerGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateBackendServerGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateHostHeader(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateHostHeaderWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateHostHeaderRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateListeners(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateListenersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateListenersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -84,9 +92,21 @@ type SlbAPI interface {
 	CreateLoadBalancerAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateLoadBalancerAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateSlbRule(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateSlbRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateSlbRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteBackendServerGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteBackendServerGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteBackendServerGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteHealthCheck(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteHealthCheckRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteHostHeader(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteHostHeaderWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteHostHeaderRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteListeners(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteListenersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -104,13 +124,33 @@ type SlbAPI interface {
 	DeleteLoadBalancerAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteLoadBalancerAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteRule(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeregisterBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
+	DeregisterBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeregisterBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeregisterInstancesFromListener(*map[string]interface{}) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeBackendServerGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeBackendServerGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeBackendServerGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeBackendServers(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeBackendServersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeBackendServersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeHealthChecks(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeHealthChecksWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeHealthChecksRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeHostHeaders(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeHostHeadersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeHostHeadersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeInstancesWithListener(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInstancesWithListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -128,13 +168,33 @@ type SlbAPI interface {
 	DescribeLoadBalancersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeLoadBalancersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeRules(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeRulesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeRulesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DisassociateLoadBalancerAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateLoadBalancerAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateLoadBalancerAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyBackendServerGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyBackendServerGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyBackendServerGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyBackendServerGroupHealthCheck(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyBackendServerGroupHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyBackendServerGroupHealthCheckRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyHealthCheck(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyHealthCheckRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyHostHeader(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyHostHeaderWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyHostHeaderRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyInstancesWithListener(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyInstancesWithListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -151,6 +211,18 @@ type SlbAPI interface {
 	ModifyLoadBalancerAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyLoadBalancerAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyLoadBalancerAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyLoadBalancerAclEntry(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyLoadBalancerAclEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyLoadBalancerAclEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifySlbRule(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifySlbRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifySlbRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RegisterBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
+	RegisterBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RegisterBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RegisterInstancesWithListener(*map[string]interface{}) (*map[string]interface{}, error)
 	RegisterInstancesWithListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

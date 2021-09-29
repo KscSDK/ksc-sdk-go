@@ -9,9 +9,9 @@
 package keciface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/kec"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/kec"
 )
 
 // KecAPI provides an interface to enable mocking the
@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kec.
 //    func myFunc(svc keciface.KecAPI) bool {
-//        // Make svc.AttachKey request
+//        // Make svc.AddVmIntoDataGuard request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKecClient struct {
 //        keciface.KecAPI
 //    }
-//    func (m *mockKecClient) AttachKey(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKecClient) AddVmIntoDataGuard(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,18 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KecAPI interface {
+	AddVmIntoDataGuard(*map[string]interface{}) (*map[string]interface{}, error)
+	AddVmIntoDataGuardWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddVmIntoDataGuardRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	AttachInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	AttachInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AttachInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	AttachInstancesIamRole(*map[string]interface{}) (*map[string]interface{}, error)
+	AttachInstancesIamRoleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AttachInstancesIamRoleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AttachKey(*map[string]interface{}) (*map[string]interface{}, error)
 	AttachKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachKeyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -72,6 +84,10 @@ type KecAPI interface {
 	CopyImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CopyImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateDataGuardGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDataGuardGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDataGuardGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateImage(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -80,13 +96,61 @@ type KecAPI interface {
 	CreateLocalVolumeSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateLocalVolumeSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateScalingConfiguration(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateScalingConfigurationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateScalingConfigurationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateScalingNotification(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateScalingNotificationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateScalingNotificationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateScalingPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateScalingPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateScalingPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateScheduledTask(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateScheduledTaskWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateScheduledTaskRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteDataGuardGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDataGuardGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDataGuardGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteLocalVolumeSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteLocalVolumeSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteLocalVolumeSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteScalingConfiguration(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteScalingConfigurationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteScalingConfigurationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteScalingPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteScalingPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteScalingPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteScheduledTask(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteScheduledTaskWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteScheduledTaskRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeAvailabilityZones(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeAvailabilityZonesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeAvailabilityZonesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDataGuardCapacity(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDataGuardCapacityWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDataGuardCapacityRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDataGuardGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDataGuardGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDataGuardGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeImageSharePermission(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeImageSharePermissionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -112,6 +176,14 @@ type KecAPI interface {
 	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeKecIamRoles(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeKecIamRolesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeKecIamRolesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeKecInventory(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeKecInventoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeKecInventoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeLocalVolumeSnapshots(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeLocalVolumeSnapshotsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -124,6 +196,42 @@ type KecAPI interface {
 	DescribeRegionsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeRegionsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeScalingActivity(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScalingActivityWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScalingActivityRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeScalingConfiguration(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScalingConfigurationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScalingConfigurationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeScalingInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScalingInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScalingInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeScalingNotification(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScalingNotificationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScalingNotificationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeScalingPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScalingPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScalingPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeScheduledTask(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeScheduledTaskWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeScheduledTaskRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DetachInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	DetachInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DetachInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DetachInstancesIamRole(*map[string]interface{}) (*map[string]interface{}, error)
+	DetachInstancesIamRoleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DetachInstancesIamRoleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DetachKey(*map[string]interface{}) (*map[string]interface{}, error)
 	DetachKeyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DetachKeyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -132,9 +240,21 @@ type KecAPI interface {
 	DetachNetworkInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DetachNetworkInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DisableScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DisableScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DisableScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	EnableScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	EnableScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	EnableScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ImportImage(*map[string]interface{}) (*map[string]interface{}, error)
 	ImportImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ImportImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyDataGuardGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDataGuardGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDataGuardGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyImageAttribute(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyImageAttributeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -160,6 +280,30 @@ type KecAPI interface {
 	ModifyNetworkInterfaceAttributeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNetworkInterfaceAttributeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyScalingConfiguration(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScalingConfigurationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScalingConfigurationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyScalingLoadBalancers(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScalingLoadBalancersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScalingLoadBalancersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyScalingNotification(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScalingNotificationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScalingNotificationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyScalingPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScalingPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScalingPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyScheduledTask(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyScheduledTaskWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyScheduledTaskRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	RebootInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	RebootInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RebootInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -168,6 +312,10 @@ type KecAPI interface {
 	RemoveImagesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RemoveImagesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	RemoveVmFromDataGuard(*map[string]interface{}) (*map[string]interface{}, error)
+	RemoveVmFromDataGuardWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RemoveVmFromDataGuardRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	RollbackLocalVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	RollbackLocalVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RollbackLocalVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -175,6 +323,10 @@ type KecAPI interface {
 	RunInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	RunInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RunInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SetKvmProtectedDetach(*map[string]interface{}) (*map[string]interface{}, error)
+	SetKvmProtectedDetachWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetKvmProtectedDetachRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	StartInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	StartInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

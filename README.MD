@@ -1,10 +1,9 @@
 ### KSC SDK for Go
 ####  概述
 1. 金山云Go语言SDK
-2. 本SDK依赖于AWS的SDK包 [AWS-SDK-GO](https://github.com/aws/aws-sdk-go)，纯引用，没对AWS的SDK做过任何修改
-3. Go语言版本1.5+ 推荐是用1.12+ 这样方便使用govendor
-4. service目录下的文件请不要修改，都是由代码生成器自动生成 代码生成器暂时不开源
-5. 如果使用vendor 请确保所有ksc-sdk-go 在GOPATH下面/src/github.com/ksc目录下 ($GOPATH/src/github.com/ksc)
+2. Go语言版本1.5+ 推荐是用1.12+ 这样方便使用govendor
+3. service目录下的文件请不要修改，都是由代码生成器自动生成 代码生成器暂时不开源
+4. 如果使用vendor 请确保所有ksc-sdk-go 在GOPATH下面/src/github.com/KscSDK目录下 ($GOPATH/src/github.com/KscSDK)
 
 ##### vendor
 使用vendor(Go 1.5+)做依赖的话可以直接使用本sdk工具
@@ -14,6 +13,8 @@
 或者使用 go get github.com/aws/aws-sdk-go
 
 ##### 代码示例
+UseInternal:true 代表使用金山云内网域名
+
 代码示例在example目录下
 
 	ak := "用户AK"
@@ -21,6 +22,7 @@
 	region := "cn-beijing-6"
 	svc := vpc.SdkNew(ksc.NewClient(ak, sk), &ksc.Config{Region: &region}, &utils.UrlInfo{
     		UseSSL: true,
+    		UseInternal:true,
     	})
 
 	//创建入参 参考 https://docs.ksyun.com/

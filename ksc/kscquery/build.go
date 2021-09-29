@@ -1,12 +1,15 @@
 package kscquery
 
 import (
-	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
+	"fmt"
+	"github.com/KscSDK/ksc-sdk-go/ksc"
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscbody"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/ksc/kscbody"
+	"github.com/aws/aws-sdk-go/private/protocol/query/queryutil"
 	"net/url"
 	"reflect"
+	"runtime"
 	"strings"
 )
 
@@ -28,26 +31,40 @@ func Build(r *request.Request) {
 		kscbody.BodyJson(r)
 		return
 	}
-	if len(v) > 0 && strings.Contains(strings.ToLower(v), "x-www-form-urlencoded") {
-		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
-		r.SetBufferBody([]byte(body.Encode()))
-		return
-	}
-	if len(v)>0{
-		r.Error = awserr.New("SerializationError", "not support such content-type",nil)
-		return
-	}
-
 	if reflect.TypeOf(r.Params) == reflect.TypeOf(&map[string]interface{}{}) {
 		m := *(r.Params).(*map[string]interface{})
 		for k, v := range m {
 			if reflect.TypeOf(v).String() == "string" {
 				body.Add(k, v.(string))
+			} else {
+				body.Add(k, fmt.Sprintf("%v", v))
 			}
 		}
 	} else if err := queryutil.Parse(body, r.Params, false); err != nil {
 		r.Error = awserr.New("SerializationError", "failed encoding Query request", err)
 		return
 	}
-	r.HTTPRequest.URL.RawQuery = body.Encode()
+	if len(v) > 0 && strings.Contains(strings.ToLower(v), "x-www-form-urlencoded") {
+		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
+		r.SetBufferBody([]byte(body.Encode()))
+		return
+	}
+	if len(v) > 0 {
+		r.Error = awserr.New("SerializationError", "not support such content-type", nil)
+		return
+	}
+
+	method := strings.ToUpper(r.HTTPRequest.Method)
+	if method == "GET" || method == "DELETE" {
+		r.HTTPRequest.URL.RawQuery = body.Encode()
+	} else if method == "POST" || method == "PUT" {
+		r.HTTPRequest.Header.Set("Content-Type", "application/x-www-form-urlencoded; charset=utf-8")
+		r.SetBufferBody([]byte(body.Encode()))
+	} else {
+		r.HTTPRequest.URL.RawQuery = body.Encode()
+	}
+	//user-agent
+	r.HTTPRequest.Header.Del("User-Agent")
+	fn := request.MakeAddToUserAgentHandler(ksc.SDKName, ksc.SDKVersion, runtime.Version(), runtime.GOOS, runtime.GOARCH)
+	fn(r)
 }

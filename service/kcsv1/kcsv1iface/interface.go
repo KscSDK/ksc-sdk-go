@@ -9,9 +9,9 @@
 package kcsv1iface
 
 import (
+	"github.com/KscSDK/ksc-sdk-go/service/kcsv1"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
-	"github.com/ksc/ksc-sdk-go/service/kcsv1"
 )
 
 // Kcsv1API provides an interface to enable mocking the
@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kcsv1.
 //    func myFunc(svc kcsv1iface.Kcsv1API) bool {
-//        // Make svc.CreateCacheCluster request
+//        // Make svc.AllocateSecurityGroup request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKcsv1Client struct {
 //        kcsv1iface.Kcsv1API
 //    }
-//    func (m *mockKcsv1Client) CreateCacheCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKcsv1Client) AllocateSecurityGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,14 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type Kcsv1API interface {
+	AllocateSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	AllocateSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AllocateSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CloneSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CloneSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CloneSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateCacheCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateCacheClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateCacheClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -68,13 +76,21 @@ type Kcsv1API interface {
 	CreateCacheParameterGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateCacheParameterGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	CreateCacheSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
-	CreateCacheSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	CreateCacheSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+	CreateSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateSecurityGroupRule(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateSecurityGroupRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateSecurityGroupRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeallocateSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DeallocateSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeallocateSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteCacheCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteCacheClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -84,17 +100,13 @@ type Kcsv1API interface {
 	DeleteCacheParameterGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteCacheParameterGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	DeleteCacheSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
-	DeleteCacheSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DeleteCacheSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+	DeleteSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	DeleteCacheSecurityGroupRule(*map[string]interface{}) (*map[string]interface{}, error)
-	DeleteCacheSecurityGroupRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DeleteCacheSecurityGroupRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	DeleteCacheSecurityRule(*map[string]interface{}) (*map[string]interface{}, error)
-	DeleteCacheSecurityRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DeleteCacheSecurityRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+	DeleteSecurityGroupRule(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteSecurityGroupRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteSecurityGroupRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -128,21 +140,21 @@ type Kcsv1API interface {
 	DescribeCacheParametersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeCacheParametersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	DescribeCacheSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
-	DescribeCacheSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DescribeCacheSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	DescribeCacheSecurityGroups(*map[string]interface{}) (*map[string]interface{}, error)
-	DescribeCacheSecurityGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DescribeCacheSecurityGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	DescribeCacheSecurityRules(*map[string]interface{}) (*map[string]interface{}, error)
-	DescribeCacheSecurityRulesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DescribeCacheSecurityRulesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+	DescribeInstances(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeRegions(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeRegionsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeRegionsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeSecurityGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeSecurityGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeSecurityGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeSnapshots(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeSnapshotsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -164,9 +176,9 @@ type Kcsv1API interface {
 	ModifyCacheParameterGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyCacheParameterGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	ModifyCacheSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
-	ModifyCacheSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	ModifyCacheSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+	ModifySecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifySecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifySecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RenameCacheCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	RenameCacheClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -192,17 +204,13 @@ type Kcsv1API interface {
 	SetCacheParametersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetCacheParametersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	SetCacheSecurityGroup(*map[string]interface{}) (*map[string]interface{}, error)
-	SetCacheSecurityGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	SetCacheSecurityGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
-	SetCacheSecurityRules(*map[string]interface{}) (*map[string]interface{}, error)
-	SetCacheSecurityRulesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	SetCacheSecurityRulesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	SetTimingSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
 	SetTimingSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetTimingSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdatePassword(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdatePasswordWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdatePasswordRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ Kcsv1API = (*kcsv1.Kcsv1)(nil)
