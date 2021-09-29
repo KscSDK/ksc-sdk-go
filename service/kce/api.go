@@ -7,6 +7,298 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddClusterInstanceToNodePool = "AddClusterInstanceToNodePool"
+
+// AddClusterInstanceToNodePoolRequest generates a "ksc/request.Request" representing the
+// client's request for the AddClusterInstanceToNodePool operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddClusterInstanceToNodePool for more information on using the AddClusterInstanceToNodePool
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddClusterInstanceToNodePoolRequest method.
+//    req, resp := client.AddClusterInstanceToNodePoolRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterInstanceToNodePool
+func (c *Kce) AddClusterInstanceToNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddClusterInstanceToNodePool,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddClusterInstanceToNodePool API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation AddClusterInstanceToNodePool for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterInstanceToNodePool
+func (c *Kce) AddClusterInstanceToNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddClusterInstanceToNodePoolRequest(input)
+	return out, req.Send()
+}
+
+// AddClusterInstanceToNodePoolWithContext is the same as AddClusterInstanceToNodePool with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddClusterInstanceToNodePool for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) AddClusterInstanceToNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddClusterInstanceToNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateNodePool = "CreateNodePool"
+
+// CreateNodePoolRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateNodePool operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateNodePool for more information on using the CreateNodePool
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateNodePoolRequest method.
+//    req, resp := client.CreateNodePoolRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CreateNodePool
+func (c *Kce) CreateNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateNodePool,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateNodePool API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation CreateNodePool for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CreateNodePool
+func (c *Kce) CreateNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateNodePoolRequest(input)
+	return out, req.Send()
+}
+
+// CreateNodePoolWithContext is the same as CreateNodePool with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateNodePool for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) CreateNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteClusterInstancesFromNodePool = "DeleteClusterInstancesFromNodePool"
+
+// DeleteClusterInstancesFromNodePoolRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteClusterInstancesFromNodePool operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteClusterInstancesFromNodePool for more information on using the DeleteClusterInstancesFromNodePool
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteClusterInstancesFromNodePoolRequest method.
+//    req, resp := client.DeleteClusterInstancesFromNodePoolRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteClusterInstancesFromNodePool
+func (c *Kce) DeleteClusterInstancesFromNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteClusterInstancesFromNodePool,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteClusterInstancesFromNodePool API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DeleteClusterInstancesFromNodePool for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteClusterInstancesFromNodePool
+func (c *Kce) DeleteClusterInstancesFromNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterInstancesFromNodePoolRequest(input)
+	return out, req.Send()
+}
+
+// DeleteClusterInstancesFromNodePoolWithContext is the same as DeleteClusterInstancesFromNodePool with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteClusterInstancesFromNodePool for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DeleteClusterInstancesFromNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterInstancesFromNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteNodePool = "DeleteNodePool"
+
+// DeleteNodePoolRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteNodePool operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteNodePool for more information on using the DeleteNodePool
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteNodePoolRequest method.
+//    req, resp := client.DeleteNodePoolRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteNodePool
+func (c *Kce) DeleteNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteNodePool,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteNodePool API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DeleteNodePool for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteNodePool
+func (c *Kce) DeleteNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteNodePoolRequest(input)
+	return out, req.Send()
+}
+
+// DeleteNodePoolWithContext is the same as DeleteNodePool with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteNodePool for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DeleteNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeCluster = "DescribeCluster"
 
 // DescribeClusterRequest generates a "ksc/request.Request" representing the
@@ -32,7 +324,7 @@ const opDescribeCluster = "DescribeCluster"
 //        fmt.Println(resp)
 //    }
 //
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2016-03-04/DescribeCluster
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeCluster
 func (c *Kce) DescribeClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeCluster,
@@ -58,7 +350,7 @@ func (c *Kce) DescribeClusterRequest(input *map[string]interface{}) (req *reques
 //
 // See the KSC API reference guide for kce's
 // API operation DescribeCluster for usage and error information.
-// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2016-03-04/DescribeCluster
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeCluster
 func (c *Kce) DescribeCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
 	req, out := c.DescribeClusterRequest(input)
 	return out, req.Send()
@@ -75,6 +367,444 @@ func (c *Kce) DescribeCluster(input *map[string]interface{}) (*map[string]interf
 // for more information on using Contexts.
 func (c *Kce) DescribeClusterWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeClusterRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeNodePool = "DescribeNodePool"
+
+// DescribeNodePoolRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeNodePool operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeNodePool for more information on using the DescribeNodePool
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeNodePoolRequest method.
+//    req, resp := client.DescribeNodePoolRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeNodePool
+func (c *Kce) DescribeNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeNodePool,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeNodePool API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeNodePool for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeNodePool
+func (c *Kce) DescribeNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeNodePoolRequest(input)
+	return out, req.Send()
+}
+
+// DescribeNodePoolWithContext is the same as DescribeNodePool with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeNodePool for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyNodePool = "ModifyNodePool"
+
+// ModifyNodePoolRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyNodePool operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyNodePool for more information on using the ModifyNodePool
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyNodePoolRequest method.
+//    req, resp := client.ModifyNodePoolRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePool
+func (c *Kce) ModifyNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyNodePool,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyNodePool API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ModifyNodePool for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePool
+func (c *Kce) ModifyNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodePoolRequest(input)
+	return out, req.Send()
+}
+
+// ModifyNodePoolWithContext is the same as ModifyNodePool with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyNodePool for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ModifyNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyNodePoolScaleDownPolicy = "ModifyNodePoolScaleDownPolicy"
+
+// ModifyNodePoolScaleDownPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyNodePoolScaleDownPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyNodePoolScaleDownPolicy for more information on using the ModifyNodePoolScaleDownPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyNodePoolScaleDownPolicyRequest method.
+//    req, resp := client.ModifyNodePoolScaleDownPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePoolScaleDownPolicy
+func (c *Kce) ModifyNodePoolScaleDownPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyNodePoolScaleDownPolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyNodePoolScaleDownPolicy API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ModifyNodePoolScaleDownPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePoolScaleDownPolicy
+func (c *Kce) ModifyNodePoolScaleDownPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodePoolScaleDownPolicyRequest(input)
+	return out, req.Send()
+}
+
+// ModifyNodePoolScaleDownPolicyWithContext is the same as ModifyNodePoolScaleDownPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyNodePoolScaleDownPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ModifyNodePoolScaleDownPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodePoolScaleDownPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyNodePoolScaleUpPolicy = "ModifyNodePoolScaleUpPolicy"
+
+// ModifyNodePoolScaleUpPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyNodePoolScaleUpPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyNodePoolScaleUpPolicy for more information on using the ModifyNodePoolScaleUpPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyNodePoolScaleUpPolicyRequest method.
+//    req, resp := client.ModifyNodePoolScaleUpPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePoolScaleUpPolicy
+func (c *Kce) ModifyNodePoolScaleUpPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyNodePoolScaleUpPolicy,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyNodePoolScaleUpPolicy API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ModifyNodePoolScaleUpPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePoolScaleUpPolicy
+func (c *Kce) ModifyNodePoolScaleUpPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodePoolScaleUpPolicyRequest(input)
+	return out, req.Send()
+}
+
+// ModifyNodePoolScaleUpPolicyWithContext is the same as ModifyNodePoolScaleUpPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyNodePoolScaleUpPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ModifyNodePoolScaleUpPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodePoolScaleUpPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyNodeTemplate = "ModifyNodeTemplate"
+
+// ModifyNodeTemplateRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyNodeTemplate operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyNodeTemplate for more information on using the ModifyNodeTemplate
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyNodeTemplateRequest method.
+//    req, resp := client.ModifyNodeTemplateRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodeTemplate
+func (c *Kce) ModifyNodeTemplateRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyNodeTemplate,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyNodeTemplate API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ModifyNodeTemplate for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodeTemplate
+func (c *Kce) ModifyNodeTemplate(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodeTemplateRequest(input)
+	return out, req.Send()
+}
+
+// ModifyNodeTemplateWithContext is the same as ModifyNodeTemplate with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyNodeTemplate for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ModifyNodeTemplateWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyNodeTemplateRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opProtectedFromScaleDown = "ProtectedFromScaleDown"
+
+// ProtectedFromScaleDownRequest generates a "ksc/request.Request" representing the
+// client's request for the ProtectedFromScaleDown operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ProtectedFromScaleDown for more information on using the ProtectedFromScaleDown
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ProtectedFromScaleDownRequest method.
+//    req, resp := client.ProtectedFromScaleDownRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ProtectedFromScaleDown
+func (c *Kce) ProtectedFromScaleDownRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opProtectedFromScaleDown,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ProtectedFromScaleDown API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ProtectedFromScaleDown for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ProtectedFromScaleDown
+func (c *Kce) ProtectedFromScaleDown(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ProtectedFromScaleDownRequest(input)
+	return out, req.Send()
+}
+
+// ProtectedFromScaleDownWithContext is the same as ProtectedFromScaleDown with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ProtectedFromScaleDown for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ProtectedFromScaleDownWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ProtectedFromScaleDownRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
