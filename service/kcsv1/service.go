@@ -86,6 +86,9 @@ func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *
 		if info[0].CustomerDomain != "" {
 			_info.CustomerDomain = info[0].CustomerDomain
 		}
+		if info[0].CustomerDomainIgnoreService {
+			_info.CustomerDomainIgnoreService = info[0].CustomerDomainIgnoreService
+		}
 
 	}
 	return ExtraNew(&_info, p, &aws.Config{Region: cfgs.Region})
