@@ -4,7 +4,7 @@ package kce
 
 import (
 	"github.com/KscSDK/ksc-sdk-go/ksc"
-	"github.com/KscSDK/ksc-sdk-go/ksc/kscjson"
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscquery"
 	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/client"
@@ -117,10 +117,10 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 	svc.Handlers.Build.Remove(corehandlers.SDKVersionUserAgentHandler)
 	// add ksc user-agent
 	svc.Handlers.Build.PushBackNamed(ksc.SDKVersionUserAgentHandler)
-	svc.Handlers.Build.PushBackNamed(kscjson.BuildHandler)
-	svc.Handlers.Unmarshal.PushBackNamed(kscjson.UnmarshalHandler)
-	svc.Handlers.UnmarshalMeta.PushBackNamed(kscjson.UnmarshalMetaHandler)
-	svc.Handlers.UnmarshalError.PushBackNamed(kscjson.UnmarshalErrorHandler)
+	svc.Handlers.Build.PushBackNamed(kscquery.BuildHandler)
+	svc.Handlers.Unmarshal.PushBackNamed(kscquery.UnmarshalHandler)
+	svc.Handlers.UnmarshalMeta.PushBackNamed(kscquery.UnmarshalMetaHandler)
+	svc.Handlers.UnmarshalError.PushBackNamed(kscquery.UnmarshalErrorHandler)
 
 	// Run custom client initialization if present
 	if initClient != nil {
