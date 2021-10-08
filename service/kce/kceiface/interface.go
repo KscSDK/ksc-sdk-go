@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kce.
 //    func myFunc(svc kceiface.KceAPI) bool {
-//        // Make svc.AddClusterInstanceToNodePool request
+//        // Make svc.AddClusterEpcInstances request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKceClient struct {
 //        kceiface.KceAPI
 //    }
-//    func (m *mockKceClient) AddClusterInstanceToNodePool(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKceClient) AddClusterEpcInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,13 +60,37 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KceAPI interface {
+	AddClusterEpcInstances(*map[string]interface{}) (*map[string]interface{}, error)
+	AddClusterEpcInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddClusterEpcInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AddClusterInstanceToNodePool(*map[string]interface{}) (*map[string]interface{}, error)
 	AddClusterInstanceToNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddClusterInstanceToNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AddClusterInstances(*map[string]interface{}) (*map[string]interface{}, error)
+	AddClusterInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddClusterInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	AddExistedInstances(*map[string]interface{}) (*map[string]interface{}, error)
+	AddExistedInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddExistedInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateCluster(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateNodePool(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteCluster(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteClusterInstances(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteClusterInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteClusterInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteClusterInstancesFromNodePool(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteClusterInstancesFromNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -80,9 +104,41 @@ type KceAPI interface {
 	DescribeClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeClusterInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeClusterInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeClusterInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeEpcForCluster(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeEpcForClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeEpcForClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeEpcImage(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeEpcImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeEpcImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeExistedInstances(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeExistedInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeExistedInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeInstanceImage(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeInstanceImageWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeInstanceImageRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeNodePool(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DownloadClusterConfig(*map[string]interface{}) (*map[string]interface{}, error)
+	DownloadClusterConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DownloadClusterConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ForceRemoveClusterInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	ForceRemoveClusterInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ForceRemoveClusterInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyClusterInfo(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyClusterInfoWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyClusterInfoRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyNodePool(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

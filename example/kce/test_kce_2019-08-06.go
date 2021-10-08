@@ -19,6 +19,199 @@ func main() {
 	})
 	var resp *map[string]interface{}
 	var err error
+
+	//	****************************************创建集群(CreateCluster)***************************************************
+/*	createCluster := map[string]interface{}{
+		"ClusterName": "xxxxx",
+		"ClusterManageMode": "DedicatedCluster",
+		"VpcId": "15552848-026b-4ad6-a3e3-xxxxx",
+		"PodCidr": "10.32.0.0/14",
+		"ServiceCidr": "10.254.0.0/16",
+		"NetworkType": "Flannel",
+		"K8sVersion": "v1.13.4",
+		"ReserveSubnetId": "9729f4c0-93ee-4e2a-9b2a-xxxxx",
+		"PublicApiServer": "{\"LineId\":\"5fc2595f-1bfd-481b-bf64-2d08f116d800\",\"BandWidth\": \"10\",\"ChargeType\": \"PostPaidByDay\"}",
+		"InstanceSet.0.NodeRole": "Master_Etcd",
+		"InstanceSet.0.NodePara.0": "{\"MaxCount\":3,\"MinCount\":3,\"ImageId\":\"a0699172-76c6-4885-a4e9-0799a9cb811d\",\"SubnetId\":\"4a077fa8-a239-47bf-a18f-xxxxx\",\"InstancePassword\":\"Root23123\",\"SecurityGroupId\":\"0dcd8356-9e7e-43ae-897b-xxxxx\",\"DataDiskGb\":0,\"ChargeType\":\"Daily\",\"InstanceType\":\"I3.2A\",\"PurchaseTime\":0,\"InstanceName\":\"kce-py\",\"InstanceNameSuffix\":1}",
+		"InstanceSet.1.NodeRole": "Worker",
+		"InstanceSet.1.NodePara.0": "{\"MaxCount\":1,\"MinCount\":1,\"ImageId\":\"a0699172-76c6-4885-a4e9-0799a9cb811d\",\"SubnetId\":\"4a077fa8-a239-47bf-a18f-xxxxx\",\"InstancePassword\":\"Root23123\",\"SecurityGroupId\":\"0dcd8356-9e7e-43ae-897b-xxxxx\",\"DataDiskGb\":0,\"ChargeType\":\"Daily\",\"InstanceType\":\"I3.2A\",\"PurchaseTime\":0,\"InstanceName\":\"kce-py\",\"InstanceNameSuffix\":1}",
+	}
+	resp, err = svc.CreateCluster(&createCluster)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}*/
+	//	****************************************查询集群列表(DescribeCluster())***************************************************
+	describeCluster := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+	}
+	resp, err = svc.DescribeCluster(&describeCluster)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************新增节点(AddClusterInstances())***************************************************
+	addClusterInstances := map[string]interface{}{
+		"ClusterId": "a77b437f-07c9-4ae7-ac8d-xxxxx",
+		"InstanceSet.0.NodeRole": "Worker",
+		"InstanceSet.0.NodePara.0": "{\"MaxCount\":1,\"MinCount\":1,\"ImageId\":\"a0699172-76c6-4885-a4e9-0799a9cb811d\",\"SubnetId\":\"4a077fa8-a239-47bf-a18f-xxxxx\",\"InstancePassword\":\"Root23123\",\"SecurityGroupId\":\"0dcd8356-9e7e-43ae-897b-xxxxx\",\"DataDiskGb\":0,\"ChargeType\":\"Daily\",\"InstanceType\":\"I3.2A\",\"PurchaseTime\":0,\"InstanceName\":\"kce-py\",\"InstanceNameSuffix\":1}",
+	}
+	resp, err = svc.AddClusterInstances(&addClusterInstances)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************删除集群中的节点(DeleteClusterInstances())***************************************************
+	deleteClusterInstances := map[string]interface{}{
+		"ClusterId": "a77b437f-07c9-4ae7-ac8d-xxxxx",
+		"InstanceId.1": "0253d503-485e-4adc-8859-xxxxx",
+	}
+	resp, err = svc.DeleteClusterInstances(&deleteClusterInstances)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	*********************强制移除节点,该接口必须在DeleteClusterInstances后执行(ForceRemoveClusterInstance())*******************
+	forceRemoveClusterInstance := map[string]interface{}{
+		"ClusterId": "a77b437f-07c9-4ae7-ac8d-xxxxx",
+		"InstanceId.1": "0253d503-485e-4adc-8859-xxxxx",
+		"InstanceId.2": "0253d503-485e-4adc-8860-xxxxx",
+	}
+	resp, err = svc.ForceRemoveClusterInstance(&forceRemoveClusterInstance)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************修改集群基本信息(ModifyClusterInfo())***************************************************
+	modifyClusterInfo := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+		"ClusterName": "update",
+		"ClusterDesc": "xxxxxxxx",
+	}
+	resp, err = svc.ModifyClusterInfo(&modifyClusterInfo)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+
+	//	****************************************下载集群配置文件(DownloadClusterConfig())***************************************************
+	downloadClusterConfig := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+	}
+	resp, err = svc.DownloadClusterConfig(&downloadClusterConfig)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************删除集群(DeleteCluster())***************************************************
+	deleteCluster := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+	}
+	resp, err = svc.DeleteCluster(&deleteCluster)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************获取容器服务支持的节点操作系统(DescribeInstanceImage())***************************************************
+	describeInstanceImage := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+	}
+	resp, err = svc.DescribeInstanceImage(&describeInstanceImage)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************获取支持移入物理机集群的epc列表(DescribeEpcForCluster())***************************************************
+	describeEpcForCluster := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+	}
+	resp, err = svc.DescribeEpcForCluster(&describeEpcForCluster)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************移入物理机服务器至物理机集群(AddClusterEpcInstances())***************************************************
+	addClusterEpcInstances := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+		"InstanceId.1": "64xxxxxxxx",
+	}
+	resp, err = svc.AddClusterEpcInstances(&addClusterEpcInstances)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************查询已经存在的云服务器(DescribeExistedInstances())***************************************************
+	describeExistedInstances := map[string]interface{}{
+		"ClusterId": "d9a0adf0-a8f3-xxx-xxxxx",
+		"InstanceId.1": "64xxxxxxxx",
+	}
+	resp, err = svc.DescribeExistedInstances(&describeExistedInstances)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************添加已有的服务器(AddExistedInstances())***************************************************
+	addExistedInstances := map[string]interface{}{
+		"ClusterId": "84d89f76-xxxx-47a2-b37e-xxxxx",
+		"ExistedInstanceKecSet.1.NodeRole": "worker",
+		"ExistedInstanceKecSet.1.KecPara.1": "{\"InstanceId\":\"8d1cae6a-23c3-47f6-8fe6-xxxxx\",\"ImageId\":\"81cc01c3-4d64-40fa-89af-xxxxx\",\"InstancePassword\":\"xxxxx\"}",
+	}
+	resp, err = svc.AddExistedInstances(&addExistedInstances)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
+	//	****************************************获取裸金属服务器支持的节点操作系统(DescribeEpcImage())***************************************************
+	describeEpcImage := map[string]interface{}{
+		//"ImageId": "64xxxxxxxx",
+	}
+	resp, err = svc.DescribeEpcImage(&describeEpcImage)
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+	if resp != nil {
+		str, _ := json.Marshal(&resp)
+		fmt.Printf("%+v\n", string(str))
+	}
 	//	****************************************创建节点池(CreateNodePool())***************************************************
 /*	createNodePool := map[string]interface{}{
         "NodePoolName": "xuan-create",

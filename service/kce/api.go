@@ -7,6 +7,79 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddClusterEpcInstances = "AddClusterEpcInstances"
+
+// AddClusterEpcInstancesRequest generates a "ksc/request.Request" representing the
+// client's request for the AddClusterEpcInstances operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddClusterEpcInstances for more information on using the AddClusterEpcInstances
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddClusterEpcInstancesRequest method.
+//    req, resp := client.AddClusterEpcInstancesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterEpcInstances
+func (c *Kce) AddClusterEpcInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddClusterEpcInstances,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddClusterEpcInstances API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation AddClusterEpcInstances for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterEpcInstances
+func (c *Kce) AddClusterEpcInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddClusterEpcInstancesRequest(input)
+	return out, req.Send()
+}
+
+// AddClusterEpcInstancesWithContext is the same as AddClusterEpcInstances with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddClusterEpcInstances for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) AddClusterEpcInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddClusterEpcInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAddClusterInstanceToNodePool = "AddClusterInstanceToNodePool"
 
 // AddClusterInstanceToNodePoolRequest generates a "ksc/request.Request" representing the
@@ -80,6 +153,225 @@ func (c *Kce) AddClusterInstanceToNodePoolWithContext(ctx aws.Context, input *ma
 	return out, req.Send()
 }
 
+const opAddClusterInstances = "AddClusterInstances"
+
+// AddClusterInstancesRequest generates a "ksc/request.Request" representing the
+// client's request for the AddClusterInstances operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddClusterInstances for more information on using the AddClusterInstances
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddClusterInstancesRequest method.
+//    req, resp := client.AddClusterInstancesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterInstances
+func (c *Kce) AddClusterInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddClusterInstances,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddClusterInstances API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation AddClusterInstances for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterInstances
+func (c *Kce) AddClusterInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddClusterInstancesRequest(input)
+	return out, req.Send()
+}
+
+// AddClusterInstancesWithContext is the same as AddClusterInstances with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddClusterInstances for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) AddClusterInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddClusterInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opAddExistedInstances = "AddExistedInstances"
+
+// AddExistedInstancesRequest generates a "ksc/request.Request" representing the
+// client's request for the AddExistedInstances operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddExistedInstances for more information on using the AddExistedInstances
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddExistedInstancesRequest method.
+//    req, resp := client.AddExistedInstancesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddExistedInstances
+func (c *Kce) AddExistedInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddExistedInstances,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddExistedInstances API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation AddExistedInstances for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddExistedInstances
+func (c *Kce) AddExistedInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddExistedInstancesRequest(input)
+	return out, req.Send()
+}
+
+// AddExistedInstancesWithContext is the same as AddExistedInstances with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddExistedInstances for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) AddExistedInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddExistedInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateCluster = "CreateCluster"
+
+// CreateClusterRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateCluster operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateCluster for more information on using the CreateCluster
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateClusterRequest method.
+//    req, resp := client.CreateClusterRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CreateCluster
+func (c *Kce) CreateClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateCluster,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateCluster API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation CreateCluster for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CreateCluster
+func (c *Kce) CreateCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateClusterRequest(input)
+	return out, req.Send()
+}
+
+// CreateClusterWithContext is the same as CreateCluster with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateCluster for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) CreateClusterWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateClusterRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateNodePool = "CreateNodePool"
 
 // CreateNodePoolRequest generates a "ksc/request.Request" representing the
@@ -148,6 +440,152 @@ func (c *Kce) CreateNodePool(input *map[string]interface{}) (*map[string]interfa
 // for more information on using Contexts.
 func (c *Kce) CreateNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteCluster = "DeleteCluster"
+
+// DeleteClusterRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteCluster operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteCluster for more information on using the DeleteCluster
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteClusterRequest method.
+//    req, resp := client.DeleteClusterRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteCluster
+func (c *Kce) DeleteClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteCluster,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteCluster API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DeleteCluster for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteCluster
+func (c *Kce) DeleteCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterRequest(input)
+	return out, req.Send()
+}
+
+// DeleteClusterWithContext is the same as DeleteCluster with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteCluster for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DeleteClusterWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteClusterInstances = "DeleteClusterInstances"
+
+// DeleteClusterInstancesRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteClusterInstances operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteClusterInstances for more information on using the DeleteClusterInstances
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteClusterInstancesRequest method.
+//    req, resp := client.DeleteClusterInstancesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteClusterInstances
+func (c *Kce) DeleteClusterInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteClusterInstances,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteClusterInstances API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DeleteClusterInstances for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteClusterInstances
+func (c *Kce) DeleteClusterInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterInstancesRequest(input)
+	return out, req.Send()
+}
+
+// DeleteClusterInstancesWithContext is the same as DeleteClusterInstances with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteClusterInstances for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DeleteClusterInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteClusterInstancesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -372,6 +810,371 @@ func (c *Kce) DescribeClusterWithContext(ctx aws.Context, input *map[string]inte
 	return out, req.Send()
 }
 
+const opDescribeClusterInstance = "DescribeClusterInstance"
+
+// DescribeClusterInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeClusterInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeClusterInstance for more information on using the DescribeClusterInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeClusterInstanceRequest method.
+//    req, resp := client.DescribeClusterInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeClusterInstance
+func (c *Kce) DescribeClusterInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeClusterInstance,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeClusterInstance API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeClusterInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeClusterInstance
+func (c *Kce) DescribeClusterInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeClusterInstanceRequest(input)
+	return out, req.Send()
+}
+
+// DescribeClusterInstanceWithContext is the same as DescribeClusterInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeClusterInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeClusterInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeClusterInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeEpcForCluster = "DescribeEpcForCluster"
+
+// DescribeEpcForClusterRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeEpcForCluster operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeEpcForCluster for more information on using the DescribeEpcForCluster
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeEpcForClusterRequest method.
+//    req, resp := client.DescribeEpcForClusterRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeEpcForCluster
+func (c *Kce) DescribeEpcForClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeEpcForCluster,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeEpcForCluster API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeEpcForCluster for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeEpcForCluster
+func (c *Kce) DescribeEpcForCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeEpcForClusterRequest(input)
+	return out, req.Send()
+}
+
+// DescribeEpcForClusterWithContext is the same as DescribeEpcForCluster with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeEpcForCluster for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeEpcForClusterWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeEpcForClusterRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeEpcImage = "DescribeEpcImage"
+
+// DescribeEpcImageRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeEpcImage operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeEpcImage for more information on using the DescribeEpcImage
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeEpcImageRequest method.
+//    req, resp := client.DescribeEpcImageRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeEpcImage
+func (c *Kce) DescribeEpcImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeEpcImage,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeEpcImage API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeEpcImage for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeEpcImage
+func (c *Kce) DescribeEpcImage(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeEpcImageRequest(input)
+	return out, req.Send()
+}
+
+// DescribeEpcImageWithContext is the same as DescribeEpcImage with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeEpcImage for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeEpcImageWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeEpcImageRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeExistedInstances = "DescribeExistedInstances"
+
+// DescribeExistedInstancesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeExistedInstances operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeExistedInstances for more information on using the DescribeExistedInstances
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeExistedInstancesRequest method.
+//    req, resp := client.DescribeExistedInstancesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeExistedInstances
+func (c *Kce) DescribeExistedInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeExistedInstances,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeExistedInstances API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeExistedInstances for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeExistedInstances
+func (c *Kce) DescribeExistedInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeExistedInstancesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeExistedInstancesWithContext is the same as DescribeExistedInstances with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeExistedInstances for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeExistedInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeExistedInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeInstanceImage = "DescribeInstanceImage"
+
+// DescribeInstanceImageRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeInstanceImage operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeInstanceImage for more information on using the DescribeInstanceImage
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeInstanceImageRequest method.
+//    req, resp := client.DescribeInstanceImageRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeInstanceImage
+func (c *Kce) DescribeInstanceImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeInstanceImage,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeInstanceImage API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeInstanceImage for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeInstanceImage
+func (c *Kce) DescribeInstanceImage(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeInstanceImageRequest(input)
+	return out, req.Send()
+}
+
+// DescribeInstanceImageWithContext is the same as DescribeInstanceImage with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeInstanceImage for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeInstanceImageWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeInstanceImageRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeNodePool = "DescribeNodePool"
 
 // DescribeNodePoolRequest generates a "ksc/request.Request" representing the
@@ -440,6 +1243,225 @@ func (c *Kce) DescribeNodePool(input *map[string]interface{}) (*map[string]inter
 // for more information on using Contexts.
 func (c *Kce) DescribeNodePoolWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeNodePoolRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDownloadClusterConfig = "DownloadClusterConfig"
+
+// DownloadClusterConfigRequest generates a "ksc/request.Request" representing the
+// client's request for the DownloadClusterConfig operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DownloadClusterConfig for more information on using the DownloadClusterConfig
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DownloadClusterConfigRequest method.
+//    req, resp := client.DownloadClusterConfigRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DownloadClusterConfig
+func (c *Kce) DownloadClusterConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDownloadClusterConfig,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DownloadClusterConfig API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DownloadClusterConfig for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DownloadClusterConfig
+func (c *Kce) DownloadClusterConfig(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DownloadClusterConfigRequest(input)
+	return out, req.Send()
+}
+
+// DownloadClusterConfigWithContext is the same as DownloadClusterConfig with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DownloadClusterConfig for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DownloadClusterConfigWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DownloadClusterConfigRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opForceRemoveClusterInstance = "ForceRemoveClusterInstance"
+
+// ForceRemoveClusterInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the ForceRemoveClusterInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ForceRemoveClusterInstance for more information on using the ForceRemoveClusterInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ForceRemoveClusterInstanceRequest method.
+//    req, resp := client.ForceRemoveClusterInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ForceRemoveClusterInstance
+func (c *Kce) ForceRemoveClusterInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opForceRemoveClusterInstance,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ForceRemoveClusterInstance API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ForceRemoveClusterInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ForceRemoveClusterInstance
+func (c *Kce) ForceRemoveClusterInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ForceRemoveClusterInstanceRequest(input)
+	return out, req.Send()
+}
+
+// ForceRemoveClusterInstanceWithContext is the same as ForceRemoveClusterInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ForceRemoveClusterInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ForceRemoveClusterInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ForceRemoveClusterInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyClusterInfo = "ModifyClusterInfo"
+
+// ModifyClusterInfoRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyClusterInfo operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyClusterInfo for more information on using the ModifyClusterInfo
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyClusterInfoRequest method.
+//    req, resp := client.ModifyClusterInfoRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyClusterInfo
+func (c *Kce) ModifyClusterInfoRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyClusterInfo,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyClusterInfo API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ModifyClusterInfo for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyClusterInfo
+func (c *Kce) ModifyClusterInfo(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyClusterInfoRequest(input)
+	return out, req.Send()
+}
+
+// ModifyClusterInfoWithContext is the same as ModifyClusterInfo with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyClusterInfo for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ModifyClusterInfoWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyClusterInfoRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
