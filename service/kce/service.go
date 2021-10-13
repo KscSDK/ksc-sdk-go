@@ -4,7 +4,7 @@ package kce
 
 import (
 	"github.com/KscSDK/ksc-sdk-go/ksc"
-	"github.com/KscSDK/ksc-sdk-go/ksc/kscjson"
+	"github.com/KscSDK/ksc-sdk-go/ksc/kscquery"
 	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/client"
@@ -72,11 +72,7 @@ func ExtraNew(info *utils.UrlInfo, p client.ConfigProvider, cfgs ...*aws.Config)
 
 // SdkNew create int can support ssl or region locate set
 func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *Kce {
-	_info := utils.UrlInfo{
-		UseSSL:      false,
-		Locate:      false,
-		UseInternal: false,
-	}
+	_info := utils.UrlInfo{}
 	if len(info) > 0 && len(info) == 1 {
 		if info[0].UseSSL {
 			_info.UseSSL = info[0].UseSSL
@@ -86,6 +82,12 @@ func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *
 		}
 		if info[0].UseInternal {
 			_info.UseInternal = info[0].UseInternal
+		}
+		if info[0].CustomerDomain != "" {
+			_info.CustomerDomain = info[0].CustomerDomain
+		}
+		if info[0].CustomerDomainIgnoreService {
+			_info.CustomerDomainIgnoreService = info[0].CustomerDomainIgnoreService
 		}
 
 	}
@@ -115,10 +117,10 @@ func newClient(cfg aws.Config, handlers request.Handlers, endpoint, signingRegio
 	svc.Handlers.Build.Remove(corehandlers.SDKVersionUserAgentHandler)
 	// add ksc user-agent
 	svc.Handlers.Build.PushBackNamed(ksc.SDKVersionUserAgentHandler)
-	svc.Handlers.Build.PushBackNamed(kscjson.BuildHandler)
-	svc.Handlers.Unmarshal.PushBackNamed(kscjson.UnmarshalHandler)
-	svc.Handlers.UnmarshalMeta.PushBackNamed(kscjson.UnmarshalMetaHandler)
-	svc.Handlers.UnmarshalError.PushBackNamed(kscjson.UnmarshalErrorHandler)
+	svc.Handlers.Build.PushBackNamed(kscquery.BuildHandler)
+	svc.Handlers.Unmarshal.PushBackNamed(kscquery.UnmarshalHandler)
+	svc.Handlers.UnmarshalMeta.PushBackNamed(kscquery.UnmarshalMetaHandler)
+	svc.Handlers.UnmarshalError.PushBackNamed(kscquery.UnmarshalErrorHandler)
 
 	// Run custom client initialization if present
 	if initClient != nil {
