@@ -71,4 +71,17 @@ func main() {
 	//	str, _ := json.Marshal(&resp)
 	//	fmt.Printf("%+v\n", string(str))
 	//}
+	//	****************************************查询线号信息***************************************************
+	//queryPortLineInfos := make(map[string]interface{})
+	//queryPortLineInfos["SwitchSn"] = "G1Q515N001190"
+	//queryPortLineInfos["Limit"] = 5
+	//queryPortLineInfos["Offset"] = 0
+	//resp, err = svc.QueryPortLineInfos(&queryPortLineInfos)
+	//if err != nil {
+	//	fmt.Println("error:", err.Error())
+	//}
+	//if resp != nil {
+	//	str, _ := json.Marshal(&resp)
+	//	fmt.Printf("%+v\n", string(str))
+	//}
 }

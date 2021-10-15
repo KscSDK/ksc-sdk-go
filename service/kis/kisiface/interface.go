@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kis.
 //    func myFunc(svc kisiface.KisAPI) bool {
-//        // Make svc.QueryServerBatchIds request
+//        // Make svc.QueryPortLineInfos request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKisClient struct {
 //        kisiface.KisAPI
 //    }
-//    func (m *mockKisClient) QueryServerBatchIds(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKisClient) QueryPortLineInfos(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,10 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KisAPI interface {
+	QueryPortLineInfos(*map[string]interface{}) (*map[string]interface{}, error)
+	QueryPortLineInfosWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	QueryPortLineInfosRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	QueryServerBatchIds(*map[string]interface{}) (*map[string]interface{}, error)
 	QueryServerBatchIdsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	QueryServerBatchIdsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
