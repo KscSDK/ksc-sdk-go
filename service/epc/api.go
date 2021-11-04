@@ -328,7 +328,7 @@ const opCreateEpc = "CreateEpc"
 func (c *Epc) CreateEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opCreateEpc,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -1394,6 +1394,79 @@ func (c *Epc) DescribeEpcManagementsWithContext(ctx aws.Context, input *map[stri
 	return out, req.Send()
 }
 
+const opDescribeEpcRaidAttributes = "DescribeEpcRaidAttributes"
+
+// DescribeEpcRaidAttributesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeEpcRaidAttributes operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeEpcRaidAttributes for more information on using the DescribeEpcRaidAttributes
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeEpcRaidAttributesRequest method.
+//    req, resp := client.DescribeEpcRaidAttributesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcRaidAttributes
+func (c *Epc) DescribeEpcRaidAttributesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeEpcRaidAttributes,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeEpcRaidAttributes API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation DescribeEpcRaidAttributes for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcRaidAttributes
+func (c *Epc) DescribeEpcRaidAttributes(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeEpcRaidAttributesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeEpcRaidAttributesWithContext is the same as DescribeEpcRaidAttributes with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeEpcRaidAttributes for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) DescribeEpcRaidAttributesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeEpcRaidAttributesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeEpcStocks = "DescribeEpcStocks"
 
 // DescribeEpcStocksRequest generates a "ksc/request.Request" representing the
@@ -1496,7 +1569,7 @@ const opDescribeEpcs = "DescribeEpcs"
 func (c *Epc) DescribeEpcsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeEpcs,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -1569,7 +1642,7 @@ const opDescribeImages = "DescribeImages"
 func (c *Epc) DescribeImagesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opDescribeImages,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -2372,7 +2445,7 @@ const opModifyEpc = "ModifyEpc"
 func (c *Epc) ModifyEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opModifyEpc,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
@@ -3029,7 +3102,7 @@ const opReinstallEpc = "ReinstallEpc"
 func (c *Epc) ReinstallEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opReinstallEpc,
-		HTTPMethod: "GET",
+		HTTPMethod: "POST",
 		HTTPPath:   "/",
 	}
 
