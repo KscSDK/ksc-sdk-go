@@ -136,6 +136,10 @@ type EpcAPI interface {
 	DescribeEpcManagementsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeEpcManagementsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeEpcRaidAttributes(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeEpcRaidAttributesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeEpcRaidAttributesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeEpcStocks(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeEpcStocksWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeEpcStocksRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
