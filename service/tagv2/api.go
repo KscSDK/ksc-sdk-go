@@ -631,6 +631,8 @@ func (c *Tagv2) ReplaceResourcesTagsRequest(input *map[string]interface{}) (req 
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
 	return
 }
 
