@@ -153,6 +153,79 @@ func (c *Vpc) AllocateSubnetIpv6CidrBlockWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
+const opAssignPrivateIpAddress = "AssignPrivateIpAddress"
+
+// AssignPrivateIpAddressRequest generates a "ksc/request.Request" representing the
+// client's request for the AssignPrivateIpAddress operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AssignPrivateIpAddress for more information on using the AssignPrivateIpAddress
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AssignPrivateIpAddressRequest method.
+//    req, resp := client.AssignPrivateIpAddressRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssignPrivateIpAddress
+func (c *Vpc) AssignPrivateIpAddressRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAssignPrivateIpAddress,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AssignPrivateIpAddress API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AssignPrivateIpAddress for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssignPrivateIpAddress
+func (c *Vpc) AssignPrivateIpAddress(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AssignPrivateIpAddressRequest(input)
+	return out, req.Send()
+}
+
+// AssignPrivateIpAddressWithContext is the same as AssignPrivateIpAddress with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AssignPrivateIpAddress for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AssignPrivateIpAddressWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AssignPrivateIpAddressRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAssociateNat = "AssociateNat"
 
 // AssociateNatRequest generates a "ksc/request.Request" representing the
@@ -4820,6 +4893,79 @@ func (c *Vpc) RevokeSecurityGroupEntry(input *map[string]interface{}) (*map[stri
 // for more information on using Contexts.
 func (c *Vpc) RevokeSecurityGroupEntryWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RevokeSecurityGroupEntryRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUnassignPrivateIpAddress = "UnassignPrivateIpAddress"
+
+// UnassignPrivateIpAddressRequest generates a "ksc/request.Request" representing the
+// client's request for the UnassignPrivateIpAddress operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UnassignPrivateIpAddress for more information on using the UnassignPrivateIpAddress
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the UnassignPrivateIpAddressRequest method.
+//    req, resp := client.UnassignPrivateIpAddressRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/UnassignPrivateIpAddress
+func (c *Vpc) UnassignPrivateIpAddressRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUnassignPrivateIpAddress,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UnassignPrivateIpAddress API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation UnassignPrivateIpAddress for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/UnassignPrivateIpAddress
+func (c *Vpc) UnassignPrivateIpAddress(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UnassignPrivateIpAddressRequest(input)
+	return out, req.Send()
+}
+
+// UnassignPrivateIpAddressWithContext is the same as UnassignPrivateIpAddress with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UnassignPrivateIpAddress for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) UnassignPrivateIpAddressWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UnassignPrivateIpAddressRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
