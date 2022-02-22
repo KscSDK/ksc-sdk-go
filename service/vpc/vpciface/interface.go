@@ -68,6 +68,10 @@ type VpcAPI interface {
 	AllocateSubnetIpv6CidrBlockWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AllocateSubnetIpv6CidrBlockRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AssignPrivateIpAddress(*map[string]interface{}) (*map[string]interface{}, error)
+	AssignPrivateIpAddressWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AssignPrivateIpAddressRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AssociateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	AssociateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssociateNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -323,6 +327,10 @@ type VpcAPI interface {
 	RevokeSecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	RevokeSecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RevokeSecurityGroupEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UnassignPrivateIpAddress(*map[string]interface{}) (*map[string]interface{}, error)
+	UnassignPrivateIpAddressWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UnassignPrivateIpAddressRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ VpcAPI = (*vpc.Vpc)(nil)
