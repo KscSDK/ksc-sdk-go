@@ -103,7 +103,7 @@ func main() {
 	describeInstances["Marker"] = "0"
 	describeInstances["MaxResults"] = "10"
 
-	resp, err = svc.DescribeInstances(nil)
+	resp, err = svc.DescribeInstances(&describeInstances)
 	if err != nil {
 		fmt.Println("error:", err.Error())
 	}
