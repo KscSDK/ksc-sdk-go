@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	ak := "AKLTyQ2lkSEHQAKDnKe-TDcCDQ"
-	sk := "OIiVC5T6hpI2kQMMqtoYTTIszmU86n7UTMYniVs/hdCw5u5sivT4Hw+/h1o3tY87NA=="
+	ak := "你的ak"
+	sk := "你的sk"
 	region := "cn-beijing-6"
 	//debug模式的话 打开这个开关
 	svc := kisv1.SdkNew(ksc.NewClient(ak, sk /*,true*/), &ksc.Config{Region: &region}, &utils.UrlInfo{
