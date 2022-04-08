@@ -64,9 +64,17 @@ type EbsAPI interface {
 	AttachVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -80,6 +88,10 @@ type EbsAPI interface {
 	DescribeInstanceVolumesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInstanceVolumesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeSnapshots(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeSnapshotsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeSnapshotsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeVolumes(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeVolumesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeVolumesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -87,6 +99,10 @@ type EbsAPI interface {
 	DetachVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	DetachVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DetachVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifySnapshot(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifySnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifySnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -99,6 +115,10 @@ type EbsAPI interface {
 	ResizeVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	ResizeVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ResizeVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RollbackSnapshot(*map[string]interface{}) (*map[string]interface{}, error)
+	RollbackSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RollbackSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	UpdateVolumeProject(*map[string]interface{}) (*map[string]interface{}, error)
 	UpdateVolumeProjectWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

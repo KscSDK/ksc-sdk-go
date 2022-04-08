@@ -84,6 +84,10 @@ type VpcAPI interface {
 	AssociateVpcCidrBlockWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssociateVpcCidrBlockRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AttachDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
+	AttachDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AttachDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AuthorizeSecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	AuthorizeSecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AuthorizeSecurityGroupEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -91,6 +95,22 @@ type VpcAPI interface {
 	CreateCustomerGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateDirectConnectExtraCidr(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDirectConnectExtraCidrWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDirectConnectExtraCidrRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateDirectConnectInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDirectConnectInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateDirectConnectReomteCidr(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDirectConnectReomteCidrWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDirectConnectReomteCidrRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -144,6 +164,22 @@ type VpcAPI interface {
 	DeleteCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteDirectConnectExtraCidr(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDirectConnectExtraCidrWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDirectConnectExtraCidrRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteDirectConnectInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDirectConnectInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteDirectConnectReomteCidr(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDirectConnectReomteCidrWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDirectConnectReomteCidrRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteNat(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -195,6 +231,18 @@ type VpcAPI interface {
 	DescribeCustomerGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeCustomerGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeCustomerGatewaysRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDirectConnectGateways(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDirectConnectGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDirectConnectGatewaysRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDirectConnectInterfaces(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDirectConnectInterfacesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDirectConnectInterfacesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDirectConnects(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDirectConnectsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDirectConnectsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeInternetGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInternetGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -256,6 +304,10 @@ type VpcAPI interface {
 	DescribeVpnTunnelsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeVpnTunnelsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DetachDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
+	DetachDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DetachDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DisassociateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -267,6 +319,14 @@ type VpcAPI interface {
 	ModifyCustomerGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyDirectConnectInterface(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDirectConnectInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
