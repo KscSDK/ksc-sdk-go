@@ -445,6 +445,79 @@ func (c *Vpc) AssociateVpcCidrBlockWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opAttachDirectConnectGateway = "AttachDirectConnectGateway"
+
+// AttachDirectConnectGatewayRequest generates a "ksc/request.Request" representing the
+// client's request for the AttachDirectConnectGateway operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AttachDirectConnectGateway for more information on using the AttachDirectConnectGateway
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AttachDirectConnectGatewayRequest method.
+//    req, resp := client.AttachDirectConnectGatewayRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AttachDirectConnectGateway
+func (c *Vpc) AttachDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAttachDirectConnectGateway,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AttachDirectConnectGateway API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AttachDirectConnectGateway for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AttachDirectConnectGateway
+func (c *Vpc) AttachDirectConnectGateway(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AttachDirectConnectGatewayRequest(input)
+	return out, req.Send()
+}
+
+// AttachDirectConnectGatewayWithContext is the same as AttachDirectConnectGateway with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AttachDirectConnectGateway for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AttachDirectConnectGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AttachDirectConnectGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAuthorizeSecurityGroupEntry = "AuthorizeSecurityGroupEntry"
 
 // AuthorizeSecurityGroupEntryRequest generates a "ksc/request.Request" representing the
@@ -586,6 +659,298 @@ func (c *Vpc) CreateCustomerGateway(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Vpc) CreateCustomerGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateCustomerGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateDirectConnectExtraCidr = "CreateDirectConnectExtraCidr"
+
+// CreateDirectConnectExtraCidrRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDirectConnectExtraCidr operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDirectConnectExtraCidr for more information on using the CreateDirectConnectExtraCidr
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateDirectConnectExtraCidrRequest method.
+//    req, resp := client.CreateDirectConnectExtraCidrRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectExtraCidr
+func (c *Vpc) CreateDirectConnectExtraCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDirectConnectExtraCidr,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDirectConnectExtraCidr API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateDirectConnectExtraCidr for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectExtraCidr
+func (c *Vpc) CreateDirectConnectExtraCidr(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectExtraCidrRequest(input)
+	return out, req.Send()
+}
+
+// CreateDirectConnectExtraCidrWithContext is the same as CreateDirectConnectExtraCidr with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDirectConnectExtraCidr for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateDirectConnectExtraCidrWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectExtraCidrRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateDirectConnectGateway = "CreateDirectConnectGateway"
+
+// CreateDirectConnectGatewayRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDirectConnectGateway operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDirectConnectGateway for more information on using the CreateDirectConnectGateway
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateDirectConnectGatewayRequest method.
+//    req, resp := client.CreateDirectConnectGatewayRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectGateway
+func (c *Vpc) CreateDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDirectConnectGateway,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDirectConnectGateway API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateDirectConnectGateway for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectGateway
+func (c *Vpc) CreateDirectConnectGateway(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectGatewayRequest(input)
+	return out, req.Send()
+}
+
+// CreateDirectConnectGatewayWithContext is the same as CreateDirectConnectGateway with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDirectConnectGateway for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateDirectConnectGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateDirectConnectInterface = "CreateDirectConnectInterface"
+
+// CreateDirectConnectInterfaceRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDirectConnectInterface operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDirectConnectInterface for more information on using the CreateDirectConnectInterface
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateDirectConnectInterfaceRequest method.
+//    req, resp := client.CreateDirectConnectInterfaceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectInterface
+func (c *Vpc) CreateDirectConnectInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDirectConnectInterface,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDirectConnectInterface API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateDirectConnectInterface for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectInterface
+func (c *Vpc) CreateDirectConnectInterface(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectInterfaceRequest(input)
+	return out, req.Send()
+}
+
+// CreateDirectConnectInterfaceWithContext is the same as CreateDirectConnectInterface with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDirectConnectInterface for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateDirectConnectInterfaceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectInterfaceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateDirectConnectReomteCidr = "CreateDirectConnectReomteCidr"
+
+// CreateDirectConnectReomteCidrRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDirectConnectReomteCidr operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDirectConnectReomteCidr for more information on using the CreateDirectConnectReomteCidr
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateDirectConnectReomteCidrRequest method.
+//    req, resp := client.CreateDirectConnectReomteCidrRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectReomteCidr
+func (c *Vpc) CreateDirectConnectReomteCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDirectConnectReomteCidr,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDirectConnectReomteCidr API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateDirectConnectReomteCidr for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectReomteCidr
+func (c *Vpc) CreateDirectConnectReomteCidr(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectReomteCidrRequest(input)
+	return out, req.Send()
+}
+
+// CreateDirectConnectReomteCidrWithContext is the same as CreateDirectConnectReomteCidr with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDirectConnectReomteCidr for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateDirectConnectReomteCidrWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectReomteCidrRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1540,6 +1905,298 @@ func (c *Vpc) DeleteCustomerGatewayWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opDeleteDirectConnectExtraCidr = "DeleteDirectConnectExtraCidr"
+
+// DeleteDirectConnectExtraCidrRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDirectConnectExtraCidr operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDirectConnectExtraCidr for more information on using the DeleteDirectConnectExtraCidr
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteDirectConnectExtraCidrRequest method.
+//    req, resp := client.DeleteDirectConnectExtraCidrRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectExtraCidr
+func (c *Vpc) DeleteDirectConnectExtraCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDirectConnectExtraCidr,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDirectConnectExtraCidr API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteDirectConnectExtraCidr for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectExtraCidr
+func (c *Vpc) DeleteDirectConnectExtraCidr(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectExtraCidrRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDirectConnectExtraCidrWithContext is the same as DeleteDirectConnectExtraCidr with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDirectConnectExtraCidr for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteDirectConnectExtraCidrWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectExtraCidrRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteDirectConnectGateway = "DeleteDirectConnectGateway"
+
+// DeleteDirectConnectGatewayRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDirectConnectGateway operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDirectConnectGateway for more information on using the DeleteDirectConnectGateway
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteDirectConnectGatewayRequest method.
+//    req, resp := client.DeleteDirectConnectGatewayRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectGateway
+func (c *Vpc) DeleteDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDirectConnectGateway,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDirectConnectGateway API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteDirectConnectGateway for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectGateway
+func (c *Vpc) DeleteDirectConnectGateway(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectGatewayRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDirectConnectGatewayWithContext is the same as DeleteDirectConnectGateway with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDirectConnectGateway for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteDirectConnectGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteDirectConnectInterface = "DeleteDirectConnectInterface"
+
+// DeleteDirectConnectInterfaceRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDirectConnectInterface operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDirectConnectInterface for more information on using the DeleteDirectConnectInterface
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteDirectConnectInterfaceRequest method.
+//    req, resp := client.DeleteDirectConnectInterfaceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectInterface
+func (c *Vpc) DeleteDirectConnectInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDirectConnectInterface,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDirectConnectInterface API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteDirectConnectInterface for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectInterface
+func (c *Vpc) DeleteDirectConnectInterface(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectInterfaceRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDirectConnectInterfaceWithContext is the same as DeleteDirectConnectInterface with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDirectConnectInterface for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteDirectConnectInterfaceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectInterfaceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteDirectConnectReomteCidr = "DeleteDirectConnectReomteCidr"
+
+// DeleteDirectConnectReomteCidrRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDirectConnectReomteCidr operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDirectConnectReomteCidr for more information on using the DeleteDirectConnectReomteCidr
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteDirectConnectReomteCidrRequest method.
+//    req, resp := client.DeleteDirectConnectReomteCidrRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectReomteCidr
+func (c *Vpc) DeleteDirectConnectReomteCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDirectConnectReomteCidr,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDirectConnectReomteCidr API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteDirectConnectReomteCidr for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectReomteCidr
+func (c *Vpc) DeleteDirectConnectReomteCidr(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectReomteCidrRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDirectConnectReomteCidrWithContext is the same as DeleteDirectConnectReomteCidr with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDirectConnectReomteCidr for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteDirectConnectReomteCidrWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectReomteCidrRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteNat = "DeleteNat"
 
 // DeleteNatRequest generates a "ksc/request.Request" representing the
@@ -2484,6 +3141,225 @@ func (c *Vpc) DescribeCustomerGateways(input *map[string]interface{}) (*map[stri
 // for more information on using Contexts.
 func (c *Vpc) DescribeCustomerGatewaysWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeCustomerGatewaysRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDirectConnectGateways = "DescribeDirectConnectGateways"
+
+// DescribeDirectConnectGatewaysRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDirectConnectGateways operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDirectConnectGateways for more information on using the DescribeDirectConnectGateways
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDirectConnectGatewaysRequest method.
+//    req, resp := client.DescribeDirectConnectGatewaysRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectGateways
+func (c *Vpc) DescribeDirectConnectGatewaysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDirectConnectGateways,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDirectConnectGateways API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeDirectConnectGateways for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectGateways
+func (c *Vpc) DescribeDirectConnectGateways(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectGatewaysRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDirectConnectGatewaysWithContext is the same as DescribeDirectConnectGateways with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDirectConnectGateways for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeDirectConnectGatewaysWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectGatewaysRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDirectConnectInterfaces = "DescribeDirectConnectInterfaces"
+
+// DescribeDirectConnectInterfacesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDirectConnectInterfaces operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDirectConnectInterfaces for more information on using the DescribeDirectConnectInterfaces
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDirectConnectInterfacesRequest method.
+//    req, resp := client.DescribeDirectConnectInterfacesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectInterfaces
+func (c *Vpc) DescribeDirectConnectInterfacesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDirectConnectInterfaces,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDirectConnectInterfaces API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeDirectConnectInterfaces for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectInterfaces
+func (c *Vpc) DescribeDirectConnectInterfaces(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectInterfacesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDirectConnectInterfacesWithContext is the same as DescribeDirectConnectInterfaces with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDirectConnectInterfaces for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeDirectConnectInterfacesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectInterfacesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeDirectConnects = "DescribeDirectConnects"
+
+// DescribeDirectConnectsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDirectConnects operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDirectConnects for more information on using the DescribeDirectConnects
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDirectConnectsRequest method.
+//    req, resp := client.DescribeDirectConnectsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnects
+func (c *Vpc) DescribeDirectConnectsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDirectConnects,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDirectConnects API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeDirectConnects for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnects
+func (c *Vpc) DescribeDirectConnects(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDirectConnectsWithContext is the same as DescribeDirectConnects with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDirectConnects for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeDirectConnectsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -3584,6 +4460,79 @@ func (c *Vpc) DescribeVpnTunnelsWithContext(ctx aws.Context, input *map[string]i
 	return out, req.Send()
 }
 
+const opDetachDirectConnectGateway = "DetachDirectConnectGateway"
+
+// DetachDirectConnectGatewayRequest generates a "ksc/request.Request" representing the
+// client's request for the DetachDirectConnectGateway operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetachDirectConnectGateway for more information on using the DetachDirectConnectGateway
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DetachDirectConnectGatewayRequest method.
+//    req, resp := client.DetachDirectConnectGatewayRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DetachDirectConnectGateway
+func (c *Vpc) DetachDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDetachDirectConnectGateway,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DetachDirectConnectGateway API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DetachDirectConnectGateway for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DetachDirectConnectGateway
+func (c *Vpc) DetachDirectConnectGateway(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DetachDirectConnectGatewayRequest(input)
+	return out, req.Send()
+}
+
+// DetachDirectConnectGatewayWithContext is the same as DetachDirectConnectGateway with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetachDirectConnectGateway for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DetachDirectConnectGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DetachDirectConnectGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDisassociateNat = "DisassociateNat"
 
 // DisassociateNatRequest generates a "ksc/request.Request" representing the
@@ -3798,6 +4747,152 @@ func (c *Vpc) ModifyCustomerGateway(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Vpc) ModifyCustomerGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ModifyCustomerGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyDirectConnectGateway = "ModifyDirectConnectGateway"
+
+// ModifyDirectConnectGatewayRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyDirectConnectGateway operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyDirectConnectGateway for more information on using the ModifyDirectConnectGateway
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyDirectConnectGatewayRequest method.
+//    req, resp := client.ModifyDirectConnectGatewayRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectGateway
+func (c *Vpc) ModifyDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyDirectConnectGateway,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyDirectConnectGateway API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyDirectConnectGateway for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectGateway
+func (c *Vpc) ModifyDirectConnectGateway(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyDirectConnectGatewayRequest(input)
+	return out, req.Send()
+}
+
+// ModifyDirectConnectGatewayWithContext is the same as ModifyDirectConnectGateway with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyDirectConnectGateway for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyDirectConnectGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyDirectConnectGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyDirectConnectInterface = "ModifyDirectConnectInterface"
+
+// ModifyDirectConnectInterfaceRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyDirectConnectInterface operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyDirectConnectInterface for more information on using the ModifyDirectConnectInterface
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyDirectConnectInterfaceRequest method.
+//    req, resp := client.ModifyDirectConnectInterfaceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectInterface
+func (c *Vpc) ModifyDirectConnectInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyDirectConnectInterface,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyDirectConnectInterface API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyDirectConnectInterface for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectInterface
+func (c *Vpc) ModifyDirectConnectInterface(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyDirectConnectInterfaceRequest(input)
+	return out, req.Send()
+}
+
+// ModifyDirectConnectInterfaceWithContext is the same as ModifyDirectConnectInterface with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyDirectConnectInterface for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyDirectConnectInterfaceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyDirectConnectInterfaceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

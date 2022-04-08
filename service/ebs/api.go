@@ -80,6 +80,79 @@ func (c *Ebs) AttachVolumeWithContext(ctx aws.Context, input *map[string]interfa
 	return out, req.Send()
 }
 
+const opCreateSnapshot = "CreateSnapshot"
+
+// CreateSnapshotRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateSnapshot operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateSnapshot for more information on using the CreateSnapshot
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateSnapshotRequest method.
+//    req, resp := client.CreateSnapshotRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/CreateSnapshot
+func (c *Ebs) CreateSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateSnapshot,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateSnapshot API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation CreateSnapshot for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/CreateSnapshot
+func (c *Ebs) CreateSnapshot(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateSnapshotRequest(input)
+	return out, req.Send()
+}
+
+// CreateSnapshotWithContext is the same as CreateSnapshot with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateSnapshot for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) CreateSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateSnapshotRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateVolume = "CreateVolume"
 
 // CreateVolumeRequest generates a "ksc/request.Request" representing the
@@ -148,6 +221,79 @@ func (c *Ebs) CreateVolume(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Ebs) CreateVolumeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateVolumeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteSnapshot = "DeleteSnapshot"
+
+// DeleteSnapshotRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteSnapshot operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteSnapshot for more information on using the DeleteSnapshot
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteSnapshotRequest method.
+//    req, resp := client.DeleteSnapshotRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DeleteSnapshot
+func (c *Ebs) DeleteSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteSnapshot,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteSnapshot API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation DeleteSnapshot for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DeleteSnapshot
+func (c *Ebs) DeleteSnapshot(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteSnapshotRequest(input)
+	return out, req.Send()
+}
+
+// DeleteSnapshotWithContext is the same as DeleteSnapshot with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteSnapshot for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) DeleteSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -372,6 +518,79 @@ func (c *Ebs) DescribeInstanceVolumesWithContext(ctx aws.Context, input *map[str
 	return out, req.Send()
 }
 
+const opDescribeSnapshots = "DescribeSnapshots"
+
+// DescribeSnapshotsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeSnapshots operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeSnapshots for more information on using the DescribeSnapshots
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeSnapshotsRequest method.
+//    req, resp := client.DescribeSnapshotsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DescribeSnapshots
+func (c *Ebs) DescribeSnapshotsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeSnapshots,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeSnapshots API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation DescribeSnapshots for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DescribeSnapshots
+func (c *Ebs) DescribeSnapshots(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeSnapshotsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeSnapshotsWithContext is the same as DescribeSnapshots with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeSnapshots for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) DescribeSnapshotsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeSnapshotsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeVolumes = "DescribeVolumes"
 
 // DescribeVolumesRequest generates a "ksc/request.Request" representing the
@@ -513,6 +732,79 @@ func (c *Ebs) DetachVolume(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Ebs) DetachVolumeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DetachVolumeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifySnapshot = "ModifySnapshot"
+
+// ModifySnapshotRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifySnapshot operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifySnapshot for more information on using the ModifySnapshot
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifySnapshotRequest method.
+//    req, resp := client.ModifySnapshotRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifySnapshot
+func (c *Ebs) ModifySnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifySnapshot,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifySnapshot API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation ModifySnapshot for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifySnapshot
+func (c *Ebs) ModifySnapshot(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifySnapshotRequest(input)
+	return out, req.Send()
+}
+
+// ModifySnapshotWithContext is the same as ModifySnapshot with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifySnapshot for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) ModifySnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifySnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -732,6 +1024,79 @@ func (c *Ebs) ResizeVolume(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Ebs) ResizeVolumeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ResizeVolumeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRollbackSnapshot = "RollbackSnapshot"
+
+// RollbackSnapshotRequest generates a "ksc/request.Request" representing the
+// client's request for the RollbackSnapshot operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RollbackSnapshot for more information on using the RollbackSnapshot
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the RollbackSnapshotRequest method.
+//    req, resp := client.RollbackSnapshotRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/RollbackSnapshot
+func (c *Ebs) RollbackSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRollbackSnapshot,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// RollbackSnapshot API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation RollbackSnapshot for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/RollbackSnapshot
+func (c *Ebs) RollbackSnapshot(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RollbackSnapshotRequest(input)
+	return out, req.Send()
+}
+
+// RollbackSnapshotWithContext is the same as RollbackSnapshot with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RollbackSnapshot for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) RollbackSnapshotWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RollbackSnapshotRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
