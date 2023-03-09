@@ -9,8 +9,9 @@ import (
 )
 
 func main() {
-	ak := "你的ak"
-	sk := "你的sk"
+    ak := "your ak"
+	sk := "your sk"
+
 	region := "cn-shanghai-2"
 
 	//debug模式的话 打开这个开关
