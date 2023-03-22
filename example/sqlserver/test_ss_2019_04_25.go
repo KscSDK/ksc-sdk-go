@@ -9,14 +9,11 @@ import (
 )
 
 func main() {
-	//region = "cn-shanghai-3"
-	//access_key = "AKLTpmhJ3QlBQEmB401iSDl0dA"
-	//secret_key = "OAeYHxiil7rl7nbVcpsUPnbvzJEkY6zQM4ExOR4aOYUx4SZhwLqrKnlaCETVyVv7gw=="
-	ak := "AKLTpmhJ3QlBQEmB401iSDl0dA"
-	sk := "OAeYHxiil7rl7nbVcpsUPnbvzJEkY6zQM4ExOR4aOYUx4SZhwLqrKnlaCETVyVv7gw=="
+	ak := "your ak"
+	sk := "your sk"
 	region := "cn-shanghai-3"
 	//debug模式的话 打开这个开关
-	ss := sqlserver.SdkNew(ksc.NewClient(ak, sk ,true), &ksc.Config{Region: &region}, &utils.UrlInfo{
+	ss := sqlserver.SdkNew(ksc.NewClient(ak, sk, true), &ksc.Config{Region: &region}, &utils.UrlInfo{
 		UseSSL: false,
 		Locate: false,
 	})
@@ -24,7 +21,7 @@ func main() {
 	var err error
 
 	describeAddresses := make(map[string]interface{})
-	describeAddresses["DBInstanceStatus"]="active"
+	describeAddresses["DBInstanceStatus"] = "active"
 	resp, err = ss.DescribeDBInstances(&describeAddresses)
 	fmt.Println(resp)
 	if err != nil {
