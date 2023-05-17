@@ -76,10 +76,6 @@ type KceAPI interface {
 	AddExistedInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddExistedInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	CordonNode(*map[string]interface{}) (*map[string]interface{}, error)
-	CordonNodeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	CordonNodeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	CreateCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
