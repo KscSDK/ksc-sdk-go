@@ -4,4 +4,4 @@ package ksc
 var SDKName = "ksc-sdk-go"
 
 // SDKVersion is the version of this SDK
-var SDKVersion = "0.1.47"
+var SDKVersion = "0.1.48"
