@@ -42,11 +42,12 @@ const (
 // ksc.Config parameter to add your extra config.
 //
 // Example:
-//     // Create a Kce client from just a session.
-//     svc := kce.New(mySession)
 //
-//     // Create a Kce client with additional configuration
-//     svc := kce.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
+//	// Create a Kce client from just a session.
+//	svc := kce.New(mySession)
+//
+//	// Create a Kce client with additional configuration
+//	svc := kce.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
 func New(p client.ConfigProvider, cfgs ...*aws.Config) *Kce {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	c.Endpoint = utils.Url(&utils.UrlInfo{

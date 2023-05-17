@@ -23,14 +23,13 @@ const opAddClusterEpcInstances = "AddClusterEpcInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddClusterEpcInstancesRequest method.
+//	req, resp := client.AddClusterEpcInstancesRequest(params)
 //
-//    // Example sending a request using the AddClusterEpcInstancesRequest method.
-//    req, resp := client.AddClusterEpcInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterEpcInstances
 func (c *Kce) AddClusterEpcInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +95,13 @@ const opAddClusterInstanceToNodePool = "AddClusterInstanceToNodePool"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddClusterInstanceToNodePoolRequest method.
+//	req, resp := client.AddClusterInstanceToNodePoolRequest(params)
 //
-//    // Example sending a request using the AddClusterInstanceToNodePoolRequest method.
-//    req, resp := client.AddClusterInstanceToNodePoolRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterInstanceToNodePool
 func (c *Kce) AddClusterInstanceToNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -169,14 +167,13 @@ const opAddClusterInstances = "AddClusterInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddClusterInstancesRequest method.
+//	req, resp := client.AddClusterInstancesRequest(params)
 //
-//    // Example sending a request using the AddClusterInstancesRequest method.
-//    req, resp := client.AddClusterInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddClusterInstances
 func (c *Kce) AddClusterInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -242,14 +239,13 @@ const opAddExistedInstances = "AddExistedInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddExistedInstancesRequest method.
+//	req, resp := client.AddExistedInstancesRequest(params)
 //
-//    // Example sending a request using the AddExistedInstancesRequest method.
-//    req, resp := client.AddExistedInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddExistedInstances
 func (c *Kce) AddExistedInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -299,6 +295,78 @@ func (c *Kce) AddExistedInstancesWithContext(ctx aws.Context, input *map[string]
 	return out, req.Send()
 }
 
+const opCordonNode = "CordonNode"
+
+// CordonNodeRequest generates a "ksc/request.Request" representing the
+// client's request for the CordonNode operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CordonNode for more information on using the CordonNode
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CordonNodeRequest method.
+//	req, resp := client.CordonNodeRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CordonNode
+func (c *Kce) CordonNodeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCordonNode,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CordonNode API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation CordonNode for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CordonNode
+func (c *Kce) CordonNode(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CordonNodeRequest(input)
+	return out, req.Send()
+}
+
+// CordonNodeWithContext is the same as CordonNode with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CordonNode for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) CordonNodeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CordonNodeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateCluster = "CreateCluster"
 
 // CreateClusterRequest generates a "ksc/request.Request" representing the
@@ -315,14 +383,13 @@ const opCreateCluster = "CreateCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateClusterRequest method.
+//	req, resp := client.CreateClusterRequest(params)
 //
-//    // Example sending a request using the CreateClusterRequest method.
-//    req, resp := client.CreateClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CreateCluster
 func (c *Kce) CreateClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +455,13 @@ const opCreateNodePool = "CreateNodePool"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateNodePoolRequest method.
+//	req, resp := client.CreateNodePoolRequest(params)
 //
-//    // Example sending a request using the CreateNodePoolRequest method.
-//    req, resp := client.CreateNodePoolRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/CreateNodePool
 func (c *Kce) CreateNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +527,13 @@ const opDeleteCluster = "DeleteCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteClusterRequest method.
+//	req, resp := client.DeleteClusterRequest(params)
 //
-//    // Example sending a request using the DeleteClusterRequest method.
-//    req, resp := client.DeleteClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteCluster
 func (c *Kce) DeleteClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -534,14 +599,13 @@ const opDeleteClusterInstances = "DeleteClusterInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteClusterInstancesRequest method.
+//	req, resp := client.DeleteClusterInstancesRequest(params)
 //
-//    // Example sending a request using the DeleteClusterInstancesRequest method.
-//    req, resp := client.DeleteClusterInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteClusterInstances
 func (c *Kce) DeleteClusterInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -607,14 +671,13 @@ const opDeleteClusterInstancesFromNodePool = "DeleteClusterInstancesFromNodePool
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteClusterInstancesFromNodePoolRequest method.
+//	req, resp := client.DeleteClusterInstancesFromNodePoolRequest(params)
 //
-//    // Example sending a request using the DeleteClusterInstancesFromNodePoolRequest method.
-//    req, resp := client.DeleteClusterInstancesFromNodePoolRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteClusterInstancesFromNodePool
 func (c *Kce) DeleteClusterInstancesFromNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -680,14 +743,13 @@ const opDeleteNodePool = "DeleteNodePool"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNodePoolRequest method.
+//	req, resp := client.DeleteNodePoolRequest(params)
 //
-//    // Example sending a request using the DeleteNodePoolRequest method.
-//    req, resp := client.DeleteNodePoolRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteNodePool
 func (c *Kce) DeleteNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -753,14 +815,13 @@ const opDescribeCluster = "DescribeCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeClusterRequest method.
+//	req, resp := client.DescribeClusterRequest(params)
 //
-//    // Example sending a request using the DescribeClusterRequest method.
-//    req, resp := client.DescribeClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeCluster
 func (c *Kce) DescribeClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -826,14 +887,13 @@ const opDescribeClusterInstance = "DescribeClusterInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeClusterInstanceRequest method.
+//	req, resp := client.DescribeClusterInstanceRequest(params)
 //
-//    // Example sending a request using the DescribeClusterInstanceRequest method.
-//    req, resp := client.DescribeClusterInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeClusterInstance
 func (c *Kce) DescribeClusterInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -899,14 +959,13 @@ const opDescribeEpcForCluster = "DescribeEpcForCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcForClusterRequest method.
+//	req, resp := client.DescribeEpcForClusterRequest(params)
 //
-//    // Example sending a request using the DescribeEpcForClusterRequest method.
-//    req, resp := client.DescribeEpcForClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeEpcForCluster
 func (c *Kce) DescribeEpcForClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -972,14 +1031,13 @@ const opDescribeEpcImage = "DescribeEpcImage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcImageRequest method.
+//	req, resp := client.DescribeEpcImageRequest(params)
 //
-//    // Example sending a request using the DescribeEpcImageRequest method.
-//    req, resp := client.DescribeEpcImageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeEpcImage
 func (c *Kce) DescribeEpcImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1045,14 +1103,13 @@ const opDescribeExistedInstances = "DescribeExistedInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeExistedInstancesRequest method.
+//	req, resp := client.DescribeExistedInstancesRequest(params)
 //
-//    // Example sending a request using the DescribeExistedInstancesRequest method.
-//    req, resp := client.DescribeExistedInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeExistedInstances
 func (c *Kce) DescribeExistedInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1118,14 +1175,13 @@ const opDescribeInstanceImage = "DescribeInstanceImage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeInstanceImageRequest method.
+//	req, resp := client.DescribeInstanceImageRequest(params)
 //
-//    // Example sending a request using the DescribeInstanceImageRequest method.
-//    req, resp := client.DescribeInstanceImageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeInstanceImage
 func (c *Kce) DescribeInstanceImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1191,14 +1247,13 @@ const opDescribeNodePool = "DescribeNodePool"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeNodePoolRequest method.
+//	req, resp := client.DescribeNodePoolRequest(params)
 //
-//    // Example sending a request using the DescribeNodePoolRequest method.
-//    req, resp := client.DescribeNodePoolRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeNodePool
 func (c *Kce) DescribeNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1264,14 +1319,13 @@ const opDownloadClusterConfig = "DownloadClusterConfig"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DownloadClusterConfigRequest method.
+//	req, resp := client.DownloadClusterConfigRequest(params)
 //
-//    // Example sending a request using the DownloadClusterConfigRequest method.
-//    req, resp := client.DownloadClusterConfigRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DownloadClusterConfig
 func (c *Kce) DownloadClusterConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1337,14 +1391,13 @@ const opForceRemoveClusterInstance = "ForceRemoveClusterInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ForceRemoveClusterInstanceRequest method.
+//	req, resp := client.ForceRemoveClusterInstanceRequest(params)
 //
-//    // Example sending a request using the ForceRemoveClusterInstanceRequest method.
-//    req, resp := client.ForceRemoveClusterInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ForceRemoveClusterInstance
 func (c *Kce) ForceRemoveClusterInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1410,14 +1463,13 @@ const opModifyClusterInfo = "ModifyClusterInfo"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyClusterInfoRequest method.
+//	req, resp := client.ModifyClusterInfoRequest(params)
 //
-//    // Example sending a request using the ModifyClusterInfoRequest method.
-//    req, resp := client.ModifyClusterInfoRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyClusterInfo
 func (c *Kce) ModifyClusterInfoRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1483,14 +1535,13 @@ const opModifyNodePool = "ModifyNodePool"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNodePoolRequest method.
+//	req, resp := client.ModifyNodePoolRequest(params)
 //
-//    // Example sending a request using the ModifyNodePoolRequest method.
-//    req, resp := client.ModifyNodePoolRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePool
 func (c *Kce) ModifyNodePoolRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1556,14 +1607,13 @@ const opModifyNodePoolScaleDownPolicy = "ModifyNodePoolScaleDownPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNodePoolScaleDownPolicyRequest method.
+//	req, resp := client.ModifyNodePoolScaleDownPolicyRequest(params)
 //
-//    // Example sending a request using the ModifyNodePoolScaleDownPolicyRequest method.
-//    req, resp := client.ModifyNodePoolScaleDownPolicyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePoolScaleDownPolicy
 func (c *Kce) ModifyNodePoolScaleDownPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1629,14 +1679,13 @@ const opModifyNodePoolScaleUpPolicy = "ModifyNodePoolScaleUpPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNodePoolScaleUpPolicyRequest method.
+//	req, resp := client.ModifyNodePoolScaleUpPolicyRequest(params)
 //
-//    // Example sending a request using the ModifyNodePoolScaleUpPolicyRequest method.
-//    req, resp := client.ModifyNodePoolScaleUpPolicyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodePoolScaleUpPolicy
 func (c *Kce) ModifyNodePoolScaleUpPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1702,14 +1751,13 @@ const opModifyNodeTemplate = "ModifyNodeTemplate"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNodeTemplateRequest method.
+//	req, resp := client.ModifyNodeTemplateRequest(params)
 //
-//    // Example sending a request using the ModifyNodeTemplateRequest method.
-//    req, resp := client.ModifyNodeTemplateRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyNodeTemplate
 func (c *Kce) ModifyNodeTemplateRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1775,14 +1823,13 @@ const opProtectedFromScaleDown = "ProtectedFromScaleDown"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ProtectedFromScaleDownRequest method.
+//	req, resp := client.ProtectedFromScaleDownRequest(params)
 //
-//    // Example sending a request using the ProtectedFromScaleDownRequest method.
-//    req, resp := client.ProtectedFromScaleDownRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ProtectedFromScaleDown
 func (c *Kce) ProtectedFromScaleDownRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
