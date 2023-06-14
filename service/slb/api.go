@@ -550,6 +550,8 @@ func (c *Slb) CreateAlbRuleGroupRequest(input *map[string]interface{}) (req *req
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
 
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
 	return
 }
 
@@ -3429,6 +3431,8 @@ func (c *Slb) ModifyAlbRuleGroupRequest(input *map[string]interface{}) (req *req
 
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
 
 	return
 }
