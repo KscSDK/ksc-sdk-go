@@ -2169,7 +2169,7 @@ func (c *Slb) DeregisterInstancesFromListenerWithContext(ctx aws.Context, input 
 	return out, req.Send()
 }
 
-const opDescribeAlbListenerCertGroups = "DelDescribeAlbListenerCertGroupseteAlbRule"
+const opDescribeAlbListenerCertGroups = "DescribeAlbListenerCertGroups"
 
 // DescribeAlbListenerCertGroupsRequest generates a "ksc/request.Request" representing the
 // client's request for the DescribeAlbListenerCertGroups operation. The "output" return
