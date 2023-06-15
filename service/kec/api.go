@@ -80,6 +80,78 @@ func (c *Kec) AddVmIntoDataGuardWithContext(ctx aws.Context, input *map[string]i
 	return out, req.Send()
 }
 
+const opApplyAutoSnapshotPolicy = "ApplyAutoSnapshotPolicy"
+
+// ApplyAutoSnapshotPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the ApplyAutoSnapshotPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ApplyAutoSnapshotPolicy for more information on using the ApplyAutoSnapshotPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ApplyAutoSnapshotPolicyRequest method.
+//	req, resp := client.ApplyAutoSnapshotPolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ApplyAutoSnapshotPolicy
+func (c *Kec) ApplyAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opApplyAutoSnapshotPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ApplyAutoSnapshotPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ApplyAutoSnapshotPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ApplyAutoSnapshotPolicy
+func (c *Kec) ApplyAutoSnapshotPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ApplyAutoSnapshotPolicyRequest(input)
+	return out, req.Send()
+}
+
+// ApplyAutoSnapshotPolicyWithContext is the same as ApplyAutoSnapshotPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ApplyAutoSnapshotPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ApplyAutoSnapshotPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ApplyAutoSnapshotPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAttachInstance = "AttachInstance"
 
 // AttachInstanceRequest generates a "ksc/request.Request" representing the
@@ -372,6 +444,222 @@ func (c *Kec) AttachNetworkInterfaceWithContext(ctx aws.Context, input *map[stri
 	return out, req.Send()
 }
 
+const opCalculatePolicyInVolumeNum = "CalculatePolicyInVolumeNum"
+
+// CalculatePolicyInVolumeNumRequest generates a "ksc/request.Request" representing the
+// client's request for the CalculatePolicyInVolumeNum operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CalculatePolicyInVolumeNum for more information on using the CalculatePolicyInVolumeNum
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CalculatePolicyInVolumeNumRequest method.
+//	req, resp := client.CalculatePolicyInVolumeNumRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CalculatePolicyInVolumeNum
+func (c *Kec) CalculatePolicyInVolumeNumRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCalculatePolicyInVolumeNum,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CalculatePolicyInVolumeNum API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CalculatePolicyInVolumeNum for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CalculatePolicyInVolumeNum
+func (c *Kec) CalculatePolicyInVolumeNum(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CalculatePolicyInVolumeNumRequest(input)
+	return out, req.Send()
+}
+
+// CalculatePolicyInVolumeNumWithContext is the same as CalculatePolicyInVolumeNum with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CalculatePolicyInVolumeNum for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CalculatePolicyInVolumeNumWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CalculatePolicyInVolumeNumRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCalculatePolicyNum = "CalculatePolicyNum"
+
+// CalculatePolicyNumRequest generates a "ksc/request.Request" representing the
+// client's request for the CalculatePolicyNum operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CalculatePolicyNum for more information on using the CalculatePolicyNum
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CalculatePolicyNumRequest method.
+//	req, resp := client.CalculatePolicyNumRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CalculatePolicyNum
+func (c *Kec) CalculatePolicyNumRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCalculatePolicyNum,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CalculatePolicyNum API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CalculatePolicyNum for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CalculatePolicyNum
+func (c *Kec) CalculatePolicyNum(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CalculatePolicyNumRequest(input)
+	return out, req.Send()
+}
+
+// CalculatePolicyNumWithContext is the same as CalculatePolicyNum with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CalculatePolicyNum for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CalculatePolicyNumWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CalculatePolicyNumRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCancelAutoSnapshotPolicy = "CancelAutoSnapshotPolicy"
+
+// CancelAutoSnapshotPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the CancelAutoSnapshotPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CancelAutoSnapshotPolicy for more information on using the CancelAutoSnapshotPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CancelAutoSnapshotPolicyRequest method.
+//	req, resp := client.CancelAutoSnapshotPolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CancelAutoSnapshotPolicy
+func (c *Kec) CancelAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCancelAutoSnapshotPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CancelAutoSnapshotPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CancelAutoSnapshotPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CancelAutoSnapshotPolicy
+func (c *Kec) CancelAutoSnapshotPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CancelAutoSnapshotPolicyRequest(input)
+	return out, req.Send()
+}
+
+// CancelAutoSnapshotPolicyWithContext is the same as CancelAutoSnapshotPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CancelAutoSnapshotPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CancelAutoSnapshotPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CancelAutoSnapshotPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCopyImage = "CopyImage"
 
 // CopyImageRequest generates a "ksc/request.Request" representing the
@@ -440,6 +728,78 @@ func (c *Kec) CopyImage(input *map[string]interface{}) (*map[string]interface{},
 // for more information on using Contexts.
 func (c *Kec) CopyImageWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CopyImageRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateAutoSnapshotPolicy = "CreateAutoSnapshotPolicy"
+
+// CreateAutoSnapshotPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateAutoSnapshotPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateAutoSnapshotPolicy for more information on using the CreateAutoSnapshotPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateAutoSnapshotPolicyRequest method.
+//	req, resp := client.CreateAutoSnapshotPolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateAutoSnapshotPolicy
+func (c *Kec) CreateAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateAutoSnapshotPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateAutoSnapshotPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateAutoSnapshotPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateAutoSnapshotPolicy
+func (c *Kec) CreateAutoSnapshotPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateAutoSnapshotPolicyRequest(input)
+	return out, req.Send()
+}
+
+// CreateAutoSnapshotPolicyWithContext is the same as CreateAutoSnapshotPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateAutoSnapshotPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateAutoSnapshotPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateAutoSnapshotPolicyRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1029,6 +1389,78 @@ func (c *Kec) CreateScheduledTaskWithContext(ctx aws.Context, input *map[string]
 	return out, req.Send()
 }
 
+const opDeleteAutoSnapshotPolicy = "DeleteAutoSnapshotPolicy"
+
+// DeleteAutoSnapshotPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteAutoSnapshotPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteAutoSnapshotPolicy for more information on using the DeleteAutoSnapshotPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteAutoSnapshotPolicyRequest method.
+//	req, resp := client.DeleteAutoSnapshotPolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteAutoSnapshotPolicy
+func (c *Kec) DeleteAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteAutoSnapshotPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteAutoSnapshotPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DeleteAutoSnapshotPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteAutoSnapshotPolicy
+func (c *Kec) DeleteAutoSnapshotPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteAutoSnapshotPolicyRequest(input)
+	return out, req.Send()
+}
+
+// DeleteAutoSnapshotPolicyWithContext is the same as DeleteAutoSnapshotPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteAutoSnapshotPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DeleteAutoSnapshotPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteAutoSnapshotPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteDataGuardGroups = "DeleteDataGuardGroups"
 
 // DeleteDataGuardGroupsRequest generates a "ksc/request.Request" representing the
@@ -1462,6 +1894,78 @@ func (c *Kec) DeleteScheduledTask(input *map[string]interface{}) (*map[string]in
 // for more information on using Contexts.
 func (c *Kec) DeleteScheduledTaskWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteScheduledTaskRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeAutoSnapshotPolicy = "DescribeAutoSnapshotPolicy"
+
+// DescribeAutoSnapshotPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeAutoSnapshotPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeAutoSnapshotPolicy for more information on using the DescribeAutoSnapshotPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeAutoSnapshotPolicyRequest method.
+//	req, resp := client.DescribeAutoSnapshotPolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeAutoSnapshotPolicy
+func (c *Kec) DescribeAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeAutoSnapshotPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeAutoSnapshotPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeAutoSnapshotPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeAutoSnapshotPolicy
+func (c *Kec) DescribeAutoSnapshotPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeAutoSnapshotPolicyRequest(input)
+	return out, req.Send()
+}
+
+// DescribeAutoSnapshotPolicyWithContext is the same as DescribeAutoSnapshotPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeAutoSnapshotPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeAutoSnapshotPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeAutoSnapshotPolicyRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -3506,6 +4010,78 @@ func (c *Kec) ImportImage(input *map[string]interface{}) (*map[string]interface{
 // for more information on using Contexts.
 func (c *Kec) ImportImageWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ImportImageRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyAutoSnapshotPolicy = "ModifyAutoSnapshotPolicy"
+
+// ModifyAutoSnapshotPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyAutoSnapshotPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyAutoSnapshotPolicy for more information on using the ModifyAutoSnapshotPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyAutoSnapshotPolicyRequest method.
+//	req, resp := client.ModifyAutoSnapshotPolicyRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyAutoSnapshotPolicy
+func (c *Kec) ModifyAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyAutoSnapshotPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyAutoSnapshotPolicy API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation ModifyAutoSnapshotPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyAutoSnapshotPolicy
+func (c *Kec) ModifyAutoSnapshotPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyAutoSnapshotPolicyRequest(input)
+	return out, req.Send()
+}
+
+// ModifyAutoSnapshotPolicyWithContext is the same as ModifyAutoSnapshotPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyAutoSnapshotPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) ModifyAutoSnapshotPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyAutoSnapshotPolicyRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
