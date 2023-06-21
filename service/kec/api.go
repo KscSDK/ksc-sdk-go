@@ -96,13 +96,14 @@ const opApplyAutoSnapshotPolicy = "ApplyAutoSnapshotPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the ApplyAutoSnapshotPolicyRequest method.
-//	req, resp := client.ApplyAutoSnapshotPolicyRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the ApplyAutoSnapshotPolicyRequest method.
+//    req, resp := client.ApplyAutoSnapshotPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ApplyAutoSnapshotPolicy
 func (c *Kec) ApplyAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -460,13 +461,14 @@ const opCalculatePolicyInVolumeNum = "CalculatePolicyInVolumeNum"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the CalculatePolicyInVolumeNumRequest method.
-//	req, resp := client.CalculatePolicyInVolumeNumRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the CalculatePolicyInVolumeNumRequest method.
+//    req, resp := client.CalculatePolicyInVolumeNumRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CalculatePolicyInVolumeNum
 func (c *Kec) CalculatePolicyInVolumeNumRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -532,13 +534,14 @@ const opCalculatePolicyNum = "CalculatePolicyNum"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the CalculatePolicyNumRequest method.
-//	req, resp := client.CalculatePolicyNumRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the CalculatePolicyNumRequest method.
+//    req, resp := client.CalculatePolicyNumRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CalculatePolicyNum
 func (c *Kec) CalculatePolicyNumRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -604,13 +607,14 @@ const opCancelAutoSnapshotPolicy = "CancelAutoSnapshotPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the CancelAutoSnapshotPolicyRequest method.
-//	req, resp := client.CancelAutoSnapshotPolicyRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the CancelAutoSnapshotPolicyRequest method.
+//    req, resp := client.CancelAutoSnapshotPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CancelAutoSnapshotPolicy
 func (c *Kec) CancelAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -749,13 +753,14 @@ const opCreateAutoSnapshotPolicy = "CreateAutoSnapshotPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the CreateAutoSnapshotPolicyRequest method.
-//	req, resp := client.CreateAutoSnapshotPolicyRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the CreateAutoSnapshotPolicyRequest method.
+//    req, resp := client.CreateAutoSnapshotPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateAutoSnapshotPolicy
 func (c *Kec) CreateAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1405,13 +1410,14 @@ const opDeleteAutoSnapshotPolicy = "DeleteAutoSnapshotPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the DeleteAutoSnapshotPolicyRequest method.
-//	req, resp := client.DeleteAutoSnapshotPolicyRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the DeleteAutoSnapshotPolicyRequest method.
+//    req, resp := client.DeleteAutoSnapshotPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DeleteAutoSnapshotPolicy
 func (c *Kec) DeleteAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1915,13 +1921,14 @@ const opDescribeAutoSnapshotPolicy = "DescribeAutoSnapshotPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the DescribeAutoSnapshotPolicyRequest method.
-//	req, resp := client.DescribeAutoSnapshotPolicyRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the DescribeAutoSnapshotPolicyRequest method.
+//    req, resp := client.DescribeAutoSnapshotPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeAutoSnapshotPolicy
 func (c *Kec) DescribeAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3869,6 +3876,79 @@ func (c *Kec) DisableScalingGroupWithContext(ctx aws.Context, input *map[string]
 	return out, req.Send()
 }
 
+const opEnableImageCaching = "EnableImageCaching"
+
+// EnableImageCachingRequest generates a "ksc/request.Request" representing the
+// client's request for the EnableImageCaching operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See EnableImageCaching for more information on using the EnableImageCaching
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the EnableImageCachingRequest method.
+//    req, resp := client.EnableImageCachingRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/EnableImageCaching
+func (c *Kec) EnableImageCachingRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opEnableImageCaching,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// EnableImageCaching API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation EnableImageCaching for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/EnableImageCaching
+func (c *Kec) EnableImageCaching(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.EnableImageCachingRequest(input)
+	return out, req.Send()
+}
+
+// EnableImageCachingWithContext is the same as EnableImageCaching with the addition of
+// the ability to pass a context and additional request options.
+//
+// See EnableImageCaching for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) EnableImageCachingWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.EnableImageCachingRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opEnableScalingGroup = "EnableScalingGroup"
 
 // EnableScalingGroupRequest generates a "ksc/request.Request" representing the
@@ -4031,13 +4111,14 @@ const opModifyAutoSnapshotPolicy = "ModifyAutoSnapshotPolicy"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
-//	// Example sending a request using the ModifyAutoSnapshotPolicyRequest method.
-//	req, resp := client.ModifyAutoSnapshotPolicyRequest(params)
 //
-//	err := req.Send()
-//	if err == nil { // resp is now filled
-//	    fmt.Println(resp)
-//	}
+//    // Example sending a request using the ModifyAutoSnapshotPolicyRequest method.
+//    req, resp := client.ModifyAutoSnapshotPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/ModifyAutoSnapshotPolicy
 func (c *Kec) ModifyAutoSnapshotPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {

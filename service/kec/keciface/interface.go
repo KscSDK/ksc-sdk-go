@@ -23,37 +23,37 @@ import (
 // can be stubbed out for unit testing your code with the SDK without needing
 // to inject custom request handlers into the SDK's request pipeline.
 //
-//	// myFunc uses an SDK service client to make a request to
-//	// kec.
-//	func myFunc(svc keciface.KecAPI) bool {
-//	    // Make svc.AddVmIntoDataGuard request
-//	}
+//    // myFunc uses an SDK service client to make a request to
+//    // kec.
+//    func myFunc(svc keciface.KecAPI) bool {
+//        // Make svc.AddVmIntoDataGuard request
+//    }
 //
-//	func main() {
-//	    sess := session.New()
-//	    svc := kec.New(sess)
+//    func main() {
+//        sess := session.New()
+//        svc := kec.New(sess)
 //
-//	    myFunc(svc)
-//	}
+//        myFunc(svc)
+//    }
 //
 // In your _test.go file:
 //
-//	// Define a mock struct to be used in your unit tests of myFunc.
-//	type mockKecClient struct {
-//	    keciface.KecAPI
-//	}
-//	func (m *mockKecClient) AddVmIntoDataGuard(input *map[string]interface{}) (*map[string]interface{}, error) {
-//	    // mock response/functionality
-//	}
+//    // Define a mock struct to be used in your unit tests of myFunc.
+//    type mockKecClient struct {
+//        keciface.KecAPI
+//    }
+//    func (m *mockKecClient) AddVmIntoDataGuard(input *map[string]interface{}) (*map[string]interface{}, error) {
+//        // mock response/functionality
+//    }
 //
-//	func TestMyFunc(t *testing.T) {
-//	    // Setup Test
-//	    mockSvc := &mockKecClient{}
+//    func TestMyFunc(t *testing.T) {
+//        // Setup Test
+//        mockSvc := &mockKecClient{}
 //
-//	    myfunc(mockSvc)
+//        myfunc(mockSvc)
 //
-//	    // Verify myFunc's functionality
-//	}
+//        // Verify myFunc's functionality
+//    }
 //
 // It is important to note that this interface will have breaking changes
 // when the service model is updated and adds new API operations, paginators,
@@ -271,6 +271,10 @@ type KecAPI interface {
 	DisableScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	DisableScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisableScalingGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	EnableImageCaching(*map[string]interface{}) (*map[string]interface{}, error)
+	EnableImageCachingWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	EnableImageCachingRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	EnableScalingGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	EnableScalingGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
