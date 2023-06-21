@@ -7,6 +7,150 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddAlbRule = "AddAlbRule"
+
+// AddAlbRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the AddAlbRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddAlbRule for more information on using the AddAlbRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the AddAlbRuleRequest method.
+//	req, resp := client.AddAlbRuleRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AddAlbRule
+func (c *Slb) AddAlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddAlbRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddAlbRule API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation AddAlbRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AddAlbRule
+func (c *Slb) AddAlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddAlbRuleRequest(input)
+	return out, req.Send()
+}
+
+// AddAlbRuleWithContext is the same as AddAlbRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddAlbRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) AddAlbRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddAlbRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opAssociateCertificateWithGroup = "AssociateCertificateWithGroup"
+
+// AssociateCertificateWithGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the AssociateCertificateWithGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AssociateCertificateWithGroup for more information on using the AssociateCertificateWithGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the AssociateCertificateWithGroupRequest method.
+//	req, resp := client.AssociateCertificateWithGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AssociateCertificateWithGroup
+func (c *Slb) AssociateCertificateWithGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAssociateCertificateWithGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AssociateCertificateWithGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation AssociateCertificateWithGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AssociateCertificateWithGroup
+func (c *Slb) AssociateCertificateWithGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AssociateCertificateWithGroupRequest(input)
+	return out, req.Send()
+}
+
+// AssociateCertificateWithGroupWithContext is the same as AssociateCertificateWithGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AssociateCertificateWithGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) AssociateCertificateWithGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AssociateCertificateWithGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAssociateLoadBalancerAcl = "AssociateLoadBalancerAcl"
 
 // AssociateLoadBalancerAclRequest generates a "ksc/request.Request" representing the
@@ -146,6 +290,296 @@ func (c *Slb) ConfigureHealthCheck(input *map[string]interface{}) (*map[string]i
 // for more information on using Contexts.
 func (c *Slb) ConfigureHealthCheckWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ConfigureHealthCheckRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateAlb = "CreateAlb"
+
+// CreateAlbRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateAlb operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateAlb for more information on using the CreateAlb
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateAlbRequest method.
+//	req, resp := client.CreateAlbRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlb
+func (c *Slb) CreateAlbRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateAlb,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateAlb API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateAlb for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlb
+func (c *Slb) CreateAlb(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbRequest(input)
+	return out, req.Send()
+}
+
+// CreateAlbWithContext is the same as CreateAlb with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateAlb for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateAlbWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateAlbListener = "CreateAlbListener"
+
+// CreateAlbListenerRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateAlbListener operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateAlbListener for more information on using the CreateAlbListener
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateAlbListenerRequest method.
+//	req, resp := client.CreateAlbListenerRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbListener
+func (c *Slb) CreateAlbListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateAlbListener,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateAlbListener API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateAlbListener for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbListener
+func (c *Slb) CreateAlbListener(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbListenerRequest(input)
+	return out, req.Send()
+}
+
+// CreateAlbListenerWithContext is the same as CreateAlbListener with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateAlbListener for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateAlbListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateAlbListenerCertGroup = "CreateAlbListenerCertGroup"
+
+// CreateAlbListenerCertGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateAlbListenerCertGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateAlbListenerCertGroup for more information on using the CreateAlbListenerCertGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateAlbListenerCertGroupRequest method.
+//	req, resp := client.CreateAlbListenerCertGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbListenerCertGroup
+func (c *Slb) CreateAlbListenerCertGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateAlbListenerCertGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateAlbListenerCertGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateAlbListenerCertGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbListenerCertGroup
+func (c *Slb) CreateAlbListenerCertGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbListenerCertGroupRequest(input)
+	return out, req.Send()
+}
+
+// CreateAlbListenerCertGroupWithContext is the same as CreateAlbListenerCertGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateAlbListenerCertGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateAlbListenerCertGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbListenerCertGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateAlbRuleGroup = "CreateAlbRuleGroup"
+
+// CreateAlbRuleGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateAlbRuleGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateAlbRuleGroup for more information on using the CreateAlbRuleGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateAlbRuleGroupRequest method.
+//	req, resp := client.CreateAlbRuleGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbRuleGroup
+func (c *Slb) CreateAlbRuleGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateAlbRuleGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// CreateAlbRuleGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation CreateAlbRuleGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbRuleGroup
+func (c *Slb) CreateAlbRuleGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbRuleGroupRequest(input)
+	return out, req.Send()
+}
+
+// CreateAlbRuleGroupWithContext is the same as CreateAlbRuleGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateAlbRuleGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) CreateAlbRuleGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateAlbRuleGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -650,6 +1084,366 @@ func (c *Slb) CreateSlbRule(input *map[string]interface{}) (*map[string]interfac
 // for more information on using Contexts.
 func (c *Slb) CreateSlbRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateSlbRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteAlb = "DeleteAlb"
+
+// DeleteAlbRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteAlb operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteAlb for more information on using the DeleteAlb
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteAlbRequest method.
+//	req, resp := client.DeleteAlbRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlb
+func (c *Slb) DeleteAlbRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteAlb,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteAlb API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteAlb for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlb
+func (c *Slb) DeleteAlb(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbRequest(input)
+	return out, req.Send()
+}
+
+// DeleteAlbWithContext is the same as DeleteAlb with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteAlb for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteAlbWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteAlbListener = "DeleteAlbListener"
+
+// DeleteAlbListenerRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteAlbListener operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteAlbListener for more information on using the DeleteAlbListener
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteAlbListenerRequest method.
+//	req, resp := client.DeleteAlbListenerRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbListener
+func (c *Slb) DeleteAlbListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteAlbListener,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteAlbListener API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteAlbListener for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbListener
+func (c *Slb) DeleteAlbListener(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbListenerRequest(input)
+	return out, req.Send()
+}
+
+// DeleteAlbListenerWithContext is the same as DeleteAlbListener with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteAlbListener for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteAlbListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteAlbListenerCertGroup = "DeleteAlbListenerCertGroup"
+
+// DeleteAlbListenerCertGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteAlbListenerCertGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteAlbListenerCertGroup for more information on using the DeleteAlbListenerCertGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteAlbListenerCertGroupRequest method.
+//	req, resp := client.DeleteAlbListenerCertGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbListenerCertGroup
+func (c *Slb) DeleteAlbListenerCertGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteAlbListenerCertGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteAlbListenerCertGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteAlbListenerCertGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbListenerCertGroup
+func (c *Slb) DeleteAlbListenerCertGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbListenerCertGroupRequest(input)
+	return out, req.Send()
+}
+
+// DeleteAlbListenerCertGroupWithContext is the same as DeleteAlbListenerCertGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteAlbListenerCertGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteAlbListenerCertGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbListenerCertGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteAlbRule = "DeleteAlbRule"
+
+// DeleteAlbRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteAlbRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteAlbRule for more information on using the DeleteAlbRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteAlbRuleRequest method.
+//	req, resp := client.DeleteAlbRuleRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbRule
+func (c *Slb) DeleteAlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteAlbRule,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteAlbRule API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteAlbRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbRule
+func (c *Slb) DeleteAlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbRuleRequest(input)
+	return out, req.Send()
+}
+
+// DeleteAlbRuleWithContext is the same as DeleteAlbRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteAlbRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteAlbRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteAlbRuleGroup = "DeleteAlbRuleGroup"
+
+// DeleteAlbRuleGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteAlbRuleGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteAlbRuleGroup for more information on using the DeleteAlbRuleGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteAlbRuleGroupRequest method.
+//	req, resp := client.DeleteAlbRuleGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbRuleGroup
+func (c *Slb) DeleteAlbRuleGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteAlbRuleGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteAlbRuleGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeleteAlbRuleGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbRuleGroup
+func (c *Slb) DeleteAlbRuleGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbRuleGroupRequest(input)
+	return out, req.Send()
+}
+
+// DeleteAlbRuleGroupWithContext is the same as DeleteAlbRuleGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteAlbRuleGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeleteAlbRuleGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteAlbRuleGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1370,6 +2164,294 @@ func (c *Slb) DeregisterInstancesFromListener(input *map[string]interface{}) (*m
 // for more information on using Contexts.
 func (c *Slb) DeregisterInstancesFromListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeregisterInstancesFromListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeAlbListenerCertGroups = "DescribeAlbListenerCertGroups"
+
+// DescribeAlbListenerCertGroupsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeAlbListenerCertGroups operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeAlbListenerCertGroups for more information on using the DescribeAlbListenerCertGroups
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeAlbListenerCertGroupsRequest method.
+//	req, resp := client.DescribeAlbListenerCertGroupsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbListenerCertGroups
+func (c *Slb) DescribeAlbListenerCertGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeAlbListenerCertGroups,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeAlbListenerCertGroups API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeAlbListenerCertGroups for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbListenerCertGroups
+func (c *Slb) DescribeAlbListenerCertGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbListenerCertGroupsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeAlbListenerCertGroupsWithContext is the same as DescribeAlbListenerCertGroups with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeAlbListenerCertGroups for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeAlbListenerCertGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbListenerCertGroupsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeAlbListeners = "DescribeAlbListeners"
+
+// DescribeAlbListenersRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeAlbListeners operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeAlbListeners for more information on using the DescribeAlbListeners
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeAlbListenersRequest method.
+//	req, resp := client.DescribeAlbListenersRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbListeners
+func (c *Slb) DescribeAlbListenersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeAlbListeners,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeAlbListeners API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeAlbListeners for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbListeners
+func (c *Slb) DescribeAlbListeners(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbListenersRequest(input)
+	return out, req.Send()
+}
+
+// DescribeAlbListenersWithContext is the same as DescribeAlbListeners with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeAlbListeners for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeAlbListenersWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbListenersRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeAlbRuleGroups = "DescribeAlbRuleGroups"
+
+// DescribeAlbRuleGroupsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeAlbRuleGroups operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeAlbRuleGroups for more information on using the DescribeAlbRuleGroups
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeAlbRuleGroupsRequest method.
+//	req, resp := client.DescribeAlbRuleGroupsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbRuleGroups
+func (c *Slb) DescribeAlbRuleGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeAlbRuleGroups,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeAlbRuleGroups API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeAlbRuleGroups for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbRuleGroups
+func (c *Slb) DescribeAlbRuleGroups(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbRuleGroupsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeAlbRuleGroupsWithContext is the same as DescribeAlbRuleGroups with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeAlbRuleGroups for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeAlbRuleGroupsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbRuleGroupsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeAlbs = "DescribeAlbs"
+
+// DescribeAlbsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeAlbs operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeAlbs for more information on using the DescribeAlbs
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeAlbsRequest method.
+//	req, resp := client.DescribeAlbsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbs
+func (c *Slb) DescribeAlbsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeAlbs,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeAlbs API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DescribeAlbs for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbs
+func (c *Slb) DescribeAlbs(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeAlbsWithContext is the same as DescribeAlbs with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeAlbs for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DescribeAlbsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeAlbsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -2162,6 +3244,224 @@ func (c *Slb) DisassociateLoadBalancerAcl(input *map[string]interface{}) (*map[s
 // for more information on using Contexts.
 func (c *Slb) DisassociateLoadBalancerAclWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DisassociateLoadBalancerAclRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDissociateCertificateWithGroup = "DissociateCertificateWithGroup"
+
+// DissociateCertificateWithGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DissociateCertificateWithGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DissociateCertificateWithGroup for more information on using the DissociateCertificateWithGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DissociateCertificateWithGroupRequest method.
+//	req, resp := client.DissociateCertificateWithGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DissociateCertificateWithGroup
+func (c *Slb) DissociateCertificateWithGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDissociateCertificateWithGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DissociateCertificateWithGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DissociateCertificateWithGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DissociateCertificateWithGroup
+func (c *Slb) DissociateCertificateWithGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DissociateCertificateWithGroupRequest(input)
+	return out, req.Send()
+}
+
+// DissociateCertificateWithGroupWithContext is the same as DissociateCertificateWithGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DissociateCertificateWithGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DissociateCertificateWithGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DissociateCertificateWithGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyAlbListener = "ModifyAlbListener"
+
+// ModifyAlbListenerRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyAlbListener operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyAlbListener for more information on using the ModifyAlbListener
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyAlbListenerRequest method.
+//	req, resp := client.ModifyAlbListenerRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbListener
+func (c *Slb) ModifyAlbListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyAlbListener,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyAlbListener API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyAlbListener for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbListener
+func (c *Slb) ModifyAlbListener(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyAlbListenerRequest(input)
+	return out, req.Send()
+}
+
+// ModifyAlbListenerWithContext is the same as ModifyAlbListener with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyAlbListener for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyAlbListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyAlbListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyAlbRuleGroup = "ModifyAlbRuleGroup"
+
+// ModifyAlbRuleGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyAlbRuleGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyAlbRuleGroup for more information on using the ModifyAlbRuleGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyAlbRuleGroupRequest method.
+//	req, resp := client.ModifyAlbRuleGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbRuleGroup
+func (c *Slb) ModifyAlbRuleGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyAlbRuleGroup,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// ModifyAlbRuleGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyAlbRuleGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbRuleGroup
+func (c *Slb) ModifyAlbRuleGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyAlbRuleGroupRequest(input)
+	return out, req.Send()
+}
+
+// ModifyAlbRuleGroupWithContext is the same as ModifyAlbRuleGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyAlbRuleGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyAlbRuleGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyAlbRuleGroupRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -3170,6 +4470,150 @@ func (c *Slb) RegisterInstancesWithListener(input *map[string]interface{}) (*map
 // for more information on using Contexts.
 func (c *Slb) RegisterInstancesWithListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RegisterInstancesWithListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opSetAlbName = "SetAlbName"
+
+// SetAlbNameRequest generates a "ksc/request.Request" representing the
+// client's request for the SetAlbName operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SetAlbName for more information on using the SetAlbName
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the SetAlbNameRequest method.
+//	req, resp := client.SetAlbNameRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbName
+func (c *Slb) SetAlbNameRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSetAlbName,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// SetAlbName API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation SetAlbName for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbName
+func (c *Slb) SetAlbName(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SetAlbNameRequest(input)
+	return out, req.Send()
+}
+
+// SetAlbNameWithContext is the same as SetAlbName with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SetAlbName for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) SetAlbNameWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SetAlbNameRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opSetAlbStatus = "SetAlbStatus"
+
+// SetAlbStatusRequest generates a "ksc/request.Request" representing the
+// client's request for the SetAlbStatus operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SetAlbStatus for more information on using the SetAlbStatus
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the SetAlbStatusRequest method.
+//	req, resp := client.SetAlbStatusRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbStatus
+func (c *Slb) SetAlbStatusRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSetAlbStatus,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// SetAlbStatus API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation SetAlbStatus for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbStatus
+func (c *Slb) SetAlbStatus(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SetAlbStatusRequest(input)
+	return out, req.Send()
+}
+
+// SetAlbStatusWithContext is the same as SetAlbStatus with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SetAlbStatus for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) SetAlbStatusWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SetAlbStatusRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
