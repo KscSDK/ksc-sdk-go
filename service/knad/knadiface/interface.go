@@ -76,13 +76,13 @@ type KnadAPI interface {
 	DescribeKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeKnadRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
-	DescribeKnadIp(*map[string]interface{}) (*map[string]interface{}, error)
-	DescribeKnadIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
-	DescribeKnadIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
-
 	DisassociateIp(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	IpList(*map[string]interface{}) (*map[string]interface{}, error)
+	IpListWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	IpListRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyKnad(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
