@@ -308,6 +308,10 @@ type SlbAPI interface {
 	RegisterInstancesWithListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RegisterInstancesWithListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	SetAlbAccessLog(*map[string]interface{}) (*map[string]interface{}, error)
+	SetAlbAccessLogWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetAlbAccessLogRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	SetAlbName(*map[string]interface{}) (*map[string]interface{}, error)
 	SetAlbNameWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetAlbNameRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -315,6 +319,10 @@ type SlbAPI interface {
 	SetAlbStatus(*map[string]interface{}) (*map[string]interface{}, error)
 	SetAlbStatusWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetAlbStatusRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SetEnableAlbAccessLog(*map[string]interface{}) (*map[string]interface{}, error)
+	SetEnableAlbAccessLogWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetEnableAlbAccessLogRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ SlbAPI = (*slb.Slb)(nil)
