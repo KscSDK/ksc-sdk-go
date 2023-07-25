@@ -80,6 +80,79 @@ func (c *Vpc) AcceptVpcPeeringConnectionWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opAddNatIp = "AddNatIp"
+
+// AddNatIpRequest generates a "ksc/request.Request" representing the
+// client's request for the AddNatIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddNatIp for more information on using the AddNatIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AddNatIpRequest method.
+//    req, resp := client.AddNatIpRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AddNatIp
+func (c *Vpc) AddNatIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddNatIp,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddNatIp API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AddNatIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AddNatIp
+func (c *Vpc) AddNatIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddNatIpRequest(input)
+	return out, req.Send()
+}
+
+// AddNatIpWithContext is the same as AddNatIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddNatIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AddNatIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddNatIpRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAllocateSubnetIpv6CidrBlock = "AllocateSubnetIpv6CidrBlock"
 
 // AllocateSubnetIpv6CidrBlockRequest generates a "ksc/request.Request" representing the
@@ -221,6 +294,79 @@ func (c *Vpc) AssignPrivateIpAddress(input *map[string]interface{}) (*map[string
 // for more information on using Contexts.
 func (c *Vpc) AssignPrivateIpAddressWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.AssignPrivateIpAddressRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opAssociateInstance = "AssociateInstance"
+
+// AssociateInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the AssociateInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AssociateInstance for more information on using the AssociateInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the AssociateInstanceRequest method.
+//    req, resp := client.AssociateInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateInstance
+func (c *Vpc) AssociateInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAssociateInstance,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AssociateInstance API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AssociateInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateInstance
+func (c *Vpc) AssociateInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AssociateInstanceRequest(input)
+	return out, req.Send()
+}
+
+// AssociateInstanceWithContext is the same as AssociateInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AssociateInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AssociateInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AssociateInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -956,6 +1102,79 @@ func (c *Vpc) CreateDirectConnectReomteCidrWithContext(ctx aws.Context, input *m
 	return out, req.Send()
 }
 
+const opCreateDnat = "CreateDnat"
+
+// CreateDnatRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDnat operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDnat for more information on using the CreateDnat
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateDnatRequest method.
+//    req, resp := client.CreateDnatRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDnat
+func (c *Vpc) CreateDnatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDnat,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDnat API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateDnat for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDnat
+func (c *Vpc) CreateDnat(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDnatRequest(input)
+	return out, req.Send()
+}
+
+// CreateDnatWithContext is the same as CreateDnat with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDnat for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateDnatWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDnatRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateIpv6PublicIp = "CreateIpv6PublicIp"
 
 // CreateIpv6PublicIpRequest generates a "ksc/request.Request" representing the
@@ -1097,6 +1316,79 @@ func (c *Vpc) CreateNat(input *map[string]interface{}) (*map[string]interface{},
 // for more information on using Contexts.
 func (c *Vpc) CreateNatWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateNatRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateNatRateLimit = "CreateNatRateLimit"
+
+// CreateNatRateLimitRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateNatRateLimit operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateNatRateLimit for more information on using the CreateNatRateLimit
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateNatRateLimitRequest method.
+//    req, resp := client.CreateNatRateLimitRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNatRateLimit
+func (c *Vpc) CreateNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateNatRateLimit,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateNatRateLimit API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateNatRateLimit for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNatRateLimit
+func (c *Vpc) CreateNatRateLimit(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateNatRateLimitRequest(input)
+	return out, req.Send()
+}
+
+// CreateNatRateLimitWithContext is the same as CreateNatRateLimit with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateNatRateLimit for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateNatRateLimitWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateNatRateLimitRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -2197,6 +2489,79 @@ func (c *Vpc) DeleteDirectConnectReomteCidrWithContext(ctx aws.Context, input *m
 	return out, req.Send()
 }
 
+const opDeleteDnat = "DeleteDnat"
+
+// DeleteDnatRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDnat operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDnat for more information on using the DeleteDnat
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteDnatRequest method.
+//    req, resp := client.DeleteDnatRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDnat
+func (c *Vpc) DeleteDnatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDnat,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDnat API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteDnat for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDnat
+func (c *Vpc) DeleteDnat(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDnatRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDnatWithContext is the same as DeleteDnat with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDnat for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteDnatWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDnatRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteNat = "DeleteNat"
 
 // DeleteNatRequest generates a "ksc/request.Request" representing the
@@ -2265,6 +2630,152 @@ func (c *Vpc) DeleteNat(input *map[string]interface{}) (*map[string]interface{},
 // for more information on using Contexts.
 func (c *Vpc) DeleteNatWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteNatRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteNatIp = "DeleteNatIp"
+
+// DeleteNatIpRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteNatIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteNatIp for more information on using the DeleteNatIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteNatIpRequest method.
+//    req, resp := client.DeleteNatIpRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNatIp
+func (c *Vpc) DeleteNatIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteNatIp,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteNatIp API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteNatIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNatIp
+func (c *Vpc) DeleteNatIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteNatIpRequest(input)
+	return out, req.Send()
+}
+
+// DeleteNatIpWithContext is the same as DeleteNatIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteNatIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteNatIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteNatIpRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteNatRateLimit = "DeleteNatRateLimit"
+
+// DeleteNatRateLimitRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteNatRateLimit operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteNatRateLimit for more information on using the DeleteNatRateLimit
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteNatRateLimitRequest method.
+//    req, resp := client.DeleteNatRateLimitRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNatRateLimit
+func (c *Vpc) DeleteNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteNatRateLimit,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteNatRateLimit API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteNatRateLimit for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNatRateLimit
+func (c *Vpc) DeleteNatRateLimit(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteNatRateLimitRequest(input)
+	return out, req.Send()
+}
+
+// DeleteNatRateLimitWithContext is the same as DeleteNatRateLimit with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteNatRateLimit for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteNatRateLimitWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteNatRateLimitRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -3365,6 +3876,79 @@ func (c *Vpc) DescribeDirectConnectsWithContext(ctx aws.Context, input *map[stri
 	return out, req.Send()
 }
 
+const opDescribeDnats = "DescribeDnats"
+
+// DescribeDnatsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDnats operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDnats for more information on using the DescribeDnats
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeDnatsRequest method.
+//    req, resp := client.DescribeDnatsRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDnats
+func (c *Vpc) DescribeDnatsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDnats,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDnats API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeDnats for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDnats
+func (c *Vpc) DescribeDnats(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDnatsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDnatsWithContext is the same as DescribeDnats with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDnats for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeDnatsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDnatsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeInternetGateways = "DescribeInternetGateways"
 
 // DescribeInternetGatewaysRequest generates a "ksc/request.Request" representing the
@@ -3579,6 +4163,79 @@ func (c *Vpc) DescribeIpv6PublicIpAddresses(input *map[string]interface{}) (*map
 // for more information on using Contexts.
 func (c *Vpc) DescribeIpv6PublicIpAddressesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeIpv6PublicIpAddressesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeNatRateLimit = "DescribeNatRateLimit"
+
+// DescribeNatRateLimitRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeNatRateLimit operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeNatRateLimit for more information on using the DescribeNatRateLimit
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeNatRateLimitRequest method.
+//    req, resp := client.DescribeNatRateLimitRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeNatRateLimit
+func (c *Vpc) DescribeNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeNatRateLimit,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeNatRateLimit API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeNatRateLimit for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeNatRateLimit
+func (c *Vpc) DescribeNatRateLimit(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeNatRateLimitRequest(input)
+	return out, req.Send()
+}
+
+// DescribeNatRateLimitWithContext is the same as DescribeNatRateLimit with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeNatRateLimit for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeNatRateLimitWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeNatRateLimitRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -4533,6 +5190,79 @@ func (c *Vpc) DetachDirectConnectGatewayWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opDisassociateInstance = "DisassociateInstance"
+
+// DisassociateInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the DisassociateInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DisassociateInstance for more information on using the DisassociateInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DisassociateInstanceRequest method.
+//    req, resp := client.DisassociateInstanceRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DisassociateInstance
+func (c *Vpc) DisassociateInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDisassociateInstance,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DisassociateInstance API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DisassociateInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DisassociateInstance
+func (c *Vpc) DisassociateInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DisassociateInstanceRequest(input)
+	return out, req.Send()
+}
+
+// DisassociateInstanceWithContext is the same as DisassociateInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DisassociateInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DisassociateInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DisassociateInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDisassociateNat = "DisassociateNat"
 
 // DisassociateNatRequest generates a "ksc/request.Request" representing the
@@ -4898,6 +5628,79 @@ func (c *Vpc) ModifyDirectConnectInterfaceWithContext(ctx aws.Context, input *ma
 	return out, req.Send()
 }
 
+const opModifyDnat = "ModifyDnat"
+
+// ModifyDnatRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyDnat operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyDnat for more information on using the ModifyDnat
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyDnatRequest method.
+//    req, resp := client.ModifyDnatRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDnat
+func (c *Vpc) ModifyDnatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyDnat,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyDnat API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyDnat for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDnat
+func (c *Vpc) ModifyDnat(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyDnatRequest(input)
+	return out, req.Send()
+}
+
+// ModifyDnatWithContext is the same as ModifyDnat with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyDnat for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyDnatWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyDnatRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyIpv6PublicIp = "ModifyIpv6PublicIp"
 
 // ModifyIpv6PublicIpRequest generates a "ksc/request.Request" representing the
@@ -5039,6 +5842,79 @@ func (c *Vpc) ModifyNat(input *map[string]interface{}) (*map[string]interface{},
 // for more information on using Contexts.
 func (c *Vpc) ModifyNatWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ModifyNatRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyNatRateLimit = "ModifyNatRateLimit"
+
+// ModifyNatRateLimitRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyNatRateLimit operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyNatRateLimit for more information on using the ModifyNatRateLimit
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the ModifyNatRateLimitRequest method.
+//    req, resp := client.ModifyNatRateLimitRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNatRateLimit
+func (c *Vpc) ModifyNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyNatRateLimit,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyNatRateLimit API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyNatRateLimit for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNatRateLimit
+func (c *Vpc) ModifyNatRateLimit(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyNatRateLimitRequest(input)
+	return out, req.Send()
+}
+
+// ModifyNatRateLimitWithContext is the same as ModifyNatRateLimit with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyNatRateLimit for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyNatRateLimitWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyNatRateLimitRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
