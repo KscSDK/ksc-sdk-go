@@ -64,6 +64,10 @@ type VpcAPI interface {
 	AcceptVpcPeeringConnectionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AcceptVpcPeeringConnectionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AddNatIp(*map[string]interface{}) (*map[string]interface{}, error)
+	AddNatIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddNatIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AllocateSubnetIpv6CidrBlock(*map[string]interface{}) (*map[string]interface{}, error)
 	AllocateSubnetIpv6CidrBlockWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AllocateSubnetIpv6CidrBlockRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -71,6 +75,10 @@ type VpcAPI interface {
 	AssignPrivateIpAddress(*map[string]interface{}) (*map[string]interface{}, error)
 	AssignPrivateIpAddressWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssignPrivateIpAddressRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	AssociateInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	AssociateInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AssociateInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	AssociateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	AssociateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -112,6 +120,10 @@ type VpcAPI interface {
 	CreateDirectConnectReomteCidrWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateDirectConnectReomteCidrRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateDnat(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDnatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDnatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateIpv6PublicIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -119,6 +131,10 @@ type VpcAPI interface {
 	CreateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateNatRateLimit(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateNatRateLimitWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateNatRateLimitRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateNetworkAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -180,9 +196,21 @@ type VpcAPI interface {
 	DeleteDirectConnectReomteCidrWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteDirectConnectReomteCidrRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteDnat(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDnatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDnatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteNat(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteNatIp(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteNatIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteNatIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteNatRateLimit(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteNatRateLimitWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteNatRateLimitRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteNetworkAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -244,6 +272,10 @@ type VpcAPI interface {
 	DescribeDirectConnectsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeDirectConnectsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeDnats(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDnatsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDnatsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeInternetGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeInternetGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeInternetGatewaysRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -255,6 +287,10 @@ type VpcAPI interface {
 	DescribeIpv6PublicIpAddresses(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeIpv6PublicIpAddressesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeIpv6PublicIpAddressesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeNatRateLimit(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeNatRateLimitWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeNatRateLimitRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeNats(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeNatsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -308,6 +344,10 @@ type VpcAPI interface {
 	DetachDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DetachDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DisassociateInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	DisassociateInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DisassociateInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DisassociateNat(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -328,6 +368,10 @@ type VpcAPI interface {
 	ModifyDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyDirectConnectInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyDnat(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDnatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDnatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyIpv6PublicIp(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyIpv6PublicIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyIpv6PublicIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -335,6 +379,10 @@ type VpcAPI interface {
 	ModifyNat(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyNatRateLimit(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNatRateLimitWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNatRateLimitRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyNetworkAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
