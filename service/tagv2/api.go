@@ -23,14 +23,13 @@ const opCreateTag = "CreateTag"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateTagRequest method.
+//	req, resp := client.CreateTagRequest(params)
 //
-//    // Example sending a request using the CreateTagRequest method.
-//    req, resp := client.CreateTagRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/CreateTag
 func (c *Tagv2) CreateTagRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +95,13 @@ const opDeleteTag = "DeleteTag"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteTagRequest method.
+//	req, resp := client.DeleteTagRequest(params)
 //
-//    // Example sending a request using the DeleteTagRequest method.
-//    req, resp := client.DeleteTagRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/DeleteTag
 func (c *Tagv2) DeleteTagRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -119,6 +117,8 @@ func (c *Tagv2) DeleteTagRequest(input *map[string]interface{}) (req *request.Re
 
 	output = &map[string]interface{}{}
 	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
 
 	return
 }
@@ -169,14 +169,13 @@ const opDetachResourceTags = "DetachResourceTags"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetachResourceTagsRequest method.
+//	req, resp := client.DetachResourceTagsRequest(params)
 //
-//    // Example sending a request using the DetachResourceTagsRequest method.
-//    req, resp := client.DetachResourceTagsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/DetachResourceTags
 func (c *Tagv2) DetachResourceTagsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -242,14 +241,13 @@ const opListResources = "ListResources"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListResourcesRequest method.
+//	req, resp := client.ListResourcesRequest(params)
 //
-//    // Example sending a request using the ListResourcesRequest method.
-//    req, resp := client.ListResourcesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/ListResources
 func (c *Tagv2) ListResourcesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -315,14 +313,13 @@ const opListTagKeys = "ListTagKeys"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagKeysRequest method.
+//	req, resp := client.ListTagKeysRequest(params)
 //
-//    // Example sending a request using the ListTagKeysRequest method.
-//    req, resp := client.ListTagKeysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/ListTagKeys
 func (c *Tagv2) ListTagKeysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +385,13 @@ const opListTagValues = "ListTagValues"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagValuesRequest method.
+//	req, resp := client.ListTagValuesRequest(params)
 //
-//    // Example sending a request using the ListTagValuesRequest method.
-//    req, resp := client.ListTagValuesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/ListTagValues
 func (c *Tagv2) ListTagValuesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +457,13 @@ const opListTags = "ListTags"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagsRequest method.
+//	req, resp := client.ListTagsRequest(params)
 //
-//    // Example sending a request using the ListTagsRequest method.
-//    req, resp := client.ListTagsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/ListTags
 func (c *Tagv2) ListTagsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -534,14 +529,13 @@ const opListTagsByResourceIds = "ListTagsByResourceIds"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagsByResourceIdsRequest method.
+//	req, resp := client.ListTagsByResourceIdsRequest(params)
 //
-//    // Example sending a request using the ListTagsByResourceIdsRequest method.
-//    req, resp := client.ListTagsByResourceIdsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/ListTagsByResourceIds
 func (c *Tagv2) ListTagsByResourceIdsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -607,14 +601,13 @@ const opReplaceResourcesTags = "ReplaceResourcesTags"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ReplaceResourcesTagsRequest method.
+//	req, resp := client.ReplaceResourcesTagsRequest(params)
 //
-//    // Example sending a request using the ReplaceResourcesTagsRequest method.
-//    req, resp := client.ReplaceResourcesTagsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/tagv2-2020-09-01/ReplaceResourcesTags
 func (c *Tagv2) ReplaceResourcesTagsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
