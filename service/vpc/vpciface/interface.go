@@ -172,6 +172,10 @@ type VpcAPI interface {
 	CreateVpnGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateVpnGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateVpnGatewayRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateVpnGatewayRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateVpnGatewayRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateVpnTunnel(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateVpnTunnelWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateVpnTunnelRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -247,6 +251,10 @@ type VpcAPI interface {
 	DeleteVpnGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteVpnGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteVpnGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteVpnGatewayRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteVpnGatewayRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteVpnGatewayRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteVpnTunnel(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteVpnTunnelWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -331,6 +339,10 @@ type VpcAPI interface {
 	DescribeVpcs(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeVpcsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeVpcsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeVpnGatewayRoutes(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeVpnGatewayRoutesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeVpnGatewayRoutesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeVpnGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeVpnGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

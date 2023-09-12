@@ -2051,6 +2051,79 @@ func (c *Vpc) CreateVpnGatewayWithContext(ctx aws.Context, input *map[string]int
 	return out, req.Send()
 }
 
+const opCreateVpnGatewayRoute = "CreateVpnGatewayRoute"
+
+// CreateVpnGatewayRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateVpnGatewayRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateVpnGatewayRoute for more information on using the CreateVpnGatewayRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateVpnGatewayRouteRequest method.
+//    req, resp := client.CreateVpnGatewayRouteRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpnGatewayRoute
+func (c *Vpc) CreateVpnGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateVpnGatewayRoute,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateVpnGatewayRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateVpnGatewayRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpnGatewayRoute
+func (c *Vpc) CreateVpnGatewayRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateVpnGatewayRouteRequest(input)
+	return out, req.Send()
+}
+
+// CreateVpnGatewayRouteWithContext is the same as CreateVpnGatewayRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateVpnGatewayRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateVpnGatewayRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateVpnGatewayRouteRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateVpnTunnel = "CreateVpnTunnel"
 
 // CreateVpnTunnelRequest generates a "ksc/request.Request" representing the
@@ -3433,6 +3506,79 @@ func (c *Vpc) DeleteVpnGateway(input *map[string]interface{}) (*map[string]inter
 // for more information on using Contexts.
 func (c *Vpc) DeleteVpnGatewayWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteVpnGatewayRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteVpnGatewayRoute = "DeleteVpnGatewayRoute"
+
+// DeleteVpnGatewayRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteVpnGatewayRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteVpnGatewayRoute for more information on using the DeleteVpnGatewayRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteVpnGatewayRouteRequest method.
+//    req, resp := client.DeleteVpnGatewayRouteRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpnGatewayRoute
+func (c *Vpc) DeleteVpnGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteVpnGatewayRoute,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteVpnGatewayRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteVpnGatewayRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpnGatewayRoute
+func (c *Vpc) DeleteVpnGatewayRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteVpnGatewayRouteRequest(input)
+	return out, req.Send()
+}
+
+// DeleteVpnGatewayRouteWithContext is the same as DeleteVpnGatewayRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteVpnGatewayRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteVpnGatewayRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteVpnGatewayRouteRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -4966,6 +5112,79 @@ func (c *Vpc) DescribeVpcs(input *map[string]interface{}) (*map[string]interface
 // for more information on using Contexts.
 func (c *Vpc) DescribeVpcsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeVpcsRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeVpnGatewayRoutes = "DescribeVpnGatewayRoutes"
+
+// DescribeVpnGatewayRoutesRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeVpnGatewayRoutes operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeVpnGatewayRoutes for more information on using the DescribeVpnGatewayRoutes
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeVpnGatewayRoutesRequest method.
+//    req, resp := client.DescribeVpnGatewayRoutesRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpnGatewayRoutes
+func (c *Vpc) DescribeVpnGatewayRoutesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeVpnGatewayRoutes,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeVpnGatewayRoutes API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeVpnGatewayRoutes for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpnGatewayRoutes
+func (c *Vpc) DescribeVpnGatewayRoutes(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeVpnGatewayRoutesRequest(input)
+	return out, req.Send()
+}
+
+// DescribeVpnGatewayRoutesWithContext is the same as DescribeVpnGatewayRoutes with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeVpnGatewayRoutes for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeVpnGatewayRoutesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeVpnGatewayRoutesRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
