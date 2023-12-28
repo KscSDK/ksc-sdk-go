@@ -26,7 +26,7 @@ import (
 //    // myFunc uses an SDK service client to make a request to
 //    // kcrs.
 //    func myFunc(svc kcrsiface.KcrsAPI) bool {
-//        // Make svc.CreateInstance request
+//        // Make svc.CloseExternalEndpoint request
 //    }
 //
 //    func main() {
@@ -42,7 +42,7 @@ import (
 //    type mockKcrsClient struct {
 //        kcrsiface.KcrsAPI
 //    }
-//    func (m *mockKcrsClient) CreateInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+//    func (m *mockKcrsClient) CloseExternalEndpoint(input *map[string]interface{}) (*map[string]interface{}, error) {
 //        // mock response/functionality
 //    }
 //
@@ -60,6 +60,14 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KcrsAPI interface {
+	CloseExternalEndpoint(*map[string]interface{}) (*map[string]interface{}, error)
+	CloseExternalEndpointWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CloseExternalEndpointRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateExternalEndpointPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateExternalEndpointPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateExternalEndpointPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -80,9 +88,17 @@ type KcrsAPI interface {
 	CreateNamespaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateNamespaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateRetentionRule(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateRetentionRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateRetentionRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateWebhookTrigger(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateWebhookTriggerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateWebhookTriggerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteExternalEndpointPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteExternalEndpointPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteExternalEndpointPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteImages(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteImagesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -116,9 +132,17 @@ type KcrsAPI interface {
 	DeleteRepositoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteRepositoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteRetentionRule(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteRetentionRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteRetentionRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteWebhookTrigger(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteWebhookTriggerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteWebhookTriggerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeExternalEndpoint(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeExternalEndpointWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeExternalEndpointRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeImageScan(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeImageScanWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -156,6 +180,10 @@ type KcrsAPI interface {
 	DescribeRepositoryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeRepositoryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeRetentionRule(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeRetentionRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeRetentionRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeWebhookTrigger(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeWebhookTriggerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeWebhookTriggerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -180,9 +208,25 @@ type KcrsAPI interface {
 	ModifyWebhookTriggerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyWebhookTriggerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	OpenExternalEndpoint(*map[string]interface{}) (*map[string]interface{}, error)
+	OpenExternalEndpointWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	OpenExternalEndpointRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RunRetentionPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	RunRetentionPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RunRetentionPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	StartImageScan(*map[string]interface{}) (*map[string]interface{}, error)
 	StartImageScanWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	StartImageScanRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdateExternalEndpointPolicy(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdateExternalEndpointPolicyWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdateExternalEndpointPolicyRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdateRetentionRule(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdateRetentionRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdateRetentionRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ KcrsAPI = (*kcrs.Kcrs)(nil)
