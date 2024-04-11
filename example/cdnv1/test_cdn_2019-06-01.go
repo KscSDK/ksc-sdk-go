@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	ak := "AKLT7QA2mrRWTTG9glDtSshA"
-	sk := "OO1Rb37LorWEyi1BUJqviGkvPq1krhClVeKfFdoz"
+	ak := "your ak"
+	sk := "your sk"
 
 	region := "cn-shanghai-2"
 
