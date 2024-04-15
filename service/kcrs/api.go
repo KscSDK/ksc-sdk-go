@@ -7,6 +7,152 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opCloseExternalEndpoint = "CloseExternalEndpoint"
+
+// CloseExternalEndpointRequest generates a "ksc/request.Request" representing the
+// client's request for the CloseExternalEndpoint operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CloseExternalEndpoint for more information on using the CloseExternalEndpoint
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CloseExternalEndpointRequest method.
+//    req, resp := client.CloseExternalEndpointRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/CloseExternalEndpoint
+func (c *Kcrs) CloseExternalEndpointRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCloseExternalEndpoint,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CloseExternalEndpoint API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation CloseExternalEndpoint for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/CloseExternalEndpoint
+func (c *Kcrs) CloseExternalEndpoint(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CloseExternalEndpointRequest(input)
+	return out, req.Send()
+}
+
+// CloseExternalEndpointWithContext is the same as CloseExternalEndpoint with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CloseExternalEndpoint for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) CloseExternalEndpointWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CloseExternalEndpointRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opCreateExternalEndpointPolicy = "CreateExternalEndpointPolicy"
+
+// CreateExternalEndpointPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateExternalEndpointPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateExternalEndpointPolicy for more information on using the CreateExternalEndpointPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateExternalEndpointPolicyRequest method.
+//    req, resp := client.CreateExternalEndpointPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/CreateExternalEndpointPolicy
+func (c *Kcrs) CreateExternalEndpointPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateExternalEndpointPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateExternalEndpointPolicy API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation CreateExternalEndpointPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/CreateExternalEndpointPolicy
+func (c *Kcrs) CreateExternalEndpointPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateExternalEndpointPolicyRequest(input)
+	return out, req.Send()
+}
+
+// CreateExternalEndpointPolicyWithContext is the same as CreateExternalEndpointPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateExternalEndpointPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) CreateExternalEndpointPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateExternalEndpointPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateInstance = "CreateInstance"
 
 // CreateInstanceRequest generates a "ksc/request.Request" representing the
@@ -372,6 +518,79 @@ func (c *Kcrs) CreateNamespaceWithContext(ctx aws.Context, input *map[string]int
 	return out, req.Send()
 }
 
+const opCreateRetentionRule = "CreateRetentionRule"
+
+// CreateRetentionRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateRetentionRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateRetentionRule for more information on using the CreateRetentionRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the CreateRetentionRuleRequest method.
+//    req, resp := client.CreateRetentionRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/CreateRetentionRule
+func (c *Kcrs) CreateRetentionRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateRetentionRule,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateRetentionRule API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation CreateRetentionRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/CreateRetentionRule
+func (c *Kcrs) CreateRetentionRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateRetentionRuleRequest(input)
+	return out, req.Send()
+}
+
+// CreateRetentionRuleWithContext is the same as CreateRetentionRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateRetentionRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) CreateRetentionRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateRetentionRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateWebhookTrigger = "CreateWebhookTrigger"
 
 // CreateWebhookTriggerRequest generates a "ksc/request.Request" representing the
@@ -440,6 +659,79 @@ func (c *Kcrs) CreateWebhookTrigger(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Kcrs) CreateWebhookTriggerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.CreateWebhookTriggerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteExternalEndpointPolicy = "DeleteExternalEndpointPolicy"
+
+// DeleteExternalEndpointPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteExternalEndpointPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteExternalEndpointPolicy for more information on using the DeleteExternalEndpointPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteExternalEndpointPolicyRequest method.
+//    req, resp := client.DeleteExternalEndpointPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DeleteExternalEndpointPolicy
+func (c *Kcrs) DeleteExternalEndpointPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteExternalEndpointPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteExternalEndpointPolicy API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation DeleteExternalEndpointPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DeleteExternalEndpointPolicy
+func (c *Kcrs) DeleteExternalEndpointPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteExternalEndpointPolicyRequest(input)
+	return out, req.Send()
+}
+
+// DeleteExternalEndpointPolicyWithContext is the same as DeleteExternalEndpointPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteExternalEndpointPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) DeleteExternalEndpointPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteExternalEndpointPolicyRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1029,6 +1321,79 @@ func (c *Kcrs) DeleteRepositoryWithContext(ctx aws.Context, input *map[string]in
 	return out, req.Send()
 }
 
+const opDeleteRetentionRule = "DeleteRetentionRule"
+
+// DeleteRetentionRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteRetentionRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteRetentionRule for more information on using the DeleteRetentionRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DeleteRetentionRuleRequest method.
+//    req, resp := client.DeleteRetentionRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DeleteRetentionRule
+func (c *Kcrs) DeleteRetentionRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteRetentionRule,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteRetentionRule API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation DeleteRetentionRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DeleteRetentionRule
+func (c *Kcrs) DeleteRetentionRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteRetentionRuleRequest(input)
+	return out, req.Send()
+}
+
+// DeleteRetentionRuleWithContext is the same as DeleteRetentionRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteRetentionRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) DeleteRetentionRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteRetentionRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteWebhookTrigger = "DeleteWebhookTrigger"
 
 // DeleteWebhookTriggerRequest generates a "ksc/request.Request" representing the
@@ -1097,6 +1462,79 @@ func (c *Kcrs) DeleteWebhookTrigger(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Kcrs) DeleteWebhookTriggerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeleteWebhookTriggerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeExternalEndpoint = "DescribeExternalEndpoint"
+
+// DescribeExternalEndpointRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeExternalEndpoint operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeExternalEndpoint for more information on using the DescribeExternalEndpoint
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeExternalEndpointRequest method.
+//    req, resp := client.DescribeExternalEndpointRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DescribeExternalEndpoint
+func (c *Kcrs) DescribeExternalEndpointRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeExternalEndpoint,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeExternalEndpoint API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation DescribeExternalEndpoint for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DescribeExternalEndpoint
+func (c *Kcrs) DescribeExternalEndpoint(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeExternalEndpointRequest(input)
+	return out, req.Send()
+}
+
+// DescribeExternalEndpointWithContext is the same as DescribeExternalEndpoint with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeExternalEndpoint for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) DescribeExternalEndpointWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeExternalEndpointRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1759,6 +2197,79 @@ func (c *Kcrs) DescribeRepositoryWithContext(ctx aws.Context, input *map[string]
 	return out, req.Send()
 }
 
+const opDescribeRetentionRule = "DescribeRetentionRule"
+
+// DescribeRetentionRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeRetentionRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeRetentionRule for more information on using the DescribeRetentionRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the DescribeRetentionRuleRequest method.
+//    req, resp := client.DescribeRetentionRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DescribeRetentionRule
+func (c *Kcrs) DescribeRetentionRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeRetentionRule,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeRetentionRule API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation DescribeRetentionRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/DescribeRetentionRule
+func (c *Kcrs) DescribeRetentionRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeRetentionRuleRequest(input)
+	return out, req.Send()
+}
+
+// DescribeRetentionRuleWithContext is the same as DescribeRetentionRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeRetentionRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) DescribeRetentionRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeRetentionRuleRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeWebhookTrigger = "DescribeWebhookTrigger"
 
 // DescribeWebhookTriggerRequest generates a "ksc/request.Request" representing the
@@ -2197,6 +2708,152 @@ func (c *Kcrs) ModifyWebhookTriggerWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opOpenExternalEndpoint = "OpenExternalEndpoint"
+
+// OpenExternalEndpointRequest generates a "ksc/request.Request" representing the
+// client's request for the OpenExternalEndpoint operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See OpenExternalEndpoint for more information on using the OpenExternalEndpoint
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the OpenExternalEndpointRequest method.
+//    req, resp := client.OpenExternalEndpointRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/OpenExternalEndpoint
+func (c *Kcrs) OpenExternalEndpointRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opOpenExternalEndpoint,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// OpenExternalEndpoint API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation OpenExternalEndpoint for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/OpenExternalEndpoint
+func (c *Kcrs) OpenExternalEndpoint(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.OpenExternalEndpointRequest(input)
+	return out, req.Send()
+}
+
+// OpenExternalEndpointWithContext is the same as OpenExternalEndpoint with the addition of
+// the ability to pass a context and additional request options.
+//
+// See OpenExternalEndpoint for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) OpenExternalEndpointWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.OpenExternalEndpointRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRunRetentionPolicy = "RunRetentionPolicy"
+
+// RunRetentionPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the RunRetentionPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RunRetentionPolicy for more information on using the RunRetentionPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the RunRetentionPolicyRequest method.
+//    req, resp := client.RunRetentionPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/RunRetentionPolicy
+func (c *Kcrs) RunRetentionPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRunRetentionPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// RunRetentionPolicy API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation RunRetentionPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/RunRetentionPolicy
+func (c *Kcrs) RunRetentionPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RunRetentionPolicyRequest(input)
+	return out, req.Send()
+}
+
+// RunRetentionPolicyWithContext is the same as RunRetentionPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RunRetentionPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) RunRetentionPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RunRetentionPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opStartImageScan = "StartImageScan"
 
 // StartImageScanRequest generates a "ksc/request.Request" representing the
@@ -2265,6 +2922,152 @@ func (c *Kcrs) StartImageScan(input *map[string]interface{}) (*map[string]interf
 // for more information on using Contexts.
 func (c *Kcrs) StartImageScanWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.StartImageScanRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUpdateExternalEndpointPolicy = "UpdateExternalEndpointPolicy"
+
+// UpdateExternalEndpointPolicyRequest generates a "ksc/request.Request" representing the
+// client's request for the UpdateExternalEndpointPolicy operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateExternalEndpointPolicy for more information on using the UpdateExternalEndpointPolicy
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the UpdateExternalEndpointPolicyRequest method.
+//    req, resp := client.UpdateExternalEndpointPolicyRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/UpdateExternalEndpointPolicy
+func (c *Kcrs) UpdateExternalEndpointPolicyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUpdateExternalEndpointPolicy,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UpdateExternalEndpointPolicy API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation UpdateExternalEndpointPolicy for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/UpdateExternalEndpointPolicy
+func (c *Kcrs) UpdateExternalEndpointPolicy(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UpdateExternalEndpointPolicyRequest(input)
+	return out, req.Send()
+}
+
+// UpdateExternalEndpointPolicyWithContext is the same as UpdateExternalEndpointPolicy with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateExternalEndpointPolicy for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) UpdateExternalEndpointPolicyWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UpdateExternalEndpointPolicyRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUpdateRetentionRule = "UpdateRetentionRule"
+
+// UpdateRetentionRuleRequest generates a "ksc/request.Request" representing the
+// client's request for the UpdateRetentionRule operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateRetentionRule for more information on using the UpdateRetentionRule
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//
+//    // Example sending a request using the UpdateRetentionRuleRequest method.
+//    req, resp := client.UpdateRetentionRuleRequest(params)
+//
+//    err := req.Send()
+//    if err == nil { // resp is now filled
+//        fmt.Println(resp)
+//    }
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/UpdateRetentionRule
+func (c *Kcrs) UpdateRetentionRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUpdateRetentionRule,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UpdateRetentionRule API operation for kcrs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kcrs's
+// API operation UpdateRetentionRule for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kcrs-2021-11-09/UpdateRetentionRule
+func (c *Kcrs) UpdateRetentionRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UpdateRetentionRuleRequest(input)
+	return out, req.Send()
+}
+
+// UpdateRetentionRuleWithContext is the same as UpdateRetentionRule with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateRetentionRule for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kcrs) UpdateRetentionRuleWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UpdateRetentionRuleRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

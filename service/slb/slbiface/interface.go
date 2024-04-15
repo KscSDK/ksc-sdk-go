@@ -23,37 +23,37 @@ import (
 // can be stubbed out for unit testing your code with the SDK without needing
 // to inject custom request handlers into the SDK's request pipeline.
 //
-//	// myFunc uses an SDK service client to make a request to
-//	// slb.
-//	func myFunc(svc slbiface.SlbAPI) bool {
-//	    // Make svc.AddAlbRule request
-//	}
+//    // myFunc uses an SDK service client to make a request to
+//    // slb.
+//    func myFunc(svc slbiface.SlbAPI) bool {
+//        // Make svc.AddAlbRule request
+//    }
 //
-//	func main() {
-//	    sess := session.New()
-//	    svc := slb.New(sess)
+//    func main() {
+//        sess := session.New()
+//        svc := slb.New(sess)
 //
-//	    myFunc(svc)
-//	}
+//        myFunc(svc)
+//    }
 //
 // In your _test.go file:
 //
-//	// Define a mock struct to be used in your unit tests of myFunc.
-//	type mockSlbClient struct {
-//	    slbiface.SlbAPI
-//	}
-//	func (m *mockSlbClient) AddAlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
-//	    // mock response/functionality
-//	}
+//    // Define a mock struct to be used in your unit tests of myFunc.
+//    type mockSlbClient struct {
+//        slbiface.SlbAPI
+//    }
+//    func (m *mockSlbClient) AddAlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+//        // mock response/functionality
+//    }
 //
-//	func TestMyFunc(t *testing.T) {
-//	    // Setup Test
-//	    mockSvc := &mockSlbClient{}
+//    func TestMyFunc(t *testing.T) {
+//        // Setup Test
+//        mockSvc := &mockSlbClient{}
 //
-//	    myfunc(mockSvc)
+//        myfunc(mockSvc)
 //
-//	    // Verify myFunc's functionality
-//	}
+//        // Verify myFunc's functionality
+//    }
 //
 // It is important to note that this interface will have breaking changes
 // when the service model is updated and adds new API operations, paginators,
@@ -79,6 +79,10 @@ type SlbAPI interface {
 	CreateAlb(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateAlbWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateAlbRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateAlbBackendServerGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateAlbBackendServerGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateAlbBackendServerGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateAlbListener(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateAlbListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -123,6 +127,10 @@ type SlbAPI interface {
 	DeleteAlb(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteAlbWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteAlbRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteAlbBackendServerGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteAlbBackendServerGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteAlbBackendServerGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteAlbListener(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteAlbListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -172,6 +180,10 @@ type SlbAPI interface {
 	DeleteRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeregisterAlbBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
+	DeregisterAlbBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeregisterAlbBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeregisterBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
 	DeregisterBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeregisterBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -179,6 +191,14 @@ type SlbAPI interface {
 	DeregisterInstancesFromListener(*map[string]interface{}) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeAlbBackendServerGroups(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeAlbBackendServerGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeAlbBackendServerGroupsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeAlbBackendServers(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeAlbBackendServersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeAlbBackendServersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeAlbListenerCertGroups(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeAlbListenerCertGroupsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -244,6 +264,14 @@ type SlbAPI interface {
 	DissociateCertificateWithGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DissociateCertificateWithGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyAlbBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyAlbBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyAlbBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyAlbBackendServerGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyAlbBackendServerGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyAlbBackendServerGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyAlbListener(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyAlbListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyAlbListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -299,6 +327,10 @@ type SlbAPI interface {
 	ModifySlbRule(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifySlbRuleWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifySlbRuleRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RegisterAlbBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
+	RegisterAlbBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RegisterAlbBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RegisterBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
 	RegisterBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
