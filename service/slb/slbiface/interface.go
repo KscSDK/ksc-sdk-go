@@ -23,37 +23,37 @@ import (
 // can be stubbed out for unit testing your code with the SDK without needing
 // to inject custom request handlers into the SDK's request pipeline.
 //
-//    // myFunc uses an SDK service client to make a request to
-//    // slb.
-//    func myFunc(svc slbiface.SlbAPI) bool {
-//        // Make svc.AddAlbRule request
-//    }
+//	// myFunc uses an SDK service client to make a request to
+//	// slb.
+//	func myFunc(svc slbiface.SlbAPI) bool {
+//	    // Make svc.AddAlbRule request
+//	}
 //
-//    func main() {
-//        sess := session.New()
-//        svc := slb.New(sess)
+//	func main() {
+//	    sess := session.New()
+//	    svc := slb.New(sess)
 //
-//        myFunc(svc)
-//    }
+//	    myFunc(svc)
+//	}
 //
 // In your _test.go file:
 //
-//    // Define a mock struct to be used in your unit tests of myFunc.
-//    type mockSlbClient struct {
-//        slbiface.SlbAPI
-//    }
-//    func (m *mockSlbClient) AddAlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
-//        // mock response/functionality
-//    }
+//	// Define a mock struct to be used in your unit tests of myFunc.
+//	type mockSlbClient struct {
+//	    slbiface.SlbAPI
+//	}
+//	func (m *mockSlbClient) AddAlbRule(input *map[string]interface{}) (*map[string]interface{}, error) {
+//	    // mock response/functionality
+//	}
 //
-//    func TestMyFunc(t *testing.T) {
-//        // Setup Test
-//        mockSvc := &mockSlbClient{}
+//	func TestMyFunc(t *testing.T) {
+//	    // Setup Test
+//	    mockSvc := &mockSlbClient{}
 //
-//        myfunc(mockSvc)
+//	    myfunc(mockSvc)
 //
-//        // Verify myFunc's functionality
-//    }
+//	    // Verify myFunc's functionality
+//	}
 //
 // It is important to note that this interface will have breaking changes
 // when the service model is updated and adds new API operations, paginators,
@@ -71,6 +71,10 @@ type SlbAPI interface {
 	AssociateLoadBalancerAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	AssociateLoadBalancerAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssociateLoadBalancerAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	AssociateMirrorGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	AssociateMirrorGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AssociateMirrorGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ConfigureHealthCheck(*map[string]interface{}) (*map[string]interface{}, error)
 	ConfigureHealthCheckWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -188,6 +192,10 @@ type SlbAPI interface {
 	DeregisterBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeregisterBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeregisterBackendServerGroupFromListener(*map[string]interface{}) (*map[string]interface{}, error)
+	DeregisterBackendServerGroupFromListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeregisterBackendServerGroupFromListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeregisterInstancesFromListener(*map[string]interface{}) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeregisterInstancesFromListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -259,6 +267,10 @@ type SlbAPI interface {
 	DisassociateLoadBalancerAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateLoadBalancerAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateLoadBalancerAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DisassociateMirrorGroup(*map[string]interface{}) (*map[string]interface{}, error)
+	DisassociateMirrorGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DisassociateMirrorGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DissociateCertificateWithGroup(*map[string]interface{}) (*map[string]interface{}, error)
 	DissociateCertificateWithGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -335,6 +347,10 @@ type SlbAPI interface {
 	RegisterBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
 	RegisterBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RegisterBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RegisterBackendServerGroupWithListener(*map[string]interface{}) (*map[string]interface{}, error)
+	RegisterBackendServerGroupWithListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RegisterBackendServerGroupWithListenerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RegisterInstancesWithListener(*map[string]interface{}) (*map[string]interface{}, error)
 	RegisterInstancesWithListenerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
