@@ -276,6 +276,10 @@ type SlbAPI interface {
 	DissociateCertificateWithGroupWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DissociateCertificateWithGroupRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyAlb(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyAlbWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyAlbRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyAlbBackendServer(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyAlbBackendServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyAlbBackendServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -359,6 +363,14 @@ type SlbAPI interface {
 	SetAlbAccessLog(*map[string]interface{}) (*map[string]interface{}, error)
 	SetAlbAccessLogWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetAlbAccessLogRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SetAlbDeleteProtection(*map[string]interface{}) (*map[string]interface{}, error)
+	SetAlbDeleteProtectionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetAlbDeleteProtectionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SetAlbModificationProtection(*map[string]interface{}) (*map[string]interface{}, error)
+	SetAlbModificationProtectionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetAlbModificationProtectionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	SetAlbName(*map[string]interface{}) (*map[string]interface{}, error)
 	SetAlbNameWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
