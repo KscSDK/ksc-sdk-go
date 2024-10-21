@@ -23,14 +23,13 @@ const opAddAlbRule = "AddAlbRule"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddAlbRuleRequest method.
+//	req, resp := client.AddAlbRuleRequest(params)
 //
-//    // Example sending a request using the AddAlbRuleRequest method.
-//    req, resp := client.AddAlbRuleRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AddAlbRule
 func (c *Slb) AddAlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +95,13 @@ const opAssociateCertificateWithGroup = "AssociateCertificateWithGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateCertificateWithGroupRequest method.
+//	req, resp := client.AssociateCertificateWithGroupRequest(params)
 //
-//    // Example sending a request using the AssociateCertificateWithGroupRequest method.
-//    req, resp := client.AssociateCertificateWithGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AssociateCertificateWithGroup
 func (c *Slb) AssociateCertificateWithGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -169,14 +167,13 @@ const opAssociateLoadBalancerAcl = "AssociateLoadBalancerAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateLoadBalancerAclRequest method.
+//	req, resp := client.AssociateLoadBalancerAclRequest(params)
 //
-//    // Example sending a request using the AssociateLoadBalancerAclRequest method.
-//    req, resp := client.AssociateLoadBalancerAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AssociateLoadBalancerAcl
 func (c *Slb) AssociateLoadBalancerAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -226,6 +223,78 @@ func (c *Slb) AssociateLoadBalancerAclWithContext(ctx aws.Context, input *map[st
 	return out, req.Send()
 }
 
+const opAssociateMirrorGroup = "AssociateMirrorGroup"
+
+// AssociateMirrorGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the AssociateMirrorGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AssociateMirrorGroup for more information on using the AssociateMirrorGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the AssociateMirrorGroupRequest method.
+//	req, resp := client.AssociateMirrorGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AssociateMirrorGroup
+func (c *Slb) AssociateMirrorGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAssociateMirrorGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AssociateMirrorGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation AssociateMirrorGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/AssociateMirrorGroup
+func (c *Slb) AssociateMirrorGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AssociateMirrorGroupRequest(input)
+	return out, req.Send()
+}
+
+// AssociateMirrorGroupWithContext is the same as AssociateMirrorGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AssociateMirrorGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) AssociateMirrorGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AssociateMirrorGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opConfigureHealthCheck = "ConfigureHealthCheck"
 
 // ConfigureHealthCheckRequest generates a "ksc/request.Request" representing the
@@ -242,14 +311,13 @@ const opConfigureHealthCheck = "ConfigureHealthCheck"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ConfigureHealthCheckRequest method.
+//	req, resp := client.ConfigureHealthCheckRequest(params)
 //
-//    // Example sending a request using the ConfigureHealthCheckRequest method.
-//    req, resp := client.ConfigureHealthCheckRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ConfigureHealthCheck
 func (c *Slb) ConfigureHealthCheckRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -315,14 +383,13 @@ const opCreateAlb = "CreateAlb"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateAlbRequest method.
+//	req, resp := client.CreateAlbRequest(params)
 //
-//    // Example sending a request using the CreateAlbRequest method.
-//    req, resp := client.CreateAlbRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlb
 func (c *Slb) CreateAlbRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +455,13 @@ const opCreateAlbBackendServerGroup = "CreateAlbBackendServerGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateAlbBackendServerGroupRequest method.
+//	req, resp := client.CreateAlbBackendServerGroupRequest(params)
 //
-//    // Example sending a request using the CreateAlbBackendServerGroupRequest method.
-//    req, resp := client.CreateAlbBackendServerGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbBackendServerGroup
 func (c *Slb) CreateAlbBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +527,13 @@ const opCreateAlbListener = "CreateAlbListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateAlbListenerRequest method.
+//	req, resp := client.CreateAlbListenerRequest(params)
 //
-//    // Example sending a request using the CreateAlbListenerRequest method.
-//    req, resp := client.CreateAlbListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbListener
 func (c *Slb) CreateAlbListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -536,14 +601,13 @@ const opCreateAlbListenerCertGroup = "CreateAlbListenerCertGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateAlbListenerCertGroupRequest method.
+//	req, resp := client.CreateAlbListenerCertGroupRequest(params)
 //
-//    // Example sending a request using the CreateAlbListenerCertGroupRequest method.
-//    req, resp := client.CreateAlbListenerCertGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbListenerCertGroup
 func (c *Slb) CreateAlbListenerCertGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -609,14 +673,13 @@ const opCreateAlbRuleGroup = "CreateAlbRuleGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateAlbRuleGroupRequest method.
+//	req, resp := client.CreateAlbRuleGroupRequest(params)
 //
-//    // Example sending a request using the CreateAlbRuleGroupRequest method.
-//    req, resp := client.CreateAlbRuleGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateAlbRuleGroup
 func (c *Slb) CreateAlbRuleGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -684,14 +747,13 @@ const opCreateBackendServerGroup = "CreateBackendServerGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateBackendServerGroupRequest method.
+//	req, resp := client.CreateBackendServerGroupRequest(params)
 //
-//    // Example sending a request using the CreateBackendServerGroupRequest method.
-//    req, resp := client.CreateBackendServerGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateBackendServerGroup
 func (c *Slb) CreateBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -757,14 +819,13 @@ const opCreateHostHeader = "CreateHostHeader"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateHostHeaderRequest method.
+//	req, resp := client.CreateHostHeaderRequest(params)
 //
-//    // Example sending a request using the CreateHostHeaderRequest method.
-//    req, resp := client.CreateHostHeaderRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateHostHeader
 func (c *Slb) CreateHostHeaderRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -830,14 +891,13 @@ const opCreateListeners = "CreateListeners"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateListenersRequest method.
+//	req, resp := client.CreateListenersRequest(params)
 //
-//    // Example sending a request using the CreateListenersRequest method.
-//    req, resp := client.CreateListenersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateListeners
 func (c *Slb) CreateListenersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -903,14 +963,13 @@ const opCreateLoadBalancer = "CreateLoadBalancer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateLoadBalancerRequest method.
+//	req, resp := client.CreateLoadBalancerRequest(params)
 //
-//    // Example sending a request using the CreateLoadBalancerRequest method.
-//    req, resp := client.CreateLoadBalancerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateLoadBalancer
 func (c *Slb) CreateLoadBalancerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -976,14 +1035,13 @@ const opCreateLoadBalancerAcl = "CreateLoadBalancerAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateLoadBalancerAclRequest method.
+//	req, resp := client.CreateLoadBalancerAclRequest(params)
 //
-//    // Example sending a request using the CreateLoadBalancerAclRequest method.
-//    req, resp := client.CreateLoadBalancerAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateLoadBalancerAcl
 func (c *Slb) CreateLoadBalancerAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1049,14 +1107,13 @@ const opCreateLoadBalancerAclEntry = "CreateLoadBalancerAclEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateLoadBalancerAclEntryRequest method.
+//	req, resp := client.CreateLoadBalancerAclEntryRequest(params)
 //
-//    // Example sending a request using the CreateLoadBalancerAclEntryRequest method.
-//    req, resp := client.CreateLoadBalancerAclEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateLoadBalancerAclEntry
 func (c *Slb) CreateLoadBalancerAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1122,14 +1179,13 @@ const opCreateSlbRule = "CreateSlbRule"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateSlbRuleRequest method.
+//	req, resp := client.CreateSlbRuleRequest(params)
 //
-//    // Example sending a request using the CreateSlbRuleRequest method.
-//    req, resp := client.CreateSlbRuleRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/CreateSlbRule
 func (c *Slb) CreateSlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1195,14 +1251,13 @@ const opDeleteAlb = "DeleteAlb"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAlbRequest method.
+//	req, resp := client.DeleteAlbRequest(params)
 //
-//    // Example sending a request using the DeleteAlbRequest method.
-//    req, resp := client.DeleteAlbRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlb
 func (c *Slb) DeleteAlbRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1268,14 +1323,13 @@ const opDeleteAlbBackendServerGroup = "DeleteAlbBackendServerGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAlbBackendServerGroupRequest method.
+//	req, resp := client.DeleteAlbBackendServerGroupRequest(params)
 //
-//    // Example sending a request using the DeleteAlbBackendServerGroupRequest method.
-//    req, resp := client.DeleteAlbBackendServerGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbBackendServerGroup
 func (c *Slb) DeleteAlbBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1341,14 +1395,13 @@ const opDeleteAlbListener = "DeleteAlbListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAlbListenerRequest method.
+//	req, resp := client.DeleteAlbListenerRequest(params)
 //
-//    // Example sending a request using the DeleteAlbListenerRequest method.
-//    req, resp := client.DeleteAlbListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbListener
 func (c *Slb) DeleteAlbListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1414,14 +1467,13 @@ const opDeleteAlbListenerCertGroup = "DeleteAlbListenerCertGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAlbListenerCertGroupRequest method.
+//	req, resp := client.DeleteAlbListenerCertGroupRequest(params)
 //
-//    // Example sending a request using the DeleteAlbListenerCertGroupRequest method.
-//    req, resp := client.DeleteAlbListenerCertGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbListenerCertGroup
 func (c *Slb) DeleteAlbListenerCertGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1487,14 +1539,13 @@ const opDeleteAlbRule = "DeleteAlbRule"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAlbRuleRequest method.
+//	req, resp := client.DeleteAlbRuleRequest(params)
 //
-//    // Example sending a request using the DeleteAlbRuleRequest method.
-//    req, resp := client.DeleteAlbRuleRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbRule
 func (c *Slb) DeleteAlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1560,14 +1611,13 @@ const opDeleteAlbRuleGroup = "DeleteAlbRuleGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAlbRuleGroupRequest method.
+//	req, resp := client.DeleteAlbRuleGroupRequest(params)
 //
-//    // Example sending a request using the DeleteAlbRuleGroupRequest method.
-//    req, resp := client.DeleteAlbRuleGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteAlbRuleGroup
 func (c *Slb) DeleteAlbRuleGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1633,14 +1683,13 @@ const opDeleteBackendServerGroup = "DeleteBackendServerGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteBackendServerGroupRequest method.
+//	req, resp := client.DeleteBackendServerGroupRequest(params)
 //
-//    // Example sending a request using the DeleteBackendServerGroupRequest method.
-//    req, resp := client.DeleteBackendServerGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteBackendServerGroup
 func (c *Slb) DeleteBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1706,14 +1755,13 @@ const opDeleteHealthCheck = "DeleteHealthCheck"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteHealthCheckRequest method.
+//	req, resp := client.DeleteHealthCheckRequest(params)
 //
-//    // Example sending a request using the DeleteHealthCheckRequest method.
-//    req, resp := client.DeleteHealthCheckRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteHealthCheck
 func (c *Slb) DeleteHealthCheckRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1779,14 +1827,13 @@ const opDeleteHostHeader = "DeleteHostHeader"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteHostHeaderRequest method.
+//	req, resp := client.DeleteHostHeaderRequest(params)
 //
-//    // Example sending a request using the DeleteHostHeaderRequest method.
-//    req, resp := client.DeleteHostHeaderRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteHostHeader
 func (c *Slb) DeleteHostHeaderRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1852,14 +1899,13 @@ const opDeleteListeners = "DeleteListeners"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteListenersRequest method.
+//	req, resp := client.DeleteListenersRequest(params)
 //
-//    // Example sending a request using the DeleteListenersRequest method.
-//    req, resp := client.DeleteListenersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteListeners
 func (c *Slb) DeleteListenersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1925,14 +1971,13 @@ const opDeleteLoadBalancer = "DeleteLoadBalancer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteLoadBalancerRequest method.
+//	req, resp := client.DeleteLoadBalancerRequest(params)
 //
-//    // Example sending a request using the DeleteLoadBalancerRequest method.
-//    req, resp := client.DeleteLoadBalancerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteLoadBalancer
 func (c *Slb) DeleteLoadBalancerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1998,14 +2043,13 @@ const opDeleteLoadBalancerAcl = "DeleteLoadBalancerAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteLoadBalancerAclRequest method.
+//	req, resp := client.DeleteLoadBalancerAclRequest(params)
 //
-//    // Example sending a request using the DeleteLoadBalancerAclRequest method.
-//    req, resp := client.DeleteLoadBalancerAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteLoadBalancerAcl
 func (c *Slb) DeleteLoadBalancerAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2071,14 +2115,13 @@ const opDeleteLoadBalancerAclEntry = "DeleteLoadBalancerAclEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteLoadBalancerAclEntryRequest method.
+//	req, resp := client.DeleteLoadBalancerAclEntryRequest(params)
 //
-//    // Example sending a request using the DeleteLoadBalancerAclEntryRequest method.
-//    req, resp := client.DeleteLoadBalancerAclEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteLoadBalancerAclEntry
 func (c *Slb) DeleteLoadBalancerAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2144,14 +2187,13 @@ const opDeleteRule = "DeleteRule"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteRuleRequest method.
+//	req, resp := client.DeleteRuleRequest(params)
 //
-//    // Example sending a request using the DeleteRuleRequest method.
-//    req, resp := client.DeleteRuleRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeleteRule
 func (c *Slb) DeleteRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2217,14 +2259,13 @@ const opDeregisterAlbBackendServer = "DeregisterAlbBackendServer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeregisterAlbBackendServerRequest method.
+//	req, resp := client.DeregisterAlbBackendServerRequest(params)
 //
-//    // Example sending a request using the DeregisterAlbBackendServerRequest method.
-//    req, resp := client.DeregisterAlbBackendServerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterAlbBackendServer
 func (c *Slb) DeregisterAlbBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2290,14 +2331,13 @@ const opDeregisterBackendServer = "DeregisterBackendServer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeregisterBackendServerRequest method.
+//	req, resp := client.DeregisterBackendServerRequest(params)
 //
-//    // Example sending a request using the DeregisterBackendServerRequest method.
-//    req, resp := client.DeregisterBackendServerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterBackendServer
 func (c *Slb) DeregisterBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2347,6 +2387,78 @@ func (c *Slb) DeregisterBackendServerWithContext(ctx aws.Context, input *map[str
 	return out, req.Send()
 }
 
+const opDeregisterBackendServerGroupFromListener = "DeregisterBackendServerGroupFromListener"
+
+// DeregisterBackendServerGroupFromListenerRequest generates a "ksc/request.Request" representing the
+// client's request for the DeregisterBackendServerGroupFromListener operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeregisterBackendServerGroupFromListener for more information on using the DeregisterBackendServerGroupFromListener
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeregisterBackendServerGroupFromListenerRequest method.
+//	req, resp := client.DeregisterBackendServerGroupFromListenerRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterBackendServerGroupFromListener
+func (c *Slb) DeregisterBackendServerGroupFromListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeregisterBackendServerGroupFromListener,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeregisterBackendServerGroupFromListener API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DeregisterBackendServerGroupFromListener for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterBackendServerGroupFromListener
+func (c *Slb) DeregisterBackendServerGroupFromListener(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeregisterBackendServerGroupFromListenerRequest(input)
+	return out, req.Send()
+}
+
+// DeregisterBackendServerGroupFromListenerWithContext is the same as DeregisterBackendServerGroupFromListener with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeregisterBackendServerGroupFromListener for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DeregisterBackendServerGroupFromListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeregisterBackendServerGroupFromListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeregisterInstancesFromListener = "DeregisterInstancesFromListener"
 
 // DeregisterInstancesFromListenerRequest generates a "ksc/request.Request" representing the
@@ -2363,14 +2475,13 @@ const opDeregisterInstancesFromListener = "DeregisterInstancesFromListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeregisterInstancesFromListenerRequest method.
+//	req, resp := client.DeregisterInstancesFromListenerRequest(params)
 //
-//    // Example sending a request using the DeregisterInstancesFromListenerRequest method.
-//    req, resp := client.DeregisterInstancesFromListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DeregisterInstancesFromListener
 func (c *Slb) DeregisterInstancesFromListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2436,14 +2547,13 @@ const opDescribeAlbBackendServerGroups = "DescribeAlbBackendServerGroups"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAlbBackendServerGroupsRequest method.
+//	req, resp := client.DescribeAlbBackendServerGroupsRequest(params)
 //
-//    // Example sending a request using the DescribeAlbBackendServerGroupsRequest method.
-//    req, resp := client.DescribeAlbBackendServerGroupsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbBackendServerGroups
 func (c *Slb) DescribeAlbBackendServerGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2509,14 +2619,13 @@ const opDescribeAlbBackendServers = "DescribeAlbBackendServers"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAlbBackendServersRequest method.
+//	req, resp := client.DescribeAlbBackendServersRequest(params)
 //
-//    // Example sending a request using the DescribeAlbBackendServersRequest method.
-//    req, resp := client.DescribeAlbBackendServersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbBackendServers
 func (c *Slb) DescribeAlbBackendServersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2582,14 +2691,13 @@ const opDescribeAlbListenerCertGroups = "DescribeAlbListenerCertGroups"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAlbListenerCertGroupsRequest method.
+//	req, resp := client.DescribeAlbListenerCertGroupsRequest(params)
 //
-//    // Example sending a request using the DescribeAlbListenerCertGroupsRequest method.
-//    req, resp := client.DescribeAlbListenerCertGroupsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbListenerCertGroups
 func (c *Slb) DescribeAlbListenerCertGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2655,14 +2763,13 @@ const opDescribeAlbListeners = "DescribeAlbListeners"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAlbListenersRequest method.
+//	req, resp := client.DescribeAlbListenersRequest(params)
 //
-//    // Example sending a request using the DescribeAlbListenersRequest method.
-//    req, resp := client.DescribeAlbListenersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbListeners
 func (c *Slb) DescribeAlbListenersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2728,14 +2835,13 @@ const opDescribeAlbRuleGroups = "DescribeAlbRuleGroups"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAlbRuleGroupsRequest method.
+//	req, resp := client.DescribeAlbRuleGroupsRequest(params)
 //
-//    // Example sending a request using the DescribeAlbRuleGroupsRequest method.
-//    req, resp := client.DescribeAlbRuleGroupsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbRuleGroups
 func (c *Slb) DescribeAlbRuleGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2801,14 +2907,13 @@ const opDescribeAlbs = "DescribeAlbs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAlbsRequest method.
+//	req, resp := client.DescribeAlbsRequest(params)
 //
-//    // Example sending a request using the DescribeAlbsRequest method.
-//    req, resp := client.DescribeAlbsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeAlbs
 func (c *Slb) DescribeAlbsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2874,14 +2979,13 @@ const opDescribeBackendServerGroups = "DescribeBackendServerGroups"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeBackendServerGroupsRequest method.
+//	req, resp := client.DescribeBackendServerGroupsRequest(params)
 //
-//    // Example sending a request using the DescribeBackendServerGroupsRequest method.
-//    req, resp := client.DescribeBackendServerGroupsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeBackendServerGroups
 func (c *Slb) DescribeBackendServerGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2947,14 +3051,13 @@ const opDescribeBackendServers = "DescribeBackendServers"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeBackendServersRequest method.
+//	req, resp := client.DescribeBackendServersRequest(params)
 //
-//    // Example sending a request using the DescribeBackendServersRequest method.
-//    req, resp := client.DescribeBackendServersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeBackendServers
 func (c *Slb) DescribeBackendServersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3020,14 +3123,13 @@ const opDescribeHealthChecks = "DescribeHealthChecks"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeHealthChecksRequest method.
+//	req, resp := client.DescribeHealthChecksRequest(params)
 //
-//    // Example sending a request using the DescribeHealthChecksRequest method.
-//    req, resp := client.DescribeHealthChecksRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeHealthChecks
 func (c *Slb) DescribeHealthChecksRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3093,14 +3195,13 @@ const opDescribeHostHeaders = "DescribeHostHeaders"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeHostHeadersRequest method.
+//	req, resp := client.DescribeHostHeadersRequest(params)
 //
-//    // Example sending a request using the DescribeHostHeadersRequest method.
-//    req, resp := client.DescribeHostHeadersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeHostHeaders
 func (c *Slb) DescribeHostHeadersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3166,14 +3267,13 @@ const opDescribeInstancesWithListener = "DescribeInstancesWithListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeInstancesWithListenerRequest method.
+//	req, resp := client.DescribeInstancesWithListenerRequest(params)
 //
-//    // Example sending a request using the DescribeInstancesWithListenerRequest method.
-//    req, resp := client.DescribeInstancesWithListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeInstancesWithListener
 func (c *Slb) DescribeInstancesWithListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3239,14 +3339,13 @@ const opDescribeListeners = "DescribeListeners"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeListenersRequest method.
+//	req, resp := client.DescribeListenersRequest(params)
 //
-//    // Example sending a request using the DescribeListenersRequest method.
-//    req, resp := client.DescribeListenersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeListeners
 func (c *Slb) DescribeListenersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3312,14 +3411,13 @@ const opDescribeLoadBalancerAcls = "DescribeLoadBalancerAcls"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeLoadBalancerAclsRequest method.
+//	req, resp := client.DescribeLoadBalancerAclsRequest(params)
 //
-//    // Example sending a request using the DescribeLoadBalancerAclsRequest method.
-//    req, resp := client.DescribeLoadBalancerAclsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeLoadBalancerAcls
 func (c *Slb) DescribeLoadBalancerAclsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3385,14 +3483,13 @@ const opDescribeLoadBalancerAttributes = "DescribeLoadBalancerAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeLoadBalancerAttributesRequest method.
+//	req, resp := client.DescribeLoadBalancerAttributesRequest(params)
 //
-//    // Example sending a request using the DescribeLoadBalancerAttributesRequest method.
-//    req, resp := client.DescribeLoadBalancerAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeLoadBalancerAttributes
 func (c *Slb) DescribeLoadBalancerAttributesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3458,14 +3555,13 @@ const opDescribeLoadBalancers = "DescribeLoadBalancers"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeLoadBalancersRequest method.
+//	req, resp := client.DescribeLoadBalancersRequest(params)
 //
-//    // Example sending a request using the DescribeLoadBalancersRequest method.
-//    req, resp := client.DescribeLoadBalancersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeLoadBalancers
 func (c *Slb) DescribeLoadBalancersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3531,14 +3627,13 @@ const opDescribeRules = "DescribeRules"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeRulesRequest method.
+//	req, resp := client.DescribeRulesRequest(params)
 //
-//    // Example sending a request using the DescribeRulesRequest method.
-//    req, resp := client.DescribeRulesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DescribeRules
 func (c *Slb) DescribeRulesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3604,14 +3699,13 @@ const opDisassociateLoadBalancerAcl = "DisassociateLoadBalancerAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DisassociateLoadBalancerAclRequest method.
+//	req, resp := client.DisassociateLoadBalancerAclRequest(params)
 //
-//    // Example sending a request using the DisassociateLoadBalancerAclRequest method.
-//    req, resp := client.DisassociateLoadBalancerAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DisassociateLoadBalancerAcl
 func (c *Slb) DisassociateLoadBalancerAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3661,6 +3755,78 @@ func (c *Slb) DisassociateLoadBalancerAclWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
+const opDisassociateMirrorGroup = "DisassociateMirrorGroup"
+
+// DisassociateMirrorGroupRequest generates a "ksc/request.Request" representing the
+// client's request for the DisassociateMirrorGroup operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DisassociateMirrorGroup for more information on using the DisassociateMirrorGroup
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DisassociateMirrorGroupRequest method.
+//	req, resp := client.DisassociateMirrorGroupRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DisassociateMirrorGroup
+func (c *Slb) DisassociateMirrorGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDisassociateMirrorGroup,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DisassociateMirrorGroup API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation DisassociateMirrorGroup for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DisassociateMirrorGroup
+func (c *Slb) DisassociateMirrorGroup(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DisassociateMirrorGroupRequest(input)
+	return out, req.Send()
+}
+
+// DisassociateMirrorGroupWithContext is the same as DisassociateMirrorGroup with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DisassociateMirrorGroup for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) DisassociateMirrorGroupWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DisassociateMirrorGroupRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDissociateCertificateWithGroup = "DissociateCertificateWithGroup"
 
 // DissociateCertificateWithGroupRequest generates a "ksc/request.Request" representing the
@@ -3677,14 +3843,13 @@ const opDissociateCertificateWithGroup = "DissociateCertificateWithGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DissociateCertificateWithGroupRequest method.
+//	req, resp := client.DissociateCertificateWithGroupRequest(params)
 //
-//    // Example sending a request using the DissociateCertificateWithGroupRequest method.
-//    req, resp := client.DissociateCertificateWithGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/DissociateCertificateWithGroup
 func (c *Slb) DissociateCertificateWithGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3734,6 +3899,78 @@ func (c *Slb) DissociateCertificateWithGroupWithContext(ctx aws.Context, input *
 	return out, req.Send()
 }
 
+const opModifyAlb = "ModifyAlb"
+
+// ModifyAlbRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyAlb operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyAlb for more information on using the ModifyAlb
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyAlbRequest method.
+//	req, resp := client.ModifyAlbRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlb
+func (c *Slb) ModifyAlbRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyAlb,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyAlb API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation ModifyAlb for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlb
+func (c *Slb) ModifyAlb(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyAlbRequest(input)
+	return out, req.Send()
+}
+
+// ModifyAlbWithContext is the same as ModifyAlb with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyAlb for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) ModifyAlbWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyAlbRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyAlbBackendServer = "ModifyAlbBackendServer"
 
 // ModifyAlbBackendServerRequest generates a "ksc/request.Request" representing the
@@ -3750,14 +3987,13 @@ const opModifyAlbBackendServer = "ModifyAlbBackendServer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyAlbBackendServerRequest method.
+//	req, resp := client.ModifyAlbBackendServerRequest(params)
 //
-//    // Example sending a request using the ModifyAlbBackendServerRequest method.
-//    req, resp := client.ModifyAlbBackendServerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbBackendServer
 func (c *Slb) ModifyAlbBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3823,14 +4059,13 @@ const opModifyAlbBackendServerGroup = "ModifyAlbBackendServerGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyAlbBackendServerGroupRequest method.
+//	req, resp := client.ModifyAlbBackendServerGroupRequest(params)
 //
-//    // Example sending a request using the ModifyAlbBackendServerGroupRequest method.
-//    req, resp := client.ModifyAlbBackendServerGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbBackendServerGroup
 func (c *Slb) ModifyAlbBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3896,14 +4131,13 @@ const opModifyAlbListener = "ModifyAlbListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyAlbListenerRequest method.
+//	req, resp := client.ModifyAlbListenerRequest(params)
 //
-//    // Example sending a request using the ModifyAlbListenerRequest method.
-//    req, resp := client.ModifyAlbListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbListener
 func (c *Slb) ModifyAlbListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3971,14 +4205,13 @@ const opModifyAlbRuleGroup = "ModifyAlbRuleGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyAlbRuleGroupRequest method.
+//	req, resp := client.ModifyAlbRuleGroupRequest(params)
 //
-//    // Example sending a request using the ModifyAlbRuleGroupRequest method.
-//    req, resp := client.ModifyAlbRuleGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyAlbRuleGroup
 func (c *Slb) ModifyAlbRuleGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4046,14 +4279,13 @@ const opModifyBackendServer = "ModifyBackendServer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyBackendServerRequest method.
+//	req, resp := client.ModifyBackendServerRequest(params)
 //
-//    // Example sending a request using the ModifyBackendServerRequest method.
-//    req, resp := client.ModifyBackendServerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServer
 func (c *Slb) ModifyBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4119,14 +4351,13 @@ const opModifyBackendServerGroup = "ModifyBackendServerGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyBackendServerGroupRequest method.
+//	req, resp := client.ModifyBackendServerGroupRequest(params)
 //
-//    // Example sending a request using the ModifyBackendServerGroupRequest method.
-//    req, resp := client.ModifyBackendServerGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServerGroup
 func (c *Slb) ModifyBackendServerGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4192,14 +4423,13 @@ const opModifyBackendServerGroupHealthCheck = "ModifyBackendServerGroupHealthChe
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyBackendServerGroupHealthCheckRequest method.
+//	req, resp := client.ModifyBackendServerGroupHealthCheckRequest(params)
 //
-//    // Example sending a request using the ModifyBackendServerGroupHealthCheckRequest method.
-//    req, resp := client.ModifyBackendServerGroupHealthCheckRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyBackendServerGroupHealthCheck
 func (c *Slb) ModifyBackendServerGroupHealthCheckRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4265,14 +4495,13 @@ const opModifyHealthCheck = "ModifyHealthCheck"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyHealthCheckRequest method.
+//	req, resp := client.ModifyHealthCheckRequest(params)
 //
-//    // Example sending a request using the ModifyHealthCheckRequest method.
-//    req, resp := client.ModifyHealthCheckRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyHealthCheck
 func (c *Slb) ModifyHealthCheckRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4338,14 +4567,13 @@ const opModifyHostHeader = "ModifyHostHeader"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyHostHeaderRequest method.
+//	req, resp := client.ModifyHostHeaderRequest(params)
 //
-//    // Example sending a request using the ModifyHostHeaderRequest method.
-//    req, resp := client.ModifyHostHeaderRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyHostHeader
 func (c *Slb) ModifyHostHeaderRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4411,14 +4639,13 @@ const opModifyInstancesWithListener = "ModifyInstancesWithListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyInstancesWithListenerRequest method.
+//	req, resp := client.ModifyInstancesWithListenerRequest(params)
 //
-//    // Example sending a request using the ModifyInstancesWithListenerRequest method.
-//    req, resp := client.ModifyInstancesWithListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyInstancesWithListener
 func (c *Slb) ModifyInstancesWithListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4484,14 +4711,13 @@ const opModifyListeners = "ModifyListeners"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyListenersRequest method.
+//	req, resp := client.ModifyListenersRequest(params)
 //
-//    // Example sending a request using the ModifyListenersRequest method.
-//    req, resp := client.ModifyListenersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyListeners
 func (c *Slb) ModifyListenersRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4557,14 +4783,13 @@ const opModifyLoadBalancer = "ModifyLoadBalancer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyLoadBalancerRequest method.
+//	req, resp := client.ModifyLoadBalancerRequest(params)
 //
-//    // Example sending a request using the ModifyLoadBalancerRequest method.
-//    req, resp := client.ModifyLoadBalancerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyLoadBalancer
 func (c *Slb) ModifyLoadBalancerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4630,14 +4855,13 @@ const opModifyLoadBalancerAcl = "ModifyLoadBalancerAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyLoadBalancerAclRequest method.
+//	req, resp := client.ModifyLoadBalancerAclRequest(params)
 //
-//    // Example sending a request using the ModifyLoadBalancerAclRequest method.
-//    req, resp := client.ModifyLoadBalancerAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyLoadBalancerAcl
 func (c *Slb) ModifyLoadBalancerAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4703,14 +4927,13 @@ const opModifyLoadBalancerAclEntry = "ModifyLoadBalancerAclEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyLoadBalancerAclEntryRequest method.
+//	req, resp := client.ModifyLoadBalancerAclEntryRequest(params)
 //
-//    // Example sending a request using the ModifyLoadBalancerAclEntryRequest method.
-//    req, resp := client.ModifyLoadBalancerAclEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyLoadBalancerAclEntry
 func (c *Slb) ModifyLoadBalancerAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4776,14 +4999,13 @@ const opModifyLoadBalancerAttributes = "ModifyLoadBalancerAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyLoadBalancerAttributesRequest method.
+//	req, resp := client.ModifyLoadBalancerAttributesRequest(params)
 //
-//    // Example sending a request using the ModifyLoadBalancerAttributesRequest method.
-//    req, resp := client.ModifyLoadBalancerAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifyLoadBalancerAttributes
 func (c *Slb) ModifyLoadBalancerAttributesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4849,14 +5071,13 @@ const opModifySlbRule = "ModifySlbRule"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifySlbRuleRequest method.
+//	req, resp := client.ModifySlbRuleRequest(params)
 //
-//    // Example sending a request using the ModifySlbRuleRequest method.
-//    req, resp := client.ModifySlbRuleRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/ModifySlbRule
 func (c *Slb) ModifySlbRuleRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4922,14 +5143,13 @@ const opRegisterAlbBackendServer = "RegisterAlbBackendServer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RegisterAlbBackendServerRequest method.
+//	req, resp := client.RegisterAlbBackendServerRequest(params)
 //
-//    // Example sending a request using the RegisterAlbBackendServerRequest method.
-//    req, resp := client.RegisterAlbBackendServerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterAlbBackendServer
 func (c *Slb) RegisterAlbBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4995,14 +5215,13 @@ const opRegisterBackendServer = "RegisterBackendServer"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RegisterBackendServerRequest method.
+//	req, resp := client.RegisterBackendServerRequest(params)
 //
-//    // Example sending a request using the RegisterBackendServerRequest method.
-//    req, resp := client.RegisterBackendServerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterBackendServer
 func (c *Slb) RegisterBackendServerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5052,6 +5271,78 @@ func (c *Slb) RegisterBackendServerWithContext(ctx aws.Context, input *map[strin
 	return out, req.Send()
 }
 
+const opRegisterBackendServerGroupWithListener = "RegisterBackendServerGroupWithListener"
+
+// RegisterBackendServerGroupWithListenerRequest generates a "ksc/request.Request" representing the
+// client's request for the RegisterBackendServerGroupWithListener operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RegisterBackendServerGroupWithListener for more information on using the RegisterBackendServerGroupWithListener
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the RegisterBackendServerGroupWithListenerRequest method.
+//	req, resp := client.RegisterBackendServerGroupWithListenerRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterBackendServerGroupWithListener
+func (c *Slb) RegisterBackendServerGroupWithListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRegisterBackendServerGroupWithListener,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// RegisterBackendServerGroupWithListener API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation RegisterBackendServerGroupWithListener for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterBackendServerGroupWithListener
+func (c *Slb) RegisterBackendServerGroupWithListener(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RegisterBackendServerGroupWithListenerRequest(input)
+	return out, req.Send()
+}
+
+// RegisterBackendServerGroupWithListenerWithContext is the same as RegisterBackendServerGroupWithListener with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RegisterBackendServerGroupWithListener for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) RegisterBackendServerGroupWithListenerWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RegisterBackendServerGroupWithListenerRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRegisterInstancesWithListener = "RegisterInstancesWithListener"
 
 // RegisterInstancesWithListenerRequest generates a "ksc/request.Request" representing the
@@ -5068,14 +5359,13 @@ const opRegisterInstancesWithListener = "RegisterInstancesWithListener"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RegisterInstancesWithListenerRequest method.
+//	req, resp := client.RegisterInstancesWithListenerRequest(params)
 //
-//    // Example sending a request using the RegisterInstancesWithListenerRequest method.
-//    req, resp := client.RegisterInstancesWithListenerRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/RegisterInstancesWithListener
 func (c *Slb) RegisterInstancesWithListenerRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5141,14 +5431,13 @@ const opSetAlbAccessLog = "SetAlbAccessLog"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SetAlbAccessLogRequest method.
+//	req, resp := client.SetAlbAccessLogRequest(params)
 //
-//    // Example sending a request using the SetAlbAccessLogRequest method.
-//    req, resp := client.SetAlbAccessLogRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbAccessLog
 func (c *Slb) SetAlbAccessLogRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5198,6 +5487,150 @@ func (c *Slb) SetAlbAccessLogWithContext(ctx aws.Context, input *map[string]inte
 	return out, req.Send()
 }
 
+const opSetAlbDeleteProtection = "SetAlbDeleteProtection"
+
+// SetAlbDeleteProtectionRequest generates a "ksc/request.Request" representing the
+// client's request for the SetAlbDeleteProtection operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SetAlbDeleteProtection for more information on using the SetAlbDeleteProtection
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the SetAlbDeleteProtectionRequest method.
+//	req, resp := client.SetAlbDeleteProtectionRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbDeleteProtection
+func (c *Slb) SetAlbDeleteProtectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSetAlbDeleteProtection,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// SetAlbDeleteProtection API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation SetAlbDeleteProtection for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbDeleteProtection
+func (c *Slb) SetAlbDeleteProtection(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SetAlbDeleteProtectionRequest(input)
+	return out, req.Send()
+}
+
+// SetAlbDeleteProtectionWithContext is the same as SetAlbDeleteProtection with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SetAlbDeleteProtection for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) SetAlbDeleteProtectionWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SetAlbDeleteProtectionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opSetAlbModificationProtection = "SetAlbModificationProtection"
+
+// SetAlbModificationProtectionRequest generates a "ksc/request.Request" representing the
+// client's request for the SetAlbModificationProtection operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SetAlbModificationProtection for more information on using the SetAlbModificationProtection
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the SetAlbModificationProtectionRequest method.
+//	req, resp := client.SetAlbModificationProtectionRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbModificationProtection
+func (c *Slb) SetAlbModificationProtectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSetAlbModificationProtection,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// SetAlbModificationProtection API operation for slb.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for slb's
+// API operation SetAlbModificationProtection for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbModificationProtection
+func (c *Slb) SetAlbModificationProtection(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SetAlbModificationProtectionRequest(input)
+	return out, req.Send()
+}
+
+// SetAlbModificationProtectionWithContext is the same as SetAlbModificationProtection with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SetAlbModificationProtection for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Slb) SetAlbModificationProtectionWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SetAlbModificationProtectionRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opSetAlbName = "SetAlbName"
 
 // SetAlbNameRequest generates a "ksc/request.Request" representing the
@@ -5214,14 +5647,13 @@ const opSetAlbName = "SetAlbName"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SetAlbNameRequest method.
+//	req, resp := client.SetAlbNameRequest(params)
 //
-//    // Example sending a request using the SetAlbNameRequest method.
-//    req, resp := client.SetAlbNameRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbName
 func (c *Slb) SetAlbNameRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5287,14 +5719,13 @@ const opSetAlbStatus = "SetAlbStatus"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SetAlbStatusRequest method.
+//	req, resp := client.SetAlbStatusRequest(params)
 //
-//    // Example sending a request using the SetAlbStatusRequest method.
-//    req, resp := client.SetAlbStatusRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetAlbStatus
 func (c *Slb) SetAlbStatusRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5360,14 +5791,13 @@ const opSetEnableAlbAccessLog = "SetEnableAlbAccessLog"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SetEnableAlbAccessLogRequest method.
+//	req, resp := client.SetEnableAlbAccessLogRequest(params)
 //
-//    // Example sending a request using the SetEnableAlbAccessLogRequest method.
-//    req, resp := client.SetEnableAlbAccessLogRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/slb-2016-03-04/SetEnableAlbAccessLog
 func (c *Slb) SetEnableAlbAccessLogRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
