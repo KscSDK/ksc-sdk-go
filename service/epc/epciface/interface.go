@@ -23,43 +23,47 @@ import (
 // can be stubbed out for unit testing your code with the SDK without needing
 // to inject custom request handlers into the SDK's request pipeline.
 //
-//    // myFunc uses an SDK service client to make a request to
-//    // epc.
-//    func myFunc(svc epciface.EpcAPI) bool {
-//        // Make svc.AssociateCluster request
-//    }
+//	// myFunc uses an SDK service client to make a request to
+//	// epc.
+//	func myFunc(svc epciface.EpcAPI) bool {
+//	    // Make svc.ActivateHotStandbyEpc request
+//	}
 //
-//    func main() {
-//        sess := session.New()
-//        svc := epc.New(sess)
+//	func main() {
+//	    sess := session.New()
+//	    svc := epc.New(sess)
 //
-//        myFunc(svc)
-//    }
+//	    myFunc(svc)
+//	}
 //
 // In your _test.go file:
 //
-//    // Define a mock struct to be used in your unit tests of myFunc.
-//    type mockEpcClient struct {
-//        epciface.EpcAPI
-//    }
-//    func (m *mockEpcClient) AssociateCluster(input *map[string]interface{}) (*map[string]interface{}, error) {
-//        // mock response/functionality
-//    }
+//	// Define a mock struct to be used in your unit tests of myFunc.
+//	type mockEpcClient struct {
+//	    epciface.EpcAPI
+//	}
+//	func (m *mockEpcClient) ActivateHotStandbyEpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+//	    // mock response/functionality
+//	}
 //
-//    func TestMyFunc(t *testing.T) {
-//        // Setup Test
-//        mockSvc := &mockEpcClient{}
+//	func TestMyFunc(t *testing.T) {
+//	    // Setup Test
+//	    mockSvc := &mockEpcClient{}
 //
-//        myfunc(mockSvc)
+//	    myfunc(mockSvc)
 //
-//        // Verify myFunc's functionality
-//    }
+//	    // Verify myFunc's functionality
+//	}
 //
 // It is important to note that this interface will have breaking changes
 // when the service model is updated and adds new API operations, paginators,
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type EpcAPI interface {
+	ActivateHotStandbyEpc(*map[string]interface{}) (*map[string]interface{}, error)
+	ActivateHotStandbyEpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ActivateHotStandbyEpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AssociateCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	AssociateClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AssociateClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -212,6 +216,10 @@ type EpcAPI interface {
 	ModifyNetworkInterfaceAttributeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNetworkInterfaceAttributeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyOverclockingAttribute(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyOverclockingAttributeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyOverclockingAttributeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyRemoteManagement(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyRemoteManagementWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyRemoteManagementRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -247,6 +255,10 @@ type EpcAPI interface {
 	StopEpc(*map[string]interface{}) (*map[string]interface{}, error)
 	StopEpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	StopEpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UseHotStandByEpc(*map[string]interface{}) (*map[string]interface{}, error)
+	UseHotStandByEpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UseHotStandByEpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ EpcAPI = (*epc.Epc)(nil)
