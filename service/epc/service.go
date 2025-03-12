@@ -42,11 +42,12 @@ const (
 // ksc.Config parameter to add your extra config.
 //
 // Example:
-//     // Create a Epc client from just a session.
-//     svc := epc.New(mySession)
 //
-//     // Create a Epc client with additional configuration
-//     svc := epc.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
+//	// Create a Epc client from just a session.
+//	svc := epc.New(mySession)
+//
+//	// Create a Epc client with additional configuration
+//	svc := epc.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
 func New(p client.ConfigProvider, cfgs ...*aws.Config) *Epc {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	c.Endpoint = utils.Url(&utils.UrlInfo{
