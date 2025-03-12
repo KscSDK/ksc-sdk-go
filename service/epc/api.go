@@ -7,6 +7,78 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opActivateHotStandbyEpc = "ActivateHotStandbyEpc"
+
+// ActivateHotStandbyEpcRequest generates a "ksc/request.Request" representing the
+// client's request for the ActivateHotStandbyEpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ActivateHotStandbyEpc for more information on using the ActivateHotStandbyEpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ActivateHotStandbyEpcRequest method.
+//	req, resp := client.ActivateHotStandbyEpcRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ActivateHotStandbyEpc
+func (c *Epc) ActivateHotStandbyEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opActivateHotStandbyEpc,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ActivateHotStandbyEpc API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation ActivateHotStandbyEpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ActivateHotStandbyEpc
+func (c *Epc) ActivateHotStandbyEpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ActivateHotStandbyEpcRequest(input)
+	return out, req.Send()
+}
+
+// ActivateHotStandbyEpcWithContext is the same as ActivateHotStandbyEpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ActivateHotStandbyEpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) ActivateHotStandbyEpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ActivateHotStandbyEpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAssociateCluster = "AssociateCluster"
 
 // AssociateClusterRequest generates a "ksc/request.Request" representing the
@@ -23,14 +95,13 @@ const opAssociateCluster = "AssociateCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateClusterRequest method.
+//	req, resp := client.AssociateClusterRequest(params)
 //
-//    // Example sending a request using the AssociateClusterRequest method.
-//    req, resp := client.AssociateClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/AssociateCluster
 func (c *Epc) AssociateClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +167,13 @@ const opBuyAccessory = "BuyAccessory"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BuyAccessoryRequest method.
+//	req, resp := client.BuyAccessoryRequest(params)
 //
-//    // Example sending a request using the BuyAccessoryRequest method.
-//    req, resp := client.BuyAccessoryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/BuyAccessory
 func (c *Epc) BuyAccessoryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -169,14 +239,13 @@ const opCreateAccessory = "CreateAccessory"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateAccessoryRequest method.
+//	req, resp := client.CreateAccessoryRequest(params)
 //
-//    // Example sending a request using the CreateAccessoryRequest method.
-//    req, resp := client.CreateAccessoryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateAccessory
 func (c *Epc) CreateAccessoryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -242,14 +311,13 @@ const opCreateCabinet = "CreateCabinet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateCabinetRequest method.
+//	req, resp := client.CreateCabinetRequest(params)
 //
-//    // Example sending a request using the CreateCabinetRequest method.
-//    req, resp := client.CreateCabinetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateCabinet
 func (c *Epc) CreateCabinetRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -315,14 +383,13 @@ const opCreateEpc = "CreateEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateEpcRequest method.
+//	req, resp := client.CreateEpcRequest(params)
 //
-//    // Example sending a request using the CreateEpcRequest method.
-//    req, resp := client.CreateEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateEpc
 func (c *Epc) CreateEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +455,13 @@ const opCreateImage = "CreateImage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateImageRequest method.
+//	req, resp := client.CreateImageRequest(params)
 //
-//    // Example sending a request using the CreateImageRequest method.
-//    req, resp := client.CreateImageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateImage
 func (c *Epc) CreateImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +527,13 @@ const opCreateKey = "CreateKey"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateKeyRequest method.
+//	req, resp := client.CreateKeyRequest(params)
 //
-//    // Example sending a request using the CreateKeyRequest method.
-//    req, resp := client.CreateKeyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateKey
 func (c *Epc) CreateKeyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -534,14 +599,13 @@ const opCreateProcess = "CreateProcess"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateProcessRequest method.
+//	req, resp := client.CreateProcessRequest(params)
 //
-//    // Example sending a request using the CreateProcessRequest method.
-//    req, resp := client.CreateProcessRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateProcess
 func (c *Epc) CreateProcessRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -607,14 +671,13 @@ const opCreateRemoteManagement = "CreateRemoteManagement"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateRemoteManagementRequest method.
+//	req, resp := client.CreateRemoteManagementRequest(params)
 //
-//    // Example sending a request using the CreateRemoteManagementRequest method.
-//    req, resp := client.CreateRemoteManagementRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/CreateRemoteManagement
 func (c *Epc) CreateRemoteManagementRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -680,14 +743,13 @@ const opDeleteAccessory = "DeleteAccessory"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAccessoryRequest method.
+//	req, resp := client.DeleteAccessoryRequest(params)
 //
-//    // Example sending a request using the DeleteAccessoryRequest method.
-//    req, resp := client.DeleteAccessoryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteAccessory
 func (c *Epc) DeleteAccessoryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -753,14 +815,13 @@ const opDeleteEpc = "DeleteEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteEpcRequest method.
+//	req, resp := client.DeleteEpcRequest(params)
 //
-//    // Example sending a request using the DeleteEpcRequest method.
-//    req, resp := client.DeleteEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteEpc
 func (c *Epc) DeleteEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -826,14 +887,13 @@ const opDeleteImage = "DeleteImage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteImageRequest method.
+//	req, resp := client.DeleteImageRequest(params)
 //
-//    // Example sending a request using the DeleteImageRequest method.
-//    req, resp := client.DeleteImageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteImage
 func (c *Epc) DeleteImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -899,14 +959,13 @@ const opDeleteKey = "DeleteKey"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteKeyRequest method.
+//	req, resp := client.DeleteKeyRequest(params)
 //
-//    // Example sending a request using the DeleteKeyRequest method.
-//    req, resp := client.DeleteKeyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteKey
 func (c *Epc) DeleteKeyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -972,14 +1031,13 @@ const opDeleteProcess = "DeleteProcess"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteProcessRequest method.
+//	req, resp := client.DeleteProcessRequest(params)
 //
-//    // Example sending a request using the DeleteProcessRequest method.
-//    req, resp := client.DeleteProcessRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteProcess
 func (c *Epc) DeleteProcessRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1045,14 +1103,13 @@ const opDeleteRemoteManagement = "DeleteRemoteManagement"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteRemoteManagementRequest method.
+//	req, resp := client.DeleteRemoteManagementRequest(params)
 //
-//    // Example sending a request using the DeleteRemoteManagementRequest method.
-//    req, resp := client.DeleteRemoteManagementRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DeleteRemoteManagement
 func (c *Epc) DeleteRemoteManagementRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1118,14 +1175,13 @@ const opDescribeAccessorys = "DescribeAccessorys"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAccessorysRequest method.
+//	req, resp := client.DescribeAccessorysRequest(params)
 //
-//    // Example sending a request using the DescribeAccessorysRequest method.
-//    req, resp := client.DescribeAccessorysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeAccessorys
 func (c *Epc) DescribeAccessorysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1191,14 +1247,13 @@ const opDescribeCabinets = "DescribeCabinets"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeCabinetsRequest method.
+//	req, resp := client.DescribeCabinetsRequest(params)
 //
-//    // Example sending a request using the DescribeCabinetsRequest method.
-//    req, resp := client.DescribeCabinetsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeCabinets
 func (c *Epc) DescribeCabinetsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1264,14 +1319,13 @@ const opDescribeEpcDeviceAttributes = "DescribeEpcDeviceAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcDeviceAttributesRequest method.
+//	req, resp := client.DescribeEpcDeviceAttributesRequest(params)
 //
-//    // Example sending a request using the DescribeEpcDeviceAttributesRequest method.
-//    req, resp := client.DescribeEpcDeviceAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcDeviceAttributes
 func (c *Epc) DescribeEpcDeviceAttributesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1337,14 +1391,13 @@ const opDescribeEpcManagements = "DescribeEpcManagements"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcManagementsRequest method.
+//	req, resp := client.DescribeEpcManagementsRequest(params)
 //
-//    // Example sending a request using the DescribeEpcManagementsRequest method.
-//    req, resp := client.DescribeEpcManagementsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcManagements
 func (c *Epc) DescribeEpcManagementsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1410,14 +1463,13 @@ const opDescribeEpcRaidAttributes = "DescribeEpcRaidAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcRaidAttributesRequest method.
+//	req, resp := client.DescribeEpcRaidAttributesRequest(params)
 //
-//    // Example sending a request using the DescribeEpcRaidAttributesRequest method.
-//    req, resp := client.DescribeEpcRaidAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcRaidAttributes
 func (c *Epc) DescribeEpcRaidAttributesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1483,14 +1535,13 @@ const opDescribeEpcStocks = "DescribeEpcStocks"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcStocksRequest method.
+//	req, resp := client.DescribeEpcStocksRequest(params)
 //
-//    // Example sending a request using the DescribeEpcStocksRequest method.
-//    req, resp := client.DescribeEpcStocksRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcStocks
 func (c *Epc) DescribeEpcStocksRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1556,14 +1607,13 @@ const opDescribeEpcs = "DescribeEpcs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEpcsRequest method.
+//	req, resp := client.DescribeEpcsRequest(params)
 //
-//    // Example sending a request using the DescribeEpcsRequest method.
-//    req, resp := client.DescribeEpcsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeEpcs
 func (c *Epc) DescribeEpcsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1629,14 +1679,13 @@ const opDescribeImages = "DescribeImages"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeImagesRequest method.
+//	req, resp := client.DescribeImagesRequest(params)
 //
-//    // Example sending a request using the DescribeImagesRequest method.
-//    req, resp := client.DescribeImagesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeImages
 func (c *Epc) DescribeImagesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1702,14 +1751,13 @@ const opDescribeInspections = "DescribeInspections"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeInspectionsRequest method.
+//	req, resp := client.DescribeInspectionsRequest(params)
 //
-//    // Example sending a request using the DescribeInspectionsRequest method.
-//    req, resp := client.DescribeInspectionsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeInspections
 func (c *Epc) DescribeInspectionsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1775,14 +1823,13 @@ const opDescribeKeys = "DescribeKeys"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeKeysRequest method.
+//	req, resp := client.DescribeKeysRequest(params)
 //
-//    // Example sending a request using the DescribeKeysRequest method.
-//    req, resp := client.DescribeKeysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeKeys
 func (c *Epc) DescribeKeysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1848,14 +1895,13 @@ const opDescribePhysicalMonitor = "DescribePhysicalMonitor"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribePhysicalMonitorRequest method.
+//	req, resp := client.DescribePhysicalMonitorRequest(params)
 //
-//    // Example sending a request using the DescribePhysicalMonitorRequest method.
-//    req, resp := client.DescribePhysicalMonitorRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribePhysicalMonitor
 func (c *Epc) DescribePhysicalMonitorRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1921,14 +1967,13 @@ const opDescribeProcesses = "DescribeProcesses"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeProcessesRequest method.
+//	req, resp := client.DescribeProcessesRequest(params)
 //
-//    // Example sending a request using the DescribeProcessesRequest method.
-//    req, resp := client.DescribeProcessesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeProcesses
 func (c *Epc) DescribeProcessesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1994,14 +2039,13 @@ const opDescribeRemoteManagements = "DescribeRemoteManagements"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeRemoteManagementsRequest method.
+//	req, resp := client.DescribeRemoteManagementsRequest(params)
 //
-//    // Example sending a request using the DescribeRemoteManagementsRequest method.
-//    req, resp := client.DescribeRemoteManagementsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeRemoteManagements
 func (c *Epc) DescribeRemoteManagementsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2067,14 +2111,13 @@ const opDescribeVpns = "DescribeVpns"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVpnsRequest method.
+//	req, resp := client.DescribeVpnsRequest(params)
 //
-//    // Example sending a request using the DescribeVpnsRequest method.
-//    req, resp := client.DescribeVpnsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DescribeVpns
 func (c *Epc) DescribeVpnsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2140,14 +2183,13 @@ const opDisassociateCluster = "DisassociateCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DisassociateClusterRequest method.
+//	req, resp := client.DisassociateClusterRequest(params)
 //
-//    // Example sending a request using the DisassociateClusterRequest method.
-//    req, resp := client.DisassociateClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/DisassociateCluster
 func (c *Epc) DisassociateClusterRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2213,14 +2255,13 @@ const opGetDynamicCode = "GetDynamicCode"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the GetDynamicCodeRequest method.
+//	req, resp := client.GetDynamicCodeRequest(params)
 //
-//    // Example sending a request using the GetDynamicCodeRequest method.
-//    req, resp := client.GetDynamicCodeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/GetDynamicCode
 func (c *Epc) GetDynamicCodeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2286,14 +2327,13 @@ const opImportKey = "ImportKey"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ImportKeyRequest method.
+//	req, resp := client.ImportKeyRequest(params)
 //
-//    // Example sending a request using the ImportKeyRequest method.
-//    req, resp := client.ImportKeyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ImportKey
 func (c *Epc) ImportKeyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2359,14 +2399,13 @@ const opModifyDns = "ModifyDns"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyDnsRequest method.
+//	req, resp := client.ModifyDnsRequest(params)
 //
-//    // Example sending a request using the ModifyDnsRequest method.
-//    req, resp := client.ModifyDnsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyDns
 func (c *Epc) ModifyDnsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2432,14 +2471,13 @@ const opModifyEpc = "ModifyEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyEpcRequest method.
+//	req, resp := client.ModifyEpcRequest(params)
 //
-//    // Example sending a request using the ModifyEpcRequest method.
-//    req, resp := client.ModifyEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyEpc
 func (c *Epc) ModifyEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2505,14 +2543,13 @@ const opModifyHyperThreading = "ModifyHyperThreading"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyHyperThreadingRequest method.
+//	req, resp := client.ModifyHyperThreadingRequest(params)
 //
-//    // Example sending a request using the ModifyHyperThreadingRequest method.
-//    req, resp := client.ModifyHyperThreadingRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyHyperThreading
 func (c *Epc) ModifyHyperThreadingRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2578,14 +2615,13 @@ const opModifyImage = "ModifyImage"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyImageRequest method.
+//	req, resp := client.ModifyImageRequest(params)
 //
-//    // Example sending a request using the ModifyImageRequest method.
-//    req, resp := client.ModifyImageRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyImage
 func (c *Epc) ModifyImageRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2651,14 +2687,13 @@ const opModifyKey = "ModifyKey"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyKeyRequest method.
+//	req, resp := client.ModifyKeyRequest(params)
 //
-//    // Example sending a request using the ModifyKeyRequest method.
-//    req, resp := client.ModifyKeyRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyKey
 func (c *Epc) ModifyKeyRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2724,14 +2759,13 @@ const opModifyNetworkInterfaceAttribute = "ModifyNetworkInterfaceAttribute"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNetworkInterfaceAttributeRequest method.
+//	req, resp := client.ModifyNetworkInterfaceAttributeRequest(params)
 //
-//    // Example sending a request using the ModifyNetworkInterfaceAttributeRequest method.
-//    req, resp := client.ModifyNetworkInterfaceAttributeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyNetworkInterfaceAttribute
 func (c *Epc) ModifyNetworkInterfaceAttributeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2781,6 +2815,78 @@ func (c *Epc) ModifyNetworkInterfaceAttributeWithContext(ctx aws.Context, input 
 	return out, req.Send()
 }
 
+const opModifyOverclockingAttribute = "ModifyOverclockingAttribute"
+
+// ModifyOverclockingAttributeRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyOverclockingAttribute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyOverclockingAttribute for more information on using the ModifyOverclockingAttribute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyOverclockingAttributeRequest method.
+//	req, resp := client.ModifyOverclockingAttributeRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyOverclockingAttribute
+func (c *Epc) ModifyOverclockingAttributeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyOverclockingAttribute,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyOverclockingAttribute API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation ModifyOverclockingAttribute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyOverclockingAttribute
+func (c *Epc) ModifyOverclockingAttribute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyOverclockingAttributeRequest(input)
+	return out, req.Send()
+}
+
+// ModifyOverclockingAttributeWithContext is the same as ModifyOverclockingAttribute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyOverclockingAttribute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) ModifyOverclockingAttributeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyOverclockingAttributeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyRemoteManagement = "ModifyRemoteManagement"
 
 // ModifyRemoteManagementRequest generates a "ksc/request.Request" representing the
@@ -2797,14 +2903,13 @@ const opModifyRemoteManagement = "ModifyRemoteManagement"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyRemoteManagementRequest method.
+//	req, resp := client.ModifyRemoteManagementRequest(params)
 //
-//    // Example sending a request using the ModifyRemoteManagementRequest method.
-//    req, resp := client.ModifyRemoteManagementRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifyRemoteManagement
 func (c *Epc) ModifyRemoteManagementRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2870,14 +2975,13 @@ const opModifySecurityGroup = "ModifySecurityGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifySecurityGroupRequest method.
+//	req, resp := client.ModifySecurityGroupRequest(params)
 //
-//    // Example sending a request using the ModifySecurityGroupRequest method.
-//    req, resp := client.ModifySecurityGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ModifySecurityGroup
 func (c *Epc) ModifySecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2943,14 +3047,13 @@ const opRebootEpc = "RebootEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RebootEpcRequest method.
+//	req, resp := client.RebootEpcRequest(params)
 //
-//    // Example sending a request using the RebootEpcRequest method.
-//    req, resp := client.RebootEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/RebootEpc
 func (c *Epc) RebootEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3016,14 +3119,13 @@ const opReinstallCustomerEpc = "ReinstallCustomerEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ReinstallCustomerEpcRequest method.
+//	req, resp := client.ReinstallCustomerEpcRequest(params)
 //
-//    // Example sending a request using the ReinstallCustomerEpcRequest method.
-//    req, resp := client.ReinstallCustomerEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ReinstallCustomerEpc
 func (c *Epc) ReinstallCustomerEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3089,14 +3191,13 @@ const opReinstallEpc = "ReinstallEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ReinstallEpcRequest method.
+//	req, resp := client.ReinstallEpcRequest(params)
 //
-//    // Example sending a request using the ReinstallEpcRequest method.
-//    req, resp := client.ReinstallEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ReinstallEpc
 func (c *Epc) ReinstallEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3162,14 +3263,13 @@ const opReplyProcess = "ReplyProcess"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ReplyProcessRequest method.
+//	req, resp := client.ReplyProcessRequest(params)
 //
-//    // Example sending a request using the ReplyProcessRequest method.
-//    req, resp := client.ReplyProcessRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ReplyProcess
 func (c *Epc) ReplyProcessRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3235,14 +3335,13 @@ const opResetPassword = "ResetPassword"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ResetPasswordRequest method.
+//	req, resp := client.ResetPasswordRequest(params)
 //
-//    // Example sending a request using the ResetPasswordRequest method.
-//    req, resp := client.ResetPasswordRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/ResetPassword
 func (c *Epc) ResetPasswordRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3308,14 +3407,13 @@ const opStartEpc = "StartEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartEpcRequest method.
+//	req, resp := client.StartEpcRequest(params)
 //
-//    // Example sending a request using the StartEpcRequest method.
-//    req, resp := client.StartEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/StartEpc
 func (c *Epc) StartEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3381,14 +3479,13 @@ const opStopEpc = "StopEpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopEpcRequest method.
+//	req, resp := client.StopEpcRequest(params)
 //
-//    // Example sending a request using the StopEpcRequest method.
-//    req, resp := client.StopEpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/StopEpc
 func (c *Epc) StopEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3433,6 +3530,78 @@ func (c *Epc) StopEpc(input *map[string]interface{}) (*map[string]interface{}, e
 // for more information on using Contexts.
 func (c *Epc) StopEpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.StopEpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUseHotStandByEpc = "UseHotStandByEpc"
+
+// UseHotStandByEpcRequest generates a "ksc/request.Request" representing the
+// client's request for the UseHotStandByEpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UseHotStandByEpc for more information on using the UseHotStandByEpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the UseHotStandByEpcRequest method.
+//	req, resp := client.UseHotStandByEpcRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/UseHotStandByEpc
+func (c *Epc) UseHotStandByEpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUseHotStandByEpc,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UseHotStandByEpc API operation for epc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for epc's
+// API operation UseHotStandByEpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/epc-2015-11-01/UseHotStandByEpc
+func (c *Epc) UseHotStandByEpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UseHotStandByEpcRequest(input)
+	return out, req.Send()
+}
+
+// UseHotStandByEpcWithContext is the same as UseHotStandByEpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UseHotStandByEpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Epc) UseHotStandByEpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UseHotStandByEpcRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
