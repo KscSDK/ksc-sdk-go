@@ -7,6 +7,80 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddPerformanceOnePosixAclIp = "AddPerformanceOnePosixAclIp"
+
+// AddPerformanceOnePosixAclIpRequest generates a "ksc/request.Request" representing the
+// client's request for the AddPerformanceOnePosixAclIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddPerformanceOnePosixAclIp for more information on using the AddPerformanceOnePosixAclIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the AddPerformanceOnePosixAclIpRequest method.
+//	req, resp := client.AddPerformanceOnePosixAclIpRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/AddPerformanceOnePosixAclIp
+func (c *Kpfs) AddPerformanceOnePosixAclIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddPerformanceOnePosixAclIp,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// AddPerformanceOnePosixAclIp API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation AddPerformanceOnePosixAclIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/AddPerformanceOnePosixAclIp
+func (c *Kpfs) AddPerformanceOnePosixAclIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddPerformanceOnePosixAclIpRequest(input)
+	return out, req.Send()
+}
+
+// AddPerformanceOnePosixAclIpWithContext is the same as AddPerformanceOnePosixAclIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddPerformanceOnePosixAclIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) AddPerformanceOnePosixAclIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddPerformanceOnePosixAclIpRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeletePerformanceOnePosixAcl = "DeletePerformanceOnePosixAcl"
 
 // DeletePerformanceOnePosixAclRequest generates a "ksc/request.Request" representing the
@@ -146,6 +220,80 @@ func (c *Kpfs) DescribePerformanceOnePosixAclList(input *map[string]interface{})
 // for more information on using Contexts.
 func (c *Kpfs) DescribePerformanceOnePosixAclListWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribePerformanceOnePosixAclListRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opRemovePerformanceOnePosixAclIp = "RemovePerformanceOnePosixAclIp"
+
+// RemovePerformanceOnePosixAclIpRequest generates a "ksc/request.Request" representing the
+// client's request for the RemovePerformanceOnePosixAclIp operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See RemovePerformanceOnePosixAclIp for more information on using the RemovePerformanceOnePosixAclIp
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the RemovePerformanceOnePosixAclIpRequest method.
+//	req, resp := client.RemovePerformanceOnePosixAclIpRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/RemovePerformanceOnePosixAclIp
+func (c *Kpfs) RemovePerformanceOnePosixAclIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opRemovePerformanceOnePosixAclIp,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// RemovePerformanceOnePosixAclIp API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation RemovePerformanceOnePosixAclIp for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/RemovePerformanceOnePosixAclIp
+func (c *Kpfs) RemovePerformanceOnePosixAclIp(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.RemovePerformanceOnePosixAclIpRequest(input)
+	return out, req.Send()
+}
+
+// RemovePerformanceOnePosixAclIpWithContext is the same as RemovePerformanceOnePosixAclIp with the addition of
+// the ability to pass a context and additional request options.
+//
+// See RemovePerformanceOnePosixAclIp for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) RemovePerformanceOnePosixAclIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.RemovePerformanceOnePosixAclIpRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
