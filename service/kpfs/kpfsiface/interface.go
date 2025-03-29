@@ -26,7 +26,7 @@ import (
 //	// myFunc uses an SDK service client to make a request to
 //	// kpfs.
 //	func myFunc(svc kpfsiface.KpfsAPI) bool {
-//	    // Make svc.DeletePerformanceOnePosixAcl request
+//	    // Make svc.AddPerformanceOnePosixAclIp request
 //	}
 //
 //	func main() {
@@ -42,7 +42,7 @@ import (
 //	type mockKpfsClient struct {
 //	    kpfsiface.KpfsAPI
 //	}
-//	func (m *mockKpfsClient) DeletePerformanceOnePosixAcl(input *map[string]interface{}) (*map[string]interface{}, error) {
+//	func (m *mockKpfsClient) AddPerformanceOnePosixAclIp(input *map[string]interface{}) (*map[string]interface{}, error) {
 //	    // mock response/functionality
 //	}
 //
@@ -60,6 +60,10 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KpfsAPI interface {
+	AddPerformanceOnePosixAclIp(*map[string]interface{}) (*map[string]interface{}, error)
+	AddPerformanceOnePosixAclIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddPerformanceOnePosixAclIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeletePerformanceOnePosixAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	DeletePerformanceOnePosixAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeletePerformanceOnePosixAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -67,6 +71,10 @@ type KpfsAPI interface {
 	DescribePerformanceOnePosixAclList(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribePerformanceOnePosixAclListWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribePerformanceOnePosixAclListRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	RemovePerformanceOnePosixAclIp(*map[string]interface{}) (*map[string]interface{}, error)
+	RemovePerformanceOnePosixAclIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	RemovePerformanceOnePosixAclIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	UpdatePerformanceOnePosixAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	UpdatePerformanceOnePosixAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
