@@ -148,6 +148,10 @@ type KceAPI interface {
 	InstallComponentWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	InstallComponentRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ListComponentInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	ListComponentInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ListComponentInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyClusterInfo(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyClusterInfoWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyClusterInfoRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
