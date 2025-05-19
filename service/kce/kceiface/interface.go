@@ -96,6 +96,10 @@ type KceAPI interface {
 	DeleteClusterInstancesFromNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteClusterInstancesFromNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteComponentInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteComponentInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteComponentInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteNodePool(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -107,6 +111,10 @@ type KceAPI interface {
 	DescribeClusterInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeClusterInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeClusterInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeComponent(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeComponentWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeComponentRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeEpcForCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeEpcForClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -136,6 +144,14 @@ type KceAPI interface {
 	ForceRemoveClusterInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ForceRemoveClusterInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	InstallComponent(*map[string]interface{}) (*map[string]interface{}, error)
+	InstallComponentWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	InstallComponentRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ListComponentInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	ListComponentInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ListComponentInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyClusterInfo(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyClusterInfoWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyClusterInfoRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -159,6 +175,10 @@ type KceAPI interface {
 	ProtectedFromScaleDown(*map[string]interface{}) (*map[string]interface{}, error)
 	ProtectedFromScaleDownWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ProtectedFromScaleDownRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UpdateComponentInstance(*map[string]interface{}) (*map[string]interface{}, error)
+	UpdateComponentInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UpdateComponentInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ KceAPI = (*kce.Kce)(nil)

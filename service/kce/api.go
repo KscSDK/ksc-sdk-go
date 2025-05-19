@@ -655,6 +655,78 @@ func (c *Kce) DeleteClusterInstancesFromNodePoolWithContext(ctx aws.Context, inp
 	return out, req.Send()
 }
 
+const opDeleteComponentInstance = "DeleteComponentInstance"
+
+// DeleteComponentInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteComponentInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteComponentInstance for more information on using the DeleteComponentInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteComponentInstanceRequest method.
+//	req, resp := client.DeleteComponentInstanceRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteComponentInstance
+func (c *Kce) DeleteComponentInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteComponentInstance,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteComponentInstance API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DeleteComponentInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteComponentInstance
+func (c *Kce) DeleteComponentInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteComponentInstanceRequest(input)
+	return out, req.Send()
+}
+
+// DeleteComponentInstanceWithContext is the same as DeleteComponentInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteComponentInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DeleteComponentInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteComponentInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteNodePool = "DeleteNodePool"
 
 // DeleteNodePoolRequest generates a "ksc/request.Request" representing the
@@ -866,6 +938,78 @@ func (c *Kce) DescribeClusterInstance(input *map[string]interface{}) (*map[strin
 // for more information on using Contexts.
 func (c *Kce) DescribeClusterInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeClusterInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeComponent = "DescribeComponent"
+
+// DescribeComponentRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeComponent operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeComponent for more information on using the DescribeComponent
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeComponentRequest method.
+//	req, resp := client.DescribeComponentRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeComponent
+func (c *Kce) DescribeComponentRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeComponent,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeComponent API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeComponent for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeComponent
+func (c *Kce) DescribeComponent(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeComponentRequest(input)
+	return out, req.Send()
+}
+
+// DescribeComponentWithContext is the same as DescribeComponent with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeComponent for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeComponentWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeComponentRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -1375,6 +1519,150 @@ func (c *Kce) ForceRemoveClusterInstanceWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opInstallComponent = "InstallComponent"
+
+// InstallComponentRequest generates a "ksc/request.Request" representing the
+// client's request for the InstallComponent operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See InstallComponent for more information on using the InstallComponent
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the InstallComponentRequest method.
+//	req, resp := client.InstallComponentRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/InstallComponent
+func (c *Kce) InstallComponentRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opInstallComponent,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// InstallComponent API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation InstallComponent for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/InstallComponent
+func (c *Kce) InstallComponent(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.InstallComponentRequest(input)
+	return out, req.Send()
+}
+
+// InstallComponentWithContext is the same as InstallComponent with the addition of
+// the ability to pass a context and additional request options.
+//
+// See InstallComponent for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) InstallComponentWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.InstallComponentRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opListComponentInstance = "ListComponentInstance"
+
+// ListComponentInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the ListComponentInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ListComponentInstance for more information on using the ListComponentInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ListComponentInstanceRequest method.
+//	req, resp := client.ListComponentInstanceRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ListComponentInstance
+func (c *Kce) ListComponentInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opListComponentInstance,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ListComponentInstance API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ListComponentInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ListComponentInstance
+func (c *Kce) ListComponentInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ListComponentInstanceRequest(input)
+	return out, req.Send()
+}
+
+// ListComponentInstanceWithContext is the same as ListComponentInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ListComponentInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ListComponentInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ListComponentInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyClusterInfo = "ModifyClusterInfo"
 
 // ModifyClusterInfoRequest generates a "ksc/request.Request" representing the
@@ -1802,6 +2090,78 @@ func (c *Kce) ProtectedFromScaleDown(input *map[string]interface{}) (*map[string
 // for more information on using Contexts.
 func (c *Kce) ProtectedFromScaleDownWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ProtectedFromScaleDownRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUpdateComponentInstance = "UpdateComponentInstance"
+
+// UpdateComponentInstanceRequest generates a "ksc/request.Request" representing the
+// client's request for the UpdateComponentInstance operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UpdateComponentInstance for more information on using the UpdateComponentInstance
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the UpdateComponentInstanceRequest method.
+//	req, resp := client.UpdateComponentInstanceRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/UpdateComponentInstance
+func (c *Kce) UpdateComponentInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUpdateComponentInstance,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UpdateComponentInstance API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation UpdateComponentInstance for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/UpdateComponentInstance
+func (c *Kce) UpdateComponentInstance(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UpdateComponentInstanceRequest(input)
+	return out, req.Send()
+}
+
+// UpdateComponentInstanceWithContext is the same as UpdateComponentInstance with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UpdateComponentInstance for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) UpdateComponentInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UpdateComponentInstanceRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
