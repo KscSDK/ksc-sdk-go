@@ -383,6 +383,10 @@ type SlbAPI interface {
 	SetEnableAlbAccessLog(*map[string]interface{}) (*map[string]interface{}, error)
 	SetEnableAlbAccessLogWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	SetEnableAlbAccessLogRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SetLbProtocolLayers(*map[string]interface{}) (*map[string]interface{}, error)
+	SetLbProtocolLayersWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetLbProtocolLayersRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ SlbAPI = (*slb.Slb)(nil)
