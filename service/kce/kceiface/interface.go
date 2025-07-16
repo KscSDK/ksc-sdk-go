@@ -26,7 +26,7 @@ import (
 //	// myFunc uses an SDK service client to make a request to
 //	// kce.
 //	func myFunc(svc kceiface.KceAPI) bool {
-//	    // Make svc.AddClusterEpcInstances request
+//	    // Make svc.AddAuthorization request
 //	}
 //
 //	func main() {
@@ -42,7 +42,7 @@ import (
 //	type mockKceClient struct {
 //	    kceiface.KceAPI
 //	}
-//	func (m *mockKceClient) AddClusterEpcInstances(input *map[string]interface{}) (*map[string]interface{}, error) {
+//	func (m *mockKceClient) AddAuthorization(input *map[string]interface{}) (*map[string]interface{}, error) {
 //	    // mock response/functionality
 //	}
 //
@@ -60,6 +60,10 @@ import (
 // and waiters. Its suggested to use the pattern above for testing, or using
 // tooling to generate mocks to satisfy the interfaces.
 type KceAPI interface {
+	AddAuthorization(*map[string]interface{}) (*map[string]interface{}, error)
+	AddAuthorizationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AddAuthorizationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AddClusterEpcInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	AddClusterEpcInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddClusterEpcInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -104,6 +108,10 @@ type KceAPI interface {
 	DeleteNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteUserAuthorization(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteUserAuthorizationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteUserAuthorizationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeCluster(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeClusterWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeClusterRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -136,6 +144,10 @@ type KceAPI interface {
 	DescribeNodePoolWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeNodePoolRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeUserAuthorizationList(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeUserAuthorizationListWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeUserAuthorizationListRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DownloadClusterConfig(*map[string]interface{}) (*map[string]interface{}, error)
 	DownloadClusterConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DownloadClusterConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -151,6 +163,10 @@ type KceAPI interface {
 	ListComponentInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	ListComponentInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ListComponentInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyAuthorization(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyAuthorizationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyAuthorizationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyClusterInfo(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyClusterInfoWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)

@@ -7,6 +7,78 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
+const opAddAuthorization = "AddAuthorization"
+
+// AddAuthorizationRequest generates a "ksc/request.Request" representing the
+// client's request for the AddAuthorization operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AddAuthorization for more information on using the AddAuthorization
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the AddAuthorizationRequest method.
+//	req, resp := client.AddAuthorizationRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddAuthorization
+func (c *Kce) AddAuthorizationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAddAuthorization,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AddAuthorization API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation AddAuthorization for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/AddAuthorization
+func (c *Kce) AddAuthorization(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AddAuthorizationRequest(input)
+	return out, req.Send()
+}
+
+// AddAuthorizationWithContext is the same as AddAuthorization with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AddAuthorization for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) AddAuthorizationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AddAuthorizationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAddClusterEpcInstances = "AddClusterEpcInstances"
 
 // AddClusterEpcInstancesRequest generates a "ksc/request.Request" representing the
@@ -799,6 +871,78 @@ func (c *Kce) DeleteNodePoolWithContext(ctx aws.Context, input *map[string]inter
 	return out, req.Send()
 }
 
+const opDeleteUserAuthorization = "DeleteUserAuthorization"
+
+// DeleteUserAuthorizationRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteUserAuthorization operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteUserAuthorization for more information on using the DeleteUserAuthorization
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteUserAuthorizationRequest method.
+//	req, resp := client.DeleteUserAuthorizationRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteUserAuthorization
+func (c *Kce) DeleteUserAuthorizationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteUserAuthorization,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteUserAuthorization API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DeleteUserAuthorization for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DeleteUserAuthorization
+func (c *Kce) DeleteUserAuthorization(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteUserAuthorizationRequest(input)
+	return out, req.Send()
+}
+
+// DeleteUserAuthorizationWithContext is the same as DeleteUserAuthorization with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteUserAuthorization for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DeleteUserAuthorizationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteUserAuthorizationRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeCluster = "DescribeCluster"
 
 // DescribeClusterRequest generates a "ksc/request.Request" representing the
@@ -1375,6 +1519,78 @@ func (c *Kce) DescribeNodePoolWithContext(ctx aws.Context, input *map[string]int
 	return out, req.Send()
 }
 
+const opDescribeUserAuthorizationList = "DescribeUserAuthorizationList"
+
+// DescribeUserAuthorizationListRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeUserAuthorizationList operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeUserAuthorizationList for more information on using the DescribeUserAuthorizationList
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeUserAuthorizationListRequest method.
+//	req, resp := client.DescribeUserAuthorizationListRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeUserAuthorizationList
+func (c *Kce) DescribeUserAuthorizationListRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeUserAuthorizationList,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeUserAuthorizationList API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation DescribeUserAuthorizationList for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/DescribeUserAuthorizationList
+func (c *Kce) DescribeUserAuthorizationList(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeUserAuthorizationListRequest(input)
+	return out, req.Send()
+}
+
+// DescribeUserAuthorizationListWithContext is the same as DescribeUserAuthorizationList with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeUserAuthorizationList for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) DescribeUserAuthorizationListWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeUserAuthorizationListRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDownloadClusterConfig = "DownloadClusterConfig"
 
 // DownloadClusterConfigRequest generates a "ksc/request.Request" representing the
@@ -1547,7 +1763,7 @@ const opInstallComponent = "InstallComponent"
 func (c *Kce) InstallComponentRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
 	op := &request.Operation{
 		Name:       opInstallComponent,
-		HTTPMethod: "POST",
+		HTTPMethod: "GET",
 		HTTPPath:   "/",
 	}
 
@@ -1658,6 +1874,78 @@ func (c *Kce) ListComponentInstance(input *map[string]interface{}) (*map[string]
 // for more information on using Contexts.
 func (c *Kce) ListComponentInstanceWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.ListComponentInstanceRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyAuthorization = "ModifyAuthorization"
+
+// ModifyAuthorizationRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyAuthorization operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyAuthorization for more information on using the ModifyAuthorization
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyAuthorizationRequest method.
+//	req, resp := client.ModifyAuthorizationRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyAuthorization
+func (c *Kce) ModifyAuthorizationRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyAuthorization,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyAuthorization API operation for kce.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kce's
+// API operation ModifyAuthorization for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kce-2019-08-06/ModifyAuthorization
+func (c *Kce) ModifyAuthorization(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyAuthorizationRequest(input)
+	return out, req.Send()
+}
+
+// ModifyAuthorizationWithContext is the same as ModifyAuthorization with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyAuthorization for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kce) ModifyAuthorizationWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyAuthorizationRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
