@@ -23,14 +23,13 @@ const opAcceptVpcPeeringConnection = "AcceptVpcPeeringConnection"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AcceptVpcPeeringConnectionRequest method.
+//	req, resp := client.AcceptVpcPeeringConnectionRequest(params)
 //
-//    // Example sending a request using the AcceptVpcPeeringConnectionRequest method.
-//    req, resp := client.AcceptVpcPeeringConnectionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AcceptVpcPeeringConnection
 func (c *Vpc) AcceptVpcPeeringConnectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +95,13 @@ const opAddNatIp = "AddNatIp"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AddNatIpRequest method.
+//	req, resp := client.AddNatIpRequest(params)
 //
-//    // Example sending a request using the AddNatIpRequest method.
-//    req, resp := client.AddNatIpRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AddNatIp
 func (c *Vpc) AddNatIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -169,14 +167,13 @@ const opAllocateSubnetIpv6CidrBlock = "AllocateSubnetIpv6CidrBlock"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AllocateSubnetIpv6CidrBlockRequest method.
+//	req, resp := client.AllocateSubnetIpv6CidrBlockRequest(params)
 //
-//    // Example sending a request using the AllocateSubnetIpv6CidrBlockRequest method.
-//    req, resp := client.AllocateSubnetIpv6CidrBlockRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AllocateSubnetIpv6CidrBlock
 func (c *Vpc) AllocateSubnetIpv6CidrBlockRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -242,14 +239,13 @@ const opAssignPrivateIpAddress = "AssignPrivateIpAddress"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssignPrivateIpAddressRequest method.
+//	req, resp := client.AssignPrivateIpAddressRequest(params)
 //
-//    // Example sending a request using the AssignPrivateIpAddressRequest method.
-//    req, resp := client.AssignPrivateIpAddressRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssignPrivateIpAddress
 func (c *Vpc) AssignPrivateIpAddressRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -315,14 +311,13 @@ const opAssociateInstance = "AssociateInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateInstanceRequest method.
+//	req, resp := client.AssociateInstanceRequest(params)
 //
-//    // Example sending a request using the AssociateInstanceRequest method.
-//    req, resp := client.AssociateInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateInstance
 func (c *Vpc) AssociateInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +383,13 @@ const opAssociateNat = "AssociateNat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateNatRequest method.
+//	req, resp := client.AssociateNatRequest(params)
 //
-//    // Example sending a request using the AssociateNatRequest method.
-//    req, resp := client.AssociateNatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateNat
 func (c *Vpc) AssociateNatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +455,13 @@ const opAssociateNetworkAcl = "AssociateNetworkAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateNetworkAclRequest method.
+//	req, resp := client.AssociateNetworkAclRequest(params)
 //
-//    // Example sending a request using the AssociateNetworkAclRequest method.
-//    req, resp := client.AssociateNetworkAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateNetworkAcl
 func (c *Vpc) AssociateNetworkAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -534,14 +527,13 @@ const opAssociateVpcCidrBlock = "AssociateVpcCidrBlock"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AssociateVpcCidrBlockRequest method.
+//	req, resp := client.AssociateVpcCidrBlockRequest(params)
 //
-//    // Example sending a request using the AssociateVpcCidrBlockRequest method.
-//    req, resp := client.AssociateVpcCidrBlockRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AssociateVpcCidrBlock
 func (c *Vpc) AssociateVpcCidrBlockRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -607,14 +599,13 @@ const opAttachDirectConnectGateway = "AttachDirectConnectGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AttachDirectConnectGatewayRequest method.
+//	req, resp := client.AttachDirectConnectGatewayRequest(params)
 //
-//    // Example sending a request using the AttachDirectConnectGatewayRequest method.
-//    req, resp := client.AttachDirectConnectGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AttachDirectConnectGateway
 func (c *Vpc) AttachDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -664,6 +655,78 @@ func (c *Vpc) AttachDirectConnectGatewayWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opAttachDirectConnectGatewayWithVpc = "AttachDirectConnectGatewayWithVpc"
+
+// AttachDirectConnectGatewayWithVpcRequest generates a "ksc/request.Request" representing the
+// client's request for the AttachDirectConnectGatewayWithVpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See AttachDirectConnectGatewayWithVpc for more information on using the AttachDirectConnectGatewayWithVpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the AttachDirectConnectGatewayWithVpcRequest method.
+//	req, resp := client.AttachDirectConnectGatewayWithVpcRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AttachDirectConnectGatewayWithVpc
+func (c *Vpc) AttachDirectConnectGatewayWithVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opAttachDirectConnectGatewayWithVpc,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// AttachDirectConnectGatewayWithVpc API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation AttachDirectConnectGatewayWithVpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AttachDirectConnectGatewayWithVpc
+func (c *Vpc) AttachDirectConnectGatewayWithVpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.AttachDirectConnectGatewayWithVpcRequest(input)
+	return out, req.Send()
+}
+
+// AttachDirectConnectGatewayWithVpcWithContext is the same as AttachDirectConnectGatewayWithVpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See AttachDirectConnectGatewayWithVpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) AttachDirectConnectGatewayWithVpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.AttachDirectConnectGatewayWithVpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opAuthorizeSecurityGroupEntry = "AuthorizeSecurityGroupEntry"
 
 // AuthorizeSecurityGroupEntryRequest generates a "ksc/request.Request" representing the
@@ -680,14 +743,13 @@ const opAuthorizeSecurityGroupEntry = "AuthorizeSecurityGroupEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AuthorizeSecurityGroupEntryRequest method.
+//	req, resp := client.AuthorizeSecurityGroupEntryRequest(params)
 //
-//    // Example sending a request using the AuthorizeSecurityGroupEntryRequest method.
-//    req, resp := client.AuthorizeSecurityGroupEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/AuthorizeSecurityGroupEntry
 func (c *Vpc) AuthorizeSecurityGroupEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -737,6 +799,78 @@ func (c *Vpc) AuthorizeSecurityGroupEntryWithContext(ctx aws.Context, input *map
 	return out, req.Send()
 }
 
+const opCreateBfdConfig = "CreateBfdConfig"
+
+// CreateBfdConfigRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateBfdConfig operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateBfdConfig for more information on using the CreateBfdConfig
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateBfdConfigRequest method.
+//	req, resp := client.CreateBfdConfigRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateBfdConfig
+func (c *Vpc) CreateBfdConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateBfdConfig,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateBfdConfig API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateBfdConfig for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateBfdConfig
+func (c *Vpc) CreateBfdConfig(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateBfdConfigRequest(input)
+	return out, req.Send()
+}
+
+// CreateBfdConfigWithContext is the same as CreateBfdConfig with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateBfdConfig for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateBfdConfigWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateBfdConfigRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateCustomerGateway = "CreateCustomerGateway"
 
 // CreateCustomerGatewayRequest generates a "ksc/request.Request" representing the
@@ -753,14 +887,13 @@ const opCreateCustomerGateway = "CreateCustomerGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateCustomerGatewayRequest method.
+//	req, resp := client.CreateCustomerGatewayRequest(params)
 //
-//    // Example sending a request using the CreateCustomerGatewayRequest method.
-//    req, resp := client.CreateCustomerGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateCustomerGateway
 func (c *Vpc) CreateCustomerGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -826,14 +959,13 @@ const opCreateDirectConnectExtraCidr = "CreateDirectConnectExtraCidr"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDirectConnectExtraCidrRequest method.
+//	req, resp := client.CreateDirectConnectExtraCidrRequest(params)
 //
-//    // Example sending a request using the CreateDirectConnectExtraCidrRequest method.
-//    req, resp := client.CreateDirectConnectExtraCidrRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectExtraCidr
 func (c *Vpc) CreateDirectConnectExtraCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -899,14 +1031,13 @@ const opCreateDirectConnectGateway = "CreateDirectConnectGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDirectConnectGatewayRequest method.
+//	req, resp := client.CreateDirectConnectGatewayRequest(params)
 //
-//    // Example sending a request using the CreateDirectConnectGatewayRequest method.
-//    req, resp := client.CreateDirectConnectGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectGateway
 func (c *Vpc) CreateDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -956,6 +1087,78 @@ func (c *Vpc) CreateDirectConnectGatewayWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opCreateDirectConnectGatewayRoute = "CreateDirectConnectGatewayRoute"
+
+// CreateDirectConnectGatewayRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateDirectConnectGatewayRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateDirectConnectGatewayRoute for more information on using the CreateDirectConnectGatewayRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateDirectConnectGatewayRouteRequest method.
+//	req, resp := client.CreateDirectConnectGatewayRouteRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectGatewayRoute
+func (c *Vpc) CreateDirectConnectGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateDirectConnectGatewayRoute,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateDirectConnectGatewayRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation CreateDirectConnectGatewayRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectGatewayRoute
+func (c *Vpc) CreateDirectConnectGatewayRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectGatewayRouteRequest(input)
+	return out, req.Send()
+}
+
+// CreateDirectConnectGatewayRouteWithContext is the same as CreateDirectConnectGatewayRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateDirectConnectGatewayRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) CreateDirectConnectGatewayRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateDirectConnectGatewayRouteRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateDirectConnectInterface = "CreateDirectConnectInterface"
 
 // CreateDirectConnectInterfaceRequest generates a "ksc/request.Request" representing the
@@ -972,14 +1175,13 @@ const opCreateDirectConnectInterface = "CreateDirectConnectInterface"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDirectConnectInterfaceRequest method.
+//	req, resp := client.CreateDirectConnectInterfaceRequest(params)
 //
-//    // Example sending a request using the CreateDirectConnectInterfaceRequest method.
-//    req, resp := client.CreateDirectConnectInterfaceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectInterface
 func (c *Vpc) CreateDirectConnectInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1045,14 +1247,13 @@ const opCreateDirectConnectReomteCidr = "CreateDirectConnectReomteCidr"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDirectConnectReomteCidrRequest method.
+//	req, resp := client.CreateDirectConnectReomteCidrRequest(params)
 //
-//    // Example sending a request using the CreateDirectConnectReomteCidrRequest method.
-//    req, resp := client.CreateDirectConnectReomteCidrRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDirectConnectReomteCidr
 func (c *Vpc) CreateDirectConnectReomteCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1118,14 +1319,13 @@ const opCreateDnat = "CreateDnat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateDnatRequest method.
+//	req, resp := client.CreateDnatRequest(params)
 //
-//    // Example sending a request using the CreateDnatRequest method.
-//    req, resp := client.CreateDnatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateDnat
 func (c *Vpc) CreateDnatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1191,14 +1391,13 @@ const opCreateIpv6PublicIp = "CreateIpv6PublicIp"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateIpv6PublicIpRequest method.
+//	req, resp := client.CreateIpv6PublicIpRequest(params)
 //
-//    // Example sending a request using the CreateIpv6PublicIpRequest method.
-//    req, resp := client.CreateIpv6PublicIpRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateIpv6PublicIp
 func (c *Vpc) CreateIpv6PublicIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1264,14 +1463,13 @@ const opCreateNat = "CreateNat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateNatRequest method.
+//	req, resp := client.CreateNatRequest(params)
 //
-//    // Example sending a request using the CreateNatRequest method.
-//    req, resp := client.CreateNatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNat
 func (c *Vpc) CreateNatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1337,14 +1535,13 @@ const opCreateNatRateLimit = "CreateNatRateLimit"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateNatRateLimitRequest method.
+//	req, resp := client.CreateNatRateLimitRequest(params)
 //
-//    // Example sending a request using the CreateNatRateLimitRequest method.
-//    req, resp := client.CreateNatRateLimitRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNatRateLimit
 func (c *Vpc) CreateNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1410,14 +1607,13 @@ const opCreateNetworkAcl = "CreateNetworkAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateNetworkAclRequest method.
+//	req, resp := client.CreateNetworkAclRequest(params)
 //
-//    // Example sending a request using the CreateNetworkAclRequest method.
-//    req, resp := client.CreateNetworkAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNetworkAcl
 func (c *Vpc) CreateNetworkAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1483,14 +1679,13 @@ const opCreateNetworkAclEntry = "CreateNetworkAclEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateNetworkAclEntryRequest method.
+//	req, resp := client.CreateNetworkAclEntryRequest(params)
 //
-//    // Example sending a request using the CreateNetworkAclEntryRequest method.
-//    req, resp := client.CreateNetworkAclEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNetworkAclEntry
 func (c *Vpc) CreateNetworkAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1556,14 +1751,13 @@ const opCreateNetworkInterface = "CreateNetworkInterface"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateNetworkInterfaceRequest method.
+//	req, resp := client.CreateNetworkInterfaceRequest(params)
 //
-//    // Example sending a request using the CreateNetworkInterfaceRequest method.
-//    req, resp := client.CreateNetworkInterfaceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateNetworkInterface
 func (c *Vpc) CreateNetworkInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1629,14 +1823,13 @@ const opCreateRoute = "CreateRoute"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateRouteRequest method.
+//	req, resp := client.CreateRouteRequest(params)
 //
-//    // Example sending a request using the CreateRouteRequest method.
-//    req, resp := client.CreateRouteRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateRoute
 func (c *Vpc) CreateRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1702,14 +1895,13 @@ const opCreateSecurityGroup = "CreateSecurityGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateSecurityGroupRequest method.
+//	req, resp := client.CreateSecurityGroupRequest(params)
 //
-//    // Example sending a request using the CreateSecurityGroupRequest method.
-//    req, resp := client.CreateSecurityGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateSecurityGroup
 func (c *Vpc) CreateSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1775,14 +1967,13 @@ const opCreateSubnet = "CreateSubnet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateSubnetRequest method.
+//	req, resp := client.CreateSubnetRequest(params)
 //
-//    // Example sending a request using the CreateSubnetRequest method.
-//    req, resp := client.CreateSubnetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateSubnet
 func (c *Vpc) CreateSubnetRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1848,14 +2039,13 @@ const opCreateVpc = "CreateVpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateVpcRequest method.
+//	req, resp := client.CreateVpcRequest(params)
 //
-//    // Example sending a request using the CreateVpcRequest method.
-//    req, resp := client.CreateVpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpc
 func (c *Vpc) CreateVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1921,14 +2111,13 @@ const opCreateVpcPeeringConnection = "CreateVpcPeeringConnection"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateVpcPeeringConnectionRequest method.
+//	req, resp := client.CreateVpcPeeringConnectionRequest(params)
 //
-//    // Example sending a request using the CreateVpcPeeringConnectionRequest method.
-//    req, resp := client.CreateVpcPeeringConnectionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpcPeeringConnection
 func (c *Vpc) CreateVpcPeeringConnectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1994,14 +2183,13 @@ const opCreateVpnGateway = "CreateVpnGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateVpnGatewayRequest method.
+//	req, resp := client.CreateVpnGatewayRequest(params)
 //
-//    // Example sending a request using the CreateVpnGatewayRequest method.
-//    req, resp := client.CreateVpnGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpnGateway
 func (c *Vpc) CreateVpnGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2067,14 +2255,13 @@ const opCreateVpnGatewayRoute = "CreateVpnGatewayRoute"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateVpnGatewayRouteRequest method.
+//	req, resp := client.CreateVpnGatewayRouteRequest(params)
 //
-//    // Example sending a request using the CreateVpnGatewayRouteRequest method.
-//    req, resp := client.CreateVpnGatewayRouteRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpnGatewayRoute
 func (c *Vpc) CreateVpnGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2140,14 +2327,13 @@ const opCreateVpnTunnel = "CreateVpnTunnel"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateVpnTunnelRequest method.
+//	req, resp := client.CreateVpnTunnelRequest(params)
 //
-//    // Example sending a request using the CreateVpnTunnelRequest method.
-//    req, resp := client.CreateVpnTunnelRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/CreateVpnTunnel
 func (c *Vpc) CreateVpnTunnelRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2197,6 +2383,78 @@ func (c *Vpc) CreateVpnTunnelWithContext(ctx aws.Context, input *map[string]inte
 	return out, req.Send()
 }
 
+const opDeleteBfdConfig = "DelecoBfdConfig"
+
+// DeleteBfdConfigRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteBfdConfig operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteBfdConfig for more information on using the DeleteBfdConfig
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteBfdConfigRequest method.
+//	req, resp := client.DeleteBfdConfigRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteBfdConfig
+func (c *Vpc) DeleteBfdConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteBfdConfig,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteBfdConfig API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteBfdConfig for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteBfdConfig
+func (c *Vpc) DeleteBfdConfig(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteBfdConfigRequest(input)
+	return out, req.Send()
+}
+
+// DeleteBfdConfigWithContext is the same as DeleteBfdConfig with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteBfdConfig for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteBfdConfigWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteBfdConfigRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteCustomerGateway = "DeleteCustomerGateway"
 
 // DeleteCustomerGatewayRequest generates a "ksc/request.Request" representing the
@@ -2213,14 +2471,13 @@ const opDeleteCustomerGateway = "DeleteCustomerGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteCustomerGatewayRequest method.
+//	req, resp := client.DeleteCustomerGatewayRequest(params)
 //
-//    // Example sending a request using the DeleteCustomerGatewayRequest method.
-//    req, resp := client.DeleteCustomerGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteCustomerGateway
 func (c *Vpc) DeleteCustomerGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2286,14 +2543,13 @@ const opDeleteDirectConnectExtraCidr = "DeleteDirectConnectExtraCidr"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDirectConnectExtraCidrRequest method.
+//	req, resp := client.DeleteDirectConnectExtraCidrRequest(params)
 //
-//    // Example sending a request using the DeleteDirectConnectExtraCidrRequest method.
-//    req, resp := client.DeleteDirectConnectExtraCidrRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectExtraCidr
 func (c *Vpc) DeleteDirectConnectExtraCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2359,14 +2615,13 @@ const opDeleteDirectConnectGateway = "DeleteDirectConnectGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDirectConnectGatewayRequest method.
+//	req, resp := client.DeleteDirectConnectGatewayRequest(params)
 //
-//    // Example sending a request using the DeleteDirectConnectGatewayRequest method.
-//    req, resp := client.DeleteDirectConnectGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectGateway
 func (c *Vpc) DeleteDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2416,6 +2671,78 @@ func (c *Vpc) DeleteDirectConnectGatewayWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opDeleteDirectConnectGatewayRoute = "DeleteDirectConnectGatewayRoute"
+
+// DeleteDirectConnectGatewayRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteDirectConnectGatewayRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteDirectConnectGatewayRoute for more information on using the DeleteDirectConnectGatewayRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteDirectConnectGatewayRouteRequest method.
+//	req, resp := client.DeleteDirectConnectGatewayRouteRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectGatewayRoute
+func (c *Vpc) DeleteDirectConnectGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteDirectConnectGatewayRoute,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteDirectConnectGatewayRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DeleteDirectConnectGatewayRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectGatewayRoute
+func (c *Vpc) DeleteDirectConnectGatewayRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectGatewayRouteRequest(input)
+	return out, req.Send()
+}
+
+// DeleteDirectConnectGatewayRouteWithContext is the same as DeleteDirectConnectGatewayRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteDirectConnectGatewayRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DeleteDirectConnectGatewayRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteDirectConnectGatewayRouteRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeleteDirectConnectInterface = "DeleteDirectConnectInterface"
 
 // DeleteDirectConnectInterfaceRequest generates a "ksc/request.Request" representing the
@@ -2432,14 +2759,13 @@ const opDeleteDirectConnectInterface = "DeleteDirectConnectInterface"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDirectConnectInterfaceRequest method.
+//	req, resp := client.DeleteDirectConnectInterfaceRequest(params)
 //
-//    // Example sending a request using the DeleteDirectConnectInterfaceRequest method.
-//    req, resp := client.DeleteDirectConnectInterfaceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectInterface
 func (c *Vpc) DeleteDirectConnectInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2505,14 +2831,13 @@ const opDeleteDirectConnectReomteCidr = "DeleteDirectConnectReomteCidr"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDirectConnectReomteCidrRequest method.
+//	req, resp := client.DeleteDirectConnectReomteCidrRequest(params)
 //
-//    // Example sending a request using the DeleteDirectConnectReomteCidrRequest method.
-//    req, resp := client.DeleteDirectConnectReomteCidrRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDirectConnectReomteCidr
 func (c *Vpc) DeleteDirectConnectReomteCidrRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2578,14 +2903,13 @@ const opDeleteDnat = "DeleteDnat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteDnatRequest method.
+//	req, resp := client.DeleteDnatRequest(params)
 //
-//    // Example sending a request using the DeleteDnatRequest method.
-//    req, resp := client.DeleteDnatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteDnat
 func (c *Vpc) DeleteDnatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2651,14 +2975,13 @@ const opDeleteNat = "DeleteNat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNatRequest method.
+//	req, resp := client.DeleteNatRequest(params)
 //
-//    // Example sending a request using the DeleteNatRequest method.
-//    req, resp := client.DeleteNatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNat
 func (c *Vpc) DeleteNatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2724,14 +3047,13 @@ const opDeleteNatIp = "DeleteNatIp"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNatIpRequest method.
+//	req, resp := client.DeleteNatIpRequest(params)
 //
-//    // Example sending a request using the DeleteNatIpRequest method.
-//    req, resp := client.DeleteNatIpRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNatIp
 func (c *Vpc) DeleteNatIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2797,14 +3119,13 @@ const opDeleteNatRateLimit = "DeleteNatRateLimit"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNatRateLimitRequest method.
+//	req, resp := client.DeleteNatRateLimitRequest(params)
 //
-//    // Example sending a request using the DeleteNatRateLimitRequest method.
-//    req, resp := client.DeleteNatRateLimitRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNatRateLimit
 func (c *Vpc) DeleteNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2870,14 +3191,13 @@ const opDeleteNetworkAcl = "DeleteNetworkAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNetworkAclRequest method.
+//	req, resp := client.DeleteNetworkAclRequest(params)
 //
-//    // Example sending a request using the DeleteNetworkAclRequest method.
-//    req, resp := client.DeleteNetworkAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNetworkAcl
 func (c *Vpc) DeleteNetworkAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -2943,14 +3263,13 @@ const opDeleteNetworkAclEntry = "DeleteNetworkAclEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNetworkAclEntryRequest method.
+//	req, resp := client.DeleteNetworkAclEntryRequest(params)
 //
-//    // Example sending a request using the DeleteNetworkAclEntryRequest method.
-//    req, resp := client.DeleteNetworkAclEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNetworkAclEntry
 func (c *Vpc) DeleteNetworkAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3016,14 +3335,13 @@ const opDeleteNetworkInterface = "DeleteNetworkInterface"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteNetworkInterfaceRequest method.
+//	req, resp := client.DeleteNetworkInterfaceRequest(params)
 //
-//    // Example sending a request using the DeleteNetworkInterfaceRequest method.
-//    req, resp := client.DeleteNetworkInterfaceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteNetworkInterface
 func (c *Vpc) DeleteNetworkInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3089,14 +3407,13 @@ const opDeleteRoute = "DeleteRoute"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteRouteRequest method.
+//	req, resp := client.DeleteRouteRequest(params)
 //
-//    // Example sending a request using the DeleteRouteRequest method.
-//    req, resp := client.DeleteRouteRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteRoute
 func (c *Vpc) DeleteRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3162,14 +3479,13 @@ const opDeleteSecurityGroup = "DeleteSecurityGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteSecurityGroupRequest method.
+//	req, resp := client.DeleteSecurityGroupRequest(params)
 //
-//    // Example sending a request using the DeleteSecurityGroupRequest method.
-//    req, resp := client.DeleteSecurityGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteSecurityGroup
 func (c *Vpc) DeleteSecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3235,14 +3551,13 @@ const opDeleteSubnet = "DeleteSubnet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteSubnetRequest method.
+//	req, resp := client.DeleteSubnetRequest(params)
 //
-//    // Example sending a request using the DeleteSubnetRequest method.
-//    req, resp := client.DeleteSubnetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteSubnet
 func (c *Vpc) DeleteSubnetRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3308,14 +3623,13 @@ const opDeleteVpc = "DeleteVpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteVpcRequest method.
+//	req, resp := client.DeleteVpcRequest(params)
 //
-//    // Example sending a request using the DeleteVpcRequest method.
-//    req, resp := client.DeleteVpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpc
 func (c *Vpc) DeleteVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3381,14 +3695,13 @@ const opDeleteVpcPeeringConnection = "DeleteVpcPeeringConnection"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteVpcPeeringConnectionRequest method.
+//	req, resp := client.DeleteVpcPeeringConnectionRequest(params)
 //
-//    // Example sending a request using the DeleteVpcPeeringConnectionRequest method.
-//    req, resp := client.DeleteVpcPeeringConnectionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpcPeeringConnection
 func (c *Vpc) DeleteVpcPeeringConnectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3454,14 +3767,13 @@ const opDeleteVpnGateway = "DeleteVpnGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteVpnGatewayRequest method.
+//	req, resp := client.DeleteVpnGatewayRequest(params)
 //
-//    // Example sending a request using the DeleteVpnGatewayRequest method.
-//    req, resp := client.DeleteVpnGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpnGateway
 func (c *Vpc) DeleteVpnGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3527,14 +3839,13 @@ const opDeleteVpnGatewayRoute = "DeleteVpnGatewayRoute"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteVpnGatewayRouteRequest method.
+//	req, resp := client.DeleteVpnGatewayRouteRequest(params)
 //
-//    // Example sending a request using the DeleteVpnGatewayRouteRequest method.
-//    req, resp := client.DeleteVpnGatewayRouteRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpnGatewayRoute
 func (c *Vpc) DeleteVpnGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3600,14 +3911,13 @@ const opDeleteVpnTunnel = "DeleteVpnTunnel"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteVpnTunnelRequest method.
+//	req, resp := client.DeleteVpnTunnelRequest(params)
 //
-//    // Example sending a request using the DeleteVpnTunnelRequest method.
-//    req, resp := client.DeleteVpnTunnelRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DeleteVpnTunnel
 func (c *Vpc) DeleteVpnTunnelRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3673,14 +3983,13 @@ const opDescribeAvailabilityZones = "DescribeAvailabilityZones"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeAvailabilityZonesRequest method.
+//	req, resp := client.DescribeAvailabilityZonesRequest(params)
 //
-//    // Example sending a request using the DescribeAvailabilityZonesRequest method.
-//    req, resp := client.DescribeAvailabilityZonesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeAvailabilityZones
 func (c *Vpc) DescribeAvailabilityZonesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3730,6 +4039,78 @@ func (c *Vpc) DescribeAvailabilityZonesWithContext(ctx aws.Context, input *map[s
 	return out, req.Send()
 }
 
+const opDescribeBfdConfig = "DescribeBfdConfig"
+
+// DescribeBfdConfigRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeBfdConfig operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeBfdConfig for more information on using the DescribeBfdConfig
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeBfdConfigRequest method.
+//	req, resp := client.DescribeBfdConfigRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeBfdConfig
+func (c *Vpc) DescribeBfdConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeBfdConfig,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeBfdConfig API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeBfdConfig for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeBfdConfig
+func (c *Vpc) DescribeBfdConfig(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeBfdConfigRequest(input)
+	return out, req.Send()
+}
+
+// DescribeBfdConfigWithContext is the same as DescribeBfdConfig with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeBfdConfig for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeBfdConfigWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeBfdConfigRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeCustomerGateways = "DescribeCustomerGateways"
 
 // DescribeCustomerGatewaysRequest generates a "ksc/request.Request" representing the
@@ -3746,14 +4127,13 @@ const opDescribeCustomerGateways = "DescribeCustomerGateways"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeCustomerGatewaysRequest method.
+//	req, resp := client.DescribeCustomerGatewaysRequest(params)
 //
-//    // Example sending a request using the DescribeCustomerGatewaysRequest method.
-//    req, resp := client.DescribeCustomerGatewaysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeCustomerGateways
 func (c *Vpc) DescribeCustomerGatewaysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3803,6 +4183,78 @@ func (c *Vpc) DescribeCustomerGatewaysWithContext(ctx aws.Context, input *map[st
 	return out, req.Send()
 }
 
+const opDescribeDirectConnectGatewayRoute = "DescribeDirectConnectGatewayRoute"
+
+// DescribeDirectConnectGatewayRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeDirectConnectGatewayRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeDirectConnectGatewayRoute for more information on using the DescribeDirectConnectGatewayRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeDirectConnectGatewayRouteRequest method.
+//	req, resp := client.DescribeDirectConnectGatewayRouteRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectGatewayRoute
+func (c *Vpc) DescribeDirectConnectGatewayRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeDirectConnectGatewayRoute,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeDirectConnectGatewayRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DescribeDirectConnectGatewayRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectGatewayRoute
+func (c *Vpc) DescribeDirectConnectGatewayRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectGatewayRouteRequest(input)
+	return out, req.Send()
+}
+
+// DescribeDirectConnectGatewayRouteWithContext is the same as DescribeDirectConnectGatewayRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeDirectConnectGatewayRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DescribeDirectConnectGatewayRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeDirectConnectGatewayRouteRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDescribeDirectConnectGateways = "DescribeDirectConnectGateways"
 
 // DescribeDirectConnectGatewaysRequest generates a "ksc/request.Request" representing the
@@ -3819,14 +4271,13 @@ const opDescribeDirectConnectGateways = "DescribeDirectConnectGateways"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDirectConnectGatewaysRequest method.
+//	req, resp := client.DescribeDirectConnectGatewaysRequest(params)
 //
-//    // Example sending a request using the DescribeDirectConnectGatewaysRequest method.
-//    req, resp := client.DescribeDirectConnectGatewaysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectGateways
 func (c *Vpc) DescribeDirectConnectGatewaysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3892,14 +4343,13 @@ const opDescribeDirectConnectInterfaces = "DescribeDirectConnectInterfaces"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDirectConnectInterfacesRequest method.
+//	req, resp := client.DescribeDirectConnectInterfacesRequest(params)
 //
-//    // Example sending a request using the DescribeDirectConnectInterfacesRequest method.
-//    req, resp := client.DescribeDirectConnectInterfacesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnectInterfaces
 func (c *Vpc) DescribeDirectConnectInterfacesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -3965,14 +4415,13 @@ const opDescribeDirectConnects = "DescribeDirectConnects"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDirectConnectsRequest method.
+//	req, resp := client.DescribeDirectConnectsRequest(params)
 //
-//    // Example sending a request using the DescribeDirectConnectsRequest method.
-//    req, resp := client.DescribeDirectConnectsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDirectConnects
 func (c *Vpc) DescribeDirectConnectsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4038,14 +4487,13 @@ const opDescribeDnats = "DescribeDnats"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeDnatsRequest method.
+//	req, resp := client.DescribeDnatsRequest(params)
 //
-//    // Example sending a request using the DescribeDnatsRequest method.
-//    req, resp := client.DescribeDnatsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeDnats
 func (c *Vpc) DescribeDnatsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4111,14 +4559,13 @@ const opDescribeInternetGateways = "DescribeInternetGateways"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeInternetGatewaysRequest method.
+//	req, resp := client.DescribeInternetGatewaysRequest(params)
 //
-//    // Example sending a request using the DescribeInternetGatewaysRequest method.
-//    req, resp := client.DescribeInternetGatewaysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeInternetGateways
 func (c *Vpc) DescribeInternetGatewaysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4184,14 +4631,13 @@ const opDescribeIpv6NetworkInterfaces = "DescribeIpv6NetworkInterfaces"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeIpv6NetworkInterfacesRequest method.
+//	req, resp := client.DescribeIpv6NetworkInterfacesRequest(params)
 //
-//    // Example sending a request using the DescribeIpv6NetworkInterfacesRequest method.
-//    req, resp := client.DescribeIpv6NetworkInterfacesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeIpv6NetworkInterfaces
 func (c *Vpc) DescribeIpv6NetworkInterfacesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4257,14 +4703,13 @@ const opDescribeIpv6PublicIpAddresses = "DescribeIpv6PublicIpAddresses"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeIpv6PublicIpAddressesRequest method.
+//	req, resp := client.DescribeIpv6PublicIpAddressesRequest(params)
 //
-//    // Example sending a request using the DescribeIpv6PublicIpAddressesRequest method.
-//    req, resp := client.DescribeIpv6PublicIpAddressesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeIpv6PublicIpAddresses
 func (c *Vpc) DescribeIpv6PublicIpAddressesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4330,14 +4775,13 @@ const opDescribeNatRateLimit = "DescribeNatRateLimit"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeNatRateLimitRequest method.
+//	req, resp := client.DescribeNatRateLimitRequest(params)
 //
-//    // Example sending a request using the DescribeNatRateLimitRequest method.
-//    req, resp := client.DescribeNatRateLimitRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeNatRateLimit
 func (c *Vpc) DescribeNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4403,14 +4847,13 @@ const opDescribeNats = "DescribeNats"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeNatsRequest method.
+//	req, resp := client.DescribeNatsRequest(params)
 //
-//    // Example sending a request using the DescribeNatsRequest method.
-//    req, resp := client.DescribeNatsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeNats
 func (c *Vpc) DescribeNatsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4476,14 +4919,13 @@ const opDescribeNetworkAcls = "DescribeNetworkAcls"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeNetworkAclsRequest method.
+//	req, resp := client.DescribeNetworkAclsRequest(params)
 //
-//    // Example sending a request using the DescribeNetworkAclsRequest method.
-//    req, resp := client.DescribeNetworkAclsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeNetworkAcls
 func (c *Vpc) DescribeNetworkAclsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4549,14 +4991,13 @@ const opDescribeNetworkInterfaces = "DescribeNetworkInterfaces"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeNetworkInterfacesRequest method.
+//	req, resp := client.DescribeNetworkInterfacesRequest(params)
 //
-//    // Example sending a request using the DescribeNetworkInterfacesRequest method.
-//    req, resp := client.DescribeNetworkInterfacesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeNetworkInterfaces
 func (c *Vpc) DescribeNetworkInterfacesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4622,14 +5063,13 @@ const opDescribeRoutes = "DescribeRoutes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeRoutesRequest method.
+//	req, resp := client.DescribeRoutesRequest(params)
 //
-//    // Example sending a request using the DescribeRoutesRequest method.
-//    req, resp := client.DescribeRoutesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeRoutes
 func (c *Vpc) DescribeRoutesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4695,14 +5135,13 @@ const opDescribeSecurityGroups = "DescribeSecurityGroups"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeSecurityGroupsRequest method.
+//	req, resp := client.DescribeSecurityGroupsRequest(params)
 //
-//    // Example sending a request using the DescribeSecurityGroupsRequest method.
-//    req, resp := client.DescribeSecurityGroupsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeSecurityGroups
 func (c *Vpc) DescribeSecurityGroupsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4768,14 +5207,13 @@ const opDescribeSubnetAllocatedIpAddresses = "DescribeSubnetAllocatedIpAddresses
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeSubnetAllocatedIpAddressesRequest method.
+//	req, resp := client.DescribeSubnetAllocatedIpAddressesRequest(params)
 //
-//    // Example sending a request using the DescribeSubnetAllocatedIpAddressesRequest method.
-//    req, resp := client.DescribeSubnetAllocatedIpAddressesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeSubnetAllocatedIpAddresses
 func (c *Vpc) DescribeSubnetAllocatedIpAddressesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4841,14 +5279,13 @@ const opDescribeSubnetAvailableAddresses = "DescribeSubnetAvailableAddresses"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeSubnetAvailableAddressesRequest method.
+//	req, resp := client.DescribeSubnetAvailableAddressesRequest(params)
 //
-//    // Example sending a request using the DescribeSubnetAvailableAddressesRequest method.
-//    req, resp := client.DescribeSubnetAvailableAddressesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeSubnetAvailableAddresses
 func (c *Vpc) DescribeSubnetAvailableAddressesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4914,14 +5351,13 @@ const opDescribeSubnets = "DescribeSubnets"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeSubnetsRequest method.
+//	req, resp := client.DescribeSubnetsRequest(params)
 //
-//    // Example sending a request using the DescribeSubnetsRequest method.
-//    req, resp := client.DescribeSubnetsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeSubnets
 func (c *Vpc) DescribeSubnetsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -4987,14 +5423,13 @@ const opDescribeVpcPeeringConnections = "DescribeVpcPeeringConnections"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVpcPeeringConnectionsRequest method.
+//	req, resp := client.DescribeVpcPeeringConnectionsRequest(params)
 //
-//    // Example sending a request using the DescribeVpcPeeringConnectionsRequest method.
-//    req, resp := client.DescribeVpcPeeringConnectionsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpcPeeringConnections
 func (c *Vpc) DescribeVpcPeeringConnectionsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5060,14 +5495,13 @@ const opDescribeVpcs = "DescribeVpcs"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVpcsRequest method.
+//	req, resp := client.DescribeVpcsRequest(params)
 //
-//    // Example sending a request using the DescribeVpcsRequest method.
-//    req, resp := client.DescribeVpcsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpcs
 func (c *Vpc) DescribeVpcsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5133,14 +5567,13 @@ const opDescribeVpnGatewayRoutes = "DescribeVpnGatewayRoutes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVpnGatewayRoutesRequest method.
+//	req, resp := client.DescribeVpnGatewayRoutesRequest(params)
 //
-//    // Example sending a request using the DescribeVpnGatewayRoutesRequest method.
-//    req, resp := client.DescribeVpnGatewayRoutesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpnGatewayRoutes
 func (c *Vpc) DescribeVpnGatewayRoutesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5206,14 +5639,13 @@ const opDescribeVpnGateways = "DescribeVpnGateways"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVpnGatewaysRequest method.
+//	req, resp := client.DescribeVpnGatewaysRequest(params)
 //
-//    // Example sending a request using the DescribeVpnGatewaysRequest method.
-//    req, resp := client.DescribeVpnGatewaysRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpnGateways
 func (c *Vpc) DescribeVpnGatewaysRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5279,14 +5711,13 @@ const opDescribeVpnTunnels = "DescribeVpnTunnels"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVpnTunnelsRequest method.
+//	req, resp := client.DescribeVpnTunnelsRequest(params)
 //
-//    // Example sending a request using the DescribeVpnTunnelsRequest method.
-//    req, resp := client.DescribeVpnTunnelsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DescribeVpnTunnels
 func (c *Vpc) DescribeVpnTunnelsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5352,14 +5783,13 @@ const opDetachDirectConnectGateway = "DetachDirectConnectGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetachDirectConnectGatewayRequest method.
+//	req, resp := client.DetachDirectConnectGatewayRequest(params)
 //
-//    // Example sending a request using the DetachDirectConnectGatewayRequest method.
-//    req, resp := client.DetachDirectConnectGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DetachDirectConnectGateway
 func (c *Vpc) DetachDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5409,6 +5839,78 @@ func (c *Vpc) DetachDirectConnectGatewayWithContext(ctx aws.Context, input *map[
 	return out, req.Send()
 }
 
+const opDetachDirectConnectGatewayWithVpc = "DetachDirectConnectGatewayWithVpc"
+
+// DetachDirectConnectGatewayWithVpcRequest generates a "ksc/request.Request" representing the
+// client's request for the DetachDirectConnectGatewayWithVpc operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DetachDirectConnectGatewayWithVpc for more information on using the DetachDirectConnectGatewayWithVpc
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DetachDirectConnectGatewayWithVpcRequest method.
+//	req, resp := client.DetachDirectConnectGatewayWithVpcRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DetachDirectConnectGatewayWithVpc
+func (c *Vpc) DetachDirectConnectGatewayWithVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDetachDirectConnectGatewayWithVpc,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DetachDirectConnectGatewayWithVpc API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation DetachDirectConnectGatewayWithVpc for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DetachDirectConnectGatewayWithVpc
+func (c *Vpc) DetachDirectConnectGatewayWithVpc(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DetachDirectConnectGatewayWithVpcRequest(input)
+	return out, req.Send()
+}
+
+// DetachDirectConnectGatewayWithVpcWithContext is the same as DetachDirectConnectGatewayWithVpc with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DetachDirectConnectGatewayWithVpc for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) DetachDirectConnectGatewayWithVpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DetachDirectConnectGatewayWithVpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDisassociateInstance = "DisassociateInstance"
 
 // DisassociateInstanceRequest generates a "ksc/request.Request" representing the
@@ -5425,14 +5927,13 @@ const opDisassociateInstance = "DisassociateInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DisassociateInstanceRequest method.
+//	req, resp := client.DisassociateInstanceRequest(params)
 //
-//    // Example sending a request using the DisassociateInstanceRequest method.
-//    req, resp := client.DisassociateInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DisassociateInstance
 func (c *Vpc) DisassociateInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5498,14 +5999,13 @@ const opDisassociateNat = "DisassociateNat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DisassociateNatRequest method.
+//	req, resp := client.DisassociateNatRequest(params)
 //
-//    // Example sending a request using the DisassociateNatRequest method.
-//    req, resp := client.DisassociateNatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DisassociateNat
 func (c *Vpc) DisassociateNatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5571,14 +6071,13 @@ const opDisassociateNetworkAcl = "DisassociateNetworkAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DisassociateNetworkAclRequest method.
+//	req, resp := client.DisassociateNetworkAclRequest(params)
 //
-//    // Example sending a request using the DisassociateNetworkAclRequest method.
-//    req, resp := client.DisassociateNetworkAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/DisassociateNetworkAcl
 func (c *Vpc) DisassociateNetworkAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5628,6 +6127,78 @@ func (c *Vpc) DisassociateNetworkAclWithContext(ctx aws.Context, input *map[stri
 	return out, req.Send()
 }
 
+const opModifyBfdConfig = "ModifyBfdConfig"
+
+// ModifyBfdConfigRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyBfdConfig operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyBfdConfig for more information on using the ModifyBfdConfig
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyBfdConfigRequest method.
+//	req, resp := client.ModifyBfdConfigRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyBfdConfig
+func (c *Vpc) ModifyBfdConfigRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyBfdConfig,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyBfdConfig API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyBfdConfig for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyBfdConfig
+func (c *Vpc) ModifyBfdConfig(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyBfdConfigRequest(input)
+	return out, req.Send()
+}
+
+// ModifyBfdConfigWithContext is the same as ModifyBfdConfig with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyBfdConfig for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyBfdConfigWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyBfdConfigRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyCustomerGateway = "ModifyCustomerGateway"
 
 // ModifyCustomerGatewayRequest generates a "ksc/request.Request" representing the
@@ -5644,14 +6215,13 @@ const opModifyCustomerGateway = "ModifyCustomerGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyCustomerGatewayRequest method.
+//	req, resp := client.ModifyCustomerGatewayRequest(params)
 //
-//    // Example sending a request using the ModifyCustomerGatewayRequest method.
-//    req, resp := client.ModifyCustomerGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyCustomerGateway
 func (c *Vpc) ModifyCustomerGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5717,14 +6287,13 @@ const opModifyDirectConnectGateway = "ModifyDirectConnectGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyDirectConnectGatewayRequest method.
+//	req, resp := client.ModifyDirectConnectGatewayRequest(params)
 //
-//    // Example sending a request using the ModifyDirectConnectGatewayRequest method.
-//    req, resp := client.ModifyDirectConnectGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectGateway
 func (c *Vpc) ModifyDirectConnectGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5790,14 +6359,13 @@ const opModifyDirectConnectInterface = "ModifyDirectConnectInterface"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyDirectConnectInterfaceRequest method.
+//	req, resp := client.ModifyDirectConnectInterfaceRequest(params)
 //
-//    // Example sending a request using the ModifyDirectConnectInterfaceRequest method.
-//    req, resp := client.ModifyDirectConnectInterfaceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectInterface
 func (c *Vpc) ModifyDirectConnectInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5847,6 +6415,78 @@ func (c *Vpc) ModifyDirectConnectInterfaceWithContext(ctx aws.Context, input *ma
 	return out, req.Send()
 }
 
+const opModifyDirectConnectInterfaceBfd = "ModifyDirectConnectInterfaceBfd"
+
+// ModifyDirectConnectInterfaceBfdRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyDirectConnectInterfaceBfd operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyDirectConnectInterfaceBfd for more information on using the ModifyDirectConnectInterfaceBfd
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyDirectConnectInterfaceBfdRequest method.
+//	req, resp := client.ModifyDirectConnectInterfaceBfdRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectInterfaceBfd
+func (c *Vpc) ModifyDirectConnectInterfaceBfdRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyDirectConnectInterfaceBfd,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyDirectConnectInterfaceBfd API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation ModifyDirectConnectInterfaceBfd for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDirectConnectInterfaceBfd
+func (c *Vpc) ModifyDirectConnectInterfaceBfd(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyDirectConnectInterfaceBfdRequest(input)
+	return out, req.Send()
+}
+
+// ModifyDirectConnectInterfaceBfdWithContext is the same as ModifyDirectConnectInterfaceBfd with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyDirectConnectInterfaceBfd for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) ModifyDirectConnectInterfaceBfdWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyDirectConnectInterfaceBfdRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opModifyDnat = "ModifyDnat"
 
 // ModifyDnatRequest generates a "ksc/request.Request" representing the
@@ -5863,14 +6503,13 @@ const opModifyDnat = "ModifyDnat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyDnatRequest method.
+//	req, resp := client.ModifyDnatRequest(params)
 //
-//    // Example sending a request using the ModifyDnatRequest method.
-//    req, resp := client.ModifyDnatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyDnat
 func (c *Vpc) ModifyDnatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -5936,14 +6575,13 @@ const opModifyIpv6PublicIp = "ModifyIpv6PublicIp"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyIpv6PublicIpRequest method.
+//	req, resp := client.ModifyIpv6PublicIpRequest(params)
 //
-//    // Example sending a request using the ModifyIpv6PublicIpRequest method.
-//    req, resp := client.ModifyIpv6PublicIpRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyIpv6PublicIp
 func (c *Vpc) ModifyIpv6PublicIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6009,14 +6647,13 @@ const opModifyNat = "ModifyNat"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNatRequest method.
+//	req, resp := client.ModifyNatRequest(params)
 //
-//    // Example sending a request using the ModifyNatRequest method.
-//    req, resp := client.ModifyNatRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNat
 func (c *Vpc) ModifyNatRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6082,14 +6719,13 @@ const opModifyNatRateLimit = "ModifyNatRateLimit"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNatRateLimitRequest method.
+//	req, resp := client.ModifyNatRateLimitRequest(params)
 //
-//    // Example sending a request using the ModifyNatRateLimitRequest method.
-//    req, resp := client.ModifyNatRateLimitRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNatRateLimit
 func (c *Vpc) ModifyNatRateLimitRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6155,14 +6791,13 @@ const opModifyNetworkAcl = "ModifyNetworkAcl"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNetworkAclRequest method.
+//	req, resp := client.ModifyNetworkAclRequest(params)
 //
-//    // Example sending a request using the ModifyNetworkAclRequest method.
-//    req, resp := client.ModifyNetworkAclRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNetworkAcl
 func (c *Vpc) ModifyNetworkAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6228,14 +6863,13 @@ const opModifyNetworkAclEntry = "ModifyNetworkAclEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNetworkAclEntryRequest method.
+//	req, resp := client.ModifyNetworkAclEntryRequest(params)
 //
-//    // Example sending a request using the ModifyNetworkAclEntryRequest method.
-//    req, resp := client.ModifyNetworkAclEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNetworkAclEntry
 func (c *Vpc) ModifyNetworkAclEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6301,14 +6935,13 @@ const opModifyNetworkInterface = "ModifyNetworkInterface"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyNetworkInterfaceRequest method.
+//	req, resp := client.ModifyNetworkInterfaceRequest(params)
 //
-//    // Example sending a request using the ModifyNetworkInterfaceRequest method.
-//    req, resp := client.ModifyNetworkInterfaceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyNetworkInterface
 func (c *Vpc) ModifyNetworkInterfaceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6374,14 +7007,13 @@ const opModifySecurityGroup = "ModifySecurityGroup"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifySecurityGroupRequest method.
+//	req, resp := client.ModifySecurityGroupRequest(params)
 //
-//    // Example sending a request using the ModifySecurityGroupRequest method.
-//    req, resp := client.ModifySecurityGroupRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifySecurityGroup
 func (c *Vpc) ModifySecurityGroupRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6447,14 +7079,13 @@ const opModifySecurityGroupEntry = "ModifySecurityGroupEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifySecurityGroupEntryRequest method.
+//	req, resp := client.ModifySecurityGroupEntryRequest(params)
 //
-//    // Example sending a request using the ModifySecurityGroupEntryRequest method.
-//    req, resp := client.ModifySecurityGroupEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifySecurityGroupEntry
 func (c *Vpc) ModifySecurityGroupEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6520,14 +7151,13 @@ const opModifySubnet = "ModifySubnet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifySubnetRequest method.
+//	req, resp := client.ModifySubnetRequest(params)
 //
-//    // Example sending a request using the ModifySubnetRequest method.
-//    req, resp := client.ModifySubnetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifySubnet
 func (c *Vpc) ModifySubnetRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6593,14 +7223,13 @@ const opModifyVpc = "ModifyVpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyVpcRequest method.
+//	req, resp := client.ModifyVpcRequest(params)
 //
-//    // Example sending a request using the ModifyVpcRequest method.
-//    req, resp := client.ModifyVpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyVpc
 func (c *Vpc) ModifyVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6666,14 +7295,13 @@ const opModifyVpcPeeringConnection = "ModifyVpcPeeringConnection"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyVpcPeeringConnectionRequest method.
+//	req, resp := client.ModifyVpcPeeringConnectionRequest(params)
 //
-//    // Example sending a request using the ModifyVpcPeeringConnectionRequest method.
-//    req, resp := client.ModifyVpcPeeringConnectionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyVpcPeeringConnection
 func (c *Vpc) ModifyVpcPeeringConnectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6739,14 +7367,13 @@ const opModifyVpnGateway = "ModifyVpnGateway"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyVpnGatewayRequest method.
+//	req, resp := client.ModifyVpnGatewayRequest(params)
 //
-//    // Example sending a request using the ModifyVpnGatewayRequest method.
-//    req, resp := client.ModifyVpnGatewayRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyVpnGateway
 func (c *Vpc) ModifyVpnGatewayRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6812,14 +7439,13 @@ const opModifyVpnTunnel = "ModifyVpnTunnel"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyVpnTunnelRequest method.
+//	req, resp := client.ModifyVpnTunnelRequest(params)
 //
-//    // Example sending a request using the ModifyVpnTunnelRequest method.
-//    req, resp := client.ModifyVpnTunnelRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ModifyVpnTunnel
 func (c *Vpc) ModifyVpnTunnelRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6869,6 +7495,78 @@ func (c *Vpc) ModifyVpnTunnelWithContext(ctx aws.Context, input *map[string]inte
 	return out, req.Send()
 }
 
+const opPublishDirectConnectRoute = "PublishDirectConnectRoute"
+
+// PublishDirectConnectRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the PublishDirectConnectRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See PublishDirectConnectRoute for more information on using the PublishDirectConnectRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the PublishDirectConnectRouteRequest method.
+//	req, resp := client.PublishDirectConnectRouteRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/PublishDirectConnectRoute
+func (c *Vpc) PublishDirectConnectRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opPublishDirectConnectRoute,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// PublishDirectConnectRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation PublishDirectConnectRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/PublishDirectConnectRoute
+func (c *Vpc) PublishDirectConnectRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.PublishDirectConnectRouteRequest(input)
+	return out, req.Send()
+}
+
+// PublishDirectConnectRouteWithContext is the same as PublishDirectConnectRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See PublishDirectConnectRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) PublishDirectConnectRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.PublishDirectConnectRouteRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRejectVpcPeeringConnection = "RejectVpcPeeringConnection"
 
 // RejectVpcPeeringConnectionRequest generates a "ksc/request.Request" representing the
@@ -6885,14 +7583,13 @@ const opRejectVpcPeeringConnection = "RejectVpcPeeringConnection"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RejectVpcPeeringConnectionRequest method.
+//	req, resp := client.RejectVpcPeeringConnectionRequest(params)
 //
-//    // Example sending a request using the RejectVpcPeeringConnectionRequest method.
-//    req, resp := client.RejectVpcPeeringConnectionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/RejectVpcPeeringConnection
 func (c *Vpc) RejectVpcPeeringConnectionRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -6958,14 +7655,13 @@ const opReleaseIpv6PublicIp = "ReleaseIpv6PublicIp"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ReleaseIpv6PublicIpRequest method.
+//	req, resp := client.ReleaseIpv6PublicIpRequest(params)
 //
-//    // Example sending a request using the ReleaseIpv6PublicIpRequest method.
-//    req, resp := client.ReleaseIpv6PublicIpRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/ReleaseIpv6PublicIp
 func (c *Vpc) ReleaseIpv6PublicIpRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -7031,14 +7727,13 @@ const opRevokeSecurityGroupEntry = "RevokeSecurityGroupEntry"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RevokeSecurityGroupEntryRequest method.
+//	req, resp := client.RevokeSecurityGroupEntryRequest(params)
 //
-//    // Example sending a request using the RevokeSecurityGroupEntryRequest method.
-//    req, resp := client.RevokeSecurityGroupEntryRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/RevokeSecurityGroupEntry
 func (c *Vpc) RevokeSecurityGroupEntryRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -7104,14 +7799,13 @@ const opUnassignPrivateIpAddress = "UnassignPrivateIpAddress"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UnassignPrivateIpAddressRequest method.
+//	req, resp := client.UnassignPrivateIpAddressRequest(params)
 //
-//    // Example sending a request using the UnassignPrivateIpAddressRequest method.
-//    req, resp := client.UnassignPrivateIpAddressRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/UnassignPrivateIpAddress
 func (c *Vpc) UnassignPrivateIpAddressRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -7156,6 +7850,78 @@ func (c *Vpc) UnassignPrivateIpAddress(input *map[string]interface{}) (*map[stri
 // for more information on using Contexts.
 func (c *Vpc) UnassignPrivateIpAddressWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.UnassignPrivateIpAddressRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opUnpublishDirectConnectRoute = "UnpublishDirectConnectRoute"
+
+// UnpublishDirectConnectRouteRequest generates a "ksc/request.Request" representing the
+// client's request for the UnpublishDirectConnectRoute operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See UnpublishDirectConnectRoute for more information on using the UnpublishDirectConnectRoute
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the UnpublishDirectConnectRouteRequest method.
+//	req, resp := client.UnpublishDirectConnectRouteRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/UnpublishDirectConnectRoute
+func (c *Vpc) UnpublishDirectConnectRouteRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opUnpublishDirectConnectRoute,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// UnpublishDirectConnectRoute API operation for vpc.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for vpc's
+// API operation UnpublishDirectConnectRoute for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/vpc-2016-03-04/UnpublishDirectConnectRoute
+func (c *Vpc) UnpublishDirectConnectRoute(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.UnpublishDirectConnectRouteRequest(input)
+	return out, req.Send()
+}
+
+// UnpublishDirectConnectRouteWithContext is the same as UnpublishDirectConnectRoute with the addition of
+// the ability to pass a context and additional request options.
+//
+// See UnpublishDirectConnectRoute for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Vpc) UnpublishDirectConnectRouteWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.UnpublishDirectConnectRouteRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

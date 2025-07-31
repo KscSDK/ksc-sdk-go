@@ -23,37 +23,37 @@ import (
 // can be stubbed out for unit testing your code with the SDK without needing
 // to inject custom request handlers into the SDK's request pipeline.
 //
-//    // myFunc uses an SDK service client to make a request to
-//    // vpc.
-//    func myFunc(svc vpciface.VpcAPI) bool {
-//        // Make svc.AcceptVpcPeeringConnection request
-//    }
+//	// myFunc uses an SDK service client to make a request to
+//	// vpc.
+//	func myFunc(svc vpciface.VpcAPI) bool {
+//	    // Make svc.AcceptVpcPeeringConnection request
+//	}
 //
-//    func main() {
-//        sess := session.New()
-//        svc := vpc.New(sess)
+//	func main() {
+//	    sess := session.New()
+//	    svc := vpc.New(sess)
 //
-//        myFunc(svc)
-//    }
+//	    myFunc(svc)
+//	}
 //
 // In your _test.go file:
 //
-//    // Define a mock struct to be used in your unit tests of myFunc.
-//    type mockVpcClient struct {
-//        vpciface.VpcAPI
-//    }
-//    func (m *mockVpcClient) AcceptVpcPeeringConnection(input *map[string]interface{}) (*map[string]interface{}, error) {
-//        // mock response/functionality
-//    }
+//	// Define a mock struct to be used in your unit tests of myFunc.
+//	type mockVpcClient struct {
+//	    vpciface.VpcAPI
+//	}
+//	func (m *mockVpcClient) AcceptVpcPeeringConnection(input *map[string]interface{}) (*map[string]interface{}, error) {
+//	    // mock response/functionality
+//	}
 //
-//    func TestMyFunc(t *testing.T) {
-//        // Setup Test
-//        mockSvc := &mockVpcClient{}
+//	func TestMyFunc(t *testing.T) {
+//	    // Setup Test
+//	    mockSvc := &mockVpcClient{}
 //
-//        myfunc(mockSvc)
+//	    myfunc(mockSvc)
 //
-//        // Verify myFunc's functionality
-//    }
+//	    // Verify myFunc's functionality
+//	}
 //
 // It is important to note that this interface will have breaking changes
 // when the service model is updated and adds new API operations, paginators,
@@ -96,9 +96,17 @@ type VpcAPI interface {
 	AttachDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AttachDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	AttachDirectConnectGatewayWithVpc(*map[string]interface{}) (*map[string]interface{}, error)
+	AttachDirectConnectGatewayWithVpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	AttachDirectConnectGatewayWithVpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	AuthorizeSecurityGroupEntry(*map[string]interface{}) (*map[string]interface{}, error)
 	AuthorizeSecurityGroupEntryWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AuthorizeSecurityGroupEntryRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateBfdConfig(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateBfdConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateBfdConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateCustomerGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -111,6 +119,10 @@ type VpcAPI interface {
 	CreateDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	CreateDirectConnectGatewayRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateDirectConnectGatewayRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateDirectConnectGatewayRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	CreateDirectConnectInterface(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -180,6 +192,10 @@ type VpcAPI interface {
 	CreateVpnTunnelWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateVpnTunnelRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DeleteBfdConfig(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteBfdConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteBfdConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteCustomerGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -191,6 +207,10 @@ type VpcAPI interface {
 	DeleteDirectConnectGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteDirectConnectGatewayRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteDirectConnectGatewayRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteDirectConnectGatewayRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DeleteDirectConnectInterface(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -264,9 +284,17 @@ type VpcAPI interface {
 	DescribeAvailabilityZonesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeAvailabilityZonesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeBfdConfig(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeBfdConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeBfdConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DescribeCustomerGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeCustomerGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeCustomerGatewaysRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeDirectConnectGatewayRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeDirectConnectGatewayRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeDirectConnectGatewayRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeDirectConnectGateways(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeDirectConnectGatewaysWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -356,6 +384,10 @@ type VpcAPI interface {
 	DetachDirectConnectGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DetachDirectConnectGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DetachDirectConnectGatewayWithVpc(*map[string]interface{}) (*map[string]interface{}, error)
+	DetachDirectConnectGatewayWithVpcWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DetachDirectConnectGatewayWithVpcRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DisassociateInstance(*map[string]interface{}) (*map[string]interface{}, error)
 	DisassociateInstanceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateInstanceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -368,6 +400,10 @@ type VpcAPI interface {
 	DisassociateNetworkAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DisassociateNetworkAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyBfdConfig(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyBfdConfigWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyBfdConfigRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyCustomerGateway(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyCustomerGatewayWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyCustomerGatewayRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -379,6 +415,10 @@ type VpcAPI interface {
 	ModifyDirectConnectInterface(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyDirectConnectInterfaceWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyDirectConnectInterfaceRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyDirectConnectInterfaceBfd(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDirectConnectInterfaceBfdWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDirectConnectInterfaceBfdRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	ModifyDnat(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyDnatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -436,6 +476,10 @@ type VpcAPI interface {
 	ModifyVpnTunnelWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyVpnTunnelRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	PublishDirectConnectRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	PublishDirectConnectRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	PublishDirectConnectRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	RejectVpcPeeringConnection(*map[string]interface{}) (*map[string]interface{}, error)
 	RejectVpcPeeringConnectionWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RejectVpcPeeringConnectionRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -451,6 +495,10 @@ type VpcAPI interface {
 	UnassignPrivateIpAddress(*map[string]interface{}) (*map[string]interface{}, error)
 	UnassignPrivateIpAddressWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	UnassignPrivateIpAddressRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	UnpublishDirectConnectRoute(*map[string]interface{}) (*map[string]interface{}, error)
+	UnpublishDirectConnectRouteWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	UnpublishDirectConnectRouteRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ VpcAPI = (*vpc.Vpc)(nil)
