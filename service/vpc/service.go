@@ -42,11 +42,12 @@ const (
 // ksc.Config parameter to add your extra config.
 //
 // Example:
-//     // Create a Vpc client from just a session.
-//     svc := vpc.New(mySession)
 //
-//     // Create a Vpc client with additional configuration
-//     svc := vpc.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
+//	// Create a Vpc client from just a session.
+//	svc := vpc.New(mySession)
+//
+//	// Create a Vpc client with additional configuration
+//	svc := vpc.New(mySession, aws.NewConfig().WithRegion("us-west-2"))
 func New(p client.ConfigProvider, cfgs ...*aws.Config) *Vpc {
 	c := p.ClientConfig(EndpointsID, cfgs...)
 	c.Endpoint = utils.Url(&utils.UrlInfo{
