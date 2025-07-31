@@ -188,6 +188,10 @@ type KceAPI interface {
 	ModifyNodeTemplateWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNodeTemplateRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyPublicApiServer(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyPublicApiServerWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyPublicApiServerRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ProtectedFromScaleDown(*map[string]interface{}) (*map[string]interface{}, error)
 	ProtectedFromScaleDownWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ProtectedFromScaleDownRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
