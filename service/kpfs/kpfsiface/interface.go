@@ -64,17 +64,41 @@ type KpfsAPI interface {
 	AddPerformanceOnePosixAclIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	AddPerformanceOnePosixAclIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateFileSystem(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateFileSystemWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateFileSystemRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DeleteFileSystem(*map[string]interface{}) (*map[string]interface{}, error)
+	DeleteFileSystemWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DeleteFileSystemRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeletePerformanceOnePosixAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	DeletePerformanceOnePosixAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeletePerformanceOnePosixAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeClientInstallInfo(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeClientInstallInfoWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeClientInstallInfoRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeFileSystemList(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeFileSystemListWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeFileSystemListRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribePerformanceOnePosixAclList(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribePerformanceOnePosixAclListWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribePerformanceOnePosixAclListRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	DescribeClusterInfo(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeClusterInfoWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeClusterInfoRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	RemovePerformanceOnePosixAclIp(*map[string]interface{}) (*map[string]interface{}, error)
 	RemovePerformanceOnePosixAclIpWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RemovePerformanceOnePosixAclIpRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	SetPerformanceOnePosixAcl(*map[string]interface{}) (*map[string]interface{}, error)
+	SetPerformanceOnePosixAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	SetPerformanceOnePosixAclRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	UpdatePerformanceOnePosixAcl(*map[string]interface{}) (*map[string]interface{}, error)
 	UpdatePerformanceOnePosixAclWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
