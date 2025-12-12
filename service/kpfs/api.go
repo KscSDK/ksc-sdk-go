@@ -81,6 +81,152 @@ func (c *Kpfs) AddPerformanceOnePosixAclIpWithContext(ctx aws.Context, input *ma
 	return out, req.Send()
 }
 
+const opCreateFileSystem = "CreateFileSystem"
+
+// CreateFileSystemRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateFileSystem operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateFileSystem for more information on using the CreateFileSystem
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateFileSystemRequest method.
+//	req, resp := client.CreateFileSystemRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/CreateFileSystem
+func (c *Kpfs) CreateFileSystemRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateFileSystem,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// CreateFileSystem API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation CreateFileSystem for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/CreateFileSystem
+func (c *Kpfs) CreateFileSystem(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateFileSystemRequest(input)
+	return out, req.Send()
+}
+
+// CreateFileSystemWithContext is the same as CreateFileSystem with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateFileSystem for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) CreateFileSystemWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateFileSystemRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDeleteFileSystem = "DeleteFileSystem"
+
+// DeleteFileSystemRequest generates a "ksc/request.Request" representing the
+// client's request for the DeleteFileSystem operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DeleteFileSystem for more information on using the DeleteFileSystem
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DeleteFileSystemRequest method.
+//	req, resp := client.DeleteFileSystemRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DeleteFileSystem
+func (c *Kpfs) DeleteFileSystemRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDeleteFileSystem,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DeleteFileSystem API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation DeleteFileSystem for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DeleteFileSystem
+func (c *Kpfs) DeleteFileSystem(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DeleteFileSystemRequest(input)
+	return out, req.Send()
+}
+
+// DeleteFileSystemWithContext is the same as DeleteFileSystem with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DeleteFileSystem for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) DeleteFileSystemWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DeleteFileSystemRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opDeletePerformanceOnePosixAcl = "DeletePerformanceOnePosixAcl"
 
 // DeletePerformanceOnePosixAclRequest generates a "ksc/request.Request" representing the
@@ -148,6 +294,150 @@ func (c *Kpfs) DeletePerformanceOnePosixAcl(input *map[string]interface{}) (*map
 // for more information on using Contexts.
 func (c *Kpfs) DeletePerformanceOnePosixAclWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DeletePerformanceOnePosixAclRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeClientInstallInfo = "DescribeClientInstallInfo"
+
+// DescribeClientInstallInfoRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeClientInstallInfo operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeClientInstallInfo for more information on using the DescribeClientInstallInfo
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeClientInstallInfoRequest method.
+//	req, resp := client.DescribeClientInstallInfoRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DescribeClientInstallInfo
+func (c *Kpfs) DescribeClientInstallInfoRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeClientInstallInfo,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeClientInstallInfo API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation DescribeClientInstallInfo for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DescribeClientInstallInfo
+func (c *Kpfs) DescribeClientInstallInfo(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeClientInstallInfoRequest(input)
+	return out, req.Send()
+}
+
+// DescribeClientInstallInfoWithContext is the same as DescribeClientInstallInfo with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeClientInstallInfo for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) DescribeClientInstallInfoWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeClientInstallInfoRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeFileSystemList = "DescribeFileSystemList"
+
+// DescribeFileSystemListRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeFileSystemList operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeFileSystemList for more information on using the DescribeFileSystemList
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeFileSystemListRequest method.
+//	req, resp := client.DescribeFileSystemListRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DescribeFileSystemList
+func (c *Kpfs) DescribeFileSystemListRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeFileSystemList,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeFileSystemList API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation DescribeFileSystemList for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DescribeFileSystemList
+func (c *Kpfs) DescribeFileSystemList(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeFileSystemListRequest(input)
+	return out, req.Send()
+}
+
+// DescribeFileSystemListWithContext is the same as DescribeFileSystemList with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeFileSystemList for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) DescribeFileSystemListWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeFileSystemListRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -225,6 +515,78 @@ func (c *Kpfs) DescribePerformanceOnePosixAclListWithContext(ctx aws.Context, in
 	return out, req.Send()
 }
 
+const opDescribeClusterInfo = "DescribeClusterInfo"
+
+// DescribeClusterInfoRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeClusterInfo operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeClusterInfo for more information on using the DescribeClusterInfo
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeClusterInfoRequest method.
+//	req, resp := client.DescribeClusterInfoRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DescribeClusterInfo
+func (c *Kpfs) DescribeClusterInfoRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeClusterInfo,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeClusterInfo API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation DescribeClusterInfo for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/DescribeClusterInfo
+func (c *Kpfs) DescribeClusterInfo(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeClusterInfoRequest(input)
+	return out, req.Send()
+}
+
+// DescribeClusterInfoWithContext is the same as DescribeClusterInfo with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeClusterInfo for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) DescribeClusterInfoWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeClusterInfoRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRemovePerformanceOnePosixAclIp = "RemovePerformanceOnePosixAclIp"
 
 // RemovePerformanceOnePosixAclIpRequest generates a "ksc/request.Request" representing the
@@ -294,6 +656,80 @@ func (c *Kpfs) RemovePerformanceOnePosixAclIp(input *map[string]interface{}) (*m
 // for more information on using Contexts.
 func (c *Kpfs) RemovePerformanceOnePosixAclIpWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.RemovePerformanceOnePosixAclIpRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opSetPerformanceOnePosixAcl = "SetPerformanceOnePosixAcl"
+
+// SetPerformanceOnePosixAclRequest generates a "ksc/request.Request" representing the
+// client's request for the SetPerformanceOnePosixAcl operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See SetPerformanceOnePosixAcl for more information on using the SetPerformanceOnePosixAcl
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the SetPerformanceOnePosixAclRequest method.
+//	req, resp := client.SetPerformanceOnePosixAclRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/SetPerformanceOnePosixAcl
+func (c *Kpfs) SetPerformanceOnePosixAclRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opSetPerformanceOnePosixAcl,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// SetPerformanceOnePosixAcl API operation for kpfs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kpfs's
+// API operation SetPerformanceOnePosixAcl for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kpfs-2024-09-30/SetPerformanceOnePosixAcl
+func (c *Kpfs) SetPerformanceOnePosixAcl(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.SetPerformanceOnePosixAclRequest(input)
+	return out, req.Send()
+}
+
+// SetPerformanceOnePosixAclWithContext is the same as SetPerformanceOnePosixAcl with the addition of
+// the ability to pass a context and additional request options.
+//
+// See SetPerformanceOnePosixAcl for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kpfs) SetPerformanceOnePosixAclWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.SetPerformanceOnePosixAclRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
