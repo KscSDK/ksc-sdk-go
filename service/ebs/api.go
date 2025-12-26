@@ -23,14 +23,13 @@ const opAttachVolume = "AttachVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the AttachVolumeRequest method.
+//	req, resp := client.AttachVolumeRequest(params)
 //
-//    // Example sending a request using the AttachVolumeRequest method.
-//    req, resp := client.AttachVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/AttachVolume
 func (c *Ebs) AttachVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +95,13 @@ const opCreateSnapshot = "CreateSnapshot"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateSnapshotRequest method.
+//	req, resp := client.CreateSnapshotRequest(params)
 //
-//    // Example sending a request using the CreateSnapshotRequest method.
-//    req, resp := client.CreateSnapshotRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/CreateSnapshot
 func (c *Ebs) CreateSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -169,14 +167,13 @@ const opCreateVolume = "CreateVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateVolumeRequest method.
+//	req, resp := client.CreateVolumeRequest(params)
 //
-//    // Example sending a request using the CreateVolumeRequest method.
-//    req, resp := client.CreateVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/CreateVolume
 func (c *Ebs) CreateVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -242,14 +239,13 @@ const opDeleteSnapshot = "DeleteSnapshot"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteSnapshotRequest method.
+//	req, resp := client.DeleteSnapshotRequest(params)
 //
-//    // Example sending a request using the DeleteSnapshotRequest method.
-//    req, resp := client.DeleteSnapshotRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DeleteSnapshot
 func (c *Ebs) DeleteSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -315,14 +311,13 @@ const opDeleteVolume = "DeleteVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteVolumeRequest method.
+//	req, resp := client.DeleteVolumeRequest(params)
 //
-//    // Example sending a request using the DeleteVolumeRequest method.
-//    req, resp := client.DeleteVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DeleteVolume
 func (c *Ebs) DeleteVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +383,13 @@ const opDescribeEbsInstances = "DescribeEbsInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeEbsInstancesRequest method.
+//	req, resp := client.DescribeEbsInstancesRequest(params)
 //
-//    // Example sending a request using the DescribeEbsInstancesRequest method.
-//    req, resp := client.DescribeEbsInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DescribeEbsInstances
 func (c *Ebs) DescribeEbsInstancesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +455,13 @@ const opDescribeInstanceVolumes = "DescribeInstanceVolumes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeInstanceVolumesRequest method.
+//	req, resp := client.DescribeInstanceVolumesRequest(params)
 //
-//    // Example sending a request using the DescribeInstanceVolumesRequest method.
-//    req, resp := client.DescribeInstanceVolumesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DescribeInstanceVolumes
 func (c *Ebs) DescribeInstanceVolumesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -534,14 +527,13 @@ const opDescribeSnapshots = "DescribeSnapshots"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeSnapshotsRequest method.
+//	req, resp := client.DescribeSnapshotsRequest(params)
 //
-//    // Example sending a request using the DescribeSnapshotsRequest method.
-//    req, resp := client.DescribeSnapshotsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DescribeSnapshots
 func (c *Ebs) DescribeSnapshotsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -607,14 +599,13 @@ const opDescribeVolumes = "DescribeVolumes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeVolumesRequest method.
+//	req, resp := client.DescribeVolumesRequest(params)
 //
-//    // Example sending a request using the DescribeVolumesRequest method.
-//    req, resp := client.DescribeVolumesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DescribeVolumes
 func (c *Ebs) DescribeVolumesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -680,14 +671,13 @@ const opDetachVolume = "DetachVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DetachVolumeRequest method.
+//	req, resp := client.DetachVolumeRequest(params)
 //
-//    // Example sending a request using the DetachVolumeRequest method.
-//    req, resp := client.DetachVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/DetachVolume
 func (c *Ebs) DetachVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -753,14 +743,13 @@ const opModifySnapshot = "ModifySnapshot"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifySnapshotRequest method.
+//	req, resp := client.ModifySnapshotRequest(params)
 //
-//    // Example sending a request using the ModifySnapshotRequest method.
-//    req, resp := client.ModifySnapshotRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifySnapshot
 func (c *Ebs) ModifySnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -826,14 +815,13 @@ const opModifyVolume = "ModifyVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyVolumeRequest method.
+//	req, resp := client.ModifyVolumeRequest(params)
 //
-//    // Example sending a request using the ModifyVolumeRequest method.
-//    req, resp := client.ModifyVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifyVolume
 func (c *Ebs) ModifyVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -883,6 +871,78 @@ func (c *Ebs) ModifyVolumeWithContext(ctx aws.Context, input *map[string]interfa
 	return out, req.Send()
 }
 
+const opModifyVolumeType = "ModifyVolumeType"
+
+// ModifyVolumeTypeRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyVolumeType operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyVolumeType for more information on using the ModifyVolumeType
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyVolumeTypeRequest method.
+//	req, resp := client.ModifyVolumeTypeRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifyVolumeType
+func (c *Ebs) ModifyVolumeTypeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyVolumeType,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyVolumeType API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation ModifyVolumeType for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifyVolumeType
+func (c *Ebs) ModifyVolumeType(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyVolumeTypeRequest(input)
+	return out, req.Send()
+}
+
+// ModifyVolumeTypeWithContext is the same as ModifyVolumeType with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyVolumeType for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) ModifyVolumeTypeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyVolumeTypeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRecoveryVolume = "RecoveryVolume"
 
 // RecoveryVolumeRequest generates a "ksc/request.Request" representing the
@@ -899,14 +959,13 @@ const opRecoveryVolume = "RecoveryVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RecoveryVolumeRequest method.
+//	req, resp := client.RecoveryVolumeRequest(params)
 //
-//    // Example sending a request using the RecoveryVolumeRequest method.
-//    req, resp := client.RecoveryVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/RecoveryVolume
 func (c *Ebs) RecoveryVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -972,14 +1031,13 @@ const opResizeVolume = "ResizeVolume"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ResizeVolumeRequest method.
+//	req, resp := client.ResizeVolumeRequest(params)
 //
-//    // Example sending a request using the ResizeVolumeRequest method.
-//    req, resp := client.ResizeVolumeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ResizeVolume
 func (c *Ebs) ResizeVolumeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1045,14 +1103,13 @@ const opRollbackSnapshot = "RollbackSnapshot"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RollbackSnapshotRequest method.
+//	req, resp := client.RollbackSnapshotRequest(params)
 //
-//    // Example sending a request using the RollbackSnapshotRequest method.
-//    req, resp := client.RollbackSnapshotRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/RollbackSnapshot
 func (c *Ebs) RollbackSnapshotRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1118,14 +1175,13 @@ const opUpdateVolumeProject = "UpdateVolumeProject"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateVolumeProjectRequest method.
+//	req, resp := client.UpdateVolumeProjectRequest(params)
 //
-//    // Example sending a request using the UpdateVolumeProjectRequest method.
-//    req, resp := client.UpdateVolumeProjectRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/UpdateVolumeProject
 func (c *Ebs) UpdateVolumeProjectRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -1191,14 +1247,13 @@ const opValidateAttachInstance = "ValidateAttachInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ValidateAttachInstanceRequest method.
+//	req, resp := client.ValidateAttachInstanceRequest(params)
 //
-//    // Example sending a request using the ValidateAttachInstanceRequest method.
-//    req, resp := client.ValidateAttachInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ValidateAttachInstance
 func (c *Ebs) ValidateAttachInstanceRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {

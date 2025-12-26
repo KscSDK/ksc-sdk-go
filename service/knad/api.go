@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 )
 
-const opAssociateIp = "AssociateIp"
+const opAssociateIp = "InsertEips"
 
 // AssociateIpRequest generates a "ksc/request.Request" representing the
 // client's request for the AssociateIp operation. The "output" return
