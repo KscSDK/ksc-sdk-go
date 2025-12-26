@@ -23,37 +23,37 @@ import (
 // can be stubbed out for unit testing your code with the SDK without needing
 // to inject custom request handlers into the SDK's request pipeline.
 //
-//    // myFunc uses an SDK service client to make a request to
-//    // ebs.
-//    func myFunc(svc ebsiface.EbsAPI) bool {
-//        // Make svc.AttachVolume request
-//    }
+//	// myFunc uses an SDK service client to make a request to
+//	// ebs.
+//	func myFunc(svc ebsiface.EbsAPI) bool {
+//	    // Make svc.AttachVolume request
+//	}
 //
-//    func main() {
-//        sess := session.New()
-//        svc := ebs.New(sess)
+//	func main() {
+//	    sess := session.New()
+//	    svc := ebs.New(sess)
 //
-//        myFunc(svc)
-//    }
+//	    myFunc(svc)
+//	}
 //
 // In your _test.go file:
 //
-//    // Define a mock struct to be used in your unit tests of myFunc.
-//    type mockEbsClient struct {
-//        ebsiface.EbsAPI
-//    }
-//    func (m *mockEbsClient) AttachVolume(input *map[string]interface{}) (*map[string]interface{}, error) {
-//        // mock response/functionality
-//    }
+//	// Define a mock struct to be used in your unit tests of myFunc.
+//	type mockEbsClient struct {
+//	    ebsiface.EbsAPI
+//	}
+//	func (m *mockEbsClient) AttachVolume(input *map[string]interface{}) (*map[string]interface{}, error) {
+//	    // mock response/functionality
+//	}
 //
-//    func TestMyFunc(t *testing.T) {
-//        // Setup Test
-//        mockSvc := &mockEbsClient{}
+//	func TestMyFunc(t *testing.T) {
+//	    // Setup Test
+//	    mockSvc := &mockEbsClient{}
 //
-//        myfunc(mockSvc)
+//	    myfunc(mockSvc)
 //
-//        // Verify myFunc's functionality
-//    }
+//	    // Verify myFunc's functionality
+//	}
 //
 // It is important to note that this interface will have breaking changes
 // when the service model is updated and adds new API operations, paginators,
@@ -107,6 +107,10 @@ type EbsAPI interface {
 	ModifyVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyVolumeType(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyVolumeTypeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyVolumeTypeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	RecoveryVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	RecoveryVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
