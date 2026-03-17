@@ -68,6 +68,10 @@ type KnadAPI interface {
 	CreateKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateKnadRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreatePerPayKnad(*map[string]interface{}) (*map[string]interface{}, error)
+	CreatePerPayKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreatePerPayKnadRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	DeleteKnad(*map[string]interface{}) (*map[string]interface{}, error)
 	DeleteKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DeleteKnadRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -87,6 +91,10 @@ type KnadAPI interface {
 	ModifyKnad(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyKnadRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	ModifyPerPayKnad(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyPerPayKnadWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyPerPayKnadRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ KnadAPI = (*knad.Knad)(nil)
