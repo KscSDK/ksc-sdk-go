@@ -112,6 +112,10 @@ type EbsAPI interface {
 	ModifyVolumeTypeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyVolumeTypeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyDiskChargeType(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyDiskChargeTypeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyDiskChargeTypeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	RecoveryVolume(*map[string]interface{}) (*map[string]interface{}, error)
 	RecoveryVolumeWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	RecoveryVolumeRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})

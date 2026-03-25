@@ -943,6 +943,78 @@ func (c *Ebs) ModifyVolumeTypeWithContext(ctx aws.Context, input *map[string]int
 	return out, req.Send()
 }
 
+const opModifyDiskChargeType = "ModifyDiskChargeType"
+
+// ModifyDiskChargeTypeRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyDiskChargeType operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyDiskChargeType for more information on using the ModifyDiskChargeType
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyDiskChargeTypeRequest method.
+//	req, resp := client.ModifyDiskChargeTypeRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifyDiskChargeType
+func (c *Ebs) ModifyDiskChargeTypeRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyDiskChargeType,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// ModifyDiskChargeType API operation for ebs.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for ebs's
+// API operation ModifyDiskChargeType for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/ebs-2016-03-04/ModifyDiskChargeType
+func (c *Ebs) ModifyDiskChargeType(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyDiskChargeTypeRequest(input)
+	return out, req.Send()
+}
+
+// ModifyDiskChargeTypeWithContext is the same as ModifyDiskChargeType with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyDiskChargeType for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Ebs) ModifyDiskChargeTypeWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyDiskChargeTypeRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opRecoveryVolume = "RecoveryVolume"
 
 // RecoveryVolumeRequest generates a "ksc/request.Request" representing the
