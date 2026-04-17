@@ -432,6 +432,10 @@ type VpcAPI interface {
 	ModifyNatWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNatRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	ModifyNatGatewayBilling(*map[string]interface{}) (*map[string]interface{}, error)
+	ModifyNatGatewayBillingWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	ModifyNatGatewayBillingRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	ModifyNatRateLimit(*map[string]interface{}) (*map[string]interface{}, error)
 	ModifyNatRateLimitWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	ModifyNatRateLimitRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
