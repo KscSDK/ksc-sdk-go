@@ -1015,6 +1015,78 @@ func (c *Kec) CreateLocalVolumeSnapshotWithContext(ctx aws.Context, input *map[s
 	return out, req.Send()
 }
 
+const opCreateModel = "CreateModel"
+
+// CreateModelRequest generates a "ksc/request.Request" representing the
+// client's request for the CreateModel operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See CreateModel for more information on using the CreateModel
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the CreateModelRequest method.
+//	req, resp := client.CreateModelRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateModel
+func (c *Kec) CreateModelRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opCreateModel,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// CreateModel API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation CreateModel for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/CreateModel
+func (c *Kec) CreateModel(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.CreateModelRequest(input)
+	return out, req.Send()
+}
+
+// CreateModelWithContext is the same as CreateModel with the addition of
+// the ability to pass a context and additional request options.
+//
+// See CreateModel for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) CreateModelWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.CreateModelRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
 const opCreateScalingConfiguration = "CreateScalingConfiguration"
 
 // CreateScalingConfigurationRequest generates a "ksc/request.Request" representing the
@@ -2882,6 +2954,78 @@ func (c *Kec) DescribeLocalVolumes(input *map[string]interface{}) (*map[string]i
 // for more information on using Contexts.
 func (c *Kec) DescribeLocalVolumesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.DescribeLocalVolumesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opDescribeModels = "DescribeModels"
+
+// DescribeModelsRequest generates a "ksc/request.Request" representing the
+// client's request for the DescribeModels operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See DescribeModels for more information on using the DescribeModels
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the DescribeModelsRequest method.
+//	req, resp := client.DescribeModelsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeModels
+func (c *Kec) DescribeModelsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opDescribeModels,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// DescribeModels API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation DescribeModels for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/DescribeModels
+func (c *Kec) DescribeModels(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.DescribeModelsRequest(input)
+	return out, req.Send()
+}
+
+// DescribeModelsWithContext is the same as DescribeModels with the addition of
+// the ability to pass a context and additional request options.
+//
+// See DescribeModels for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) DescribeModelsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.DescribeModelsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
@@ -5762,6 +5906,78 @@ func (c *Kec) TerminateInstances(input *map[string]interface{}) (*map[string]int
 // for more information on using Contexts.
 func (c *Kec) TerminateInstancesWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.TerminateInstancesRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opTerminateModels = "TerminateModels"
+
+// TerminateModelsRequest generates a "ksc/request.Request" representing the
+// client's request for the TerminateModels operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See TerminateModels for more information on using the TerminateModels
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the TerminateModelsRequest method.
+//	req, resp := client.TerminateModelsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/TerminateModels
+func (c *Kec) TerminateModelsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opTerminateModels,
+		HTTPMethod: "GET",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	return
+}
+
+// TerminateModels API operation for kec.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for kec's
+// API operation TerminateModels for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/kec-2016-03-04/TerminateModels
+func (c *Kec) TerminateModels(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.TerminateModelsRequest(input)
+	return out, req.Send()
+}
+
+// TerminateModelsWithContext is the same as TerminateModels with the addition of
+// the ability to pass a context and additional request options.
+//
+// See TerminateModels for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Kec) TerminateModelsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.TerminateModelsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()

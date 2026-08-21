@@ -116,6 +116,10 @@ type KecAPI interface {
 	CreateLocalVolumeSnapshotWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateLocalVolumeSnapshotRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
+	CreateModel(*map[string]interface{}) (*map[string]interface{}, error)
+	CreateModelWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	CreateModelRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
 	CreateScalingConfiguration(*map[string]interface{}) (*map[string]interface{}, error)
 	CreateScalingConfigurationWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	CreateScalingConfigurationRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
@@ -219,6 +223,10 @@ type KecAPI interface {
 	DescribeLocalVolumes(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeLocalVolumesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	DescribeLocalVolumesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	DescribeModels(*map[string]interface{}) (*map[string]interface{}, error)
+	DescribeModelsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	DescribeModelsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 
 	DescribeRegions(*map[string]interface{}) (*map[string]interface{}, error)
 	DescribeRegionsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
@@ -379,6 +387,10 @@ type KecAPI interface {
 	TerminateInstances(*map[string]interface{}) (*map[string]interface{}, error)
 	TerminateInstancesWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
 	TerminateInstancesRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
+
+	TerminateModels(*map[string]interface{}) (*map[string]interface{}, error)
+	TerminateModelsWithContext(aws.Context, *map[string]interface{}, ...request.Option) (*map[string]interface{}, error)
+	TerminateModelsRequest(*map[string]interface{}) (*request.Request, *map[string]interface{})
 }
 
 var _ KecAPI = (*kec.Kec)(nil)
