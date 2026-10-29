@@ -23,14 +23,13 @@ const opBindZoneVpc = "BindZoneVpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the BindZoneVpcRequest method.
+//	req, resp := client.BindZoneVpcRequest(params)
 //
-//    // Example sending a request using the BindZoneVpcRequest method.
-//    req, resp := client.BindZoneVpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/BindZoneVpc
 func (c *Pdns) BindZoneVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -96,14 +95,13 @@ const opCreatePdnsZone = "CreatePdnsZone"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreatePdnsZoneRequest method.
+//	req, resp := client.CreatePdnsZoneRequest(params)
 //
-//    // Example sending a request using the CreatePdnsZoneRequest method.
-//    req, resp := client.CreatePdnsZoneRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/CreatePdnsZone
 func (c *Pdns) CreatePdnsZoneRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -169,14 +167,13 @@ const opCreateZoneRecord = "CreateZoneRecord"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateZoneRecordRequest method.
+//	req, resp := client.CreateZoneRecordRequest(params)
 //
-//    // Example sending a request using the CreateZoneRecordRequest method.
-//    req, resp := client.CreateZoneRecordRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/CreateZoneRecord
 func (c *Pdns) CreateZoneRecordRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -242,14 +239,13 @@ const opDeletePdnsZone = "DeletePdnsZone"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeletePdnsZoneRequest method.
+//	req, resp := client.DeletePdnsZoneRequest(params)
 //
-//    // Example sending a request using the DeletePdnsZoneRequest method.
-//    req, resp := client.DeletePdnsZoneRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/DeletePdnsZone
 func (c *Pdns) DeletePdnsZoneRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -315,14 +311,13 @@ const opDeleteZoneRecord = "DeleteZoneRecord"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteZoneRecordRequest method.
+//	req, resp := client.DeleteZoneRecordRequest(params)
 //
-//    // Example sending a request using the DeleteZoneRecordRequest method.
-//    req, resp := client.DeleteZoneRecordRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/DeleteZoneRecord
 func (c *Pdns) DeleteZoneRecordRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -388,14 +383,13 @@ const opDescribePdnsZones = "DescribePdnsZones"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribePdnsZonesRequest method.
+//	req, resp := client.DescribePdnsZonesRequest(params)
 //
-//    // Example sending a request using the DescribePdnsZonesRequest method.
-//    req, resp := client.DescribePdnsZonesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/DescribePdnsZones
 func (c *Pdns) DescribePdnsZonesRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -461,14 +455,13 @@ const opDescribeZoneRecord = "DescribeZoneRecord"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeZoneRecordRequest method.
+//	req, resp := client.DescribeZoneRecordRequest(params)
 //
-//    // Example sending a request using the DescribeZoneRecordRequest method.
-//    req, resp := client.DescribeZoneRecordRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/DescribeZoneRecord
 func (c *Pdns) DescribeZoneRecordRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -534,14 +527,13 @@ const opModifyPdnsZone = "ModifyPdnsZone"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyPdnsZoneRequest method.
+//	req, resp := client.ModifyPdnsZoneRequest(params)
 //
-//    // Example sending a request using the ModifyPdnsZoneRequest method.
-//    req, resp := client.ModifyPdnsZoneRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/ModifyPdnsZone
 func (c *Pdns) ModifyPdnsZoneRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -607,14 +599,13 @@ const opModifyZoneRecord = "ModifyZoneRecord"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ModifyZoneRecordRequest method.
+//	req, resp := client.ModifyZoneRecordRequest(params)
 //
-//    // Example sending a request using the ModifyZoneRecordRequest method.
-//    req, resp := client.ModifyZoneRecordRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/ModifyZoneRecord
 func (c *Pdns) ModifyZoneRecordRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -680,14 +671,13 @@ const opUnbindZoneVpc = "UnbindZoneVpc"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UnbindZoneVpcRequest method.
+//	req, resp := client.UnbindZoneVpcRequest(params)
 //
-//    // Example sending a request using the UnbindZoneVpcRequest method.
-//    req, resp := client.UnbindZoneVpcRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/UnbindZoneVpc
 func (c *Pdns) UnbindZoneVpcRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
@@ -732,6 +722,80 @@ func (c *Pdns) UnbindZoneVpc(input *map[string]interface{}) (*map[string]interfa
 // for more information on using Contexts.
 func (c *Pdns) UnbindZoneVpcWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
 	req, out := c.UnbindZoneVpcRequest(input)
+	req.SetContext(ctx)
+	req.ApplyOptions(opts...)
+	return out, req.Send()
+}
+
+const opModifyZoneRecords = "ModifyZoneRecords"
+
+// ModifyZoneRecordsRequest generates a "ksc/request.Request" representing the
+// client's request for the ModifyZoneRecords operation. The "output" return
+// value will be populated with the request's response once the request completes
+// successfully.
+//
+// Use "Send" method on the returned Request to send the API call to the service.
+// the "output" return value is not valid until after Send returns without error.
+//
+// See ModifyZoneRecords for more information on using the ModifyZoneRecords
+// API call, and error handling.
+//
+// This method is useful when you want to inject custom logic or configuration
+// into the SDK's request lifecycle. Such as custom headers, or retry logic.
+//
+//	// Example sending a request using the ModifyZoneRecordsRequest method.
+//	req, resp := client.ModifyZoneRecordsRequest(params)
+//
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
+//
+// See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/ModifyZoneRecords
+func (c *Pdns) ModifyZoneRecordsRequest(input *map[string]interface{}) (req *request.Request, output *map[string]interface{}) {
+	op := &request.Operation{
+		Name:       opModifyZoneRecords,
+		HTTPMethod: "POST",
+		HTTPPath:   "/",
+	}
+
+	if input == nil {
+		input = &map[string]interface{}{}
+	}
+
+	output = &map[string]interface{}{}
+	req = c.newRequest(op, input, output)
+
+	req.HTTPRequest.Header.Set("Content-Type", "application/json; charset=utf-8")
+
+	return
+}
+
+// ModifyZoneRecords API operation for pdns.
+//
+// Returns awserr.Error for service API and SDK errors. Use runtime type assertions
+// with awserr.Error's Code and Message methods to get detailed information about
+// the error.
+//
+// See the KSC API reference guide for pdns's
+// API operation ModifyZoneRecords for usage and error information.
+// See also, https://docs.aws.amazon.com/goto/WebAPI/pdns-2016-03-04/ModifyZoneRecords
+func (c *Pdns) ModifyZoneRecords(input *map[string]interface{}) (*map[string]interface{}, error) {
+	req, out := c.ModifyZoneRecordsRequest(input)
+	return out, req.Send()
+}
+
+// ModifyZoneRecordsWithContext is the same as ModifyZoneRecords with the addition of
+// the ability to pass a context and additional request options.
+//
+// See ModifyZoneRecords for details on how to use this API operation.
+//
+// The context must be non-nil and will be used for request cancellation. If
+// the context is nil a panic will occur. In the future the SDK may create
+// sub-contexts for http.Requests. See https://golang.org/pkg/context/
+// for more information on using Contexts.
+func (c *Pdns) ModifyZoneRecordsWithContext(ctx aws.Context, input *map[string]interface{}, opts ...request.Option) (*map[string]interface{}, error) {
+	req, out := c.ModifyZoneRecordsRequest(input)
 	req.SetContext(ctx)
 	req.ApplyOptions(opts...)
 	return out, req.Send()
